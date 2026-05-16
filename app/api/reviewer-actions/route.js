@@ -12,7 +12,10 @@ import { getRun, appendRunLedger, appendRunTrainingTrace } from "@/lib/aculeus-p
 import { appendTrainingTrace, buildTrainingTrace } from "@/lib/aculeus-training-trace-exporter.js";
 
 function receiptStore() {
-  return createFileReceiptStore(process.env.ACULEUS_RECEIPT_STORE_DIR || join(process.cwd(), ".local", "receipts"));
+  const defaultDir = process.env.VERCEL || process.env.VERCEL_ENV
+    ? join("/tmp", "aculeus", "receipts")
+    : join(process.cwd(), ".local", "receipts");
+  return createFileReceiptStore(process.env.ACULEUS_RECEIPT_STORE_DIR || defaultDir);
 }
 
 export async function POST(request) {

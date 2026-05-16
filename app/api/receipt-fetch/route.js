@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { createFileReceiptStore } from "@/lib/aculeus-receipt-store.js";
 import { fetchPublicReceipt } from "@/lib/aculeus-receipt-fetcher.js";
@@ -6,7 +7,10 @@ import { verifyReceiptCitation } from "@/lib/aculeus-citation-verifier.js";
 import { getRun, appendRunLedger } from "@/lib/aculeus-product-store.js";
 
 function receiptStore() {
-  return createFileReceiptStore(process.env.ACULEUS_RECEIPT_STORE_DIR || join(process.cwd(), ".local", "receipts"));
+  const defaultDir = process.env.VERCEL || process.env.VERCEL_ENV
+    ? join("/tmp", "aculeus", "receipts")
+    : join(process.cwd(), ".local", "receipts");
+  return createFileReceiptStore(process.env.ACULEUS_RECEIPT_STORE_DIR || defaultDir);
 }
 
 export async function POST(request) {
@@ -30,14 +34,16 @@ export async function POST(request) {
       max_bytes: payload.max_bytes
     }, { store, maxBytes: payload.max_bytes });
     const stored = store.getReceipt(receipt.receipt_id);
+    const quote = payload.quote || payload.quoted_text || candidate.snippet;
     const verifier = verifyReceiptCitation({
       candidate,
       receipt: stored,
       receiptText: stored?.raw_text,
-      quote: payload.quote || payload.quoted_text || candidate.snippet,
+      quote,
       claim: payload.claim,
       adjudicative_source: payload.adjudicative_source === true
     });
+    const quote_sha256 = quote ? createHash("sha256").update(String(quote)).digest("hex") : null;
     const run = payload.runId ? await getRun(payload.runId) : null;
     const ledgerEntry = {
       ledger_entry_id: `receipt_fetch_${Date.now()}`,
@@ -48,6 +54,7 @@ export async function POST(request) {
       labels: ["fetched", "receipt", verifier.source_promotion_allowed ? "usable_as_evidence" : "candidate_only"],
       candidate_id: candidate.candidate_id || candidate.source_id || null,
       receipt,
+      quote_sha256,
       verifier,
       public_safe: true
     };
@@ -57,6 +64,7 @@ export async function POST(request) {
       mode: "receipt_fetch_and_citation_verify",
       runId: run?.runId || payload.runId || null,
       receipt,
+      quote_sha256,
       verifier,
       ledger_entry: ledgerEntry
     });
