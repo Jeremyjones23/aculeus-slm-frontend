@@ -47,6 +47,7 @@
     "smoke:postdeploy:admin": "node scripts/postdeploy-admin-smoke.mjs",
     "smoke:postdeploy:live-provider": "node scripts/postdeploy-live-provider-smoke.mjs",
     "smoke:postdeploy:four-dossier": "node scripts/postdeploy-four-dossier-regression.mjs",
+    "smoke:nightly-production": "node scripts/nightly-production-smoke.mjs",
     "eval:shadow:pilot": "node scripts/run-shadow-eval-pilot-traces.mjs",
     "pilot:packet": "node scripts/build-controlled-pilot-packet.mjs",
     "test:runner": "node scripts/verify-investigation-runner.mjs",
