@@ -40,6 +40,7 @@
     "test:telemetry": "node scripts/verify-telemetry-alerts.mjs",
     "test:backup-restore": "node scripts/verify-backup-restore.mjs",
     "test:deployment-runbook": "node scripts/verify-deployment-runbook.mjs",
+    "test:controlled-pilot": "node scripts/verify-controlled-pilot-workflow.mjs",
     "test:deployment-promotion": "node scripts/verify-deployment-promotion.mjs",
     "smoke:deployment-promotion": "node scripts/run-deployment-promotion-smokes.mjs",
     "smoke:postdeploy": "node scripts/postdeploy-smoke.mjs",
