@@ -90,7 +90,11 @@ const checks = {
 };
 
 const failures = Object.entries(checks)
-  .filter(([key, value]) => key === "promotedEvidenceCount" ? value !== 0 : value !== true)
+  .filter(([key, value]) => {
+    if (key === "receiptStatus") return value !== 200;
+    if (key === "promotedEvidenceCount") return value !== 0;
+    return value !== true;
+  })
   .map(([key]) => key);
 if (failures.length) throw new Error(`Receipt smoke failed checks: ${failures.join(", ")} ${JSON.stringify(checks)}`);
 
