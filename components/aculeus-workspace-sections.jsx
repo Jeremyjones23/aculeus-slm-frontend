@@ -13,6 +13,7 @@ export const Topbar = memo(function Topbar({ onRequestAccess }) {
         <a href="#run">Run</a>
         <a href="#brief">Brief</a>
         <a href="#sources">Sources</a>
+        <a href="/disclaimer">Disclaimer</a>
         <button type="button" onClick={onRequestAccess}>Request access</button>
       </nav>
     </header>

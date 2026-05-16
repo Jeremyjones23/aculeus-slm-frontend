@@ -589,6 +589,47 @@ h1 {
   text-decoration: none;
 }
 
+.admin-budget-totals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 1rem;
+}
+
+.admin-budget-totals article {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.78);
+  padding: 1rem;
+}
+
+.admin-budget-totals h2 {
+  margin: 0 0 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.admin-budget-totals p {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(17, 16, 14, 0.08);
+}
+
+.admin-budget-totals span {
+  overflow-wrap: anywhere;
+}
+
+.admin-budget-totals small {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
 .trace-workbench {
   margin: 1rem 0;
   border: 1px solid var(--line);
@@ -700,6 +741,18 @@ h1 {
   text-transform: uppercase;
 }
 
+.trace-filter-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.trace-filter-row button {
+  min-height: 34px;
+  padding: 0.45rem 0.5rem;
+  text-align: center;
+}
+
 .trace-queue button {
   display: grid;
   gap: 0.25rem;
@@ -789,6 +842,32 @@ h1 {
 
 .trace-outcome {
   margin: 1rem 0 0;
+}
+
+.trace-review-note {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.trace-review-note span,
+.trace-review-note small {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.trace-review-note textarea {
+  min-height: 94px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.75rem;
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.35;
 }
 
 .trace-review-actions {
@@ -923,6 +1002,66 @@ h1 {
   font-family: var(--mono);
   font-size: 0.72rem;
   text-transform: uppercase;
+}
+
+.disclaimer-shell {
+  min-height: 100vh;
+  padding: 2rem clamp(1rem, 4vw, 3rem) 4rem;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.disclaimer-header {
+  max-width: 960px;
+  padding: clamp(2.5rem, 7vw, 6rem) 0 2rem;
+}
+
+.disclaimer-header h1 {
+  max-width: 920px;
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 6.2rem);
+  line-height: 0.92;
+}
+
+.disclaimer-header p {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.disclaimer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.disclaimer-grid article {
+  min-height: 260px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.disclaimer-grid span {
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.disclaimer-grid h2 {
+  margin: 1.25rem 0 0.65rem;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1;
+}
+
+.disclaimer-grid p {
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .operator-board {
@@ -1381,12 +1520,14 @@ h1 {
   .feedback-panel,
   .feedback-actions,
   .admin-metrics,
+  .admin-budget-totals,
   .trace-workbench-header,
   .trace-workbench-grid,
   .trace-stats,
   .operator-grid,
   .operator-header,
-  .candidate-row {
+  .candidate-row,
+  .disclaimer-grid {
     grid-template-columns: 1fr;
   }
 

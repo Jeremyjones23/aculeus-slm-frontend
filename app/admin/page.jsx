@@ -47,6 +47,11 @@ export default async function AdminPage() {
         <a href="/api/admin/training-export?format=sft">Reviewed SFT export</a>
         <a href="/api/admin/training-export?format=preference">Reviewed preference export</a>
       </section>
+      <section className="admin-budget-totals" aria-label="Provider budget totals">
+        <BudgetColumn title="By day" rows={summary.provider_budget_totals.by_day} labelKey="day" />
+        <BudgetColumn title="By workspace" rows={summary.provider_budget_totals.by_workspace} labelKey="workspace_id" />
+        <BudgetColumn title="By provider" rows={summary.provider_budget_totals.by_provider} labelKey="provider" />
+      </section>
       <AculeusAdminTraceWorkbench queue={traceQueue} exportSummary={exportSummary} />
       {summary.provider_cost_summary.alerts.length > 0 ? (
         <section className="admin-alerts" aria-label="Provider spend alerts">
@@ -97,5 +102,20 @@ export default async function AdminPage() {
         </table>
       </section>
     </main>
+  );
+}
+
+function BudgetColumn({ title, rows, labelKey }) {
+  return (
+    <article>
+      <h2>{title}</h2>
+      {(rows.length ? rows : [{ [labelKey]: "none", estimated_spend_usd: 0, provider_cap_usd: 0, provider_call_count: 0 }]).slice(0, 6).map((row) => (
+        <p key={row[labelKey]}>
+          <span>{row[labelKey]}</span>
+          <strong>${row.estimated_spend_usd.toFixed(2)}</strong>
+          <small>{row.provider_call_count} calls / ${row.provider_cap_usd.toFixed(2)} cap</small>
+        </p>
+      ))}
+    </article>
   );
 }

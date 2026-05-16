@@ -10,7 +10,8 @@ const checks = [
   runCheck("postdeploy_auth_provider_dry_source_ledger", ["scripts/postdeploy-smoke.mjs", base], {
     ACULEUS_LIVE_PROVIDER_SMOKE: "false"
   }),
-  runCheck("postdeploy_receipt_gate", ["scripts/postdeploy-receipt-smoke.mjs", base], {})
+  runCheck("postdeploy_receipt_gate", ["scripts/postdeploy-receipt-smoke.mjs", base], {}),
+  runCheck("postdeploy_training_export_download", ["scripts/postdeploy-training-export-smoke.mjs", base], {})
 ];
 
 const failed = checks.filter((check) => check.status !== "pass");
@@ -24,6 +25,7 @@ const packet = {
     provider_dry_run: checks[0]?.status === "pass",
     source_ledger_candidate_only: checks[0]?.status === "pass",
     receipt_fetch_and_verifier: checks[1]?.status === "pass",
+    training_export_download: checks[2]?.status === "pass",
     evidence_auto_promotion_allowed: false
   }
 };

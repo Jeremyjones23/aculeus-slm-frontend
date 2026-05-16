@@ -10,8 +10,17 @@ export async function POST(request, context) {
     }
     const { traceId } = await context.params;
     const body = await request.json();
+    const note = String(body.note || body.review_note || "").trim();
+    if (note.length < 12) {
+      return NextResponse.json({
+        ok: false,
+        error: "trace_review_note_required",
+        message: "Reviewer notes must explain the source, citation, or safety basis for the decision."
+      }, { status: 400 });
+    }
     const trace = await reviewTrainingTrace(traceId, {
       ...body,
+      note,
       reviewed_by: user.id || user.email || "approved_reviewer"
     });
     return NextResponse.json({

@@ -52,7 +52,9 @@ const summary = buildAdminRunSummary({
         entry_type: "provider_search",
         status: "fetched",
         labels: ["provider", "locator_only"],
+        created_at: "2026-05-16T12:00:00.000Z",
         result_summary: {
+          provider: "parallel",
           provider_calls_executed: true,
           paid_spend_incurred: true,
           estimated_spend_usd: 0.2,
@@ -71,6 +73,9 @@ if (summary.estimated_spend_usd !== 0.32) throw new Error("admin spend summary i
 if (summary.provider_cost_summary.estimated_spend_usd !== 0.2) throw new Error("admin provider spend summary incorrect");
 if (summary.provider_cost_summary.provider_cap_usd !== 0.25) throw new Error("admin provider cap summary incorrect");
 if (summary.provider_cost_summary.alert_count !== 1) throw new Error("admin provider alert count incorrect");
+if (summary.provider_budget_totals.by_day[0]?.day !== "2026-05-16") throw new Error("admin provider day budget total missing");
+if (summary.provider_budget_totals.by_workspace[0]?.workspace_id !== "workspace_admin") throw new Error("admin provider workspace budget total missing");
+if (summary.provider_budget_totals.by_provider[0]?.provider !== "parallel") throw new Error("admin provider budget total missing provider name");
 if (summary.rows[0].provider_spend_alert !== "provider_spend_near_cap") throw new Error("admin provider spend alert not raised");
 const traceQueue = buildTrainingTraceReviewQueue({
   runs: [{
@@ -109,16 +114,20 @@ const admin = getRequestUser(new Request("http://aculeus.local/api/admin/runs", 
 if (!canReviewEvidence(admin)) throw new Error("approved admin was not allowed to review evidence/admin runs");
 
 const page = readFileSync(join(process.cwd(), "app", "admin", "page.jsx"), "utf8");
-for (const phrase of ["Run audit visibility", "Failures", "Exports", "Ledger", "Provider spend", "Provider cap", "Spend Alert", "AculeusAdminTraceWorkbench", "Reviewed SFT export", "Reviewed preference export"]) {
+for (const phrase of ["Run audit visibility", "Failures", "Exports", "Ledger", "Provider spend", "Provider cap", "Spend Alert", "Provider budget totals", "By provider", "AculeusAdminTraceWorkbench", "Reviewed SFT export", "Reviewed preference export"]) {
   if (!page.includes(phrase)) throw new Error(`admin page missing phrase: ${phrase}`);
 }
 const component = readFileSync(join(process.cwd(), "components", "aculeus-admin-trace-workbench.jsx"), "utf8");
-for (const phrase of ["Trace review and training export", "Approve for export", "Offline export only", "No production update"]) {
+for (const phrase of ["Trace review and training export", "Reviewer notes required", "matchesTraceFilter", "Approve for export", "Offline export only", "No production update"]) {
   if (!component.includes(phrase)) throw new Error(`trace workbench missing phrase: ${phrase}`);
 }
 const route = readFileSync(join(process.cwd(), "app", "api", "admin", "training-export", "route.js"), "utf8");
 for (const phrase of ["buildTrainingExportDataset", "content-disposition", "x-aculeus-production-update-allowed"]) {
   if (!route.includes(phrase)) throw new Error(`training export route missing phrase: ${phrase}`);
+}
+const reviewRoute = readFileSync(join(process.cwd(), "app", "api", "admin", "training-traces", "[traceId]", "review", "route.js"), "utf8");
+for (const phrase of ["trace_review_note_required", "note.length < 12"]) {
+  if (!reviewRoute.includes(phrase)) throw new Error(`trace review route missing phrase: ${phrase}`);
 }
 
 console.log("Admin console verification passed.");

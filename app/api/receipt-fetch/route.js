@@ -7,6 +7,7 @@ import { verifyReceiptCitation } from "@/lib/aculeus-citation-verifier.js";
 import { getRun, appendRunLedger } from "@/lib/aculeus-product-store.js";
 import { buildAccessDeniedPayload, canReviewEvidence, getVerifiedRequestUser } from "@/lib/access-control.js";
 import { browserFallbackLedgerEntry } from "@/lib/aculeus-browser-capture-fallback.js";
+import { browserCaptureLedgerEntry, capturePublicPageWithBrowserbase } from "@/lib/aculeus-browserbase-capture.js";
 
 function receiptStore() {
   const defaultDir = process.env.VERCEL || process.env.VERCEL_ENV
@@ -79,7 +80,7 @@ export async function POST(request) {
     });
   } catch (error) {
     if (payload?.url || candidate?.url) {
-      const fallbackEntry = browserFallbackLedgerEntry({
+      const browserInput = {
         run_id: run?.runId || payload?.runId || null,
         case_id: run?.caseId || payload?.caseId || null,
         source_id: candidate?.source_id || payload?.source_id || candidate?.candidate_id,
@@ -87,11 +88,20 @@ export async function POST(request) {
         url: candidate?.url || payload?.url,
         title: candidate?.title || payload?.title || "Receipt fetch fallback",
         reason: error.message
-      });
+      };
+      let fallbackEntry = browserFallbackLedgerEntry(browserInput);
+      if (process.env.BROWSERBASE_API_KEY && payload?.enableBrowserbase !== false) {
+        try {
+          const capture = await capturePublicPageWithBrowserbase(browserInput);
+          fallbackEntry = browserCaptureLedgerEntry(capture, browserInput);
+        } catch (browserError) {
+          fallbackEntry.fallback.browserbase_error = browserError.message;
+        }
+      }
       if (run?.runId) await appendRunLedger(run.runId, fallbackEntry);
       return NextResponse.json({
         ok: true,
-        mode: "receipt_fetch_needs_browser",
+        mode: fallbackEntry.entry_type === "browser_capture" ? "receipt_fetch_browserbase_capture" : "receipt_fetch_needs_browser",
         runId: run?.runId || payload?.runId || null,
         receipt: null,
         verifier: {

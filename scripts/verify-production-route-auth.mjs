@@ -24,7 +24,8 @@ const child = spawn(process.execPath, [nextBin, command, "-p", String(port), "-H
     ACULEUS_SMOKE_SECRET: smokeSecret,
     ACULEUS_PRODUCT_STORE_DIR: storeDir,
     ACULEUS_RECEIPT_STORE_DIR: receiptDir,
-    ACULEUS_TRAINING_TRACE_PATH: tracePath
+    ACULEUS_TRAINING_TRACE_PATH: tracePath,
+    BROWSERBASE_API_KEY: ""
   },
   stdio: "ignore"
 });
@@ -77,6 +78,9 @@ try {
 
   await expectStatus("POST /api/official-api-search reviewer denied", "/api/official-api-search", { runId, rawQuery: "LA homelessness" }, reviewerHeaders, 403);
   await expectStatus("POST /api/receipt-fetch without auth", "/api/receipt-fetch", { runId }, {}, 403);
+  await expectStatus("POST /api/browser-capture without auth", "/api/browser-capture", { runId, url: "https://example.com" }, {}, 403);
+  const browserCapture = await postJson("/api/browser-capture", { runId, url: "https://example.com", candidate_id: "auth_browser_candidate" }, reviewerHeaders);
+  if (!browserCapture.ok || browserCapture.ledger_entry?.evidence_promotion_allowed !== false) throw new Error("reviewer browser capture did not pass auth gate while preserving promotion boundary");
   await expectStatus("POST /api/reviewer-actions without auth", "/api/reviewer-actions", { runId, action: "reject_candidate_source" }, {}, 403);
   const review = await postJson("/api/reviewer-actions", {
     runId,
