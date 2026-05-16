@@ -30,6 +30,7 @@
     "test:eval-bank-25": "node scripts/verify-eval-bank-25.mjs",
     "test:eval-bank-100": "node scripts/verify-eval-bank-100.mjs",
     "test:shadow-model": "node scripts/verify-shadow-model-path.mjs",
+    "test:shadow-admin": "node scripts/verify-shadow-eval-admin.mjs",
     "test:model-adapter": "node scripts/verify-model-adapter-gates.mjs",
     "test:training-boundary": "node scripts/verify-training-boundary.mjs",
     "test:auth-boundary": "node scripts/verify-auth-boundary.mjs",

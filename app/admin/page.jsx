@@ -24,6 +24,9 @@ export default function AdminPage() {
         <article><span>Provider calls</span><strong>{summary.provider_cost_summary.provider_call_count}</strong></article>
         <article><span>Spend alerts</span><strong>{summary.provider_cost_summary.alert_count}</strong></article>
       </section>
+      <section className="admin-actions" aria-label="Admin downloads">
+        <a href="/api/admin/shadow-eval?limit=60">Shadow eval JSON</a>
+      </section>
       {summary.provider_cost_summary.alerts.length > 0 ? (
         <section className="admin-alerts" aria-label="Provider spend alerts">
           <h2>Provider spend alerts</h2>

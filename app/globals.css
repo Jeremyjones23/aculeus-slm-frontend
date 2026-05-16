@@ -569,6 +569,24 @@ h1 {
   font-size: 2rem;
 }
 
+.admin-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: -0.75rem 0 1rem;
+}
+
+.admin-actions a {
+  border: 1px solid var(--line);
+  background: #17120d;
+  color: #fffaf2;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 .admin-table {
   overflow-x: auto;
 }
