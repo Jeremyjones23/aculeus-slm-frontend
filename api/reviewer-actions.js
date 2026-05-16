@@ -1,8 +1,9 @@
 import { fileURLToPath } from "node:url";
+import { join } from "node:path";
 import { createFileReceiptStore } from "../lib/aculeus-receipt-store.js";
 import { reviewCandidatePromotion, reviewCandidateRejection } from "../lib/aculeus-reviewer-actions.js";
 
-const receiptStore = createFileReceiptStore(process.env.ACULEUS_RECEIPT_STORE_DIR || fileURLToPath(new URL("../.local/receipts", import.meta.url)));
+const receiptStore = createFileReceiptStore(process.env.ACULEUS_RECEIPT_STORE_DIR || defaultReceiptDir());
 
 export default async function handler(request, response) {
   if (request.method !== "POST") {
@@ -48,6 +49,11 @@ export default async function handler(request, response) {
     receiptText: receipt.raw_text
   });
   response.status(200).json(result);
+}
+
+function defaultReceiptDir() {
+  if (process.env.VERCEL || process.env.VERCEL_ENV) return join("/tmp", "aculeus", "receipts");
+  return fileURLToPath(new URL("../.local/receipts", import.meta.url));
 }
 
 function readJsonRequest(request) {
