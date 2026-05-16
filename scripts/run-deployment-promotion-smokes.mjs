@@ -3,6 +3,8 @@ import { join } from "node:path";
 import { getRequestUser, canAccessWorkspace, canCreateCase, ROLES } from "../lib/access-control.js";
 import {
   buildDeploymentPromotionPacket,
+  REQUIRED_PRODUCTION_ENV,
+  REQUIRED_PROVIDER_ENV,
   summarizeEnvironment,
   validateDeploymentPromotionPacket
 } from "../lib/aculeus-deployment-promotion.js";
@@ -249,16 +251,27 @@ function readVercelProject() {
 }
 
 function loadDotEnvLocal() {
-  const envPath = join(process.cwd(), ".env.local");
-  if (!existsSync(envPath)) return { values: {}, keys: [] };
+  const allowedNames = new Set([
+    ...REQUIRED_PRODUCTION_ENV,
+    ...REQUIRED_PROVIDER_ENV,
+    "DATA_GOV_API_KEY"
+  ]);
   const values = {};
-  for (const line of readFileSync(envPath, "utf8").split(/\r?\n/)) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith("#") || !trimmed.includes("=")) continue;
-    const [key, ...rest] = trimmed.split("=");
-    const name = key.trim();
-    if (!/^[A-Z0-9_]+$/.test(name)) continue;
-    values[name] = rest.join("=").trim().replace(/^['"]|['"]$/g, "");
+  const files = [
+    join(process.cwd(), ".env.local"),
+    join(process.cwd(), ".vercel", ".env.production.local"),
+    join(process.cwd(), ".vercel", ".env.preview.local")
+  ];
+  for (const envPath of files) {
+    if (!existsSync(envPath)) continue;
+    for (const line of readFileSync(envPath, "utf8").split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#") || !trimmed.includes("=")) continue;
+      const [key, ...rest] = trimmed.split("=");
+      const name = key.trim();
+      if (!allowedNames.has(name)) continue;
+      values[name] = rest.join("=").trim().replace(/^['"]|['"]$/g, "");
+    }
   }
   return { values, keys: Object.keys(values) };
 }
