@@ -1,7 +1,8 @@
 import { withWorkflow } from "workflow/next";
 
 const nextConfig = {
-  reactStrictMode: true
+  reactStrictMode: true,
+  serverExternalPackages: ["playwright", "playwright-core"]
 };
 
 export default withWorkflow(nextConfig);
