@@ -1,0 +1,9 @@
+.env*.local
+.local/
+.next/
+.swc/
+.vercel/
+node_modules/
+qa-artifacts/
+data/product-store/
+data/training-traces/

@@ -1,0 +1,77 @@
+{
+  "schema_version": "aculeus_eval_bank.v1",
+  "name": "Aculeus 10-case public-records eval bank",
+  "description": "Pre-pilot regression cases for source-fed public-records investigation planning. Cases define retrieval expectations and gates, not findings.",
+  "cases": [
+    {
+      "case_id": "eval_la_homelessness_fwa",
+      "query": "LA homelessness funding oversight, contracts, subawards, and where fraud, waste, or abuse indicators could appear",
+      "jurisdiction": "Los Angeles, California",
+      "expected_source_families": ["USAspending", "Socrata", "ArcGIS", "public meeting records", "audits"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "candidate_only_until_receipted", "missing_records_named"]
+    },
+    {
+      "case_id": "eval_ca_school_board_spending",
+      "query": "California school board meeting packets, spending approvals, vendor contracts, amendments, and payment backup",
+      "jurisdiction": "California",
+      "expected_source_families": ["Socrata", "CKAN", "board agendas", "minutes", "vendor contracts"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "official_source_priority", "missing_records_named"]
+    },
+    {
+      "case_id": "eval_sf_drug_rehab_programs",
+      "query": "San Francisco drug rehabilitation program funding, nonprofit contractors, monitoring reports, and payment records",
+      "jurisdiction": "San Francisco, California",
+      "expected_source_families": ["Socrata", "ArcGIS", "city contracts", "audits", "IRS nonprofit records"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "candidate_only_until_receipted", "rejected_claims_separated"]
+    },
+    {
+      "case_id": "eval_becerra_chirla_public_records",
+      "query": "Xavier Becerra CHIRLA public-record connections, nonprofit filings, grants, official calendars, and public statements",
+      "jurisdiction": "California and United States federal",
+      "expected_source_families": ["IRS nonprofit records", "SEC where applicable", "official calendars", "campaign/ethics records", "public statements"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "overclaim_guardrails", "missing_records_named"]
+    },
+    {
+      "case_id": "eval_county_procurement_monitoring",
+      "query": "County procurement monitoring for sole-source contracts, amendments, invoices, and performance reports",
+      "jurisdiction": "California county government",
+      "expected_source_families": ["Socrata", "CKAN", "county procurement portal", "board packets", "audits"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "official_source_priority", "candidate_only_until_receipted"]
+    },
+    {
+      "case_id": "eval_nonprofit_pass_through_grants",
+      "query": "Nonprofit pass-through grant recipients, subawards, IRS filings, grant agreements, and monitoring records",
+      "jurisdiction": "United States and California",
+      "expected_source_families": ["USAspending", "IRS nonprofit records", "state grants portal", "Socrata", "audits"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "missing_records_named", "receipt_required_for_evidence"]
+    },
+    {
+      "case_id": "eval_state_contractor_conflict_records",
+      "query": "State contractor conflict-of-interest records, procurement scoring, amendments, payments, and lobbying/ethics filings",
+      "jurisdiction": "California",
+      "expected_source_families": ["state procurement portal", "ethics records", "lobbying filings", "Socrata", "public meeting records"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "overclaim_guardrails", "rejected_claims_separated"]
+    },
+    {
+      "case_id": "eval_city_overtime_spending",
+      "query": "City overtime spending, payroll summaries, department budgets, union MOUs, and audit findings",
+      "jurisdiction": "California city government",
+      "expected_source_families": ["Socrata", "city budget portal", "audits", "public meeting records", "payroll datasets"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "official_source_priority", "missing_records_named"]
+    },
+    {
+      "case_id": "eval_housing_authority_vouchers",
+      "query": "Housing authority voucher administration, landlord payments, inspection records, procurement, and audit issues",
+      "jurisdiction": "United States local housing authority",
+      "expected_source_families": ["HUD records", "USAspending", "housing authority board packets", "audits", "procurement portal"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "candidate_only_until_receipted", "missing_records_named"]
+    },
+    {
+      "case_id": "eval_water_district_capital_spending",
+      "query": "Water district capital project spending, change orders, engineering contracts, bond disclosures, and board approvals",
+      "jurisdiction": "California special district",
+      "expected_source_families": ["board agendas", "minutes", "bond disclosures", "procurement records", "audits"],
+      "expected_verifier_gates": ["zero_uncited_critical_claims", "official_source_priority", "receipt_required_for_evidence"]
+    }
+  ]
+}

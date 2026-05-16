@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aculeus Proper Handoff | May 16 2026</title>
+  <style>
+    :root { --paper:#fbf6ec; --ink:#11100e; --muted:#615c54; --red:#e61122; --blue:#1d63d8; --line:rgba(17,16,14,.16); --serif:Georgia,"Times New Roman",serif; --mono:"Courier New",monospace; --sans:Inter,system-ui,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:linear-gradient(rgba(230,17,34,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(29,99,216,.035) 1px,transparent 1px),var(--paper); background-size:28px 28px; color:var(--ink); font-family:var(--sans); }
+    main { width:min(1120px,calc(100% - 32px)); margin:0 auto; padding:48px 0 80px; }
+    header { border-bottom:1px solid var(--line); padding-bottom:28px; margin-bottom:28px; }
+    .mark { color:var(--red); font-family:var(--mono); font-weight:900; text-transform:uppercase; letter-spacing:.08em; font-size:12px; }
+    h1,h2,h3 { font-family:var(--serif); font-weight:400; letter-spacing:0; }
+    h1 { font-size:clamp(48px,9vw,112px); line-height:.9; max-width:900px; margin:14px 0; }
+    h2 { font-size:clamp(32px,5vw,58px); line-height:1; margin:0 0 16px; }
+    h3 { font-size:26px; margin:0 0 8px; }
+    p,li { line-height:1.55; font-weight:650; }
+    code { font-family:var(--mono); background:rgba(255,255,255,.55); padding:2px 5px; }
+    section { border:1px solid var(--line); background:rgba(255,251,244,.74); padding:24px; margin:18px 0; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .card { border:1px solid var(--line); padding:16px; background:rgba(255,255,255,.42); }
+    .fact { display:inline-block; color:var(--red); font-family:var(--mono); font-weight:900; font-size:11px; text-transform:uppercase; margin-bottom:8px; }
+    .ok { color:#168044; }
+    .warn { color:#9b5b00; }
+    .next li { margin-bottom:8px; }
+    @media (max-width:760px){ .grid{grid-template-columns:1fr;} main{width:min(100% - 20px,1120px); padding-top:28px;} section{padding:18px;} }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="mark">Aculeus handoff / Verified continuation brief</div>
+    <h1>Aculeus Proper is now the product foundation.</h1>
+    <p><strong>Verified:</strong> This handoff was created on May 16, 2026 at 12:28 PM America/New_York in <code>C:\Users\jerem\OneDrive\Documents\Codex Sandbox\aculeus-slm-frontend</code>.</p>
+  </header>
+
+  <section>
+    <h2>Purpose</h2>
+    <p><span class="fact">User-stated</span> The user wants the old demo direction replaced with Aculeus proper: an invite-only, account-native, Codex-feeling operator workspace for public-records work. It should support query, retrieve, inspect, reason, ask, refine, cite public/private sources, and request or shape next actions.</p>
+    <p><span class="fact">Verified</span> This run converted the app toward a Next.js product foundation and created this HTML handoff for the next agent.</p>
+  </section>
+
+  <section>
+    <h2>Current State</h2>
+    <div class="grid">
+      <div class="card"><span class="fact ok">Verified</span><h3>Next app builds</h3><p><code>npm run build</code> passes with Next.js 16.2.6 and Workflow route generation.</p></div>
+      <div class="card"><span class="fact ok">Verified</span><h3>Verifier passes</h3><p><code>npm run verify</code> passes the product foundation, source-fed, receipt, reviewer, and adversarial suites.</p></div>
+      <div class="card"><span class="fact ok">Verified</span><h3>Browser QA passes</h3><p><code>node scripts/qa-product-playwright.mjs</code> runs home, run, follow-up, citation, and mobile screenshots.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Decisions</h2>
+    <ul>
+      <li><span class="fact">User-stated</span> No rollback to old static demo UI is required.</li>
+      <li><span class="fact">User-stated</span> Access is invite-only.</li>
+      <li><span class="fact">Verified</span> Stack in <code>package.json</code>: Next.js, React, Clerk, Neon serverless, Vercel Blob, Workflow, Playwright.</li>
+      <li><span class="fact">Inferred</span> Use Next.js App Router as the product shell and API boundary; keep source-fed data/contracts as seed evidence and verification assets.</li>
+      <li><span class="fact">User-stated</span> Source citations must point to actual public source locations or exact private file/page/row/section/span locations.</li>
+      <li><span class="fact">User-stated</span> The interface should feel like Codex: calm command surface, staged work, follow-up tightening, no cluttered dashboard.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Files Changed Or Added</h2>
+    <ul>
+      <li><span class="fact">Verified</span> Product app: <code>app/layout.jsx</code>, <code>app/page.jsx</code>, <code>app/globals.css</code>.</li>
+      <li><span class="fact">Verified</span> UI: <code>components/aculeus-workspace.jsx</code>.</li>
+      <li><span class="fact">Verified</span> APIs: <code>app/api/session/route.js</code>, <code>app/api/cases/route.js</code>, <code>app/api/access-requests/route.js</code>, <code>app/api/runs/start/route.js</code>, <code>app/api/follow-up/route.js</code>, <code>app/api/sources/upload/route.js</code>, <code>app/api/workflow/aculeus-case-run/route.js</code>.</li>
+      <li><span class="fact">Verified</span> Backend contracts: <code>lib/aculeus-product-data.js</code>, <code>lib/aculeus-run-adapter.js</code>, <code>lib/aculeus-product-store.js</code>, <code>lib/access-control.js</code>, <code>lib/database.js</code>.</li>
+      <li><span class="fact">Verified</span> Workflow skeleton: <code>workflows/aculeus-case-run.js</code>.</li>
+      <li><span class="fact">Verified</span> Docs: <code>docs/aculeus-product-schema.sql</code>, <code>docs/backend-env.md</code>, <code>docs/aculeus-proper-contract.md</code>.</li>
+      <li><span class="fact">Verified</span> QA: <code>scripts/verify-product-foundation.mjs</code>, <code>scripts/verify-next-operator-routes.mjs</code>, <code>scripts/verify-next-operator-ui.mjs</code>, <code>scripts/verify-next-operator-regression.mjs</code>, <code>scripts/qa-product-playwright.mjs</code>.</li>
+      <li><span class="fact">Verified</span> Context updated: <code>CONTEXT.md</code> now records Aculeus Proper, chosen backend, invite-only access, roles, run states, source ingestion, refinement loop, direct/private citations, and durable run engine.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Evidence And Verification</h2>
+    <ul>
+      <li><span class="fact ok">Verified</span> <code>npm run build</code> passed. Build warning remains from an existing training-trace exporter import path in <code>app/api/reviewer-actions/route.js</code>; it did not fail the build.</li>
+      <li><span class="fact ok">Verified</span> <code>npm run verify</code> passed all listed scripts.</li>
+      <li><span class="fact ok">Verified</span> <code>node scripts/qa-product-playwright.mjs</code> passed and wrote screenshots to <code>qa-artifacts/product</code>.</li>
+      <li><span class="fact ok">Verified</span> Local dev server was running at <code>http://localhost:4280</code> during QA.</li>
+      <li><span class="fact warn">Verified</span> <code>npm install</code> reported 18 dependency vulnerabilities. No audit fix was applied because forced fixes may create breaking changes.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Important Constraints</h2>
+    <ul>
+      <li><span class="fact">Verified</span> This folder is not a git repository, so there is no branch, commit, or diff state.</li>
+      <li><span class="fact">Verified</span> Package metadata had to be edited with <code>npm pkg set</code> after <code>apply_patch</code> reported success but did not persist package changes.</li>
+      <li><span class="fact">Verified</span> The app currently has local-preview fallbacks. Real Clerk, Neon, Blob, and Workflow credentials still need Vercel environment setup.</li>
+      <li><span class="fact">Memory-derived</span> Prior Aculeus memory says the deployed earlier frontend was a guarded demo lane, not a promoted trained adapter; treat exact deployed model details as stale until rechecked.</li>
+      <li><span class="fact">Unknown</span> Whether the intended Vercel project should be reused or a new project should be linked for Aculeus Proper has not been confirmed in this run.</li>
+    </ul>
+  </section>
+
+  <section class="next">
+    <h2>Next Actions</h2>
+    <ol>
+      <li><span class="fact">Next safest action</span> Reopen <code>http://localhost:4280</code>, inspect <code>qa-artifacts/product/desktop-home.png</code> and <code>mobile-home.png</code>, and decide whether the new minimalist product direction is visually approved before deeper backend wiring.</li>
+      <li>Provision Clerk and implement real invite approval checks instead of <code>getLocalPreviewUser()</code>.</li>
+      <li>Provision Neon, apply <code>docs/aculeus-product-schema.sql</code>, and move local file-store writes into durable tables.</li>
+      <li>Provision Vercel Blob and replace the upload stub with private artifact writes plus extracted citation anchors.</li>
+      <li>Wire Vercel Workflow start/readable/status routes to the live <code>workflows/aculeus-case-run.js</code> run instead of the current deterministic route response.</li>
+      <li>Connect the actual Aculeus model behind <code>AculeusRunAdapter</code> while preserving structured outputs: AnswerBrief, Citations, SuggestedNextMoves, MissingRecords, RunCheckpoints, FollowUpAnswer.</li>
+      <li>Resolve or accept the Next build warning involving <code>lib/aculeus-training-trace-exporter.js</code>.</li>
+      <li>Run <code>npm audit</code> and decide whether any dependency vulnerability needs immediate remediation before deployment.</li>
+      <li>Deploy only after env variables are set: <code>NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY</code>, <code>CLERK_SECRET_KEY</code>, <code>DATABASE_URL</code>, <code>BLOB_READ_WRITE_TOKEN</code>, <code>ACULEUS_MODEL_ID</code>.</li>
+    </ol>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aculeus SLM | Agentic investigation for public records</title>
+    <meta name="description" content="Aculeus is a controlled investigation agent for public records. Ask a hard question, open permitted sources, map money and actors, cite the record, and dispatch the next move.">
+    <meta property="og:title" content="Aculeus SLM | Agentic investigation for public records">
+    <meta property="og:description" content="A controlled records agent for public work. Source-locked answers, layered findings, clear uncertainty, and human-approved action.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://aculeus-slm-frontend.vercel.app/assets/aculeus-meta-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#fff8ed">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to Aculeus</a>
+    <div class="paper-grid" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-laser" data-cursor-laser aria-hidden="true"></div>
+
+    <main id="main" class="aculeus-agent" data-app data-run-state="idle">
+      <header class="agent-topbar">
+        <a class="brand-lockup" href="./index.html" aria-label="Aculeus">
+          <img src="assets/aculeus-logomark.svg" alt="" decoding="async">
+          <img src="assets/aculeus-wordmark.svg" alt="Aculeus" decoding="async">
+        </a>
+        <a class="topbar-link" href="./source-fed.html" data-source-fed-entry>Case board</a>
+        <div class="run-status" aria-live="polite">
+          <span class="status-dot"></span>
+          <span data-run-status>Ready</span>
+        </div>
+        <button class="topbar-link" type="button" data-open-account>Access</button>
+      </header>
+
+      <section class="agent-stage" aria-labelledby="agent-title">
+        <div class="agent-orbit" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <section class="lead-panel" data-lead-panel>
+          <p class="machine-line">Agentic investigation for public records</p>
+          <h1 id="agent-title">Bring a lead. Build the case.</h1>
+          <p class="lead-copy">Aculeus dispatches a controlled investigation. It opens permitted sources, maps money and actors, separates proof from suspicion, and drafts the next move.</p>
+
+          <form class="lead-form" data-lead-form>
+            <label for="lead-input">Start with one lead</label>
+            <textarea id="lead-input" name="lead" maxlength="320" placeholder="Example: Open the intermediary network: fiscal agents, public money, sub-grants, source gaps, and the records needed to prove what moved where."></textarea>
+            <div class="lead-actions">
+              <button class="text-action" type="button" data-sample-lead>Use network lead</button>
+              <span data-counter>0 / 320</span>
+            </div>
+          </form>
+
+          <div class="primary-run">
+            <button class="run-button" type="button" data-start-investigation>
+              <span data-run-button-label>Run SF demo</span>
+              <i data-lucide="arrow-right"></i>
+            </button>
+            <small>Source-locked. Permission-aware. Action-ready.</small>
+          </div>
+
+          <div class="case-switcher" data-demo-case-list aria-label="Demo cases"></div>
+        </section>
+
+        <section class="run-panel" data-run-panel aria-live="polite">
+          <div class="run-header">
+            <button class="back-button" type="button" data-reset-run>
+              <i data-lucide="arrow-left"></i>
+              <span>New lead</span>
+            </button>
+            <div>
+              <span data-case-display-id>SF-001</span>
+              <strong data-run-title>San Francisco homelessness system review</strong>
+            </div>
+          </div>
+
+          <div class="agent-answer" data-agent-answer>
+            <span class="active-pulse"></span>
+            <p data-answer-kicker>Waiting for lead</p>
+            <h2 data-answer-headline>Ask the record. Watch the run.</h2>
+            <p data-answer-body>Run the demo to watch the agent scope the lead, retrieve source families, map actors and money, flag uncertainty, and name the next approved move.</p>
+            <div class="completion-spine" data-completion-spine hidden></div>
+          </div>
+
+          <form class="command-bar" data-command-form>
+            <small data-command-status>Ask Aculeus while you read. Answers stay inside the record trail.</small>
+            <textarea data-command-input maxlength="260" aria-label="Ask Aculeus" placeholder="Ask which claim holds, what source proves it, what is missing, or what to request next."></textarea>
+            <div class="command-answer" data-command-answer hidden>
+              <span data-command-answer-label>Answer from the record</span>
+              <div class="command-answer-text" data-command-answer-text></div>
+              <button type="button" data-command-answer-jump>Open answer in trail</button>
+            </div>
+            <div class="command-actions">
+              <button type="button" data-open-trail>Trail</button>
+              <button type="button" data-open-sources>Sources</button>
+              <button type="button" data-open-draft>Draft</button>
+              <button class="send-command" type="submit" aria-label="Ask Aculeus">
+                <i data-lucide="arrow-up"></i>
+              </button>
+            </div>
+          </form>
+
+          <ol class="run-feed" data-run-feed aria-label="Aculeus run log"></ol>
+        </section>
+      </section>
+
+      <nav class="bottom-dock" aria-label="Agent controls">
+        <button type="button" class="is-active" data-dock-action="lead">
+          <span>Lead</span>
+        </button>
+        <button type="button" data-open-trail>
+          <span>Trail</span>
+        </button>
+        <button type="button" data-open-sources>
+          <span>Sources</span>
+        </button>
+        <button type="button" data-open-draft>
+          <span>Next move</span>
+        </button>
+      </nav>
+
+      <aside class="rail-panel" aria-label="Run trail" data-desktop-rail>
+        <p>Run trail</p>
+        <ol data-rail-steps></ol>
+      </aside>
+
+      <aside class="sheet source-sheet" data-source-sheet role="dialog" aria-modal="true" aria-labelledby="source-sheet-title" hidden>
+        <div class="sheet-scrim" data-close-sheet></div>
+        <section class="sheet-panel">
+          <button class="sheet-close" type="button" data-close-sheet aria-label="Close source inspector">
+            <i data-lucide="x"></i>
+          </button>
+          <p class="machine-line">Source inspector</p>
+          <h2 id="source-sheet-title" data-source-title>Run Aculeus first.</h2>
+          <span class="source-status" data-source-status>Waiting for permitted source.</span>
+          <div class="source-actions">
+            <a data-source-open target="_blank" rel="noreferrer" aria-disabled="true">Public source pending</a>
+            <button type="button" data-source-cite>Show where cited</button>
+            <button type="button" data-source-ask>Ask about this source</button>
+          </div>
+          <article class="source-story">
+            <span>Role in the case</span>
+            <p data-source-story>The receipt will show how this source moves the larger investigation.</p>
+          </article>
+          <article class="source-provenance">
+            <span>Provenance</span>
+            <dl data-source-provenance>
+              <div><dt>Status</dt><dd>Run pending.</dd></div>
+            </dl>
+          </article>
+          <article>
+            <span>Used here because</span>
+            <p data-source-used>The source receipt appears here after the agent opens the record.</p>
+          </article>
+          <article>
+            <span>What it supports</span>
+            <p data-source-supports>The source receipt appears here after the agent opens the record.</p>
+          </article>
+          <article>
+            <span>What it cannot prove</span>
+            <p data-source-limitation>The system will not turn a weak signal into a finding.</p>
+          </article>
+          <article>
+            <span>Missing or decisive record</span>
+            <p data-source-missing>The next record appears here after the agent names the proof gap.</p>
+          </article>
+          <article>
+            <span>Trace</span>
+            <p data-source-trace>Run pending.</p>
+          </article>
+        </section>
+      </aside>
+
+      <aside class="sheet trail-sheet" data-trail-sheet role="dialog" aria-modal="true" aria-labelledby="trail-sheet-title" hidden>
+        <div class="sheet-scrim" data-close-sheet></div>
+        <section class="sheet-panel">
+          <button class="sheet-close" type="button" data-close-sheet aria-label="Close run trail">
+            <i data-lucide="x"></i>
+          </button>
+          <p class="machine-line">Run trail</p>
+          <h2 id="trail-sheet-title">What Aculeus checked.</h2>
+          <ol class="trail-list" data-trail-list></ol>
+        </section>
+      </aside>
+
+      <aside class="sheet draft-sheet" data-draft-sheet role="dialog" aria-modal="true" aria-labelledby="draft-sheet-title" hidden>
+        <div class="sheet-scrim" data-close-sheet></div>
+        <section class="sheet-panel">
+          <button class="sheet-close" type="button" data-close-sheet aria-label="Close action draft">
+            <i data-lucide="x"></i>
+          </button>
+          <p class="machine-line">Human approval required</p>
+          <h2 id="draft-sheet-title">The next move is drafted, not sent.</h2>
+          <article class="draft-copy">
+            <span>Record request</span>
+            <p data-draft-request>Run Aculeus to draft request language.</p>
+          </article>
+          <article class="draft-copy">
+            <span>Built from</span>
+            <p data-draft-provenance>Run Aculeus to bind receipts to the request.</p>
+          </article>
+          <div class="approval-actions">
+            <button class="text-action" type="button" data-copy-request>Copy request</button>
+            <button class="run-button" type="button" data-approve-action>
+              <span>Approve next move</span>
+              <i data-lucide="check"></i>
+            </button>
+          </div>
+          <p class="approval-status" data-action-status>Nothing leaves the system without human approval.</p>
+        </section>
+      </aside>
+
+      <aside class="sheet account-sheet" data-account-sheet role="dialog" aria-modal="true" aria-labelledby="account-title" hidden>
+        <div class="sheet-scrim" data-close-sheet></div>
+        <section class="sheet-panel account-panel">
+          <button class="sheet-close" type="button" data-close-sheet aria-label="Close access request">
+            <i data-lucide="x"></i>
+          </button>
+          <p class="machine-line">Access</p>
+          <h2 id="account-title">Bring a real lead.</h2>
+          <p>Aculeus is built for permissioned source retrieval, source-locked answers, uncertainty flags, and human-approved escalation.</p>
+          <form class="access-form" data-signup-form>
+            <label>
+              <span>Name</span>
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Work email</span>
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <label>
+              <span>Organization</span>
+              <input name="organization" autocomplete="organization" required>
+            </label>
+            <label>
+              <span>First lead</span>
+              <textarea name="useCase" maxlength="220" required></textarea>
+            </label>
+            <button class="run-button" type="submit">
+              <span>Request access</span>
+              <i data-lucide="arrow-right"></i>
+            </button>
+            <p class="approval-status" data-account-status>Public demo only. Send a work email and a real lead.</p>
+          </form>
+        </section>
+      </aside>
+    </main>
+
+    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="data/demo-case.js"></script>
+    <script defer src="model-adapter.js"></script>
+    <script defer src="script.js"></script>
+  </body>
+</html>

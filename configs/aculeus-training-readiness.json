@@ -1,0 +1,39 @@
+{
+  "schema_version": "aculeus_hosted_training_readiness.v1",
+  "status": "prepared_not_launched",
+  "hosted_training_launch_allowed": false,
+  "fine_tuning_launch_allowed": false,
+  "requires_explicit_final_gate": true,
+  "max_configured_spend_usd": 10,
+  "candidate_model_id_env": "ACULEUS_MODEL_ID",
+  "input_substrates": [
+    "scored_trace_jsonl",
+    "preference_pairs_jsonl",
+    "10_case_eval_report",
+    "25_case_heldout_eval_report",
+    "100_case_broad_eval_dashboard",
+    "shadow_eval_report"
+  ],
+  "required_prelaunch_gates": [
+    "no_raw_receipt_text",
+    "no_provider_auth_headers",
+    "no_api_keys_or_secrets",
+    "zero_uncited_critical_claims",
+    "candidate_only_until_receipted",
+    "verifier_pass_rate_gte_baseline",
+    "shadow_no_regression",
+    "human_reviewed_training_rows_only"
+  ],
+  "blocked_actions": [
+    "prime_rl_train",
+    "hosted_fine_tune_create",
+    "remote_model_promotion",
+    "production_shadow_promotion"
+  ],
+  "launch_command": null,
+  "notes": [
+    "This file is a readiness boundary artifact only.",
+    "Production traces remain unreviewed until explicitly scored and approved.",
+    "No hosted training or fine-tuning starts from this task."
+  ]
+}

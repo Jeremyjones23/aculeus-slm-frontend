@@ -1,0 +1,8479 @@
+window.ACULEUS_SOURCE_FED_CASE_BOARD = {
+  "defaultCaseId": "source_la_homelessness_fwa",
+  "generatedAt": "2026-05-16T01:56:17Z",
+  "sourceArtifact": "aculeus_case_board_verified_targeted_extract_findings",
+  "runStatus": {
+    "status": "SOURCE_FED_MVP_READY_WITH_HELD_TRAINING",
+    "paidTrainingDecision": "HOLD_PAID_MODEL_WORK",
+    "nextSpendDecision": "HOLD_BROAD_PROVIDER_SPEND_UNTIL_NEW_IDENTIFIERS",
+    "nextWorkOrder": "Run OCR/browser capture on 9 parser-failed LA City Clerk LAHSA contract PDFs, then citation-verify only concrete contract terms before any finding promotion.",
+    "accessGapRows": 0,
+    "accessCaptureGate": "PUBLIC_RECEIPT_RECONCILED_IN_CASE_BOARD",
+    "gapClosureStatus": "PASS",
+    "usaspendingAwardFacts": 6,
+    "usaspendingAwardFactsGate": "NARROW_AWARD_FACTS_VERIFIED",
+    "stateLocalRowFacts": 10,
+    "stateLocalRowFactsGate": "NARROW_STATE_LOCAL_ROW_FACTS_VERIFIED",
+    "lausdAllHereOcrVendorFacts": 1,
+    "lausdAllHereOcrVendorFactsGate": "NARROW_OCR_VENDOR_FACTS_VERIFIED",
+    "lausdAllHereBrowserCaptureTasks": 5,
+    "lausdAllHereBrowserCaptureGate": "BROWSER_OR_MANUAL_PUBLIC_RECEIPT_REQUIRED",
+    "lausdAllHerePublicRecordsTemplateCount": 4,
+    "lausdAllHerePublicRecordsGate": "READY_FOR_HUMAN_REVIEW_NOT_EVIDENCE",
+    "sfdphScopeParityDecision": "SFDPH_SCOPE_PARITY_VERIFIED_REVIEW_ONLY",
+    "sfdphScopeParityLanes": 4,
+    "chirlaOfficialRecordScopeDecision": "CHIRLA_OFFICIAL_RECORD_SCOPE_VERIFIED_REVIEW_ONLY",
+    "chirlaOfficialRecordScopeLanes": 3,
+    "calaccessEntityLookupDecision": "CALACCESS_ENTITY_LOOKUP_HASH_ONLY_READY",
+    "calaccessEntityLookupMatches": 8,
+    "calaccessFollowupWorkOrders": 8,
+    "calaccessFilingAtoms": 8,
+    "calaccessExactTargetMatches": 7,
+    "lacityControllerRowFacts": 25,
+    "lacityControllerRowFactsGate": "LACITY_CONTROLLER_FINANCIAL_ROWS_CITATION_VERIFIED_NARROW_SCOPE",
+    "lacityControllerRowScopeEvalBlocked": 0,
+    "sfgovHealthrightFinancialRowFacts": 20,
+    "sfgovHealthrightFinancialRowFactsGate": "SFGOV_HEALTHRIGHT_FINANCIAL_ROWS_CITATION_VERIFIED_NARROW_SCOPE",
+    "primeLiveCheckpointDecision": "HOLD_HOSTED_TRAINING_NO_READY_CHECKPOINT",
+    "primeLiveCheckpointRunsChecked": 6,
+    "primeLiveCheckpointReadyTotal": 0,
+    "primeLiveCheckpointPaidTrainingAllowed": false,
+    "crossPublisherRowScopeDecision": "CROSS_PUBLISHER_OFFICIAL_ROW_SCOPE_EVAL_READY_NO_TRAINING",
+    "crossPublisherRowScopeFamilies": 4,
+    "crossPublisherRowScopePublishers": 4,
+    "crossPublisherRowScopeVerifiedRows": 57,
+    "crossPublisherRowScopeTrainingConversionAllowed": false,
+    "crossPublisherRowScopeEvalDecision": "CROSS_PUBLISHER_ROW_SCOPE_EVAL_PASS_NO_TRAINING",
+    "crossPublisherRowScopeEvalRows": 4,
+    "crossPublisherRowScopeEvalBlocked": 0,
+    "crossPublisherRowScopeEvalTrainingConversionAllowed": false,
+    "sfgovHealthrightCrawlerFetchStatus": "PASS",
+    "sfgovHealthrightCrawlerSelectedTasks": 20,
+    "sfgovHealthrightCrawlerFetched": 20,
+    "sfgovHealthrightCrawlerExcerpts": 20,
+    "sfgovHealthrightCrawlerQualityDecision": "CRAWLER_FETCH_BATCH_READY_FOR_LEDGER_UNVERIFIED",
+    "sfgovHealthrightCrawlerQualityRecords": 20,
+    "sfgovHealthrightCrawlerQualityReceipts": 20,
+    "sfgovHealthrightCrawlerQualityHosts": {
+      "media.api.sf.gov": 20
+    },
+    "sfgovHealthrightCrawlerTrainingConversionAllowed": false,
+    "sfgovHealthrightCrawlerFindingPromotionAllowed": false,
+    "sfgovHealthrightCrawlerExcerptTermsDecision": "SFGOV_HEALTHRIGHT_CRAWLER_EXCERPT_TERMS_TRIAGED_NO_PROMOTION",
+    "sfgovHealthrightCrawlerDirectEntityExcerpts": 1,
+    "sfgovHealthrightCrawlerTopicContextOnly": 19,
+    "sfgovHealthrightCrawlerLocatorOnly": 0,
+    "sfgovHealthrightCrawlerFundingContext": 18,
+    "sfgovHealthrightCrawlerPerformanceContext": 19,
+    "sfgovHealthrightCrawlerTermsFindingPromotionAllowed": false,
+    "sfgovHealthrightCrawlerFundingExcerptDecision": "SFGOV_HEALTHRIGHT_CRAWLER_FUNDING_EXCERPT_VERIFIED_NARROW_SCOPE",
+    "sfgovHealthrightCrawlerFundingExcerptVerifiedFacts": 5,
+    "sfgovHealthrightCrawlerFundingExcerptBlockedFacts": 0,
+    "sfgovHealthrightCrawlerFundingExcerptNarrowPromotionAllowed": true,
+    "sfgovHealthrightCrawlerFundingExcerptBroaderClaimsAllowed": false,
+    "sfgovHealthrightCrawlerFundingExcerptTrainingConversionAllowed": false,
+    "sfgovHealthrightCrawlerFundingFeedbackDecision": "SFGOV_HEALTHRIGHT_CRAWLER_FUNDING_FEEDBACK_READY_NO_TRAINING",
+    "sfgovHealthrightCrawlerFundingFeedbackRows": 5,
+    "sfgovHealthrightCrawlerFundingFeedbackRejectedClaims": 15,
+    "sfgovHealthrightCrawlerFundingFeedbackTrainingConversionAllowed": false,
+    "sfgovHealthrightCrawlerFundingFeedbackEvalDecision": "SFGOV_HEALTHRIGHT_CRAWLER_FUNDING_FEEDBACK_EVAL_PASS_NO_TRAINING",
+    "sfgovHealthrightCrawlerFundingFeedbackEvalRows": 5,
+    "sfgovHealthrightCrawlerFundingFeedbackEvalBlocked": 0,
+    "sfgovHealthrightCrawlerFundingFeedbackEvalTrainingConversionAllowed": false,
+    "officialApiRowExpansionV2Decision": "OFFICIAL_API_ROW_EXPANSION_V2_READY_FOR_VERIFIER_NO_TRAINING",
+    "officialApiRowExpansionV2Surfaces": 3,
+    "officialApiRowExpansionV2RecordsFound": 12,
+    "officialApiRowExpansionV2RowFetches": 8,
+    "officialApiRowExpansionV2RowSamples": 66,
+    "officialApiRowExpansionV2TrainingConversionAllowed": false,
+    "lacityLahsaContractFetchQualityDecision": "LACITY_LAHSA_CONTRACT_FETCHED_TEXT_EXTRACTED_READY_FOR_FIELD_VERIFIER",
+    "lacityLahsaContractFetchFetched": 11,
+    "lacityLahsaContractFetchUsableExcerpts": 11,
+    "lacityLahsaContractFetchParserFailures": 9,
+    "lacityLahsaContractFetchNeedsOcr": 0,
+    "lacityLahsaContractFetchFindingPromotionAllowed": false,
+    "lacityLahsaContractFetchTrainingConversionAllowed": false,
+    "officialApiRowScopeFeedbackV2Decision": "OFFICIAL_API_ROW_SCOPE_FEEDBACK_V2_READY_NO_TRAINING",
+    "officialApiRowScopeFeedbackV2Rows": 66,
+    "officialApiRowScopeFeedbackV2Surfaces": 3,
+    "officialApiRowScopeFeedbackV2RejectedClaims": 198,
+    "officialApiRowScopeFeedbackV2TrainingConversionAllowed": false,
+    "officialApiRowScopeFeedbackV2EvalDecision": "OFFICIAL_API_ROW_SCOPE_FEEDBACK_V2_EVAL_PASS_NO_TRAINING",
+    "officialApiRowScopeFeedbackV2EvalRows": 66,
+    "officialApiRowScopeFeedbackV2EvalBlocked": 0,
+    "officialApiRowScopeFeedbackV2EvalTrainingConversionAllowed": false,
+    "lacityLahsaContractPdfTextExtractDecision": "LACITY_LAHSA_CONTRACT_PDF_TEXT_EXTRACT_READY_FOR_FIELD_VERIFIER",
+    "lacityLahsaContractPdfTextExtracted": 10,
+    "lacityLahsaContractPdfTextNeedsOcr": 1,
+    "lacityLahsaContractPdfTextFailed": 0,
+    "lacityLahsaContractPdfTextCapped": 0,
+    "lacityLahsaContractPdfTextTrainingConversionAllowed": false,
+    "lacityLahsaContractPdfFieldAtomDecision": "LACITY_LAHSA_CONTRACT_PDF_FIELD_ATOMS_VERIFIED_NARROW_SCOPE",
+    "lacityLahsaContractPdfFieldAtomsVerified": 10,
+    "lacityLahsaContractPdfFieldAtomsBlocked": 1,
+    "lacityLahsaContractPdfFieldAtomsNarrowPromotionAllowed": true,
+    "lacityLahsaContractPdfFieldAtomsBroaderClaimsAllowed": false,
+    "lacityLahsaContractPdfFieldAtomsTrainingConversionAllowed": false,
+    "lacityLahsaContractPdfAtomFeedbackDecision": "LACITY_LAHSA_CONTRACT_PDF_ATOM_FEEDBACK_READY_NO_TRAINING",
+    "lacityLahsaContractPdfAtomFeedbackRows": 10,
+    "lacityLahsaContractPdfAtomFeedbackRejectedClaims": 40,
+    "lacityLahsaContractPdfAtomFeedbackTrainingConversionAllowed": false,
+    "lacityLahsaContractPdfAtomFeedbackEvalDecision": "LACITY_LAHSA_CONTRACT_PDF_ATOM_FEEDBACK_EVAL_PASS_NO_TRAINING",
+    "lacityLahsaContractPdfAtomFeedbackEvalRows": 10,
+    "lacityLahsaContractPdfAtomFeedbackEvalBlocked": 0,
+    "lacityLahsaContractPdfAtomFeedbackEvalTrainingConversionAllowed": false,
+    "lacityLahsaContractPdfFacts": 10,
+    "lacityLahsaContractPdfFactsGate": "NARROW_LACITY_LAHSA_CONTRACT_PDF_FACTS_VERIFIED"
+  },
+  "trainingStatus": {
+    "modelDecision": "ADVANCE_PRODUCT_WRAPPER_HOLD_HOSTED_TRAINING",
+    "primarySignal": "SCO city expenditure full eval passes after deterministic JSON canonicalization, but raw model transport still fails.",
+    "canonicalizedGateGreen": true,
+    "rawGateGreen": false,
+    "paymentExtractionGateGreen": false,
+    "hostedTrainingAllowed": false,
+    "paidReadinessStatus": "BLOCKED_FOR_PAID_RUN",
+    "hostedTrainingDecision": "HOLD_HOSTED_TRAINING_NO_READY_CHECKPOINT",
+    "localTrainingDecision": "READY_FOR_TRAIN_ONLY_ANALOG_DATASET_AND_LOCAL_STACK_PREFLIGHT",
+    "localAdapterTransportDecision": "USE_DETERMINISTIC_JSON_CANONICALIZATION_HOLD_ADAPTER_SFT",
+    "preferenceSignalCount": 4,
+    "mvpUse": "Use deterministic source retrieval, row normalization, citation verification, and JSON canonicalization as product infrastructure; keep the base model in planning/scouting/summarization roles behind verifier gates.",
+    "splitDecision": "HOLD_INSUFFICIENT_TRAINING_CANDIDATE_VOLUME",
+    "trainSplitAllowed": false,
+    "reviewedCandidateRows": 8,
+    "candidatePublisherCount": 2,
+    "blockers": [
+      "prime_ready_checkpoints_absent",
+      "strict_paid_readiness_blocked",
+      "held_out_training_split_not_materialized"
+    ],
+    "splitReason": "Receipts passed review, but reviewed row/source diversity is below the minimum for training materialization.",
+    "crossPublisherRowScopeEvalReady": true,
+    "crossPublisherRowScopeTrainingConversionAllowed": false
+  },
+  "mode": "source_fed_case_board",
+  "cases": [
+    {
+      "caseId": "source_la_homelessness_fwa",
+      "displayId": "AC-001",
+      "caseType": "source_fed_public_records",
+      "caseScope": "Find official audits, court assessments, controller reports, LAHSA/city contract materials, and record gaps about Los Angeles homelessness spending. Separate substantiated waste/control gaps from unproven fraud allegations.",
+      "title": "LA homelessness and where the fraud, waste, and abuse is",
+      "headline": "A source-fed case board is ready for review.",
+      "lead": "LA homelessness and where the fraud, waste, and abuse is.",
+      "summary": "Substantiated waste and control gaps identified; no official determination of fraud or illegal activity.",
+      "jurisdiction": "Los Angeles, CA",
+      "reviewStatus": "pass",
+      "publicLabel": "source_fed_case_board",
+      "legalBoundary": "relationship signal for audit review, not legal adjudication",
+      "caseScore": 88,
+      "model": {
+        "name": "Aculeus SLM",
+        "version": "source-fed-adapter-0.1",
+        "mode": "source_fed_case_board",
+        "endpoint": "/api/investigate"
+      },
+      "commandCenter": {
+        "break": "Substantiated waste and control gaps identified; no official determination of fraud or illegal activity.",
+        "proof": [
+          "Shelter bed underutilization resulted in approximately $218 million in costs during FY19‑FY23",
+          "Only 1 in 5 interim shelter residents obtained permanent housing; over half returned to homelessness or unknown outcomes",
+          "Audit identifies control gaps in outcome tracking and financial management for Pathways to Permanent Housing"
+        ],
+        "missing": "complete contract file from contracting agency or board clerk | invoice and payment ledger from controller, finance department, or agency accounts payable | monitoring or performance report from program office, oversight body, or independent auditor | Potential underperformance in LAHSA contract oversight | Insufficient outcome tracking reported across programs | sam_entity_management requires SAM_API_KEY before this gap can be resolved.",
+        "move": "Use verified City Clerk contract-summary atoms as narrow LAHSA contract facts; request invoices, monitoring records, and performance files before any broader conclusion."
+      },
+      "entities": [
+        {
+          "name": "spending_review",
+          "role": "finding type",
+          "confidence": 75
+        },
+        {
+          "name": "program_control_gap",
+          "role": "finding type",
+          "confidence": 75
+        },
+        {
+          "name": "official_record_reference",
+          "role": "finding type",
+          "confidence": 75
+        }
+      ],
+      "sourceFamilies": [
+        "official_public_record",
+        "secondary_or_locator"
+      ],
+      "dossier": {
+        "title": "LA homelessness and where the fraud, waste, and abuse is",
+        "deck": "Substantiated waste and control gaps identified; no official determination of fraud or illegal activity.",
+        "posture": "PASS",
+        "centralQuestion": "LA homelessness and where the fraud, waste, and abuse is.",
+        "shortFinding": "Shelter bed underutilization resulted in approximately $218 million in costs during FY19‑FY23 Only 1 in 5 interim shelter residents obtained permanent housing; over half returned to homelessness or unknown outcomes Audit identifies control gaps in outcome tracking and financial management for Pathways to Permanent Housing",
+        "summary": "Substantiated waste and control gaps identified; no official determination of fraud or illegal activity.",
+        "stats": [
+          {
+            "label": "Verified leads",
+            "value": "16",
+            "detail": "Finding cards that passed the citation verifier or remain visible as blocked leads."
+          },
+          {
+            "label": "Evidence rows",
+            "value": "59",
+            "detail": "Source-ledger records carried into the front end."
+          },
+          {
+            "label": "Missing records",
+            "value": "6",
+            "detail": "Records needed before stronger conclusions."
+          }
+        ],
+        "layers": [
+          {
+            "label": "Scope",
+            "title": "Question entered",
+            "body": "LA homelessness and where the fraud, waste, and abuse is.",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03"
+            ]
+          },
+          {
+            "label": "Evidence",
+            "title": "Source ledger opened",
+            "body": "59 source-ledger records are visible for review.",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03",
+              "web_04",
+              "web_05",
+              "web_06"
+            ]
+          },
+          {
+            "label": "Verifier",
+            "title": "Claims stay citation-bound",
+            "body": "PASS",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03"
+            ]
+          }
+        ],
+        "findings": [
+          {
+            "findingId": "la_homelessness_fwa-F001",
+            "entity": "spending_review",
+            "signal": "high",
+            "whatRecordSays": "Shelter bed underutilization resulted in approximately $218 million in costs during FY19‑FY23",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "human review",
+            "sourceFamily": "spending_review",
+            "sourceIds": [
+              "web_09"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-F002",
+            "entity": "program_control_gap",
+            "signal": "medium",
+            "whatRecordSays": "Only 1 in 5 interim shelter residents obtained permanent housing; over half returned to homelessness or unknown outcomes",
+            "whyItMatters": "Confidence 0.9; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "human review",
+            "sourceFamily": "program_control_gap",
+            "sourceIds": [
+              "web_09"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-F003",
+            "entity": "program_control_gap",
+            "signal": "medium",
+            "whatRecordSays": "Audit identifies control gaps in outcome tracking and financial management for Pathways to Permanent Housing",
+            "whyItMatters": "Confidence 0.85; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "human review",
+            "sourceFamily": "program_control_gap",
+            "sourceIds": [
+              "web_02",
+              "web_01"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF001",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited California State Auditor response page identifies the Homelessness in California report and recommendation follow-up involving the California Interagency Council on Homelessness.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_06_60bc73f75e"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF002",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited California State Auditor Table 1 extract lists Homekey Round 1 at $144,000 average cost per unit funded and compares it with $380,000-$570,000 for new affordable housing construction.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_02_9516788e0a"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF003",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited California State Auditor Table 2 extract lists the CalWORKs Housing Support Program at $12,000-$22,000 average annual cost per family permanently housed.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_03_ff1be3626e"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF004",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited California State Auditor response page identifies the Homelessness in California report and recommendation follow-up involving the California Interagency Council on Homelessness.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_05_39c68eb001"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF005",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited California State Auditor response page identifies the Homelessness in California report and recommendation follow-up involving the California Interagency Council on Homelessness.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_04_ba57516943"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF006",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited ArcGIS layer probe lists Publicly-Owned Properties as a Feature Layer with geometry esriGeometryPolygon, row_count=13948, and fields including OBJECTID and AIN.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_arcgis_layer_probe_a703161463fc"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF007",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited ArcGIS layer probe lists CensusTracts2010 as a Feature Layer with geometry esriGeometryPolygon, row_count=1004, and fields including TotalHomeless2017 and TotalUnsheltered2017.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_arcgis_layer_probe_67291dbb7720"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF008",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited ArcGIS layer probe lists Homeless Shelters and Services as a Feature Layer with geometry esriGeometryPoint, row_count=182, and fields including OBJECTID and org_name.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_arcgis_layer_probe_acbbd84f8466"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF009",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited ArcGIS layer probe lists Map1: LARiskSurface as a Feature Layer with geometry esriGeometryPolygon, row_count=2343, and fields including TOTPOP_CY and ACSHHBPOV.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_arcgis_layer_probe_3f7b5b735909"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF010",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited ArcGIS layer probe lists Reachable Streets as a Feature Layer with geometry esriGeometryPolyline, row_count=73125, and fields including FromCumul_Minutes and ToCumul_Miles.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_arcgis_layer_probe_a85b2aee59b8"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF011",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited ArcGIS layer probe lists Travel_from_Homeless_Shelters_and_Services_(10_Minutes) as a Feature Layer with geometry esriGeometryPolygon, row_count=1, and fields including FromBreak, ToBreak, and AnalysisArea.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_arcgis_layer_probe_5c2585b6c90d"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF012",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited ArcGIS layer probe lists EmShTrHouSafHav as a Feature Layer with geometry esriGeometryPolygon, row_count=76, and fields including totUnsheltPeople and totSheltPeople.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_arcgis_layer_probe_bba581ffe9ac"
+            ]
+          },
+          {
+            "findingId": "la_homelessness_fwa-TEF013",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited ArcGIS layer probe lists Homeless_Counts_2020 as a Feature Layer with geometry esriGeometryPolygon, row_count=304, and fields including CSA_Label and Total_Pop.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_arcgis_layer_probe_8969bc7a344c"
+            ]
+          }
+        ],
+        "claimLedger": [
+          {
+            "claim": "Shelter bed underutilization resulted in approximately $218 million in costs during FY19‑FY23",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_09"
+            ]
+          },
+          {
+            "claim": "Only 1 in 5 interim shelter residents obtained permanent housing; over half returned to homelessness or unknown outcomes",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_09"
+            ]
+          },
+          {
+            "claim": "Audit identifies control gaps in outcome tracking and financial management for Pathways to Permanent Housing",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_02",
+              "web_01"
+            ]
+          },
+          {
+            "claim": "The cited California State Auditor response page identifies the Homelessness in California report and recommendation follow-up involving the California Interagency Council on Homelessness.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_06_60bc73f75e"
+            ]
+          },
+          {
+            "claim": "The cited California State Auditor Table 1 extract lists Homekey Round 1 at $144,000 average cost per unit funded and compares it with $380,000-$570,000 for new affordable housing construction.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_02_9516788e0a"
+            ]
+          },
+          {
+            "claim": "The cited California State Auditor Table 2 extract lists the CalWORKs Housing Support Program at $12,000-$22,000 average annual cost per family permanently housed.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_03_ff1be3626e"
+            ]
+          },
+          {
+            "claim": "Alleged fraud by LAHSA personnel",
+            "support": "rejected_or_not_supported",
+            "limitation": "Do not publish as a finding.",
+            "nextRecord": "Find primary support or keep rejected.",
+            "sourceIds": []
+          },
+          {
+            "claim": "Intentional misallocation of funds without evidence",
+            "support": "rejected_or_not_supported",
+            "limitation": "Do not publish as a finding.",
+            "nextRecord": "Find primary support or keep rejected.",
+            "sourceIds": []
+          },
+          {
+            "claim": "Low rehousing conversion rate",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          },
+          {
+            "claim": "High unused bed cost",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          },
+          {
+            "claim": "Inconsistent outcome data across programs",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          }
+        ],
+        "sourceMatrix": [
+          {
+            "family": "Official records",
+            "status": "57",
+            "proves": "Authority and source trail",
+            "missing": "Underlying attachments where not fetched"
+          },
+          {
+            "family": "Usable evidence",
+            "status": "23",
+            "proves": "Claim support candidates",
+            "missing": "Human review before publication"
+          },
+          {
+            "family": "Locators",
+            "status": "36",
+            "proves": "Where to fetch next",
+            "missing": "Direct capture or records request"
+          }
+        ],
+        "followUpQuestions": [
+          "Which finding has the strongest official-source support?",
+          "What record would change this case the most?",
+          "Which weak or rejected claim should stay out of the public narrative?",
+          "Which source should be opened next?"
+        ],
+        "nextMoves": [
+          "complete contract file from contracting agency or board clerk",
+          "invoice and payment ledger from controller, finance department, or agency accounts payable",
+          "monitoring or performance report from program office, oversight body, or independent auditor",
+          "Potential underperformance in LAHSA contract oversight",
+          "Insufficient outcome tracking reported across programs",
+          "sam_entity_management requires SAM_API_KEY before this gap can be resolved."
+        ]
+      },
+      "claims": [
+        {
+          "title": "spending_review",
+          "body": "Shelter bed underutilization resulted in approximately $218 million in costs during FY19‑FY23",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_09"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "program_control_gap",
+          "body": "Only 1 in 5 interim shelter residents obtained permanent housing; over half returned to homelessness or unknown outcomes",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_09"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "title": "program_control_gap",
+          "body": "Audit identifies control gaps in outcome tracking and financial management for Pathways to Permanent Housing",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_02",
+            "web_01"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited California State Auditor response page identifies the Homelessness in California report and recommendation follow-up involving the California Interagency Council on Homelessness.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_06_60bc73f75e"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited California State Auditor Table 1 extract lists Homekey Round 1 at $144,000 average cost per unit funded and compares it with $380,000-$570,000 for new affordable housing construction.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_02_9516788e0a"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited California State Auditor Table 2 extract lists the CalWORKs Housing Support Program at $12,000-$22,000 average annual cost per family permanently housed.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_03_ff1be3626e"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited California State Auditor response page identifies the Homelessness in California report and recommendation follow-up involving the California Interagency Council on Homelessness.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_05_39c68eb001"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited California State Auditor response page identifies the Homelessness in California report and recommendation follow-up involving the California Interagency Council on Homelessness.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_04_ba57516943"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited ArcGIS layer probe lists Publicly-Owned Properties as a Feature Layer with geometry esriGeometryPolygon, row_count=13948, and fields including OBJECTID and AIN.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_arcgis_layer_probe_a703161463fc"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited ArcGIS layer probe lists CensusTracts2010 as a Feature Layer with geometry esriGeometryPolygon, row_count=1004, and fields including TotalHomeless2017 and TotalUnsheltered2017.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_arcgis_layer_probe_67291dbb7720"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited ArcGIS layer probe lists Homeless Shelters and Services as a Feature Layer with geometry esriGeometryPoint, row_count=182, and fields including OBJECTID and org_name.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_arcgis_layer_probe_acbbd84f8466"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited ArcGIS layer probe lists Map1: LARiskSurface as a Feature Layer with geometry esriGeometryPolygon, row_count=2343, and fields including TOTPOP_CY and ACSHHBPOV.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_arcgis_layer_probe_3f7b5b735909"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited ArcGIS layer probe lists Reachable Streets as a Feature Layer with geometry esriGeometryPolyline, row_count=73125, and fields including FromCumul_Minutes and ToCumul_Miles.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_arcgis_layer_probe_a85b2aee59b8"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited ArcGIS layer probe lists Travel_from_Homeless_Shelters_and_Services_(10_Minutes) as a Feature Layer with geometry esriGeometryPolygon, row_count=1, and fields including FromBreak, ToBreak, and AnalysisArea.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_arcgis_layer_probe_5c2585b6c90d"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited ArcGIS layer probe lists EmShTrHouSafHav as a Feature Layer with geometry esriGeometryPolygon, row_count=76, and fields including totUnsheltPeople and totSheltPeople.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_arcgis_layer_probe_bba581ffe9ac"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited ArcGIS layer probe lists Homeless_Counts_2020 as a Feature Layer with geometry esriGeometryPolygon, row_count=304, and fields including CSA_Label and Total_Pop.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_arcgis_layer_probe_8969bc7a344c"
+          ],
+          "confidence": 0.92
+        }
+      ],
+      "sources": [
+        {
+          "sourceId": "web_01",
+          "title": "https://www.auditor.ca.gov/reports/2023-102-1/",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/2023-102-1/",
+          "hash": "ea655cc9bca665737837a2e2af99be05b2762d9f0c02a1a7d7f73c6f61898882",
+          "excerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunitie",
+          "quotedExcerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunitie",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_02",
+          "title": "24-1574_rpt_ctrl_12-10-24.pdf",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2024/24-1574_rpt_ctrl_12-10-24.pdf",
+          "hash": "4f3da8be79d91e892c0fe3b6020a23ae6104cc300554769bfdc88ecbc2ce970b",
+          "excerpt": "December 10, 2024 Honorable Karen Bass, Mayor Honorable Hydee Feldstein Soto, City Attorney Honorable Members of the Los Angeles City Council **Re: Pathways to Permanent Housing** Until a person is permanently housed, that person’s homelessness is not successfully ended. That is the guiding principle for the City and nation’s homelessness strategy. Understanding this bedrock concept, our Office conducted this audit to identify opportunities for the City and the Los Angeles Homeless Services Auth",
+          "quotedExcerpt": "December 10, 2024 Honorable Karen Bass, Mayor Honorable Hydee Feldstein Soto, City Attorney Honorable Members of the Los Angeles City Council **Re: Pathways to Permanent Housing** Until a person is permanently housed, that person’s homelessness is not successfully ended. That is the guiding principle for the City and nation’s homelessness strategy. Understanding this bedrock concept, our Office conducted this audit to identify opportunities for the City and the Los Angeles Homeless Services Auth",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_03",
+          "title": "dkt-870-second-amended-draft-alvarez-and-marsal-assessment-la-city-homelessness-programs",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cacd.uscourts.gov/dkt-870-second-amended-draft-alvarez-and-marsal-assessment-la-city-homelessness-programs",
+          "hash": "27d1c6702ebc0cec37ac3897db1fee30316d5ab4a29ab00c67f28d183b91fdb1",
+          "excerpt": "Dkt. 870 Second Amended Draft of the Alvarez and Marsal Assessment of LA City Homelessness Programs | Central District of California | United States District Court Skip to main content An official website of the United States government Here’s how you know Here’s how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( Lock Locked padlock icon ) or https:// means you’ve safely connected to",
+          "quotedExcerpt": "Dkt. 870 Second Amended Draft of the Alvarez and Marsal Assessment of LA City Homelessness Programs | Central District of California | United States District Court Skip to main content An official website of the United States government Here’s how you know Here’s how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( Lock Locked padlock icon ) or https:// means you’ve safely connected to",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_04",
+          "title": "[PDF] C-140706 - CONTRACT SUMMARY SHEET - City of Los Angeles",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_10-01-24.pdf",
+          "hash": "d0d718d4221c7ad600acd6c165b46c217c004cccadafe394902650b43fd2d497",
+          "excerpt": "Contractual Requirements); and (e) Updating Section 202, Services to be Provided by the Contractor, Subsection B.4.c. “Property/Facility Sites and Property/Facility Leases” with additional terms. WHEREAS, Section 505 of the Agreement provides for amendments to the Agreement; and WHEREAS, this Amendment is necessary and proper to continue and/or complete certain activities authorized under the Agreement. Los Angeles Homeless Services Authority General Fund Contract FY 2022-2023 Page 10 of 84 NOW,",
+          "quotedExcerpt": "Contractual Requirements); and (e) Updating Section 202, Services to be Provided by the Contractor, Subsection B.4.c. “Property/Facility Sites and Property/Facility Leases” with additional terms. WHEREAS, Section 505 of the Agreement provides for amendments to the Agreement; and WHEREAS, this Amendment is necessary and proper to continue and/or complete certain activities authorized under the Agreement. Los Angeles Homeless Services Authority General Fund Contract FY 2022-2023 Page 10 of 84 NOW,",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_05",
+          "title": "[PDF] January 7, 2026 - City Clerk - City of Los Angeles",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2025/25-0400_rpt_lahd_1-13-2026.pdf",
+          "hash": "e31c36ff87dfd4c63fa5a34b944d1c2f24d75bd56924292404808a38c4ea9819",
+          "excerpt": "Affordable Housing, Homelessness Solutions, and Prevention Now Transactions and Use Tax Ordinance. Measure A established a one-half percent sales tax on every dollar of goods sold in Los Angeles County to provide dedicated funding for various purposes, including reducing and preventing homelessness and increasing the supply of affordable housing. C. Measure A directs the Los Angeles County Auditor-Controller (“ **County** **Auditor-Controller** ”) to disburse 35.75% of the proceeds generated to",
+          "quotedExcerpt": "Affordable Housing, Homelessness Solutions, and Prevention Now Transactions and Use Tax Ordinance. Measure A established a one-half percent sales tax on every dollar of goods sold in Los Angeles County to provide dedicated funding for various purposes, including reducing and preventing homelessness and increasing the supply of affordable housing. C. Measure A directs the Los Angeles County Auditor-Controller (“ **County** **Auditor-Controller** ”) to disburse 35.75% of the proceeds generated to",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_06",
+          "title": "Audits - Kenneth Mejia - City of Los Angeles",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://controller.lacity.gov/audits",
+          "hash": "65430eecd1077478a04079e9dbe217528a61e939b0f9117b6b743f9e34e805fa",
+          "excerpt": "w tab) Oversight Independent Audits of City Departments and Programs Upcoming Audits & Reports Old Audits and Reports Vendor Fraud FY 2025 Single Audit Reports On The Sideline: Assessing LAPD's Mental Evaluation Unit & Smart Co-Response Model Fraud, Waste and Abuse Annual Report Affordable Housing Oversight Audit LADOT Red Zone Parking Tickets Audit of the City's Implementation of the Tenant Anti-Harassment Ordinance FY 2024 Single Audit Reports Homelessness Audit: Pathways to Permanent Housing",
+          "quotedExcerpt": "w tab) Oversight Independent Audits of City Departments and Programs Upcoming Audits & Reports Old Audits and Reports Vendor Fraud FY 2025 Single Audit Reports On The Sideline: Assessing LAPD's Mental Evaluation Unit & Smart Co-Response Model Fraud, Waste and Abuse Annual Report Affordable Housing Oversight Audit LADOT Red Zone Parking Tickets Audit of the City's Implementation of the Tenant Anti-Harassment Ordinance FY 2024 Single Audit Reports Homelessness Audit: Pathways to Permanent Housing",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_07",
+          "title": "LAHSA General Funds Agreement 2022-23 - City Clerk",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2022/C-140706_c_6-29-22.pdf",
+          "hash": "2dd2f3132ade9b338ea9a973a52066e3a444464ee49def1fc956b394a07341e0",
+          "excerpt": "1200 West 7 th Street, 9 th Floor Los Angeles, CA 90017 Hannah Levien, Assistant Chief Grants Administrator Los Angeles Housing Department 1200 West 7th Street, 9 th Floor Los Angeles, CA 90017 2. The representative of the Contractor shall be: Kristina Dixon, Co Acting Executive Director / Chief Financial and Administration Officer Los Angeles Homeless Services Authority 707 Wilshire Boulevard, 10 th Floor Los Angeles, CA 90017 kdixon@lahsa.org With copies to: Molly Rysman, Co Acting Executive D",
+          "quotedExcerpt": "1200 West 7 th Street, 9 th Floor Los Angeles, CA 90017 Hannah Levien, Assistant Chief Grants Administrator Los Angeles Housing Department 1200 West 7th Street, 9 th Floor Los Angeles, CA 90017 2. The representative of the Contractor shall be: Kristina Dixon, Co Acting Executive Director / Chief Financial and Administration Officer Los Angeles Homeless Services Authority 707 Wilshire Boulevard, 10 th Floor Los Angeles, CA 90017 kdixon@lahsa.org With copies to: Molly Rysman, Co Acting Executive D",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_08",
+          "title": "9033 - Lahsa-Audited-Financial-Statements-And-Single-Audit-Report-For-Fiscal-Year-2023-2024",
+          "type": "secondary_or_locator",
+          "publisher": "secondary_or_unknown",
+          "role": "found, secondary, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.lahsa.org/documents?id=9033-lahsa-audited-financial-statements-and-single-audit-report-for-fiscal-year-2023-2024.pdf",
+          "hash": "6d4819ad53027bae2a82dc0e71675a8d2272ca39ecd74cfa70968a60a4754990",
+          "excerpt": "udited-financial-statements-and-single-audit-report-for-fiscal-year-2023-2024.pdf * Document Type: Budget, Report * Project: * Program Type: * Project Scope: Funding * Contract Type: * Published: 04/03/2025 * Available Until 04/03/2032 * Last Updated 4/3/2025 9:43:49 AM Question or comment about this document? Let us know Email Required Invalid E-Mail Your message Required Send * About * Jobs * News * Privacy Policy * Support * * * * Los Angeles Homeless Services Authority Translate in IE [...]",
+          "quotedExcerpt": "udited-financial-statements-and-single-audit-report-for-fiscal-year-2023-2024.pdf * Document Type: Budget, Report * Project: * Program Type: * Project Scope: Funding * Contract Type: * Published: 04/03/2025 * Available Until 04/03/2032 * Last Updated 4/3/2025 9:43:49 AM Question or comment about this document? Let us know Email Required Invalid E-Mail Your message Required Send * About * Jobs * News * Privacy Policy * Support * * * * Los Angeles Homeless Services Authority Translate in IE [...]",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_09",
+          "title": "Press%20Releases%2FPress%20release%20Controller%20Audit%20of%20Paths%20to%20Perm%20Housing.pdf?alt=media&token=f154a67f-c359-4d82-b913-42522dac1847",
+          "type": "secondary_or_locator",
+          "publisher": "secondary_or_unknown",
+          "role": "fetched, found, secondary, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://firebasestorage.googleapis.com/v0/b/lacontroller-2b7de.appspot.com/o/Press%20Releases%2FPress%20release%20Controller%20Audit%20of%20Paths%20to%20Perm%20Housing.pdf?alt=media&token=f154a67f-c359-4d82-b913-42522dac1847",
+          "hash": "dd284158a1530153767063987dfb2e89d12a07d66afa20f643425ab25c4dc9d5",
+          "excerpt": "FOR IMMEDIATE RELEASEDecember 10, 2024 City Controller Kenneth Mejia Releases Performance Audit of Pathways To Permanent Housing in LAHSA’s and the City of Los Angeles’s Rehousing Systems 1 in 4 City-funded Shelter Beds Went Unused, While Costing an Estimated $218 Million from FY19-FY23 Audit Findings Show that Only 1 in 5 Interim Shelter Residents Obtained Permanent Housing, While Over 1/2 Returned to Homelessness or Unknown Outcomes LOS ANGELES – Los Angeles City Controller Kenneth Mejia today",
+          "quotedExcerpt": "FOR IMMEDIATE RELEASEDecember 10, 2024 City Controller Kenneth Mejia Releases Performance Audit of Pathways To Permanent Housing in LAHSA’s and the City of Los Angeles’s Rehousing Systems 1 in 4 City-funded Shelter Beds Went Unused, While Costing an Estimated $218 Million from FY19-FY23 Audit Findings Show that Only 1 in 5 Interim Shelter Residents Obtained Permanent Housing, While Over 1/2 Returned to Homelessness or Unknown Outcomes LOS ANGELES – Los Angeles City Controller Kenneth Mejia today",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_10",
+          "title": "plaintiff la alliance's opening brief re evidentiary hearing on ...",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cacd.uscourts.gov/sites/default/files/dkt%20977%20plaintiff%20opening%20brief.pdf",
+          "hash": "069678b3246ab6cbec740f287c6650a18f774615bdba0512076312229f108843",
+          "excerpt": "d milestones, but also required that the City consistently engage, clean, and reduce encampments also according to the City’s own established milestones. Thus, as beds went up, people would move into those beds, and encampments would go down. The City of Los Angeles has been in violation of both agreements for years and has taken and will take no steps to correct these issues without court intervention. Underpinning these failures is the wrecked homelessness response system—with patently insuffi",
+          "quotedExcerpt": "d milestones, but also required that the City consistently engage, clean, and reduce encampments also according to the City’s own established milestones. Thus, as beds went up, people would move into those beds, and encampments would go down. The City of Los Angeles has been in violation of both agreements for years and has taken and will take no steps to correct these issues without court intervention. Underpinning these failures is the wrecked homelessness response system—with patently insuffi",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "second_la_homelessness_fwa_R009_01",
+          "title": "Where are homeless shelters and services needed in Los Angeles, California?",
+          "type": "official_public_record",
+          "publisher": "official_catalog_metadata",
+          "role": "found, official, locator_only",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.arcgis.com/home/item.html?id=babd50942fcc46e6b5b6d3f8bea5c169",
+          "hash": "",
+          "excerpt": "ArcGIS item metadata: title=Where are homeless shelters and services needed in Los Angeles, California?; owner=JenniferBell_UO; type=Web Scene; snippet=This scene identifies areas in need of additional homeless shelters and services and proposes vacant, government-owned buildings that can meet this need..",
+          "quotedExcerpt": "ArcGIS item metadata: title=Where are homeless shelters and services needed in Los Angeles, California?; owner=JenniferBell_UO; type=Web Scene; snippet=This scene identifies areas in need of additional homeless shelters and services and proposes vacant, government-owned buildings that can meet this need..",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "official_api:arcgis_item_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_06_60bc73f75e",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/responses-2023-102-1-all/",
+          "hash": "35d4c557e88b32a8e453e28a9f9bc5a32f6ce3b58f2bc4985c23a599efe89398",
+          "excerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Recommendations: Recommendations: Recommendation to the Legislature Recommendations to California Interagency Council on Homelessness (Cal ICH) 2023-102.1 Homelessness in California The State Must D",
+          "quotedExcerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Recommendations: Recommendations: Recommendation to the Legislature Recommendations to California Interagency Council on Homelessness (Cal ICH) 2023-102.1 Homelessness in California The State Must D",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_06_60bc73f75e",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/responses-2023-102-1-all/",
+          "hash": "34edeabf2da1df38f892e1ed283071315917d743c8961b3adec3488f07f90c5b",
+          "excerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Recommendations: Recommendations: Recommendation to the Legislature Recommendations to California Interagency Council on Homelessness (Cal ICH) 2023-102.1 Homelessness in California The State Must D",
+          "quotedExcerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Recommendations: Recommendations: Recommendation to the Legislature Recommendations to California Interagency Council on Homelessness (Cal ICH) 2023-102.1 Homelessness in California The State Must D",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 0,
+          "matchedTerms": [
+            "Homelessness in California",
+            "California Interagency Council on Homelessness",
+            "recommendation",
+            "audit",
+            "report"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_02_9516788e0a",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "http://www.auditor.ca.gov/wp-content/uploads/2024/04/2023-102.1-Table-1.pdf",
+          "hash": "afe725612443c9b316c81caafcdf50ddf7136bfec70bf867586542b31b8e4c02",
+          "excerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table 1 Assessment of the Cost-Effectiveness of Homekey Round 1 AVERAGE COST PER UNIT FUNDED BY HOMEKEY ROUND 1 AVERAGE COST PER UNIT FOR NEW AFFORDABLE HOUSING CONSTRUCTION IN CALIFORNIA IN 2019 LIKELY COST‑EFFECTIVE? $144,000 $380,000—$570,000  Source: Analysis of program documentation and Making It Pencil: The Math Behind Housing Development, published by the Terner Center for Housing Innovation cited in HCD’s 2021 report to the Legislature on Homekey Round 1.",
+          "quotedExcerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table 1 Assessment of the Cost-Effectiveness of Homekey Round 1 AVERAGE COST PER UNIT FUNDED BY HOMEKEY ROUND 1 AVERAGE COST PER UNIT FOR NEW AFFORDABLE HOUSING CONSTRUCTION IN CALIFORNIA IN 2019 LIKELY COST‑EFFECTIVE? $144,000 $380,000—$570,000  Source: Analysis of program documentation and Making It Pencil: The Math Behind Housing Development, published by the Terner Center for Housing Innovation cited in HCD’s 2021 report to the Legislature on Homekey Round 1.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 1,
+          "matchedTerms": [
+            "Cost-Effectiveness",
+            "audit",
+            "report"
+          ],
+          "amountCandidates": [
+            "$144,000",
+            "$380,000",
+            "$570,000"
+          ]
+        },
+        {
+          "sourceId": "extract_targeted_extract_03_ff1be3626e",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "http://www.auditor.ca.gov/wp-content/uploads/2024/04/2023-102.1-Table-2.pdf",
+          "hash": "28ef29d500b3529b9addd2f34aadaf6b10c6c8a32de96b9b7f2bf2b07dc2c75e",
+          "excerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table 2 Assessment of the Cost-Effectiveness of the CalWORKs Housing Support Program AVERAGE ANNUAL COST PER FAMILY PERMANENTLY HOUSED BY THE PROGRAM ESTIMATED COST TO TAXPAYERS OF ONE PERSON EXPERIENCING CHRONIC HOMELESSNESS LIKELY COST‑EFFECTIVE? $12,000–$22,000 per household $30,000–$50,000 per year  Source: Analysis of program documentation and homelessness cost estimates cited by the U.S. Interagency Council on Homelessness, the National Alliance to End Homelessness, and the Legislature.",
+          "quotedExcerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table 2 Assessment of the Cost-Effectiveness of the CalWORKs Housing Support Program AVERAGE ANNUAL COST PER FAMILY PERMANENTLY HOUSED BY THE PROGRAM ESTIMATED COST TO TAXPAYERS OF ONE PERSON EXPERIENCING CHRONIC HOMELESSNESS LIKELY COST‑EFFECTIVE? $12,000–$22,000 per household $30,000–$50,000 per year  Source: Analysis of program documentation and homelessness cost estimates cited by the U.S. Interagency Council on Homelessness, the National Alliance to End Homelessness, and the Legislature.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 1,
+          "matchedTerms": [
+            "Cost-Effectiveness",
+            "audit",
+            "report"
+          ],
+          "amountCandidates": [
+            "$12,000",
+            "$22,000",
+            "$30,000",
+            "$50,000"
+          ]
+        },
+        {
+          "sourceId": "extract_targeted_extract_05_39c68eb001",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/wp-content/uploads/2024/04/2023-102.1-Factsheet.pdf",
+          "hash": "05bd260814351e0d6a5c6339817021d9795164f0717e6188da602218a487ee19",
+          "excerpt": "SHEET CONTACT: Communications Office | (916) 445-0255Grant Parks California State Auditor 621 Capitol Mall, Suite 1200 | Sacramento, CA 95814 | 916.445.0255 | 916.327.0019 fax | www.auditor.ca.gov April 9, 2024 Report 2023-102.1 COMMITMENTINTEGRITYLEADERSHIP Homelessness in California The State Must Do More to Assess the Cost-Effectiveness of Its Homelessness Programs Background The Joint Legislative Audit Committee requested an audit of the State’s homelessness funding and an evaluation of the State’s efforts to monitor the cost-effectiveness of such spending. This report (2023-102.1) focuses primarily on the State’s activities as carried out by the California Interagency Council on Homeles",
+          "quotedExcerpt": "SHEET CONTACT: Communications Office | (916) 445-0255Grant Parks California State Auditor 621 Capitol Mall, Suite 1200 | Sacramento, CA 95814 | 916.445.0255 | 916.327.0019 fax | www.auditor.ca.gov April 9, 2024 Report 2023-102.1 COMMITMENTINTEGRITYLEADERSHIP Homelessness in California The State Must Do More to Assess the Cost-Effectiveness of Its Homelessness Programs Background The Joint Legislative Audit Committee requested an audit of the State’s homelessness funding and an evaluation of the State’s efforts to monitor the cost-effectiveness of such spending. This report (2023-102.1) focuses primarily on the State’s activities as carried out by the California Interagency Council on Homeles",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 1,
+          "matchedTerms": [
+            "Homelessness in California",
+            "Cost-Effectiveness",
+            "California Interagency Council on Homelessness",
+            "recommendation",
+            "audit",
+            "report"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_04_ba57516943",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/2023-102-1/",
+          "hash": "77f3ad116937b4b4fb96c2d11bdcf4cba05fcbdd0d6176e57695ea4851234995",
+          "excerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities In This Report: In This Report: Selected Abbreviations Used in This Report SUMMARY INTRODUCTION Cal ICH Has Not Consistently Tracked and Evaluated the State’s Efforts to End Homelessness Two of the",
+          "quotedExcerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities In This Report: In This Report: Selected Abbreviations Used in This Report SUMMARY INTRODUCTION Cal ICH Has Not Consistently Tracked and Evaluated the State’s Efforts to End Homelessness Two of the",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 0,
+          "matchedTerms": [
+            "Homelessness in California",
+            "Cost-Effectiveness",
+            "California Interagency Council on Homelessness",
+            "recommendation",
+            "audit",
+            "report"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_05_6cc44e8a5b",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "found, fetched, official, locator_only, targeted_extract, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/policy-area/homelessness/",
+          "hash": "ae38f5dfb9637f392fc71ae462f06f111f175a7372eb5e3be39526da2c9e8183",
+          "excerpt": "Housing Published: October 14, 2025 Report 2024-111 California Colleges California’s Systems of Public Higher Education Could Better Address Student Housing Needs Higher Education , Homelessness , Housing Published: October 14, 2025 Recommendation 2023-102.2 Homelessness in California San José and San Diego Must Do More to Plan and Evaluate Their Efforts to Reduce Homelessness Homelessness , Housing , Local Published: April 9, 2024 Report 2023-102.2 Homelessness in California San José and San Diego Must Do More to Plan and Evaluate Their Efforts to Reduce Homelessness Homelessness , Housing , Local Published: April 9, 2024 Recommendation 2023-102.1 Homelessness in California The State Must D",
+          "quotedExcerpt": "Housing Published: October 14, 2025 Report 2024-111 California Colleges California’s Systems of Public Higher Education Could Better Address Student Housing Needs Higher Education , Homelessness , Housing Published: October 14, 2025 Recommendation 2023-102.2 Homelessness in California San José and San Diego Must Do More to Plan and Evaluate Their Efforts to Reduce Homelessness Homelessness , Housing , Local Published: April 9, 2024 Report 2023-102.2 Homelessness in California San José and San Diego Must Do More to Plan and Evaluate Their Efforts to Reduce Homelessness Homelessness , Housing , Local Published: April 9, 2024 Recommendation 2023-102.1 Homelessness in California The State Must D",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 0,
+          "matchedTerms": [
+            "Homelessness in California",
+            "recommendation",
+            "audit",
+            "report"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_06_2f95aa0674",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "found, fetched, official, locator_only, targeted_extract, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/recommendationsnotfullyimplemented/",
+          "hash": "bac128ed83cf3390f4a66ca6aa3f5e4b8ce98d4b49325f18a4e69c66e9b7bbeb",
+          "excerpt": "ment of 2023-112: Mobilehome Residency Law Protection Program —The California Department of Housing and Community Development Must Improve Its Oversight of the Program (Release Date: December 2023) 1 1 1 Housing Interagency Council on Homelessness 2023-102.1: Homelessness in California —The State Must Do More to Assess the Cost‑Effectiveness of Its Homelessness Programs (Release Date: April 2024) 1 1 1 Homelessness, Housing Justice, Department of 2021-102: Indian Gaming Special Distribution Fund —The State Could Better Manage Its Distribution Fund and Its Problem Gambling Programs (Release Date: August 2022) 1 2 2 Government Operations, Law Enforcement, Public Health 2021-112: The Child Abus",
+          "quotedExcerpt": "ment of 2023-112: Mobilehome Residency Law Protection Program —The California Department of Housing and Community Development Must Improve Its Oversight of the Program (Release Date: December 2023) 1 1 1 Housing Interagency Council on Homelessness 2023-102.1: Homelessness in California —The State Must Do More to Assess the Cost‑Effectiveness of Its Homelessness Programs (Release Date: April 2024) 1 1 1 Homelessness, Housing Justice, Department of 2021-102: Indian Gaming Special Distribution Fund —The State Could Better Manage Its Distribution Fund and Its Problem Gambling Programs (Release Date: August 2022) 1 2 2 Government Operations, Law Enforcement, Public Health 2021-112: The Child Abus",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 0,
+          "matchedTerms": [
+            "Homelessness in California",
+            "recommendation",
+            "audit",
+            "report"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_07_23f1eddf9d",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/wp-content/uploads/2024/04/2023-102.1-Report.pdf",
+          "hash": "837622a1a3333f669eccb65d80e2d65c9970142d2a8aab6e1ca1f6c24c643580",
+          "excerpt": "PDF source fetched; text extraction failed: Stream has ended unexpectedly",
+          "quotedExcerpt": "PDF source fetched; text extraction failed: Stream has ended unexpectedly",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_08_9516788e0a",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "http://www.auditor.ca.gov/wp-content/uploads/2024/04/2023-102.1-Table-1.pdf",
+          "hash": "a3d7fdd3961b7418d23903fd3cab3c11b8ffd292bd6e6e462539601f982a0c36",
+          "excerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table 1 Assessment of the Cost-Effectiveness of Homekey Round 1 AVERAGE COST PER UNIT FUNDED BY HOMEKEY ROUND 1 AVERAGE COST PER UNIT FOR NEW AFFORDABLE HOUSING CONSTRUCTION IN CALIFORNIA IN 2019 LIKELY COST‑EFFECTIVE? $144,000 $380,000—$570,000  Source: Analysis of program documentation and Making It Pencil: The Math Behind Housing Development, published by the Terner Center for Housing Innovation cited in HCD’s 2021 report to the Legislature on Homekey Round 1.",
+          "quotedExcerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table 1 Assessment of the Cost-Effectiveness of Homekey Round 1 AVERAGE COST PER UNIT FUNDED BY HOMEKEY ROUND 1 AVERAGE COST PER UNIT FOR NEW AFFORDABLE HOUSING CONSTRUCTION IN CALIFORNIA IN 2019 LIKELY COST‑EFFECTIVE? $144,000 $380,000—$570,000  Source: Analysis of program documentation and Making It Pencil: The Math Behind Housing Development, published by the Terner Center for Housing Innovation cited in HCD’s 2021 report to the Legislature on Homekey Round 1.",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_09_ff1be3626e",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "http://www.auditor.ca.gov/wp-content/uploads/2024/04/2023-102.1-Table-2.pdf",
+          "hash": "e41dd6a34471dcb74144834ff87a3ea10d91e151c3ed538373fd55241d710c44",
+          "excerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table 2 Assessment of the Cost-Effectiveness of the CalWORKs Housing Support Program AVERAGE ANNUAL COST PER FAMILY PERMANENTLY HOUSED BY THE PROGRAM ESTIMATED COST TO TAXPAYERS OF ONE PERSON EXPERIENCING CHRONIC HOMELESSNESS LIKELY COST‑EFFECTIVE? $12,000–$22,000 per household $30,000–$50,000 per year  Source: Analysis of program documentation and homelessness cost estimates cited by the U.S. Interagency Council on Homelessness, the National Alliance to End Homelessness, and the Legislature.",
+          "quotedExcerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table 2 Assessment of the Cost-Effectiveness of the CalWORKs Housing Support Program AVERAGE ANNUAL COST PER FAMILY PERMANENTLY HOUSED BY THE PROGRAM ESTIMATED COST TO TAXPAYERS OF ONE PERSON EXPERIENCING CHRONIC HOMELESSNESS LIKELY COST‑EFFECTIVE? $12,000–$22,000 per household $30,000–$50,000 per year  Source: Analysis of program documentation and homelessness cost estimates cited by the U.S. Interagency Council on Homelessness, the National Alliance to End Homelessness, and the Legislature.",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_10_64137bf60b",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "http://www.auditor.ca.gov/wp-content/uploads/2024/04/2023-102.1-Table-A.pdf",
+          "hash": "ad6a768ea72468240000af63ce06117eb155331cc624918a38f9552818167c53",
+          "excerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table A Statewide Homelessness Assessment Programs and Funding LEAD AGENCY PROGRAM NAME DESCRIPTION FUNDING FISCAL YEAR 2018–19 TO 2020–21 FUNDING MECHANISM FUNDING SOURCE TCAC Low-Income Housing Tax Credit Corporations provide equity to build affordable housing in exchange for tax credits (either 9% or 4%). $2,026,040,165 Tax Credit State and Federal HCD No Place Like Home Funds the development of permanent supportive housing for people who are who are experiencing homelessness or at risk of chronic homelessness and in need of mental health services. 1,345,074,418 Grant Proposition DHCS Whole Person Care Pilot Program Coordinates hea",
+          "quotedExcerpt": "1 CALIFORNIA STATE AUDITOR Report 2023-102.1 | April 2024 Table A Statewide Homelessness Assessment Programs and Funding LEAD AGENCY PROGRAM NAME DESCRIPTION FUNDING FISCAL YEAR 2018–19 TO 2020–21 FUNDING MECHANISM FUNDING SOURCE TCAC Low-Income Housing Tax Credit Corporations provide equity to build affordable housing in exchange for tax credits (either 9% or 4%). $2,026,040,165 Tax Credit State and Federal HCD No Place Like Home Funds the development of permanent supportive housing for people who are who are experiencing homelessness or at risk of chronic homelessness and in need of mental health services. 1,345,074,418 Grant Proposition DHCS Whole Person Care Pilot Program Coordinates hea",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_11_39c68eb001",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/wp-content/uploads/2024/04/2023-102.1-Factsheet.pdf",
+          "hash": "5d3b7cce745be642db59df11aba4d4991675d733c433b2f3b70ed1bcb2ce45c4",
+          "excerpt": "FACT SHEET CONTACT: Communications Office | (916) 445-0255Grant Parks California State Auditor 621 Capitol Mall, Suite 1200 | Sacramento, CA 95814 | 916.445.0255 | 916.327.0019 fax | www.auditor.ca.gov April 9, 2024 Report 2023-102.1 COMMITMENTINTEGRITYLEADERSHIP Homelessness in California The State Must Do More to Assess the Cost-Effectiveness of Its Homelessness Programs Background The Joint Legislative Audit Committee requested an audit of the State’s homelessness funding and an evaluation of the State’s efforts to monitor the cost-effectiveness of such spending. This report (2023-102.1) focuses primarily on the State’s activities as carried out by the California Interagency Council on Ho",
+          "quotedExcerpt": "FACT SHEET CONTACT: Communications Office | (916) 445-0255Grant Parks California State Auditor 621 Capitol Mall, Suite 1200 | Sacramento, CA 95814 | 916.445.0255 | 916.327.0019 fax | www.auditor.ca.gov April 9, 2024 Report 2023-102.1 COMMITMENTINTEGRITYLEADERSHIP Homelessness in California The State Must Do More to Assess the Cost-Effectiveness of Its Homelessness Programs Background The Joint Legislative Audit Committee requested an audit of the State’s homelessness funding and an evaluation of the State’s efforts to monitor the cost-effectiveness of such spending. This report (2023-102.1) focuses primarily on the State’s activities as carried out by the California Interagency Council on Ho",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_12_2b09d1fdc4",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/contracts/",
+          "hash": "548d3f450bae74cb7963f6ccfed0866f775ca29547d2180e86d22160c8de83f9",
+          "excerpt": "Contracts - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Contracts Contract Offerings The best minds working to fix California’s toughest problems. We value determination, curiosity, and dynamic thinking. You can make a difference! Opportunities for Services Currently, there are no",
+          "quotedExcerpt": "Contracts - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Contracts Contract Offerings The best minds working to fix California’s toughest problems. We value determination, curiosity, and dynamic thinking. You can make a difference! Opportunities for Services Currently, there are no",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_13_795e47c88d",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://information.auditor.ca.gov/reports",
+          "hash": "ba57dce2446b706a45035e9b7f019b927d8e570e2bc3e10f168ebfd796c20b31",
+          "excerpt": "California State Auditor - Reports Released Between 1993 and April 2024 Skip Navigation Links Information Site Reports Released Between 1993 and April 2024 Browse Reports Reports By Year Reports By Agency Search Reports Report type Financial/Federal Compliance Mandatory Discretionary Investigative State High Risk Local High Risk Special Reports to the Legislature Report Text (Example: \"Education\") Year (Example: \"1998, 2006-09\") Agency (Example: \"Water Resources\") Report Text Search Guidance Search public to get results of all reports containing the word \"public\" Search public AND policy to get results for all reports containing the word \"public\" and the word \"policy\" Search public OR policy",
+          "quotedExcerpt": "California State Auditor - Reports Released Between 1993 and April 2024 Skip Navigation Links Information Site Reports Released Between 1993 and April 2024 Browse Reports Reports By Year Reports By Agency Search Reports Report type Financial/Federal Compliance Mandatory Discretionary Investigative State High Risk Local High Risk Special Reports to the Legislature Report Text (Example: \"Education\") Year (Example: \"1998, 2006-09\") Agency (Example: \"Water Resources\") Report Text Search Guidance Search public to get results of all reports containing the word \"public\" Search public AND policy to get results for all reports containing the word \"public\" and the word \"policy\" Search public OR policy",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_14_e8121254dd",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports-coming-soon/",
+          "hash": "6f1f8d1d1732cc2c0a32a12e15f4f6c3bba6c62eb39d00baa1d69a075ddc87db",
+          "excerpt": "Reports Coming Soon - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Reports Coming Soon Reports Coming Soon Statutory Audits 2025-602 State High Risk: State of California’s Late Financial Reporting Government Code section 8546.5 Status: In progress Est. Release Date: Spring 2026 2025",
+          "quotedExcerpt": "Reports Coming Soon - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Reports Coming Soon Reports Coming Soon Statutory Audits 2025-602 State High Risk: State of California’s Late Financial Reporting Government Code section 8546.5 Status: In progress Est. Release Date: Spring 2026 2025",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_15_14dcd41994",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/",
+          "hash": "dafb424262dfd7b5e5aaa5754889d34c36d2089143eb22ec7dc786974ddbfcdc",
+          "excerpt": "Reports - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Reports Explore Our Archives For reports published between 1993-2023 Search archive database Search for: Submit Clear Filters Issue Type Issue Type Report Recommendation Policy Areas Policy Areas Cannabis COVID-19 Funds Employme",
+          "quotedExcerpt": "Reports - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Reports Explore Our Archives For reports published between 1993-2023 Search archive database Search for: Submit Clear Filters Issue Type Issue Type Report Recommendation Policy Areas Policy Areas Cannabis COVID-19 Funds Employme",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_16_ba57516943",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/2023-102-1/",
+          "hash": "69ba9470a3e6538cc5fb148e1ca57cf8de9388c759d06a2c73d332d9de743247",
+          "excerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities In This Report: In This Report: Selected Abbreviations Used in This Report SUMMARY INTRODUCTION Cal ICH Has Not Consistently Tracked and Evaluated the State’s Efforts to End Homelessness Two of the",
+          "quotedExcerpt": "2023-102.1 Homelessness in California - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities In This Report: In This Report: Selected Abbreviations Used in This Report SUMMARY INTRODUCTION Cal ICH Has Not Consistently Tracked and Evaluated the State’s Efforts to End Homelessness Two of the",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_17_6cc44e8a5b",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/policy-area/homelessness/",
+          "hash": "7c9e50fc59f827a7c9ff363c408a90ed8a9932b1e2548c0fce2e5af50b214f26",
+          "excerpt": "Homelessness - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Homelessness 2024-104 Housing Choice Voucher Program Households Face Long Wait Times for Vouchers and Potential Housing Loss When an Emergency Housing Program Ends Government Operations (Local) , Homelessness , Housing , So",
+          "quotedExcerpt": "Homelessness - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Homelessness 2024-104 Housing Choice Voucher Program Households Face Long Wait Times for Vouchers and Potential Housing Loss When an Emergency Housing Program Ends Government Operations (Local) , Homelessness , Housing , So",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_18_2f95aa0674",
+          "title": "audit_report_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.auditor.ca.gov/reports/recommendationsnotfullyimplemented/",
+          "hash": "0c2a68aa76f80253deec18e19f5e20e3e6edbe3d1498023fbd8fc06daad7711a",
+          "excerpt": "Recommendations Not Fully Implemented After One Year - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Special Reports to the Legislature Report: Recommendations Not Fully Implemented After One Year Published: August 21, 2025 State Entities – Recommendations Not Fully Implemented After",
+          "quotedExcerpt": "Recommendations Not Fully Implemented After One Year - California State Auditor Skip to statewide header Skip to site header Skip to main content Skip to site footer Skip to statewide footer CA.gov Logo Official website of the State of California Search Menu Search for: Submit Search Audit Report Archives (1993-2023) About Us Reports Reports Reports Coming Soon Recommendations Not Fully Implemented Whistleblower Careers Careers Job Openings Auditor Evaluator I Eligibility List Disclosures Contract Opportunities Special Reports to the Legislature Report: Recommendations Not Fully Implemented After One Year Published: August 21, 2025 State Entities – Recommendations Not Fully Implemented After",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_official_api_followup_96a2b56ef4",
+          "title": "official-api-followup-96a2b56ef4",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.arcgis.com/home/item.html?id=babd50942fcc46e6b5b6d3f8bea5c169",
+          "hash": "4f3e5caf55db248cfc93ace83a121c8f0b7508069356686715989f17301bdadc",
+          "excerpt": "ArcGIS",
+          "quotedExcerpt": "ArcGIS",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_official_api_followup_d296dc9632",
+          "title": "official-api-followup-d296dc9632",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.arcgis.com/home/item.html?id=9117038ebbb54f909996e791806a81b0",
+          "hash": "4f3e5caf55db248cfc93ace83a121c8f0b7508069356686715989f17301bdadc",
+          "excerpt": "ArcGIS",
+          "quotedExcerpt": "ArcGIS",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_metadata_babd50942fcc46e6b5b6d3f8bea5c169",
+          "title": "Where are homeless shelters and services needed in Los Angeles, California?",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_rest_metadata, needs_underlying_data_fetch, candidate_locator",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.arcgis.com/home/item.html?id=babd50942fcc46e6b5b6d3f8bea5c169",
+          "hash": "b1ccec1243a7200397e5f32c49aaabafab7a0a15a3a6c1d3e2c6fc5788d7f70f",
+          "excerpt": "Homelessness is a serious problem in Los Angeles, Califorania. Homeless populations live on the streets and are in need for shelters and services. With over 3,000 vacant, goverment-owned buildings in Los Angeles, there may be a solution to this problem. The goal of this scene is to analyze where there is a need for additional homeless shelters and services in Los Angeles. From there, determine which vacant, government-owned building could serve as a homeless shelter or service. This scene shows current homeless shelters and services in Los Angeles (buildings drawn in blue) and a 10-minute service area (travel time by walking) around each building . The streets in the service area are conside",
+          "quotedExcerpt": "Homelessness is a serious problem in Los Angeles, Califorania. Homeless populations live on the streets and are in need for shelters and services. With over 3,000 vacant, goverment-owned buildings in Los Angeles, there may be a solution to this problem. The goal of this scene is to analyze where there is a need for additional homeless shelters and services in Los Angeles. From there, determine which vacant, government-owned building could serve as a homeless shelter or service. This scene shows current homeless shelters and services in Los Angeles (buildings drawn in blue) and a 10-minute service area (travel time by walking) around each building . The streets in the service area are conside",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_metadata_9117038ebbb54f909996e791806a81b0",
+          "title": "Homeless Density AND Homeless in temporary shelters in Los Angeles-Copy-Copy",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_rest_metadata, needs_underlying_data_fetch, candidate_locator",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.arcgis.com/home/item.html?id=9117038ebbb54f909996e791806a81b0",
+          "hash": "6b609c45599ef08971be213203e58da9cd713c0b5522985fd43b9ed39ff5bc46",
+          "excerpt": "This map shows where people are sleeping in emergency shelters, transitional housing, or safe havens in Los Angeles. Click on the map to explore other characteristics of homeless communities: race/ethnicity, gender, age, and factors contributing to homelessness. For more information: Combating Homelessness in Los Angeles County Step-by-step tutorial",
+          "quotedExcerpt": "This map shows where people are sleeping in emergency shelters, transitional housing, or safe havens in Los Angeles. Click on the map to explore other characteristics of homeless communities: race/ethnicity, gender, age, and factors contributing to homelessness. For more information: Combating Homelessness in Los Angeles County Step-by-step tutorial",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_babd50942fcc46e6b5b6d3f8bea5c169_a703161463fc",
+          "title": "Vacant Publicly Owned Properties",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_item_data, underlying_layer_locator, needs_layer_query",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services5.arcgis.com/VAb1qw880ksyBtIL/arcgis/rest/services/Publicly_Owned_Properties/FeatureServer/6",
+          "hash": "683250acbf55d2658258ad47515f8e5989b316166b122a1d30cb6c0e9d658477",
+          "excerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Vacant Publicly Owned Properties https://services5.arcgis.com/VAb1qw880ksyBtIL/arcgis/rest/services/Publicly_Owned_Properties/FeatureServer/6",
+          "quotedExcerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Vacant Publicly Owned Properties https://services5.arcgis.com/VAb1qw880ksyBtIL/arcgis/rest/services/Publicly_Owned_Properties/FeatureServer/6",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_babd50942fcc46e6b5b6d3f8bea5c169_67291dbb7720",
+          "title": "Homeless Count",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_item_data, underlying_layer_locator, needs_layer_query",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/HomelessInLA2016To2017/FeatureServer/0",
+          "hash": "683250acbf55d2658258ad47515f8e5989b316166b122a1d30cb6c0e9d658477",
+          "excerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Homeless Count https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/HomelessInLA2016To2017/FeatureServer/0",
+          "quotedExcerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Homeless Count https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/HomelessInLA2016To2017/FeatureServer/0",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_babd50942fcc46e6b5b6d3f8bea5c169_acbbd84f8466",
+          "title": "Homeless Shelters and Services",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_item_data, underlying_layer_locator, needs_layer_query",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/158",
+          "hash": "683250acbf55d2658258ad47515f8e5989b316166b122a1d30cb6c0e9d658477",
+          "excerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Homeless Shelters and Services https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/158",
+          "quotedExcerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Homeless Shelters and Services https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/158",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_babd50942fcc46e6b5b6d3f8bea5c169_3f7b5b735909",
+          "title": "Risk of Homelessness",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_item_data, underlying_layer_locator, needs_layer_query",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LARiskSurface/FeatureServer/0",
+          "hash": "683250acbf55d2658258ad47515f8e5989b316166b122a1d30cb6c0e9d658477",
+          "excerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Risk of Homelessness https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LARiskSurface/FeatureServer/0",
+          "quotedExcerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Risk of Homelessness https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LARiskSurface/FeatureServer/0",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_babd50942fcc46e6b5b6d3f8bea5c169_a85b2aee59b8",
+          "title": "Reachable Streets",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_item_data, underlying_layer_locator, needs_layer_query",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/1",
+          "hash": "683250acbf55d2658258ad47515f8e5989b316166b122a1d30cb6c0e9d658477",
+          "excerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Reachable Streets https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/1",
+          "quotedExcerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Reachable Streets https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/1",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_babd50942fcc46e6b5b6d3f8bea5c169_5c2585b6c90d",
+          "title": "Travel from Homeless Shelters and Services (10 Minutes)",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_item_data, underlying_layer_locator, needs_layer_query",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/0",
+          "hash": "683250acbf55d2658258ad47515f8e5989b316166b122a1d30cb6c0e9d658477",
+          "excerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Travel from Homeless Shelters and Services (10 Minutes) https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/0",
+          "quotedExcerpt": "ArcGIS item data layer locator for Where are homeless shelters and services needed in Los Angeles, California?: Travel from Homeless Shelters and Services (10 Minutes) https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/0",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_9117038ebbb54f909996e791806a81b0_bba581ffe9ac",
+          "title": "Living in a temporary shelter",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_item_data, underlying_layer_locator, needs_layer_query",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LivingInSheltersFC/FeatureServer/1",
+          "hash": "78d3787b76de5ba344cf9126b8f937a3930247a83b9245751bf384777d7e977c",
+          "excerpt": "ArcGIS item data layer locator for Homeless Density AND Homeless in temporary shelters in Los Angeles-Copy-Copy: Living in a temporary shelter https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LivingInSheltersFC/FeatureServer/1",
+          "quotedExcerpt": "ArcGIS item data layer locator for Homeless Density AND Homeless in temporary shelters in Los Angeles-Copy-Copy: Living in a temporary shelter https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LivingInSheltersFC/FeatureServer/1",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_9117038ebbb54f909996e791806a81b0_8969bc7a344c",
+          "title": "Homeless Density",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_item_data, underlying_layer_locator, needs_layer_query",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/Homeless_Counts_2020/FeatureServer/0",
+          "hash": "78d3787b76de5ba344cf9126b8f937a3930247a83b9245751bf384777d7e977c",
+          "excerpt": "ArcGIS item data layer locator for Homeless Density AND Homeless in temporary shelters in Los Angeles-Copy-Copy: Homeless Density https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/Homeless_Counts_2020/FeatureServer/0",
+          "quotedExcerpt": "ArcGIS item data layer locator for Homeless Density AND Homeless in temporary shelters in Los Angeles-Copy-Copy: Homeless Density https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/Homeless_Counts_2020/FeatureServer/0",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_probe_a703161463fc",
+          "title": "Publicly-Owned Properties",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "arcgis_layer_probe, citation_verified_extract, fetched, found, needs_citation_verifier, needs_feature_sample, official, queryable_layer, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://services5.arcgis.com/VAb1qw880ksyBtIL/arcgis/rest/services/Publicly_Owned_Properties/FeatureServer/6",
+          "hash": "",
+          "excerpt": "ArcGIS layer probe for Vacant Publicly Owned Properties: type=Feature Layer; geometry=esriGeometryPolygon; row_count=13948; fields=OBJECTID, AIN, TaxRateArea, SitusHouseNo, SitusFraction, SitusDirection, SitusUnit, SitusStreet, SitusCity, SitusZIP, AgencyClassNo, UseCode",
+          "quotedExcerpt": "ArcGIS layer probe for Vacant Publicly Owned Properties: type=Feature Layer; geometry=esriGeometryPolygon; row_count=13948; fields=OBJECTID, AIN, TaxRateArea, SitusHouseNo, SitusFraction, SitusDirection, SitusUnit, SitusStreet, SitusCity, SitusZIP, AgencyClassNo, UseCode",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_probe_67291dbb7720",
+          "title": "CensusTracts2010",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "arcgis_layer_probe, citation_verified_extract, fetched, found, needs_citation_verifier, needs_feature_sample, official, queryable_layer, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/HomelessInLA2016To2017/FeatureServer/0",
+          "hash": "",
+          "excerpt": "ArcGIS layer probe for Homeless Count: type=Feature Layer; geometry=esriGeometryPolygon; row_count=1004; fields=OBJECTID, TRACTCE10, GEOID10, NAME10, NAMELSAD10, TotalHomeless2017, TotalHomeless2016, Tract2010, TotalSheltered2016, TotalUnsheltered2016, TotalSheltered2017, TotalUnsheltered2017",
+          "quotedExcerpt": "ArcGIS layer probe for Homeless Count: type=Feature Layer; geometry=esriGeometryPolygon; row_count=1004; fields=OBJECTID, TRACTCE10, GEOID10, NAME10, NAMELSAD10, TotalHomeless2017, TotalHomeless2016, Tract2010, TotalSheltered2016, TotalUnsheltered2016, TotalSheltered2017, TotalUnsheltered2017",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_probe_acbbd84f8466",
+          "title": "Homeless Shelters and Services",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "arcgis_layer_probe, citation_verified_extract, fetched, found, needs_citation_verifier, needs_feature_sample, official, queryable_layer, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/158",
+          "hash": "",
+          "excerpt": "ArcGIS layer probe for Homeless Shelters and Services: type=Feature Layer; geometry=esriGeometryPoint; row_count=182; fields=OBJECTID, source, ext_id, cat1, cat2, cat3, org_name, name, addrln1, addrln2, city, state",
+          "quotedExcerpt": "ArcGIS layer probe for Homeless Shelters and Services: type=Feature Layer; geometry=esriGeometryPoint; row_count=182; fields=OBJECTID, source, ext_id, cat1, cat2, cat3, org_name, name, addrln1, addrln2, city, state",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_probe_3f7b5b735909",
+          "title": "Map1: LARiskSurface",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "arcgis_layer_probe, citation_verified_extract, fetched, found, needs_citation_verifier, needs_feature_sample, official, queryable_layer, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LARiskSurface/FeatureServer/0",
+          "hash": "",
+          "excerpt": "ArcGIS layer probe for Risk of Homelessness: type=Feature Layer; geometry=esriGeometryPolygon; row_count=2343; fields=OBJECTID, MATCH_ID, CAND_ID, TRACT, TOTPOP_CY, ACSHHBPOV, PACSHHBPOV, ChangeHHinPoverty, ACSPUBAI, pPublicAssistanceInc, ChangeHHPubAssist, ACSHHDIS",
+          "quotedExcerpt": "ArcGIS layer probe for Risk of Homelessness: type=Feature Layer; geometry=esriGeometryPolygon; row_count=2343; fields=OBJECTID, MATCH_ID, CAND_ID, TRACT, TOTPOP_CY, ACSHHBPOV, PACSHHBPOV, ChangeHHinPoverty, ACSPUBAI, pPublicAssistanceInc, ChangeHHPubAssist, ACSHHDIS",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_probe_a85b2aee59b8",
+          "title": "Reachable Streets",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "arcgis_layer_probe, citation_verified_extract, fetched, found, needs_citation_verifier, needs_feature_sample, official, queryable_layer, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/1",
+          "hash": "",
+          "excerpt": "ArcGIS layer probe for Reachable Streets: type=Feature Layer; geometry=esriGeometryPolyline; row_count=73125; fields=OBJECTID, SourceOID, FromPosition, ToPosition, FacilityOID, SourceName, FromCumul_Minutes, ToCumul_Minutes, FromCumul_Miles, ToCumul_Miles, FromCumul_Kilometers, ToCumul_Kilometers",
+          "quotedExcerpt": "ArcGIS layer probe for Reachable Streets: type=Feature Layer; geometry=esriGeometryPolyline; row_count=73125; fields=OBJECTID, SourceOID, FromPosition, ToPosition, FacilityOID, SourceName, FromCumul_Minutes, ToCumul_Minutes, FromCumul_Miles, ToCumul_Miles, FromCumul_Kilometers, ToCumul_Kilometers",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_probe_5c2585b6c90d",
+          "title": "Travel_from_Homeless_Shelters_and_Services_(10_Minutes)",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "arcgis_layer_probe, citation_verified_extract, fetched, found, needs_citation_verifier, needs_feature_sample, official, queryable_layer, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/0",
+          "hash": "",
+          "excerpt": "ArcGIS layer probe for Travel from Homeless Shelters and Services (10 Minutes): type=Feature Layer; geometry=esriGeometryPolygon; row_count=1; fields=OBJECTID, Name, FromBreak, ToBreak, FacilityOID, AnalysisArea",
+          "quotedExcerpt": "ArcGIS layer probe for Travel from Homeless Shelters and Services (10 Minutes): type=Feature Layer; geometry=esriGeometryPolygon; row_count=1; fields=OBJECTID, Name, FromBreak, ToBreak, FacilityOID, AnalysisArea",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_probe_bba581ffe9ac",
+          "title": "EmShTrHouSafHav",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "arcgis_layer_probe, citation_verified_extract, fetched, found, needs_citation_verifier, needs_feature_sample, official, queryable_layer, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LivingInSheltersFC/FeatureServer/1",
+          "hash": "",
+          "excerpt": "ArcGIS layer probe for Living in a temporary shelter: type=Feature Layer; geometry=esriGeometryPolygon; row_count=76; fields=OBJECTID, TRACT, UniqID, TOTPOP_CY, totUnsheltPeople, totSheltPeople, totPeople, POLY_AREA, PopDensity, HomelessPopDensity, UnshelteredDensity, ShelteredDensity",
+          "quotedExcerpt": "ArcGIS layer probe for Living in a temporary shelter: type=Feature Layer; geometry=esriGeometryPolygon; row_count=76; fields=OBJECTID, TRACT, UniqID, TOTPOP_CY, totUnsheltPeople, totSheltPeople, totPeople, POLY_AREA, PopDensity, HomelessPopDensity, UnshelteredDensity, ShelteredDensity",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_layer_probe_8969bc7a344c",
+          "title": "Homeless_Counts_2020",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "arcgis_layer_probe, citation_verified_extract, fetched, found, needs_citation_verifier, needs_feature_sample, official, queryable_layer, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/Homeless_Counts_2020/FeatureServer/0",
+          "hash": "",
+          "excerpt": "ArcGIS layer probe for Homeless Density: type=Feature Layer; geometry=esriGeometryPolygon; row_count=304; fields=OBJECTID, CSA_Label, Total_Unsheltered_Pop, Total_Sheltered_Pop, Total_Pop, Data_Source, Square_Miles, Density_Unsheltered, Density_Sheltered, Density_Total, Shape__Area, Shape__Length",
+          "quotedExcerpt": "ArcGIS layer probe for Homeless Density: type=Feature Layer; geometry=esriGeometryPolygon; row_count=304; fields=OBJECTID, CSA_Label, Total_Unsheltered_Pop, Total_Sheltered_Pop, Total_Pop, Data_Source, Square_Miles, Density_Unsheltered, Density_Sheltered, Density_Total, Shape__Area, Shape__Length",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_feature_sample_a703161463fc",
+          "title": "Publicly-Owned Properties",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_feature_sample",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services5.arcgis.com/VAb1qw880ksyBtIL/arcgis/rest/services/Publicly_Owned_Properties/FeatureServer/6",
+          "hash": "6484974b0bdb57ecef54a8e0086d6aee10bb1eebb8b645f1f7363f6c4606b857",
+          "excerpt": "{\"AIN\": \"2004011900\", \"AgencyClassNo\": 236000, \"AgencyName\": \"L A CITY\", \"Area_Acres\": 6, \"Area_Sq_Footage\": 259740, \"AssemblyDistrict\": \"45\", \"AssessorID\": \"2004-011-900\", \"Bathrooms1\": null, \"Bedrooms1\": null, \"CDMEMBER\": \"Mitchell Englander\", \"CENTROID_X\": -118.61788556089124, \"CENTROID_Y\": 34.22364427391788, \"CLASS\": \"Park\", \"City\": 1, \"CongressDISTRICT\": \"30\", \"CouncilDISTRICT\": \"12\"} | {\"AIN\": \"2004018900\", \"AgencyClassNo\": 236000, \"AgencyName\": \"L A CITY\", \"Area_Acres\": 0, \"Area_Sq_Footage\": 19284, \"AssemblyDistrict\": \"45\", \"AssessorID\": \"2004-018-900\", \"Bathrooms1\": null, \"Bedrooms1\": null, \"CDMEMBER\": \"Mitchell Englander\", \"CENTROID_X\": -118.61412232599125, \"CENTROID_Y\": 34.22434637",
+          "quotedExcerpt": "{\"AIN\": \"2004011900\", \"AgencyClassNo\": 236000, \"AgencyName\": \"L A CITY\", \"Area_Acres\": 6, \"Area_Sq_Footage\": 259740, \"AssemblyDistrict\": \"45\", \"AssessorID\": \"2004-011-900\", \"Bathrooms1\": null, \"Bedrooms1\": null, \"CDMEMBER\": \"Mitchell Englander\", \"CENTROID_X\": -118.61788556089124, \"CENTROID_Y\": 34.22364427391788, \"CLASS\": \"Park\", \"City\": 1, \"CongressDISTRICT\": \"30\", \"CouncilDISTRICT\": \"12\"} | {\"AIN\": \"2004018900\", \"AgencyClassNo\": 236000, \"AgencyName\": \"L A CITY\", \"Area_Acres\": 0, \"Area_Sq_Footage\": 19284, \"AssemblyDistrict\": \"45\", \"AssessorID\": \"2004-018-900\", \"Bathrooms1\": null, \"Bedrooms1\": null, \"CDMEMBER\": \"Mitchell Englander\", \"CENTROID_X\": -118.61412232599125, \"CENTROID_Y\": 34.22434637",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_feature_sample_67291dbb7720",
+          "title": "CensusTracts2010",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_feature_sample",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/HomelessInLA2016To2017/FeatureServer/0",
+          "hash": "5985db06a16988f9d73ddf293aa5c30d07781040fe9321d10ce63455b7517c83",
+          "excerpt": "{\"Community\": \"Encino\", \"GEOID10\": \"06037139504\", \"NAME10\": \"1395.04\", \"NAMELSAD10\": \"Census Tract 1395.04\", \"OBJECTID\": 2, \"Shape__Area\": 2.8263112199056195e-05, \"Shape__Length\": 0.023419519571843756, \"TRACTCE10\": \"139504\", \"TotalHomeless2016\": 0, \"TotalHomeless2017\": 1, \"TotalSheltered2016\": 0, \"TotalSheltered2017\": 0, \"TotalUnsheltered2016\": 0, \"TotalUnsheltered2017\": 1, \"Tract2010\": 139504} | {\"Community\": \"Encino\", \"GEOID10\": \"06037139503\", \"NAME10\": \"1395.03\", \"NAMELSAD10\": \"Census Tract 1395.03\", \"OBJECTID\": 3, \"Shape__Area\": 3.438983139858465e-05, \"Shape__Length\": 0.023975046544563172, \"TRACTCE10\": \"139503\", \"TotalHomeless2016\": 11, \"TotalHomeless2017\": 0, \"TotalSheltered2016\": 0, \"T",
+          "quotedExcerpt": "{\"Community\": \"Encino\", \"GEOID10\": \"06037139504\", \"NAME10\": \"1395.04\", \"NAMELSAD10\": \"Census Tract 1395.04\", \"OBJECTID\": 2, \"Shape__Area\": 2.8263112199056195e-05, \"Shape__Length\": 0.023419519571843756, \"TRACTCE10\": \"139504\", \"TotalHomeless2016\": 0, \"TotalHomeless2017\": 1, \"TotalSheltered2016\": 0, \"TotalSheltered2017\": 0, \"TotalUnsheltered2016\": 0, \"TotalUnsheltered2017\": 1, \"Tract2010\": 139504} | {\"Community\": \"Encino\", \"GEOID10\": \"06037139503\", \"NAME10\": \"1395.03\", \"NAMELSAD10\": \"Census Tract 1395.03\", \"OBJECTID\": 3, \"Shape__Area\": 3.438983139858465e-05, \"Shape__Length\": 0.023975046544563172, \"TRACTCE10\": \"139503\", \"TotalHomeless2016\": 11, \"TotalHomeless2017\": 0, \"TotalSheltered2016\": 0, \"T",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_feature_sample_acbbd84f8466",
+          "title": "Homeless Shelters and Services",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_feature_sample",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/158",
+          "hash": "113677b0bfbe53f64f258bcc113402188742421a0d5d34dece5fb83fef15fd20",
+          "excerpt": "{\"OBJECTID\": 207, \"POINT_X\": 6561308.46533379, \"POINT_Y\": 1875360.09512213, \"addrln1\": \"605 S. Myrtle Ave.\", \"addrln2\": null, \"allcats\": \"|Health and Mental Health|Social Services|Homeless Shelters and Services|Children and Family Services|Domestic Violence \", \"cat1\": \"Health and Mental Health\", \"cat2\": \"Mental Health Counseling\", \"cat3\": \"Social Services, Homeless Shelters and Services, Children and Family Services, Domestic Violence Services, Senior Servic\", \"city\": \"Monrovia\", \"date_updated\": 1594768417000, \"description\": \"The agency provides CalFresh services, child abuse services, counseling services, domestic violence services, drug abuse\", \"dis_status\": null, \"email\": null, \"ext_id\":",
+          "quotedExcerpt": "{\"OBJECTID\": 207, \"POINT_X\": 6561308.46533379, \"POINT_Y\": 1875360.09512213, \"addrln1\": \"605 S. Myrtle Ave.\", \"addrln2\": null, \"allcats\": \"|Health and Mental Health|Social Services|Homeless Shelters and Services|Children and Family Services|Domestic Violence \", \"cat1\": \"Health and Mental Health\", \"cat2\": \"Mental Health Counseling\", \"cat3\": \"Social Services, Homeless Shelters and Services, Children and Family Services, Domestic Violence Services, Senior Servic\", \"city\": \"Monrovia\", \"date_updated\": 1594768417000, \"description\": \"The agency provides CalFresh services, child abuse services, counseling services, domestic violence services, drug abuse\", \"dis_status\": null, \"email\": null, \"ext_id\":",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_feature_sample_3f7b5b735909",
+          "title": "Map1: LARiskSurface",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_feature_sample",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LARiskSurface/FeatureServer/0",
+          "hash": "13de28cfc2aac859ee26bec279b930cac0cc006b4aa65d0c9283f35e8279f1f6",
+          "excerpt": "{\"ACSGRNTI50\": 917, \"ACSHHBPOV\": 1252, \"ACSHHDIS\": 691, \"ACSPUBAI\": 425, \"CAND_ID\": 2042, \"ChangeHHPubAssist\": 45, \"ChangeHHinPoverty\": 217, \"ChangeHHs50pInc4Rent\": 11, \"ChangeUnempRate\": -30.6, \"DomViol\": 91, \"EstSMI\": 372, \"Est_Veteran_PTSD\": 8.387097, \"LABELRANK\": 1, \"MATCH_ID\": null, \"NoHealthIns\": 891, \"OBJECTID\": 2} | {\"ACSGRNTI50\": 314, \"ACSHHBPOV\": 386, \"ACSHHDIS\": 263, \"ACSPUBAI\": 114, \"CAND_ID\": 2039, \"ChangeHHPubAssist\": -19, \"ChangeHHinPoverty\": 30, \"ChangeHHs50pInc4Rent\": 38, \"ChangeUnempRate\": 0.3, \"DomViol\": 58, \"EstSMI\": 303, \"Est_Veteran_PTSD\": 10.28037, \"LABELRANK\": 2, \"MATCH_ID\": null, \"NoHealthIns\": 810, \"OBJECTID\": 3}",
+          "quotedExcerpt": "{\"ACSGRNTI50\": 917, \"ACSHHBPOV\": 1252, \"ACSHHDIS\": 691, \"ACSPUBAI\": 425, \"CAND_ID\": 2042, \"ChangeHHPubAssist\": 45, \"ChangeHHinPoverty\": 217, \"ChangeHHs50pInc4Rent\": 11, \"ChangeUnempRate\": -30.6, \"DomViol\": 91, \"EstSMI\": 372, \"Est_Veteran_PTSD\": 8.387097, \"LABELRANK\": 1, \"MATCH_ID\": null, \"NoHealthIns\": 891, \"OBJECTID\": 2} | {\"ACSGRNTI50\": 314, \"ACSHHBPOV\": 386, \"ACSHHDIS\": 263, \"ACSPUBAI\": 114, \"CAND_ID\": 2039, \"ChangeHHPubAssist\": -19, \"ChangeHHinPoverty\": 30, \"ChangeHHs50pInc4Rent\": 38, \"ChangeUnempRate\": 0.3, \"DomViol\": 58, \"EstSMI\": 303, \"Est_Veteran_PTSD\": 10.28037, \"LABELRANK\": 2, \"MATCH_ID\": null, \"NoHealthIns\": 810, \"OBJECTID\": 3}",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_feature_sample_a85b2aee59b8",
+          "title": "Reachable Streets",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_feature_sample",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/1",
+          "hash": "4d35e3b74a56bb92846f7982378f8b8a34a5bfb1dd75a440da42475d96306830",
+          "excerpt": "{\"FacilityOID\": 156014149, \"FromCumul_Kilometers\": 0, \"FromCumul_Miles\": 0, \"FromCumul_Minutes\": 0, \"FromPosition\": 1, \"OBJECTID\": 1, \"SourceName\": \"Routing_Streets\", \"SourceOID\": 7028841, \"ToCumul_Kilometers\": 0.02986793, \"ToCumul_Miles\": 0.01855903, \"ToCumul_Minutes\": 0.35841512, \"ToPosition\": 0.92250961} | {\"FacilityOID\": 156014149, \"FromCumul_Kilometers\": 0.02986793, \"FromCumul_Miles\": 0.01855903, \"FromCumul_Minutes\": 0.35841512, \"FromPosition\": 0, \"OBJECTID\": 2, \"SourceName\": \"Routing_Streets\", \"SourceOID\": 7028859, \"ToCumul_Kilometers\": 0.03726217, \"ToCumul_Miles\": 0.02315359, \"ToCumul_Minutes\": 0.44714602, \"ToPosition\": 1}",
+          "quotedExcerpt": "{\"FacilityOID\": 156014149, \"FromCumul_Kilometers\": 0, \"FromCumul_Miles\": 0, \"FromCumul_Minutes\": 0, \"FromPosition\": 1, \"OBJECTID\": 1, \"SourceName\": \"Routing_Streets\", \"SourceOID\": 7028841, \"ToCumul_Kilometers\": 0.02986793, \"ToCumul_Miles\": 0.01855903, \"ToCumul_Minutes\": 0.35841512, \"ToPosition\": 0.92250961} | {\"FacilityOID\": 156014149, \"FromCumul_Kilometers\": 0.02986793, \"FromCumul_Miles\": 0.01855903, \"FromCumul_Minutes\": 0.35841512, \"FromPosition\": 0, \"OBJECTID\": 2, \"SourceName\": \"Routing_Streets\", \"SourceOID\": 7028859, \"ToCumul_Kilometers\": 0.03726217, \"ToCumul_Miles\": 0.02315359, \"ToCumul_Minutes\": 0.44714602, \"ToPosition\": 1}",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_feature_sample_5c2585b6c90d",
+          "title": "Travel_from_Homeless_Shelters_and_Services_(10_Minutes)",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_feature_sample",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Travel_from_Homeless_Shelters_and_Services_(10_Minutes)/FeatureServer/0",
+          "hash": "5cb1e866e11d2f16636fe5b91cc33b853fbc6233de5cd011d7a93984a8962a8c",
+          "excerpt": "{\"AnalysisArea\": 51.65726071, \"FacilityOID\": null, \"FromBreak\": 0, \"Name\": \"0 - 10\", \"OBJECTID\": 1, \"ToBreak\": 10}",
+          "quotedExcerpt": "{\"AnalysisArea\": 51.65726071, \"FacilityOID\": null, \"FromBreak\": 0, \"Name\": \"0 - 10\", \"OBJECTID\": 1, \"ToBreak\": 10}",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_feature_sample_bba581ffe9ac",
+          "title": "EmShTrHouSafHav",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_feature_sample",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services3.arcgis.com/oZfKvdlWHN1MwS48/arcgis/rest/services/LivingInSheltersFC/FeatureServer/1",
+          "hash": "0359ddd0ce86c550445c188d9e4d9b6c4e629b80ae8660139ae8867a398853fb",
+          "excerpt": "{\"Addicted\": 20.26009, \"AmerInd\": 1.332738, \"Asian\": 1.700486, \"Black\": 21.14057, \"BrainInjury\": 3.44489, \"Chronic\": 7, \"Community\": \"Pacoima\", \"DevDis\": 12.51071, \"DomViol\": 30.36724, \"Female\": 31.32697, \"HIVAIDS\": 3.082355, \"Hispanic\": 44.43798, \"HomelessPopDensity\": 65.48276330948033, \"IndFamCVC\": 6, \"IndFamESTHSH\": 8, \"IndFamTE\": 0} | {\"Addicted\": 13.15136, \"AmerInd\": 1.494336, \"Asian\": 2.811761, \"Black\": 29.29248, \"BrainInjury\": 4.325259, \"Chronic\": 9, \"Community\": \"Pacoima\", \"DevDis\": 18.71065, \"DomViol\": 17.46514, \"Female\": 31.59791, \"HIVAIDS\": 4.669363, \"Hispanic\": 31.48024, \"HomelessPopDensity\": 111.83182281142936, \"IndFamCVC\": 0, \"IndFamESTHSH\": 21, \"IndFamTE\": 2}",
+          "quotedExcerpt": "{\"Addicted\": 20.26009, \"AmerInd\": 1.332738, \"Asian\": 1.700486, \"Black\": 21.14057, \"BrainInjury\": 3.44489, \"Chronic\": 7, \"Community\": \"Pacoima\", \"DevDis\": 12.51071, \"DomViol\": 30.36724, \"Female\": 31.32697, \"HIVAIDS\": 3.082355, \"Hispanic\": 44.43798, \"HomelessPopDensity\": 65.48276330948033, \"IndFamCVC\": 6, \"IndFamESTHSH\": 8, \"IndFamTE\": 0} | {\"Addicted\": 13.15136, \"AmerInd\": 1.494336, \"Asian\": 2.811761, \"Black\": 29.29248, \"BrainInjury\": 4.325259, \"Chronic\": 9, \"Community\": \"Pacoima\", \"DevDis\": 18.71065, \"DomViol\": 17.46514, \"Female\": 31.59791, \"HIVAIDS\": 4.669363, \"Hispanic\": 31.48024, \"HomelessPopDensity\": 111.83182281142936, \"IndFamCVC\": 0, \"IndFamESTHSH\": 21, \"IndFamTE\": 2}",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_feature_sample_8969bc7a344c",
+          "title": "Homeless_Counts_2020",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_feature_sample",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/Homeless_Counts_2020/FeatureServer/0",
+          "hash": "8f89e3f2a6eae90219801cf6be961ae38b2c1403f6edcb22b69cad18670e9004",
+          "excerpt": "{\"CSA_Label\": \"City of Agoura Hills\", \"Data_Source\": \"Los Angeles Homeless Services Authority (LAHSA)\", \"Density_Sheltered\": 0, \"Density_Total\": 0.36847867098408943, \"Density_Unsheltered\": 0.36847867098408943, \"OBJECTID\": 1, \"Shape__Area\": 20581497.16796875, \"Shape__Length\": 21914.080903457794, \"Square_Miles\": 5.427722572540319, \"Total_Pop\": 2, \"Total_Sheltered_Pop\": 0, \"Total_Unsheltered_Pop\": 2} | {\"CSA_Label\": \"City of Alhambra\", \"Data_Source\": \"Los Angeles Homeless Services Authority (LAHSA)\", \"Density_Sheltered\": 1.8348554262250976, \"Density_Total\": 6.028810686168178, \"Density_Unsheltered\": 4.19395525994308, \"OBJECTID\": 2, \"Shape__Area\": 28882441.875, \"Shape__Length\": 25368.896058970146",
+          "quotedExcerpt": "{\"CSA_Label\": \"City of Agoura Hills\", \"Data_Source\": \"Los Angeles Homeless Services Authority (LAHSA)\", \"Density_Sheltered\": 0, \"Density_Total\": 0.36847867098408943, \"Density_Unsheltered\": 0.36847867098408943, \"OBJECTID\": 1, \"Shape__Area\": 20581497.16796875, \"Shape__Length\": 21914.080903457794, \"Square_Miles\": 5.427722572540319, \"Total_Pop\": 2, \"Total_Sheltered_Pop\": 0, \"Total_Unsheltered_Pop\": 2} | {\"CSA_Label\": \"City of Alhambra\", \"Data_Source\": \"Los Angeles Homeless Services Authority (LAHSA)\", \"Density_Sheltered\": 1.8348554262250976, \"Density_Total\": 6.028810686168178, \"Density_Unsheltered\": 4.19395525994308, \"OBJECTID\": 2, \"Shape__Area\": 28882441.875, \"Shape__Length\": 25368.896058970146",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "usaspending_award_001",
+          "title": "USAspending award - LOS ANGELES HOMELESS SERVICES AUTHORITY",
+          "type": "official_public_record",
+          "publisher": "USAspending",
+          "role": "official, citation_verified_award_fact, usable_as_evidence_for_award_field_atoms",
+          "confidence": "narrow_award_fact_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.usaspending.gov/award/ASST_NON_CA2099H9D002200_086",
+          "hash": "",
+          "excerpt": "LOS ANGELES HOMELESS SERVICES AUTHORITY; 14368320.0; Department of Housing and Urban Development; award_id=CA2099H9D002200",
+          "quotedExcerpt": "LOS ANGELES HOMELESS SERVICES AUTHORITY; 14368320.0; Department of Housing and Urban Development; award_id=CA2099H9D002200",
+          "limitation": "Supports only the narrow official USAspending award-listing field atoms; does not support broader allegations.",
+          "supportLevel": "supported_narrow_award_fact",
+          "retrievalMethod": "official_api_usaspending",
+          "pageNumber": null,
+          "matchedTerms": [
+            "USAspending",
+            "LOS ANGELES HOMELESS SERVICES AUTHORITY"
+          ],
+          "amountCandidates": [
+            "14368320.0"
+          ]
+        },
+        {
+          "sourceId": "usaspending_award_002",
+          "title": "USAspending award - LOS ANGELES HOMELESS SERVICES AUTHORITY",
+          "type": "official_public_record",
+          "publisher": "USAspending",
+          "role": "official, citation_verified_award_fact, usable_as_evidence_for_award_field_atoms",
+          "confidence": "narrow_award_fact_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.usaspending.gov/award/ASST_NON_CA2282L9D002401_086",
+          "hash": "",
+          "excerpt": "LOS ANGELES HOMELESS SERVICES AUTHORITY; 9534623.0; Department of Housing and Urban Development; award_id=CA2282L9D002401",
+          "quotedExcerpt": "LOS ANGELES HOMELESS SERVICES AUTHORITY; 9534623.0; Department of Housing and Urban Development; award_id=CA2282L9D002401",
+          "limitation": "Supports only the narrow official USAspending award-listing field atoms; does not support broader allegations.",
+          "supportLevel": "supported_narrow_award_fact",
+          "retrievalMethod": "official_api_usaspending",
+          "pageNumber": null,
+          "matchedTerms": [
+            "USAspending",
+            "LOS ANGELES HOMELESS SERVICES AUTHORITY"
+          ],
+          "amountCandidates": [
+            "9534623.0"
+          ]
+        },
+        {
+          "sourceId": "usaspending_award_003",
+          "title": "USAspending award - LOS ANGELES HOMELESS SERVICES AUTHORITY",
+          "type": "official_public_record",
+          "publisher": "USAspending",
+          "role": "official, citation_verified_award_fact, usable_as_evidence_for_award_field_atoms",
+          "confidence": "narrow_award_fact_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.usaspending.gov/award/ASST_NON_CA2101H9D002200_086",
+          "hash": "",
+          "excerpt": "LOS ANGELES HOMELESS SERVICES AUTHORITY; 9000000.0; Department of Housing and Urban Development; award_id=CA2101H9D002200",
+          "quotedExcerpt": "LOS ANGELES HOMELESS SERVICES AUTHORITY; 9000000.0; Department of Housing and Urban Development; award_id=CA2101H9D002200",
+          "limitation": "Supports only the narrow official USAspending award-listing field atoms; does not support broader allegations.",
+          "supportLevel": "supported_narrow_award_fact",
+          "retrievalMethod": "official_api_usaspending",
+          "pageNumber": null,
+          "matchedTerms": [
+            "USAspending",
+            "LOS ANGELES HOMELESS SERVICES AUTHORITY"
+          ],
+          "amountCandidates": [
+            "9000000.0"
+          ]
+        },
+        {
+          "sourceId": "usaspending_award_004",
+          "title": "USAspending award - JWCH INSTITUTE, INC.",
+          "type": "official_public_record",
+          "publisher": "USAspending",
+          "role": "official, citation_verified_award_fact, usable_as_evidence_for_award_field_atoms",
+          "confidence": "narrow_award_fact_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.usaspending.gov/award/ASST_NON_H79TI085171_075",
+          "hash": "",
+          "excerpt": "JWCH INSTITUTE, INC.; 1937000.0; Department of Health and Human Services; award_id=H79TI085171",
+          "quotedExcerpt": "JWCH INSTITUTE, INC.; 1937000.0; Department of Health and Human Services; award_id=H79TI085171",
+          "limitation": "Supports only the narrow official USAspending award-listing field atoms; does not support broader allegations.",
+          "supportLevel": "supported_narrow_award_fact",
+          "retrievalMethod": "official_api_usaspending",
+          "pageNumber": null,
+          "matchedTerms": [
+            "USAspending",
+            "JWCH INSTITUTE, INC."
+          ],
+          "amountCandidates": [
+            "1937000.0"
+          ]
+        },
+        {
+          "sourceId": "usaspending_award_005",
+          "title": "USAspending award - JWCH INSTITUTE, INC.",
+          "type": "official_public_record",
+          "publisher": "USAspending",
+          "role": "official, citation_verified_award_fact, usable_as_evidence_for_award_field_atoms",
+          "confidence": "narrow_award_fact_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.usaspending.gov/award/ASST_NON_H8J54631_075",
+          "hash": "",
+          "excerpt": "JWCH INSTITUTE, INC.; 500000.0; Department of Health and Human Services; award_id=H8J54631",
+          "quotedExcerpt": "JWCH INSTITUTE, INC.; 500000.0; Department of Health and Human Services; award_id=H8J54631",
+          "limitation": "Supports only the narrow official USAspending award-listing field atoms; does not support broader allegations.",
+          "supportLevel": "supported_narrow_award_fact",
+          "retrievalMethod": "official_api_usaspending",
+          "pageNumber": null,
+          "matchedTerms": [
+            "USAspending",
+            "JWCH INSTITUTE, INC."
+          ],
+          "amountCandidates": [
+            "500000.0"
+          ]
+        },
+        {
+          "sourceId": "usaspending_award_006",
+          "title": "USAspending award - UNITED STATES VETERANS INITIATIVE",
+          "type": "official_public_record",
+          "publisher": "USAspending",
+          "role": "official, citation_verified_award_fact, usable_as_evidence_for_award_field_atoms",
+          "confidence": "narrow_award_fact_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.usaspending.gov/award/ASST_NON_25560HV000130_1601",
+          "hash": "",
+          "excerpt": "UNITED STATES VETERANS INITIATIVE; 240000.0; Department of Labor; award_id=25560HV000130",
+          "quotedExcerpt": "UNITED STATES VETERANS INITIATIVE; 240000.0; Department of Labor; award_id=25560HV000130",
+          "limitation": "Supports only the narrow official USAspending award-listing field atoms; does not support broader allegations.",
+          "supportLevel": "supported_narrow_award_fact",
+          "retrievalMethod": "official_api_usaspending",
+          "pageNumber": null,
+          "matchedTerms": [
+            "USAspending",
+            "UNITED STATES VETERANS INITIATIVE"
+          ],
+          "amountCandidates": [
+            "240000.0"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_bda5da5c0b558be7",
+          "title": "ST BARNABAS SENIOR CENTER OF LOS ANGELES payment row 1",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 1: ST BARNABAS SENIOR CENTER OF LOS ANGELES amount 58318.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 1: ST BARNABAS SENIOR CENTER OF LOS ANGELES amount 58318.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "58318"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_9278fe78cd5d0578",
+          "title": "ST BARNABAS SENIOR CENTER OF LOS ANGELES payment row 2",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 2: ST BARNABAS SENIOR CENTER OF LOS ANGELES amount 41741.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 2: ST BARNABAS SENIOR CENTER OF LOS ANGELES amount 41741.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "41741"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_4cf3b07c13076540",
+          "title": "ST BARNABAS SENIOR CENTER OF LOS ANGELES payment row 3",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 3: ST BARNABAS SENIOR CENTER OF LOS ANGELES amount 40127.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 3: ST BARNABAS SENIOR CENTER OF LOS ANGELES amount 40127.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "40127"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_cde741d6d3bf702d",
+          "title": "MEXICAN AMERICAN OPPORTUNITY FOUNDATION payment row 4",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 4: MEXICAN AMERICAN OPPORTUNITY FOUNDATION amount 39435.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 4: MEXICAN AMERICAN OPPORTUNITY FOUNDATION amount 39435.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "39435"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_9cb186024e3eb12b",
+          "title": "SPECIAL SERVICE FOR GROUPS INC payment row 5",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 5: SPECIAL SERVICE FOR GROUPS INC amount 36888.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 5: SPECIAL SERVICE FOR GROUPS INC amount 36888.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "36888"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_27aaa7541d79b8dd",
+          "title": "CENTER FOR HEALTH CARE RIGHTS payment row 6",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 6: CENTER FOR HEALTH CARE RIGHTS amount 36501.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 6: CENTER FOR HEALTH CARE RIGHTS amount 36501.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "36501"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_794166d14e7f4bd6",
+          "title": "ST BARNABAS SENIOR CENTER OF LOS ANGELES payment row 7",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 7: ST BARNABAS SENIOR CENTER OF LOS ANGELES amount 36412.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 7: ST BARNABAS SENIOR CENTER OF LOS ANGELES amount 36412.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "36412"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_ab30e75b178a1b9a",
+          "title": "ONEGENERATION payment row 8",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 8: ONEGENERATION amount 30812.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 8: ONEGENERATION amount 30812.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "30812"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_263af4f2ec4122a7",
+          "title": "BET TZEDEK payment row 9",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 9: BET TZEDEK amount 29782.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 9: BET TZEDEK amount 29782.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "29782"
+          ]
+        },
+        {
+          "sourceId": "lacity_controller_financial_row_74436fa86adf7633",
+          "title": "PEOPLE COORDINATED SERVICES OF SOUTHERN CALIFORNIA INC payment row 10",
+          "type": "official_public_record",
+          "publisher": "Los Angeles Controller Open Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "hash": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "excerpt": "Los Angeles Controller Open Data row 10: PEOPLE COORDINATED SERVICES OF SOUTHERN CALIFORNIA INC amount 29204.",
+          "quotedExcerpt": "Los Angeles Controller Open Data row 10: PEOPLE COORDINATED SERVICES OF SOUTHERN CALIFORNIA INC amount 29204.",
+          "limitation": "narrow official LA Controller vendor-payment row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "lacity_controller_open_data_csv",
+          "pageNumber": null,
+          "matchedTerms": [
+            "vendor",
+            "amount",
+            "payment"
+          ],
+          "amountCandidates": [
+            "29204"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_001",
+          "title": "LA City Clerk contract C-140706 PDF atom - $38,786,972.00",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2022/C-140706_c_10-12-22.pdf",
+          "hash": "d8a4a4bb95f3e950b5b2ce334fd9a9df529cca41e6a14516b7a0b87fd3ea4a51",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$38,786,972.00, $654,279; amendments=1",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$38,786,972.00, $654,279; amendments=1",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$38,786,972.00",
+            "$654,279"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_002",
+          "title": "LA City Clerk contract C-140706 PDF atom - $43,378,892.00",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2022/C-140706_c_12-09-22.pdf",
+          "hash": "0ca486c018091f4a3e734f327f0314c7cd899199315aa19aca3c95ed37c3c5d7",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$43,378,892.00, $4,591,920.00; amendments=2",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$43,378,892.00, $4,591,920.00; amendments=2",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$43,378,892.00",
+            "$4,591,920.00"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_004",
+          "title": "LA City Clerk contract C-140706 PDF atom - $93,378,892.00",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2023/C-140706_c_02-17-23.pdf",
+          "hash": "3dd18aa610d53083dfc1019f2a64a7891462f5f5d42dee7210b1e805c64043d9",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$93,378,892.00, $50,000,000; amendments=3",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$93,378,892.00, $50,000,000; amendments=3",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$93,378,892.00",
+            "$50,000,000"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_005",
+          "title": "LA City Clerk contract C-140706 PDF atom - $95,137,984.00",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2023/C-140706_c_04-26-23.pdf",
+          "hash": "f0e452187a5f50cae99aa36b755b71f751031d30f85d3aedc630e04abd51783e",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$95,137,984.00, $978,576, $509,129, $271,387, $1,589,592, $403,542, $95,137,984; amendments=4",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$95,137,984.00, $978,576, $509,129, $271,387, $1,589,592, $403,542, $95,137,984; amendments=4",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$95,137,984.00",
+            "$978,576",
+            "$509,129",
+            "$271,387",
+            "$1,589,592",
+            "$403,542",
+            "$95,137,984"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_006",
+          "title": "LA City Clerk contract C-140706 PDF atom - $133,583,912.00",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2023/C-140706_c_6-28-23.pdf",
+          "hash": "106bb669a9adb6686c1e7c93ee628f45ec3169ace459c0fd7d26fbc59f33ced3",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$133,583,912.00, $38,445,928.00; amendments=5",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$133,583,912.00, $38,445,928.00; amendments=5",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$133,583,912.00",
+            "$38,445,928.00"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_007",
+          "title": "LA City Clerk contract C-140706 PDF atom - $133,933,912.00",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_03-04-24.pdf",
+          "hash": "646b0e46f71d3e75f9f4497f2568226f059ed69887650d0cb9e87c0632901ebe",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$133,933,912.00, $350,000.00; amendments=5",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$133,933,912.00, $350,000.00; amendments=5",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$133,933,912.00",
+            "$350,000.00"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_008",
+          "title": "LA City Clerk contract C-140706 PDF atom - $137,483,014.00",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_06-10-2024.pdf",
+          "hash": "3a196da3f292cac6208324176e4672b1a4dd823776b1769ceedc7a24156094d9",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$137,483,014.00, $3,549,102.00; amendments=7",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$137,483,014.00, $3,549,102.00; amendments=7",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$137,483,014.00",
+            "$3,549,102.00"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_009",
+          "title": "LA City Clerk contract C-140706 PDF atom - $168,161,106.84",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_07-01-24.pdf",
+          "hash": "4423a0ba7dfbe58fe787b5e22a649a7584924aca2faf84a74c59ebe8b858d858",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$168,161,106.84, $30,678,092.84; amendments=8",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$168,161,106.84, $30,678,092.84; amendments=8",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$168,161,106.84",
+            "$30,678,092.84"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_010",
+          "title": "LA City Clerk contract C-140706 PDF atom - $245,102,033.84",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_07-18-2024.pdf",
+          "hash": "4b9389997cee571771466f22a1693e2b04c91f3c6023a9df9c4dc8394fda031b",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$245,102,033.84, $76,940,927; amendments=9",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$245,102,033.84, $76,940,927; amendments=9",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$245,102,033.84",
+            "$76,940,927"
+          ]
+        },
+        {
+          "sourceId": "lacity_lahsa_c140706_pdf_atom_011",
+          "title": "LA City Clerk contract C-140706 PDF atom - $250,819,733.84",
+          "type": "official_public_record",
+          "publisher": "Los Angeles City Clerk",
+          "role": "official, citation_verified_contract_summary_fact, usable_as_evidence_for_narrow_contract_summary_atom",
+          "confidence": "narrow_contract_summary_atom_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_10-01-24.pdf",
+          "hash": "ab09aac85e6a3445e529ce8117e3a03a1d770defe6643046ddd53c0ce9949970",
+          "excerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$250,819,733.84, $5,717,700.00; amendments=",
+          "quotedExcerpt": "C-140706; Los Angeles Homeless Services Authority (LAHSA); amount_candidates=$250,819,733.84, $5,717,700.00; amendments=",
+          "limitation": "Supports only narrow LA City Clerk contract-summary field atoms; it does not prove fraud, payment impropriety, performance, service quality, intent, or liability.",
+          "supportLevel": "supported_narrow_contract_summary_atom",
+          "retrievalMethod": "official_pdf_pymupdf_field_atom_verifier",
+          "pageNumber": null,
+          "matchedTerms": [
+            "C-140706",
+            "LAHSA",
+            "Los Angeles Homeless Services Authority"
+          ],
+          "amountCandidates": [
+            "$250,819,733.84",
+            "$5,717,700.00"
+          ]
+        }
+      ],
+      "lanes": [
+        {
+          "laneId": "lead",
+          "label": "Question received",
+          "headline": "A public-record question enters.",
+          "body": "LA homelessness and where the fraud, waste, and abuse is.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "sources",
+          "label": "Sources opened",
+          "headline": "The ledger is visible.",
+          "body": "59 evidence rows are available.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "findings",
+          "label": "Findings checked",
+          "headline": "The verifier gates claims.",
+          "body": "16 finding cards were produced.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "gaps",
+          "label": "Gaps named",
+          "headline": "Missing records stay visible.",
+          "body": "6 missing records are listed.",
+          "sourceIds": []
+        }
+      ],
+      "anomalyMath": [],
+      "nextRecords": [
+        {
+          "priority": "high",
+          "recordId": "missing_1",
+          "holder": "public agency or record custodian",
+          "request": "complete contract file from contracting agency or board clerk",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_2",
+          "holder": "public agency or record custodian",
+          "request": "invoice and payment ledger from controller, finance department, or agency accounts payable",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_3",
+          "holder": "public agency or record custodian",
+          "request": "monitoring or performance report from program office, oversight body, or independent auditor",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_4",
+          "holder": "public agency or record custodian",
+          "request": "Potential underperformance in LAHSA contract oversight",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_5",
+          "holder": "public agency or record custodian",
+          "request": "Insufficient outcome tracking reported across programs",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_6",
+          "holder": "public agency or record custodian",
+          "request": "sam_entity_management requires SAM_API_KEY before this gap can be resolved.",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        }
+      ],
+      "actions": {
+        "directMove": "complete contract file from contracting agency or board clerk",
+        "requestLanguage": "complete contract file from contracting agency or board clerk",
+        "ifRefused": "Ask for the statutory exemption, record index, and segregable public portions.",
+        "coalitionPath": "Share only citation-verified review leads and missing-record requests."
+      },
+      "sourceBoard": {
+        "generatedAt": "2026-05-16T01:56:17Z",
+        "sourceRunId": "aculeus_case_board_verified_targeted_extract_findings",
+        "originalCaseId": "la_homelessness_fwa"
+      },
+      "officialAwardFacts": [
+        {
+          "evidenceId": "usaspending_award_001",
+          "locatorId": "usaspending_locator_001",
+          "status": "citation_verified_award_fact",
+          "recipientName": "LOS ANGELES HOMELESS SERVICES AUTHORITY",
+          "awardAmount": "14368320.0",
+          "awardingAgency": "Department of Housing and Urban Development",
+          "awardId": "CA2099H9D002200",
+          "startDate": "2023-10-01",
+          "endDate": "2027-06-30",
+          "url": "https://www.usaspending.gov/award/ASST_NON_CA2099H9D002200_086",
+          "allowedClaimScope": "narrow official USAspending award listing field atoms only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "program performance",
+            "recipient misconduct",
+            "contract compliance"
+          ]
+        },
+        {
+          "evidenceId": "usaspending_award_002",
+          "locatorId": "usaspending_locator_002",
+          "status": "citation_verified_award_fact",
+          "recipientName": "LOS ANGELES HOMELESS SERVICES AUTHORITY",
+          "awardAmount": "9534623.0",
+          "awardingAgency": "Department of Housing and Urban Development",
+          "awardId": "CA2282L9D002401",
+          "startDate": "",
+          "endDate": "",
+          "url": "https://www.usaspending.gov/award/ASST_NON_CA2282L9D002401_086",
+          "allowedClaimScope": "narrow official USAspending award listing field atoms only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "program performance",
+            "recipient misconduct",
+            "contract compliance"
+          ]
+        },
+        {
+          "evidenceId": "usaspending_award_003",
+          "locatorId": "usaspending_locator_003",
+          "status": "citation_verified_award_fact",
+          "recipientName": "LOS ANGELES HOMELESS SERVICES AUTHORITY",
+          "awardAmount": "9000000.0",
+          "awardingAgency": "Department of Housing and Urban Development",
+          "awardId": "CA2101H9D002200",
+          "startDate": "2023-10-01",
+          "endDate": "2027-06-30",
+          "url": "https://www.usaspending.gov/award/ASST_NON_CA2101H9D002200_086",
+          "allowedClaimScope": "narrow official USAspending award listing field atoms only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "program performance",
+            "recipient misconduct",
+            "contract compliance"
+          ]
+        },
+        {
+          "evidenceId": "usaspending_award_004",
+          "locatorId": "usaspending_locator_004",
+          "status": "citation_verified_award_fact",
+          "recipientName": "JWCH INSTITUTE, INC.",
+          "awardAmount": "1937000.0",
+          "awardingAgency": "Department of Health and Human Services",
+          "awardId": "H79TI085171",
+          "startDate": "2022-09-30",
+          "endDate": "2027-09-29",
+          "url": "https://www.usaspending.gov/award/ASST_NON_H79TI085171_075",
+          "allowedClaimScope": "narrow official USAspending award listing field atoms only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "program performance",
+            "recipient misconduct",
+            "contract compliance"
+          ]
+        },
+        {
+          "evidenceId": "usaspending_award_005",
+          "locatorId": "usaspending_locator_005",
+          "status": "citation_verified_award_fact",
+          "recipientName": "JWCH INSTITUTE, INC.",
+          "awardAmount": "500000.0",
+          "awardingAgency": "Department of Health and Human Services",
+          "awardId": "H8J54631",
+          "startDate": "2024-12-01",
+          "endDate": "2025-11-30",
+          "url": "https://www.usaspending.gov/award/ASST_NON_H8J54631_075",
+          "allowedClaimScope": "narrow official USAspending award listing field atoms only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "program performance",
+            "recipient misconduct",
+            "contract compliance"
+          ]
+        },
+        {
+          "evidenceId": "usaspending_award_006",
+          "locatorId": "usaspending_locator_006",
+          "status": "citation_verified_award_fact",
+          "recipientName": "UNITED STATES VETERANS INITIATIVE",
+          "awardAmount": "240000.0",
+          "awardingAgency": "Department of Labor",
+          "awardId": "25560HV000130",
+          "startDate": "2025-07-01",
+          "endDate": "2028-06-30",
+          "url": "https://www.usaspending.gov/award/ASST_NON_25560HV000130_1601",
+          "allowedClaimScope": "narrow official USAspending award listing field atoms only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "program performance",
+            "recipient misconduct",
+            "contract compliance"
+          ]
+        }
+      ],
+      "officialLacityControllerRowFacts": [
+        {
+          "evidenceId": "lacity_controller_financial_row_bda5da5c0b558be7",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::1::a7ef019fd016b801",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 1,
+          "vendor": "ST BARNABAS SENIOR CENTER OF LOS ANGELES",
+          "amount": 58318,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_controller_financial_row_9278fe78cd5d0578",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::2::1fc58b1b1c0a7c61",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 2,
+          "vendor": "ST BARNABAS SENIOR CENTER OF LOS ANGELES",
+          "amount": 41741,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_controller_financial_row_4cf3b07c13076540",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::3::2a33937e1f08443b",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 3,
+          "vendor": "ST BARNABAS SENIOR CENTER OF LOS ANGELES",
+          "amount": 40127,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_controller_financial_row_cde741d6d3bf702d",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::4::bf07d4c4b664fecc",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 4,
+          "vendor": "MEXICAN AMERICAN OPPORTUNITY FOUNDATION",
+          "amount": 39435,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_controller_financial_row_9cb186024e3eb12b",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::5::9961b6e06456e31a",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 5,
+          "vendor": "SPECIAL SERVICE FOR GROUPS INC",
+          "amount": 36888,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_controller_financial_row_27aaa7541d79b8dd",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::6::9568f27c2d27b078",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 6,
+          "vendor": "CENTER FOR HEALTH CARE RIGHTS",
+          "amount": 36501,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_controller_financial_row_794166d14e7f4bd6",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::7::c240681effac3b98",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 7,
+          "vendor": "ST BARNABAS SENIOR CENTER OF LOS ANGELES",
+          "amount": 36412,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_controller_financial_row_ab30e75b178a1b9a",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::8::2882aea55b1cad44",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 8,
+          "vendor": "ONEGENERATION",
+          "amount": 30812,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_controller_financial_row_263af4f2ec4122a7",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::9::b43c8ba9bb1d1795",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 9,
+          "vendor": "BET TZEDEK",
+          "amount": 29782,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_controller_financial_row_74436fa86adf7633",
+          "recordId": "ca_financial_row::lacity-controller-4bdv-srep::10::14effc865d80d3c3",
+          "status": "citation_verified_lacity_controller_payment_row_fact",
+          "recordType": "vendor_payment",
+          "publisher": "Los Angeles Controller Open Data",
+          "targetId": "lacity-controller-4bdv-srep",
+          "sourceRowNumber": 10,
+          "vendor": "PEOPLE COORDINATED SERVICES OF SOUTHERN CALIFORNIA INC",
+          "amount": 29204,
+          "receiptSha256": "B98773C41BD53800BB475C28C56D33B437CFBA15A8054A69EEDC181D9FB32A5E",
+          "url": "https://controllerdata.lacity.org/resource/4bdv-srep.csv?$limit=5000",
+          "allowedClaimScope": "narrow official LA Controller vendor-payment row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "confirmed procurement irregularity",
+            "political capture",
+            "program performance beyond row text",
+            "contract compliance beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        }
+      ],
+      "officialLacityLahsaContractPdfFacts": [
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_001",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$38,786,972.00",
+            "$654,279"
+          ],
+          "amendmentCandidates": [
+            "1"
+          ],
+          "rejectedSmallAmountCandidates": [],
+          "pageCount": 45,
+          "textCharCount": 86256,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2022/C-140706_c_10-12-22.pdf",
+          "contentSha256": "d8a4a4bb95f3e950b5b2ce334fd9a9df529cca41e6a14516b7a0b87fd3ea4a51",
+          "excerptSha256": "944448c5dbbaff8431297183e845e09c272fc833b138fa249e1fd6990db4b5db",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_002",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$43,378,892.00",
+            "$4,591,920.00"
+          ],
+          "amendmentCandidates": [
+            "2"
+          ],
+          "rejectedSmallAmountCandidates": [],
+          "pageCount": 47,
+          "textCharCount": 89349,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2022/C-140706_c_12-09-22.pdf",
+          "contentSha256": "0ca486c018091f4a3e734f327f0314c7cd899199315aa19aca3c95ed37c3c5d7",
+          "excerptSha256": "7505566be31e1612d1b657b738a37aad3d5df5ecb88a6abfbb76c38ddb727079",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_004",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$93,378,892.00",
+            "$50,000,000"
+          ],
+          "amendmentCandidates": [
+            "3"
+          ],
+          "rejectedSmallAmountCandidates": [],
+          "pageCount": 54,
+          "textCharCount": 104144,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2023/C-140706_c_02-17-23.pdf",
+          "contentSha256": "3dd18aa610d53083dfc1019f2a64a7891462f5f5d42dee7210b1e805c64043d9",
+          "excerptSha256": "829c38cf16e64bda057efaa71f83118b60859650cb60f642ab1b912bc76acf91",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_005",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$95,137,984.00",
+            "$978,576",
+            "$509,129",
+            "$271,387",
+            "$1,589,592",
+            "$403,542",
+            "$95,137,984"
+          ],
+          "amendmentCandidates": [
+            "4"
+          ],
+          "rejectedSmallAmountCandidates": [],
+          "pageCount": 58,
+          "textCharCount": 115590,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2023/C-140706_c_04-26-23.pdf",
+          "contentSha256": "f0e452187a5f50cae99aa36b755b71f751031d30f85d3aedc630e04abd51783e",
+          "excerptSha256": "c4cc5781236e9a1b856c02862c5923d3d02dac745ce42548ba6297b6a3985777",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_006",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$133,583,912.00",
+            "$38,445,928.00"
+          ],
+          "amendmentCandidates": [
+            "5"
+          ],
+          "rejectedSmallAmountCandidates": [],
+          "pageCount": 59,
+          "textCharCount": 112068,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2023/C-140706_c_6-28-23.pdf",
+          "contentSha256": "106bb669a9adb6686c1e7c93ee628f45ec3169ace459c0fd7d26fbc59f33ced3",
+          "excerptSha256": "41934d8d10ddf93856668272215a2ec10a7a8012258b72c89bb87cd112a444fa",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_007",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$133,933,912.00",
+            "$350,000.00"
+          ],
+          "amendmentCandidates": [
+            "5"
+          ],
+          "rejectedSmallAmountCandidates": [],
+          "pageCount": 59,
+          "textCharCount": 108930,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_03-04-24.pdf",
+          "contentSha256": "646b0e46f71d3e75f9f4497f2568226f059ed69887650d0cb9e87c0632901ebe",
+          "excerptSha256": "c73503feedae90a5c405e61892417bd89f78bb5c46e1c61e314612a63891f7cd",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_008",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$137,483,014.00",
+            "$3,549,102.00"
+          ],
+          "amendmentCandidates": [
+            "7"
+          ],
+          "rejectedSmallAmountCandidates": [],
+          "pageCount": 62,
+          "textCharCount": 1390,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_06-10-2024.pdf",
+          "contentSha256": "3a196da3f292cac6208324176e4672b1a4dd823776b1769ceedc7a24156094d9",
+          "excerptSha256": "31dd92f2b2b60a381b364c609066c97fd3ea5f8f04f028feae8667124cab1b0a",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_009",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$168,161,106.84",
+            "$30,678,092.84"
+          ],
+          "amendmentCandidates": [
+            "8"
+          ],
+          "rejectedSmallAmountCandidates": [],
+          "pageCount": 63,
+          "textCharCount": 122363,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_07-01-24.pdf",
+          "contentSha256": "4423a0ba7dfbe58fe787b5e22a649a7584924aca2faf84a74c59ebe8b858d858",
+          "excerptSha256": "b4d9a041bc57fa2179a03a17f1ed810ec7fba49bf0677566120fdb7c46036f6b",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_010",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$245,102,033.84",
+            "$76,940,927"
+          ],
+          "amendmentCandidates": [
+            "9"
+          ],
+          "rejectedSmallAmountCandidates": [],
+          "pageCount": 64,
+          "textCharCount": 112863,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_07-18-2024.pdf",
+          "contentSha256": "4b9389997cee571771466f22a1693e2b04c91f3c6023a9df9c4dc8394fda031b",
+          "excerptSha256": "f352b56170d9a85df1f1a1105d8b6448c91b470a2e36db1430268c1e6a0ea112",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "lacity_lahsa_c140706_pdf_atom_011",
+          "status": "verified_narrow_contract_summary_fact",
+          "contractId": "C-140706",
+          "entity": "Los Angeles Homeless Services Authority (LAHSA)",
+          "verifiedAmountCandidates": [
+            "$250,819,733.84",
+            "$5,717,700.00"
+          ],
+          "amendmentCandidates": [],
+          "rejectedSmallAmountCandidates": [
+            "$7"
+          ],
+          "pageCount": 175,
+          "textCharCount": 369923,
+          "url": "https://cityclerk.lacity.org/onlinecontracts/2024/C-140706_c_10-01-24.pdf",
+          "contentSha256": "ab09aac85e6a3445e529ce8117e3a03a1d770defe6643046ddd53c0ce9949970",
+          "excerptSha256": "38d9201500cafc2f68f9b57a26c88e059be5c75913275a458b4683398afe1e34",
+          "allowedClaimScope": "narrow_official_contract_summary_field_atom_only",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "abuse",
+            "payment impropriety",
+            "contract breach",
+            "program performance",
+            "service quality",
+            "training conversion"
+          ],
+          "trainingConversionAllowed": false
+        }
+      ]
+    },
+    {
+      "caseId": "source_ca_school_board_spending",
+      "displayId": "AC-002",
+      "caseType": "source_fed_public_records",
+      "caseScope": "Find official California school board agenda packets, procurement board reports, contract awards, vendor spend, and failed-deliverable signals. Default to LAUSD as a first exemplar if no district is specified, and preserve that as a scope limitation.",
+      "title": "CA school board meetings and what they are spending money on",
+      "headline": "A source-fed case board is ready for review.",
+      "lead": "CA school board meetings and what they are spending money on.",
+      "summary": "No official finding of fraud, waste, or abuse related to the $6.2M AllHere contract was identified in the reviewed records.",
+      "jurisdiction": "California",
+      "reviewStatus": "pass",
+      "publicLabel": "source_fed_case_board",
+      "legalBoundary": "relationship signal for audit review, not legal adjudication",
+      "caseScore": 88,
+      "model": {
+        "name": "Aculeus SLM",
+        "version": "source-fed-adapter-0.1",
+        "mode": "source_fed_case_board",
+        "endpoint": "/api/investigate"
+      },
+      "commandCenter": {
+        "break": "No official finding of fraud, waste, or abuse related to the $6.2M AllHere contract was identified in the reviewed records.",
+        "proof": [
+          "LAUSD approved a $6.2 million contract with AllHere for an AI chatbot.",
+          "The cited board-report extract describes authorization to negotiate and execute a formally competed contract and includes $6,200,000.",
+          "The captured LAUSD board-report PDF receipt identifies Board of Education Report No. 317-22/23, All Here Education, Inc., RFP 2000002930, General Funds, and $6,200,000."
+        ],
+        "missing": "complete contract file from contracting agency or board clerk | invoice and payment ledger from controller, finance department, or agency accounts payable | monitoring or performance report from program office, oversight body, or independent auditor | Potential scope expansion beyond initial $6.2M | Chatbot deliverable status not yet verified | Limited public documentation of vendor spend breakdown | sam_entity_management requires SAM_API_KEY before this gap can be resolved. | sam_exclusions requires SAM_API_KEY before this gap can be resolved.",
+        "move": "Use the verified OCR board-report fact as a narrow record lead; request the executed contract, invoices, and performance records before any broader conclusion.",
+        "captureQueue": "Capture the queued public browser receipts before using provider-only locators as evidence.",
+        "publicRecords": "Use the PRA request packet for exact contract, invoice, performance, and OIG index records; ingest responses through the response-intake contract."
+      },
+      "entities": [
+        {
+          "name": "procurement_review",
+          "role": "finding type",
+          "confidence": 75
+        },
+        {
+          "name": "official_record_reference",
+          "role": "finding type",
+          "confidence": 75
+        }
+      ],
+      "sourceFamilies": [
+        "official_public_record",
+        "secondary_or_locator"
+      ],
+      "dossier": {
+        "title": "CA school board meetings and what they are spending money on",
+        "deck": "No official finding of fraud, waste, or abuse related to the $6.2M AllHere contract was identified in the reviewed records.",
+        "posture": "PASS",
+        "centralQuestion": "CA school board meetings and what they are spending money on.",
+        "shortFinding": "LAUSD approved a $6.2 million contract with AllHere for an AI chatbot. The cited board-report extract describes authorization to negotiate and execute a formally competed contract and includes $6,200,000. The captured LAUSD board-report PDF receipt identifies Board of Education Report No. 317-22/23, All Here Education, Inc., RFP 2000002930, General Funds, and $6,200,000.",
+        "summary": "No official finding of fraud, waste, or abuse related to the $6.2M AllHere contract was identified in the reviewed records.",
+        "stats": [
+          {
+            "label": "Verified leads",
+            "value": "3",
+            "detail": "Finding cards that passed the citation verifier or remain visible as blocked leads."
+          },
+          {
+            "label": "Evidence rows",
+            "value": "14",
+            "detail": "Source-ledger records carried into the front end."
+          },
+          {
+            "label": "Missing records",
+            "value": "8",
+            "detail": "Records needed before stronger conclusions."
+          }
+        ],
+        "layers": [
+          {
+            "label": "Scope",
+            "title": "Question entered",
+            "body": "CA school board meetings and what they are spending money on.",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03"
+            ]
+          },
+          {
+            "label": "Evidence",
+            "title": "Source ledger opened",
+            "body": "14 source-ledger records are visible for review.",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03",
+              "web_04",
+              "web_05",
+              "web_06"
+            ]
+          },
+          {
+            "label": "Verifier",
+            "title": "Claims stay citation-bound",
+            "body": "CITATION_VERIFIER_BLOCKED",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03"
+            ]
+          }
+        ],
+        "findings": [
+          {
+            "findingId": "ca_school_board_spending-F001",
+            "entity": "procurement_review",
+            "signal": "high",
+            "whatRecordSays": "LAUSD approved a $6.2 million contract with AllHere for an AI chatbot.",
+            "whyItMatters": "Confidence 0.95; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Archive.org snapshot of https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports",
+            "sourceFamily": "procurement_review",
+            "sourceIds": [
+              "web_02"
+            ]
+          },
+          {
+            "findingId": "ca_school_board_spending-TEF001",
+            "entity": "official_record_reference",
+            "signal": "medium",
+            "whatRecordSays": "The cited board-report extract describes authorization to negotiate and execute a formally competed contract and includes $6,200,000.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_01_1731c97e1f",
+              "extract_targeted_extract_01_558d393ecf"
+            ]
+          },
+          {
+            "findingId": "ca_school_board_spending-RCF001",
+            "entity": "All Here Education, Inc., LAUSD",
+            "signal": "medium",
+            "whatRecordSays": "The captured LAUSD board-report PDF receipt identifies Board of Education Report No. 317-22/23, All Here Education, Inc., RFP 2000002930, General Funds, and $6,200,000.",
+            "whyItMatters": "Confidence 0.94; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Use the captured receipt as a record fact, then request the executed contract, invoices, and performance records before any broader conclusion.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "browser_receipt_web_discovered_lausd_allhere_board_report_001"
+            ]
+          }
+        ],
+        "claimLedger": [
+          {
+            "claim": "LAUSD approved a $6.2 million contract with AllHere for an AI chatbot.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Archive.org snapshot of https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports",
+            "sourceIds": [
+              "web_02"
+            ]
+          },
+          {
+            "claim": "The cited board-report extract describes authorization to negotiate and execute a formally competed contract and includes $6,200,000.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_01_1731c97e1f",
+              "extract_targeted_extract_01_558d393ecf"
+            ]
+          },
+          {
+            "claim": "The captured LAUSD board-report PDF receipt identifies Board of Education Report No. 317-22/23, All Here Education, Inc., RFP 2000002930, General Funds, and $6,200,000.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Use the captured receipt as a record fact, then request the executed contract, invoices, and performance records before any broader conclusion.",
+            "sourceIds": [
+              "browser_receipt_web_discovered_lausd_allhere_board_report_001"
+            ]
+          },
+          {
+            "claim": "The contract details were included in an approved board report PDF.",
+            "support": "blocked_by_citation_verifier",
+            "limitation": "quoted_or_claim_text_not_supported_by_excerpt",
+            "nextRecord": "Archive.org snapshot of https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports",
+            "sourceIds": [
+              "web_02"
+            ]
+          },
+          {
+            "claim": "Access to the board report PDF on the procurement site is blocked (403 Forbidden).",
+            "support": "blocked_by_citation_verifier",
+            "limitation": "quoted_or_claim_text_not_supported_by_excerpt",
+            "nextRecord": "Archive.org snapshot of https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports",
+            "sourceIds": [
+              "web_03"
+            ]
+          },
+          {
+            "claim": "The contract was awarded without any competitive bidding process.",
+            "support": "rejected_or_not_supported",
+            "limitation": "Do not publish as a finding.",
+            "nextRecord": "Find primary support or keep rejected.",
+            "sourceIds": []
+          },
+          {
+            "claim": "The contract violates California procurement statutes.",
+            "support": "rejected_or_not_supported",
+            "limitation": "Do not publish as a finding.",
+            "nextRecord": "Find primary support or keep rejected.",
+            "sourceIds": []
+          },
+          {
+            "claim": "Blocked access to board report pages (403 errors) limiting visibility of contract approval documentation.",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          },
+          {
+            "claim": "Contract description references integration with multiple district systems but no public performance or outcome metrics available.",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          },
+          {
+            "claim": "Large $6.2M expenditure for a chatbot service without publicly disclosed competitive bidding process details.",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          }
+        ],
+        "sourceMatrix": [
+          {
+            "family": "Official records",
+            "status": "13",
+            "proves": "Authority and source trail",
+            "missing": "Underlying attachments where not fetched"
+          },
+          {
+            "family": "Usable evidence",
+            "status": "13",
+            "proves": "Claim support candidates",
+            "missing": "Human review before publication"
+          },
+          {
+            "family": "Locators",
+            "status": "1",
+            "proves": "Where to fetch next",
+            "missing": "Direct capture or records request"
+          }
+        ],
+        "followUpQuestions": [
+          "Which finding has the strongest official-source support?",
+          "What record would change this case the most?",
+          "Which weak or rejected claim should stay out of the public narrative?",
+          "Which source should be opened next?"
+        ],
+        "nextMoves": [
+          "complete contract file from contracting agency or board clerk",
+          "invoice and payment ledger from controller, finance department, or agency accounts payable",
+          "monitoring or performance report from program office, oversight body, or independent auditor",
+          "Potential scope expansion beyond initial $6.2M",
+          "Chatbot deliverable status not yet verified",
+          "Limited public documentation of vendor spend breakdown",
+          "sam_entity_management requires SAM_API_KEY before this gap can be resolved.",
+          "sam_exclusions requires SAM_API_KEY before this gap can be resolved."
+        ]
+      },
+      "claims": [
+        {
+          "title": "procurement_review",
+          "body": "LAUSD approved a $6.2 million contract with AllHere for an AI chatbot.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_02"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited board-report extract describes authorization to negotiate and execute a formally competed contract and includes $6,200,000.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_01_1731c97e1f",
+            "extract_targeted_extract_01_558d393ecf"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The captured LAUSD board-report PDF receipt identifies Board of Education Report No. 317-22/23, All Here Education, Inc., RFP 2000002930, General Funds, and $6,200,000.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "browser_receipt_web_discovered_lausd_allhere_board_report_001"
+          ],
+          "confidence": 0.94
+        }
+      ],
+      "sources": [
+        {
+          "sourceId": "web_01",
+          "title": "index.jsp?uREC_ID=4431229&type=d&pREC_ID=2670085",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://procurement.lausd.org/apps/pages/index.jsp?uREC_ID=4431229&type=d&pREC_ID=2670085",
+          "hash": "e29bc9598f820fea14c48c124c04e52e5290a5146ff53b54caa9332877b37526",
+          "excerpt": "Los Angeles Unified School District # Footer Message Second largest in the nation, the Los Angeles Unified School District enrolls more than 520,000 students. The District covers an area totaling 710 square miles, which includes most of the city of Los Angeles, along with all or portions of 25 cities and unincorporated areas of Los Angeles County. 333 S Beaudry Ave. Los Angeles, CA 90017 (213) 241-1000 [Edlio Login](http://admin-procurement.lausd.org) [Powered by Edlio](http://www.edlio.com) Mob",
+          "quotedExcerpt": "Los Angeles Unified School District # Footer Message Second largest in the nation, the Los Angeles Unified School District enrolls more than 520,000 students. The District covers an area totaling 710 square miles, which includes most of the city of Los Angeles, along with all or portions of 25 cities and unincorporated areas of Los Angeles County. 333 S Beaudry Ave. Los Angeles, CA 90017 (213) 241-1000 [Edlio Login](http://admin-procurement.lausd.org) [Powered by Edlio](http://www.edlio.com) Mob",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_02",
+          "title": "allhere-contract-lausd-board-report-06202023.pdf",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://s3.documentcloud.org/documents/27420331/allhere-contract-lausd-board-report-06202023.pdf",
+          "hash": "e980513e74c02deed3ba92c14ac6ccabbb3471834b5669f54c87840f1d80a5dd",
+          "excerpt": "000002930) General Funds (100%) $6,200,000 Authorization to negotiate and execute a formally competed contract to provide the planning, design, development, testing, integration, implementation, go -live/delivery, training, communications, maintenance and post-stabilization, of the application/tool that will serve as the Individual Acceleration Plan (IAP). Integration/interfaces with, MiSiS, Welligent, IODS, Parent Portal - API is Preferable; or LAUSD’s parent account management system, Parent L",
+          "quotedExcerpt": "000002930) General Funds (100%) $6,200,000 Authorization to negotiate and execute a formally competed contract to provide the planning, design, development, testing, integration, implementation, go -live/delivery, training, communications, maintenance and post-stabilization, of the application/tool that will serve as the Individual Acceleration Plan (IAP). Integration/interfaces with, MiSiS, Welligent, IODS, Parent Portal - API is Preferable; or LAUSD’s parent account management system, Parent L",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_03",
+          "title": "Approved Board Reports - Facilities Contracts - Facilities - Procurement Services Division",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports",
+          "hash": "e29bc9598f820fea14c48c124c04e52e5290a5146ff53b54caa9332877b37526",
+          "excerpt": "Los Angeles Unified School District # Footer Message Second largest in the nation, the Los Angeles Unified School District enrolls more than 520,000 students. The District covers an area totaling 710 square miles, which includes most of the city of Los Angeles, along with all or portions of 25 cities and unincorporated areas of Los Angeles County. 333 S Beaudry Ave. Los Angeles, CA 90017 (213) 241-1000 [Edlio Login](http://admin-procurement.lausd.org) [Powered by Edlio](http://www.edlio.com) Mob",
+          "quotedExcerpt": "Los Angeles Unified School District # Footer Message Second largest in the nation, the Los Angeles Unified School District enrolls more than 520,000 students. The District covers an area totaling 710 square miles, which includes most of the city of Los Angeles, along with all or portions of 25 cities and unincorporated areas of Los Angeles County. 333 S Beaudry Ave. Los Angeles, CA 90017 (213) 241-1000 [Edlio Login](http://admin-procurement.lausd.org) [Powered by Edlio](http://www.edlio.com) Mob",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_04",
+          "title": "Purchase Order Terms and Conditions – Procurement & Contract Administration Services – Procurement Services Department",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://procurement.lausd.org/apps/pages/index.jsp?uREC_ID=4431229&type=d&pREC_ID=2670093",
+          "hash": "41d66a69eb9c6b07c4cf024e07dfaeb142bef1c1ff435c6346a18045d861029b",
+          "excerpt": "Desk + Vendor Services + Master Agreements + Rental of a Non-District Facility or Catering + Solicitations * Facilities Contracts + Architectural and Engineering Contracts + A/B Letter Contracts + Design Build/Best Value Contracts + Formal Construction Contracts + Job Order Contracts (JOC) + Bid Documents, Plans, Specifications & Addenda + Prequalification + Post Award Resources - [Electronic Funds Transfer (E-Quick Pay)](https://accountspayable.lausd.org/apps/pages/index.jsp?uREC_ID=4418733&typ",
+          "quotedExcerpt": "Desk + Vendor Services + Master Agreements + Rental of a Non-District Facility or Catering + Solicitations * Facilities Contracts + Architectural and Engineering Contracts + A/B Letter Contracts + Design Build/Best Value Contracts + Formal Construction Contracts + Job Order Contracts (JOC) + Bid Documents, Plans, Specifications & Addenda + Prequalification + Post Award Resources - [Electronic Funds Transfer (E-Quick Pay)](https://accountspayable.lausd.org/apps/pages/index.jsp?uREC_ID=4418733&typ",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_05",
+          "title": "Facilities Contracts - Facilities - Procurement Services Division",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://procurement.lausd.org/apps/pages/Facilities_Contracts",
+          "hash": "47224aaf7ff44a186add224a61a8ab74cba9382a16bcf0eba935d26ee289a413",
+          "excerpt": "# Facilities Contracts ## Facilities Contracts + [Labor Compliance Program](https://facilities.lausd.org/apps/pages/lcp) + [Project Stabilization Agreement (PSA)](https://facilities.lausd.org/apps/pages/psa) * Board Reports Toggle submenu for Board Reports + [Approved Board Reports](https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports) + [BOE Approved Contract Actions](https://procurement.lausd.org/apps/pages/BOE_Approved_Contract_Actions)",
+          "quotedExcerpt": "# Facilities Contracts ## Facilities Contracts + [Labor Compliance Program](https://facilities.lausd.org/apps/pages/lcp) + [Project Stabilization Agreement (PSA)](https://facilities.lausd.org/apps/pages/psa) * Board Reports Toggle submenu for Board Reports + [Approved Board Reports](https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports) + [BOE Approved Contract Actions](https://procurement.lausd.org/apps/pages/BOE_Approved_Contract_Actions)",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_06",
+          "title": "Design Build/Best Value Contracts - Facilities - Procurement Services Division",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://procurement.lausd.org/apps/pages/Design_Build_Best_Value_Contracts",
+          "hash": "2d2051978fe8a25a31343020acdc44f05f2064799945a041c77373f31481c866",
+          "excerpt": "# Design Build/Best Value Contracts ## Design Build/Best Value Contracts ### What is Best Value Contracting? + [Labor Compliance Program](https://facilities.lausd.org/apps/pages/lcp) + [Project Stabilization Agreement (PSA)](https://facilities.lausd.org/apps/pages/psa) * Board Reports Toggle submenu for Board Reports + [Approved Board Reports](https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports) + [BOE Approved Contract Actions](https://procurement.lausd.org/apps/pages/BO",
+          "quotedExcerpt": "# Design Build/Best Value Contracts ## Design Build/Best Value Contracts ### What is Best Value Contracting? + [Labor Compliance Program](https://facilities.lausd.org/apps/pages/lcp) + [Project Stabilization Agreement (PSA)](https://facilities.lausd.org/apps/pages/psa) * Board Reports Toggle submenu for Board Reports + [Approved Board Reports](https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports) + [BOE Approved Contract Actions](https://procurement.lausd.org/apps/pages/BO",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_07",
+          "title": "A/B Letter Contracts - Facilities - Procurement Services Division",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://procurement.lausd.org/apps/pages/Informal_Contracts",
+          "hash": "9db8c70dd6d3ca2c4f7ef7ec9e8b2a61970901c7898c6b4b00815bd9edd7c4c1",
+          "excerpt": "# A/B Letter Contracts ## A/B Letter Contracts + [Labor Compliance Program](https://facilities.lausd.org/apps/pages/lcp) + [Project Stabilization Agreement (PSA)](https://facilities.lausd.org/apps/pages/psa) * Board Reports Toggle submenu for Board Reports + [Approved Board Reports](https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports) + [BOE Approved Contract Actions](https://procurement.lausd.org/apps/pages/BOE_Approved_Contract_Actions)",
+          "quotedExcerpt": "# A/B Letter Contracts ## A/B Letter Contracts + [Labor Compliance Program](https://facilities.lausd.org/apps/pages/lcp) + [Project Stabilization Agreement (PSA)](https://facilities.lausd.org/apps/pages/psa) * Board Reports Toggle submenu for Board Reports + [Approved Board Reports](https://procurement.lausd.org/apps/pages/Facilities_Contracts_Board_Reports) + [BOE Approved Contract Actions](https://procurement.lausd.org/apps/pages/BOE_Approved_Contract_Actions)",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_08",
+          "title": "ceo-artificial-intelligence-startup-company-charged-defrauding-investors",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.justice.gov/usao-sdny/pr/ceo-artificial-intelligence-startup-company-charged-defrauding-investors",
+          "hash": "10bd2a9853475261da0d3468cef3585c828829b938443ab2c1a838ea70b7db86",
+          "excerpt": "Powered and protected by Privacy",
+          "quotedExcerpt": "Powered and protected by Privacy",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_09",
+          "title": "Job Order Contracts (JOC) - Facilities - Procurement Services Division",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://procurement.lausd.org/apps/pages/JOC",
+          "hash": "f0db720bc8e0c5bf423b1cc6015ccb257bdfc594be08c8df714924c19f54390d",
+          "excerpt": "le Home Enroll in School Enroll Now Current Students: Explore Programs New Students: Enroll in TK-12 Apply to Unified Enrollment/CHOICES Enroll in Adult & Career Education Enroll in Preschool and UTK Enroll in Virtual Academy Explore Our Schools Enrollment Support Permits & Student Transfers Placement & Assessment Center (SEPA) School Directory School Search Zones of Choice Academics & Programs Graduation Requirements Common Core State Standards LAUSD Attaining Academic Excellence Admission Crit",
+          "quotedExcerpt": "le Home Enroll in School Enroll Now Current Students: Explore Programs New Students: Enroll in TK-12 Apply to Unified Enrollment/CHOICES Enroll in Adult & Career Education Enroll in Preschool and UTK Enroll in Virtual Academy Explore Our Schools Enrollment Support Permits & Student Transfers Placement & Assessment Center (SEPA) School Directory School Search Zones of Choice Academics & Programs Graduation Requirements Common Core State Standards LAUSD Attaining Academic Excellence Admission Crit",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_10",
+          "title": "https://www.laschoolreport.com/allhere-set-meeting-with-lausd-leaders-months-before-landing-6-2m-chatbot-deal/",
+          "type": "secondary_or_locator",
+          "publisher": "secondary_or_unknown",
+          "role": "fetched, found, secondary, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.laschoolreport.com/allhere-set-meeting-with-lausd-leaders-months-before-landing-6-2m-chatbot-deal/",
+          "hash": "952288366c49d4b23f88a1bcbf90a044f245a4932bf5978009a37770724e80e1",
+          "excerpt": "AllHere Set Meeting With LAUSD Leaders Months Before Landing $6.2M Chatbot Deal | LA School Report In Partnership with 74 Twitter Facebook Español News Commentary LA Parents About Explore Accountability Parent Voices School Board Teacher Spotlight Contact [email protected] 149 South Barrington Ave, Suite 249, Los Angeles, CA 90049 Twitter Facebook Español Copyright © 2026 LA School Report LA School Report In Partnership with 74 Explore: Accountability Parent Voices School Board Teacher Spotlight",
+          "quotedExcerpt": "AllHere Set Meeting With LAUSD Leaders Months Before Landing $6.2M Chatbot Deal | LA School Report In Partnership with 74 Twitter Facebook Español News Commentary LA Parents About Explore Accountability Parent Voices School Board Teacher Spotlight Contact [email protected] 149 South Barrington Ave, Suite 249, Los Angeles, CA 90049 Twitter Facebook Español Copyright © 2026 LA School Report LA School Report In Partnership with 74 Explore: Accountability Parent Voices School Board Teacher Spotlight",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "second_ca_school_board_spending_R005_01",
+          "title": "CalEnviroScreen 2.0",
+          "type": "official_public_record",
+          "publisher": "official_catalog_metadata",
+          "role": "found, official, locator_only",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.ca.gov/dataset/ab4e1b38-df76-4397-b3cf-002fd16937c3/resource/6d6a9a5c-9221-4fc5-9b00-35015ae65837/download/calenviroscreen-final-report.csv",
+          "hash": "",
+          "excerpt": "CKAN dataset metadata: title=CalEnviroScreen 2.0; organization=California Office of Environmental Health Hazard Assessment; notes=The Office of Environmental Health Hazard Assessment (OEHHA), on behalf of the California Environmental Protection Agency (CalEPA), developed California Communities Environmental Health Screening Tool: CalEnviroScreen Version 2.0 (CalEnviroScreen 2.0). CalEnviroScreen is a screening methodology that can be used to help identify California communities that are dispropo",
+          "quotedExcerpt": "CKAN dataset metadata: title=CalEnviroScreen 2.0; organization=California Office of Environmental Health Hazard Assessment; notes=The Office of Environmental Health Hazard Assessment (OEHHA), on behalf of the California Environmental Protection Agency (CalEPA), developed California Communities Environmental Health Screening Tool: CalEnviroScreen Version 2.0 (CalEnviroScreen 2.0). CalEnviroScreen is a screening methodology that can be used to help identify California communities that are dispropo",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "official_api:california_ckan_package_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_01_1731c97e1f",
+          "title": "blocked_finding_targeted_refetch",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://s3.documentcloud.org/documents/27420331/allhere-contract-lausd-board-report-06202023.pdf",
+          "hash": "bfb955cf2933e68802df2cd3990f11bc4281bf82551a1e6b3e25d8e1cd0fddab",
+          "excerpt": "ATTACHMENT A REQUEST FOR APPROVAL OF PROCUREMENT CONTRACTS NOT UNDER DELEGATED AUTHORITY Bd. of Ed Rpt. No. 317-22/23 Page 11 of 17 Board of Education June 20, 2023 A. APPROVAL OF PROFESSIONAL SERVICE CONTRACTS NEW CONTRACTS/ AMENDMENTS/AUTHORIZATION TO INCREASE CONTRACT CAPACITY EXCEEDING $250,000 Item E SPECIAL EDUCATION, EQUITY AND SPECIALIZED PROGRAMS $6,200,000 CONTRACTOR IDENTIFICATION NO. SOURCE OF FUNDS AMOUNT All Here Education, Inc. 4400011417 (RFP 2000002930) General Funds (100%) $6,200,000 Authorization to negotiate and execute a formally competed contract to provide the planning, design, development, testing, integration, implementation, go -live/delivery, training, communicatio",
+          "quotedExcerpt": "ATTACHMENT A REQUEST FOR APPROVAL OF PROCUREMENT CONTRACTS NOT UNDER DELEGATED AUTHORITY Bd. of Ed Rpt. No. 317-22/23 Page 11 of 17 Board of Education June 20, 2023 A. APPROVAL OF PROFESSIONAL SERVICE CONTRACTS NEW CONTRACTS/ AMENDMENTS/AUTHORIZATION TO INCREASE CONTRACT CAPACITY EXCEEDING $250,000 Item E SPECIAL EDUCATION, EQUITY AND SPECIALIZED PROGRAMS $6,200,000 CONTRACTOR IDENTIFICATION NO. SOURCE OF FUNDS AMOUNT All Here Education, Inc. 4400011417 (RFP 2000002930) General Funds (100%) $6,200,000 Authorization to negotiate and execute a formally competed contract to provide the planning, design, development, testing, integration, implementation, go -live/delivery, training, communicatio",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 1,
+          "matchedTerms": [
+            "contract",
+            "formally competed contract",
+            "Authorization",
+            "$6,200,000"
+          ],
+          "amountCandidates": [
+            "$250,000",
+            "$6,200,000",
+            "$6,200,000"
+          ]
+        },
+        {
+          "sourceId": "browser_receipt_web_discovered_lausd_allhere_board_report_001",
+          "title": "AllHere-Contract-LAUSD-Board-Report-06202023",
+          "type": "official_public_record",
+          "publisher": "captured_public_receipt",
+          "role": "fetched, found, official, receipt_captured, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://s3.documentcloud.org/documents/27420331/allhere-contract-lausd-board-report-06202023.pdf?t=1772144679962",
+          "hash": "531a9e6ce7b3df78a74c4dfe8d58b3c49b356afc56162c30bcaa582ddf83bf89",
+          "excerpt": "ATTACHMENT A REQUEST FOR APPROVAL OF PROCUREMENT CONTRACTS NOT UNDER DELEGATED AUTHORITY Bd. of Ed Rpt. No. 317-22/23 Page 11 of 17 Board of Education June 20, 2023 A. APPROVAL OF PROFESSIONAL SERVICE CONTRACTS NEW CONTRACTS/ AMENDMENTS/AUTHORIZATION TO INCREASE CONTRACT CAPACITY EXCEEDING $250,000 Item E SPECIAL EDUCATION, EQUITY AND SPECIALIZED PROGRAMS $6,200,000 CONTRACTOR IDENTIFICATION NO. SOURCE OF FUNDS AMOUNT All Here Education, Inc. 4400011417 (RFP 2000002930) General Funds (100%) $6,200,000 Authorization to negotiate and execute a formally competed contract to provide the planning, design, development, testing, integration, implementation, go -live/delivery, training, communications, maintenance and post-stabilization, of the application/tool that will serve as the Individual Acceleration Plan (IAP). Integration/interfaces with, MiSiS, Welligent, IODS, Parent Portal - API is Preferable; or LAUSD’s parent account management system, Parent Login integration Oracle IDCS, Whole Child Integrated D ata (Snowflake), Other Vendor Related Data and, integrated analytics and Artificial Intelligence (AI) Chatbot features. Testing and Acceptance, Training, Organizational Change Manag",
+          "quotedExcerpt": "ATTACHMENT A REQUEST FOR APPROVAL OF PROCUREMENT CONTRACTS NOT UNDER DELEGATED AUTHORITY Bd. of Ed Rpt. No. 317-22/23 Page 11 of 17 Board of Education June 20, 2023 A. APPROVAL OF PROFESSIONAL SERVICE CONTRACTS NEW CONTRACTS/ AMENDMENTS/AUTHORIZATION TO INCREASE CONTRACT CAPACITY EXCEEDING $250,000 Item E SPECIAL EDUCATION, EQUITY AND SPECIALIZED PROGRAMS $6,200,000 CONTRACTOR IDENTIFICATION NO. SOURCE OF FUNDS AMOUNT All Here Education, Inc. 4400011417 (RFP 2000002930) General Funds (100%) $6,200,000 Authorization to negotiate and execute a formally competed contract to provide the planning, design, development, testing, integration, implementation, go -live/delivery, training, communications, maintenance and post-stabilization, of the application/tool that will serve as the Individual Acceleration Plan (IAP). Integration/interfaces with, MiSiS, Welligent, IODS, Parent Portal - API is Preferable; or LAUSD’s parent account management system, Parent Login integration Oracle IDCS, Whole Child Integrated D ata (Snowflake), Other Vendor Related Data and, integrated analytics and Artificial Intelligence (AI) Chatbot features. Testing and Acceptance, Training, Organizational Change Manag",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "browser_compatible_public_receipt",
+          "pageNumber": 1,
+          "matchedTerms": [
+            "Bd. of Ed Rpt. No. 317-22/23",
+            "All Here Education, Inc.",
+            "RFP 2000002930",
+            "General Funds",
+            "$6,200,000"
+          ],
+          "amountCandidates": [
+            "$6,200,000"
+          ]
+        },
+        {
+          "sourceId": "extract_targeted_extract_01_558d393ecf",
+          "title": "LAUSD-Board-of-Education-2023-06-20-Regular-Board-Materials-AllHere-Edlio",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.edlio.net/dabfff96/62ef07da/5d8df3b2/f867c55aff254f2cb9e86440fba07e2f?_=APPROVED+Board+Report+317-22_23+for+June+20+2023.pdf",
+          "hash": "120f3a66ce9c11f6e554e1f9a392287aebbdace9853e899ea17fba92fa723fd4",
+          "excerpt": "ATTACHMENT A REQUEST FOR APPROVAL OF PROCUREMENT CONTRACTS NOT UNDER DELEGATED AUTHORITY A. APPROVAL OF PROFESSIONAL SERVICE CONTRACTS NEW CONTRACTS/ AMENDMENTS/AUTHORIZATION TO INCREASE CONTRACT CAPACITY EXCEEDING $2502M re 5 BOARD a Item E REPORT f' aa), f}[erp > Bo ad a any sem JUN 20 2023 a P| (0yycD SPECIAL EDUCATION, EQUITY AND SPECIALIZED PROGRAMS $6,200,000 CONTRACTOR IDENTIFICATION SOURCE OF AMOUNT NO. FUNDS All Here Education, Inc. 4400011417 General Funds $6,200,000 (RFP 2000002930) (100%) Authorization to negotiate and execute a formally competed contract to provide the planning, design, development, testing, integration, implementation, go-live/delivery, training, communications, maintenance and post-stabilization, of the application/tool that will serve as the Individual Acceleration Plan (IAP). Integration/interfaces with, MiSiS, Welligent, IODS, Parent Portal - API is Preferable; or LAUSD’s parent account management system, Parent Login integration Oracle IDCS, Whole Ch",
+          "quotedExcerpt": "ATTACHMENT A REQUEST FOR APPROVAL OF PROCUREMENT CONTRACTS NOT UNDER DELEGATED AUTHORITY A. APPROVAL OF PROFESSIONAL SERVICE CONTRACTS NEW CONTRACTS/ AMENDMENTS/AUTHORIZATION TO INCREASE CONTRACT CAPACITY EXCEEDING $2502M re 5 BOARD a Item E REPORT f' aa), f}[erp > Bo ad a any sem JUN 20 2023 a P| (0yycD SPECIAL EDUCATION, EQUITY AND SPECIALIZED PROGRAMS $6,200,000 CONTRACTOR IDENTIFICATION SOURCE OF AMOUNT NO. FUNDS All Here Education, Inc. 4400011417 General Funds $6,200,000 (RFP 2000002930) (100%) Authorization to negotiate and execute a formally competed contract to provide the planning, design, development, testing, integration, implementation, go-live/delivery, training, communications, maintenance and post-stabilization, of the application/tool that will serve as the Individual Acceleration Plan (IAP). Integration/interfaces with, MiSiS, Welligent, IODS, Parent Portal - API is Preferable; or LAUSD’s parent account management system, Parent Login integration Oracle IDCS, Whole Ch",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 14,
+          "matchedTerms": [
+            "contract",
+            "formally competed contract",
+            "Authorization",
+            "$6,200,000",
+            "All Here Education, Inc.",
+            "Aggregate Five Year Contract Value"
+          ],
+          "amountCandidates": [
+            "$2502",
+            "$6,200,000",
+            "$6,200,000"
+          ]
+        },
+        {
+          "sourceId": "targeted_extract_01_558d393ecf",
+          "title": "LAUSD Board Report 317-22/23 OCR vendor extract",
+          "type": "official_public_record",
+          "publisher": "LAUSD Board of Education",
+          "role": "official, citation_verified_ocr_vendor_fact, usable_as_evidence_for_narrow_board_report_fact",
+          "confidence": "narrow_ocr_vendor_fact_verified",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.edlio.net/dabfff96/62ef07da/5d8df3b2/f867c55aff254f2cb9e86440fba07e2f?_=APPROVED+Board+Report+317-22_23+for+June+20+2023.pdf",
+          "hash": "",
+          "excerpt": "Board of Education Report No. 317-22/23; All Here Education, Inc.; 4400011417; RFP 2000002930; General Funds; $6,200,000; term=07/01/23 to 06/30/25",
+          "quotedExcerpt": "Board of Education Report No. 317-22/23; All Here Education, Inc.; 4400011417; RFP 2000002930; General Funds; $6,200,000; term=07/01/23 to 06/30/25",
+          "limitation": "Supports only narrow LAUSD board-report authorization facts; it does not prove actual payment, performance, compliance, fraud, waste, intent, or liability.",
+          "supportLevel": "supported_narrow_ocr_vendor_fact",
+          "retrievalMethod": "official_pdf_pymupdf_ocr_verifier",
+          "pageNumber": 14,
+          "matchedTerms": [
+            "All Here Education, Inc.",
+            "4400011417",
+            "RFP 2000002930",
+            "General Funds",
+            "$6,200,000",
+            "Authorization to negotiate and execute a formally competed contract",
+            "Contract Term",
+            "07/01/23",
+            "06/30/25",
+            "Aggregate Five Year Contract Value"
+          ],
+          "amountCandidates": [
+            "$6,200,000"
+          ]
+        }
+      ],
+      "lanes": [
+        {
+          "laneId": "lead",
+          "label": "Question received",
+          "headline": "A public-record question enters.",
+          "body": "CA school board meetings and what they are spending money on.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "sources",
+          "label": "Sources opened",
+          "headline": "The ledger is visible.",
+          "body": "14 evidence rows are available.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "findings",
+          "label": "Findings checked",
+          "headline": "The verifier gates claims.",
+          "body": "3 finding cards were produced.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "gaps",
+          "label": "Gaps named",
+          "headline": "Missing records stay visible.",
+          "body": "8 missing records are listed.",
+          "sourceIds": []
+        }
+      ],
+      "anomalyMath": [],
+      "nextRecords": [
+        {
+          "priority": "high",
+          "recordId": "missing_1",
+          "holder": "public agency or record custodian",
+          "request": "complete contract file from contracting agency or board clerk",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_2",
+          "holder": "public agency or record custodian",
+          "request": "invoice and payment ledger from controller, finance department, or agency accounts payable",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_3",
+          "holder": "public agency or record custodian",
+          "request": "monitoring or performance report from program office, oversight body, or independent auditor",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_4",
+          "holder": "public agency or record custodian",
+          "request": "Potential scope expansion beyond initial $6.2M",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_5",
+          "holder": "public agency or record custodian",
+          "request": "Chatbot deliverable status not yet verified",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_6",
+          "holder": "public agency or record custodian",
+          "request": "Limited public documentation of vendor spend breakdown",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_7",
+          "holder": "public agency or record custodian",
+          "request": "sam_entity_management requires SAM_API_KEY before this gap can be resolved.",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_8",
+          "holder": "public agency or record custodian",
+          "request": "sam_exclusions requires SAM_API_KEY before this gap can be resolved.",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        }
+      ],
+      "actions": {
+        "directMove": "complete contract file from contracting agency or board clerk",
+        "requestLanguage": "complete contract file from contracting agency or board clerk",
+        "ifRefused": "Ask for the statutory exemption, record index, and segregable public portions.",
+        "coalitionPath": "Share only citation-verified review leads and missing-record requests."
+      },
+      "sourceBoard": {
+        "generatedAt": "2026-05-16T01:56:17Z",
+        "sourceRunId": "aculeus_case_board_verified_targeted_extract_findings",
+        "originalCaseId": "ca_school_board_spending"
+      },
+      "officialOcrVendorFacts": [
+        {
+          "evidenceId": "targeted_extract_01_558d393ecf",
+          "inputRecordId": "crawler_fetch_web_discovered_lausd_allhere_edlio_official_board_001",
+          "status": "citation_verified_ocr_vendor_fact",
+          "contractorName": "All Here Education, Inc.",
+          "identificationNumber": "4400011417",
+          "rfpNumber": "RFP 2000002930",
+          "fundSource": "General Funds",
+          "boardReport": "Board of Education Report No. 317-22/23",
+          "amount": "$6,200,000",
+          "term": "07/01/23 to 06/30/25",
+          "pageNumber": 14,
+          "extractionSource": "pymupdf_ocr",
+          "url": "https://media.edlio.net/dabfff96/62ef07da/5d8df3b2/f867c55aff254f2cb9e86440fba07e2f?_=APPROVED+Board+Report+317-22_23+for+June+20+2023.pdf",
+          "allowedClaimScope": "Supports only the narrow LAUSD board-report authorization facts for the listed contractor, amount, source of funds, identification number, RFP number, and initial term.",
+          "unsupportedScopes": [
+            "fraud",
+            "waste",
+            "intent",
+            "vendor performance",
+            "contract compliance",
+            "invoice payment or actual spend",
+            "executed contract terms beyond the board-report authorization excerpt",
+            "criminal or civil liability"
+          ],
+          "promotionScope": "narrow_official_record_reference_only"
+        }
+      ],
+      "browserCaptureTasks": [
+        {
+          "taskId": "browser_capture_lausd_allhere_board_report_documentcloud",
+          "status": "queued_not_executed",
+          "targetRecord": "DocumentCloud copy of LAUSD AllHere Board Report 317 page",
+          "recordFamily": "board_report_locator",
+          "captureMethod": "browser_or_manual_public_receipt",
+          "captureReason": "secondary copy can help browser-locate official board-report text when direct local fetch is blocked",
+          "evidencePosture": "locator_only_until_receipt_and_citation_verifier_pass",
+          "url": "https://www.documentcloud.org/documents/27420331-allhere-contract-lausd-board-report-06202023/",
+          "sourceProvider": "Exa Contents",
+          "providerLocatorTerms": [
+            "AllHere",
+            "contract"
+          ],
+          "findingPromotionAllowed": false,
+          "trainingConversionAllowed": false
+        },
+        {
+          "taskId": "browser_capture_lausd_procurement_digital_instructional_plan",
+          "status": "queued_not_executed",
+          "targetRecord": "LAUSD procurement digital instructional procurement plan page",
+          "recordFamily": "procurement_context",
+          "captureMethod": "browser_or_manual_public_receipt",
+          "captureReason": "procurement context for digital instructional tool contracts and solicitation routing",
+          "evidencePosture": "locator_only_until_receipt_and_citation_verifier_pass",
+          "url": "https://www.lausd.org/Page/19829",
+          "sourceProvider": "Exa Contents",
+          "providerLocatorTerms": [
+            "contract"
+          ],
+          "findingPromotionAllowed": false,
+          "trainingConversionAllowed": false
+        },
+        {
+          "taskId": "browser_capture_lausd_accounts_payable",
+          "status": "queued_not_executed",
+          "targetRecord": "LAUSD Accounts Payable Branch page",
+          "recordFamily": "invoice_payment_process",
+          "captureMethod": "browser_or_manual_public_receipt",
+          "captureReason": "invoice/payment process locator for later payment-record requests",
+          "evidencePosture": "locator_only_until_receipt_and_citation_verifier_pass",
+          "url": "https://www.lausd.org/Page/2069",
+          "sourceProvider": "Exa Contents",
+          "providerLocatorTerms": [
+            "payment",
+            "invoice",
+            "warrant"
+          ],
+          "findingPromotionAllowed": false,
+          "trainingConversionAllowed": false
+        },
+        {
+          "taskId": "browser_capture_lausd_recent_oig_reports",
+          "status": "queued_not_executed",
+          "targetRecord": "LAUSD Recent OIG Reports page",
+          "recordFamily": "oig_report_index",
+          "captureMethod": "browser_or_manual_public_receipt",
+          "captureReason": "official audit/report index locator; absence inference remains blocked",
+          "evidencePosture": "locator_only_until_receipt_and_citation_verifier_pass",
+          "url": "https://www.lausd.org/Page/6905",
+          "sourceProvider": "Exa Contents",
+          "providerLocatorTerms": [
+            "audit",
+            "OIG",
+            "contract"
+          ],
+          "findingPromotionAllowed": false,
+          "trainingConversionAllowed": false
+        },
+        {
+          "taskId": "browser_capture_lausd_final_payment_guidance",
+          "status": "queued_not_executed",
+          "targetRecord": "LAUSD final payment of bills guidance PDF",
+          "recordFamily": "payment_process_guidance",
+          "captureMethod": "browser_or_manual_public_receipt",
+          "captureReason": "payment-process guidance; does not prove AllHere payment",
+          "evidencePosture": "locator_only_until_receipt_and_citation_verifier_pass",
+          "url": "https://www.lausd.org/cms/lib/CA01000043/Centricity/Domain/331/REF-3640.19%20Final%20Payment%20of%20Bills%20for%20Fiscal%20Year%202024-25.pdf",
+          "sourceProvider": "Exa Contents",
+          "providerLocatorTerms": [
+            "payment",
+            "invoice"
+          ],
+          "findingPromotionAllowed": false,
+          "trainingConversionAllowed": false
+        }
+      ],
+      "publicRecordsRequestPacket": {
+        "status": "ready_for_human_review",
+        "officialPraPageUrl": "https://www.lausd.org/Page/3137",
+        "officialPraEmail": "pra@lausd.net",
+        "templateCount": 4,
+        "templateTopics": [
+          "executed contract and attachments",
+          "invoices payments warrants and encumbrances",
+          "performance deliverables and implementation",
+          "OIG audit investigation and complaint index search"
+        ],
+        "evidencePosture": "request_templates_only_not_evidence",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false,
+        "nextAction": "Human reviewer may send or adapt these templates after confirming recipient and desired scope; resulting agency responses must be ingested as new evidence receipts before any finding or training conversion."
+      }
+    },
+    {
+      "caseId": "source_sf_drug_rehabilitation_fwa",
+      "displayId": "AC-003",
+      "caseType": "source_fed_public_records",
+      "caseScope": "Find official SF DPH, Controller, provider-monitoring, contract, licensing, and substance-use treatment records. Separate monitoring deficiencies and outcome gaps from proven fraud.",
+      "title": "San Francisco drug rehabilitation program and where the fraud is",
+      "headline": "A source-fed case board is ready for review.",
+      "lead": "San Francisco drug rehabilitation program and where the fraud is.",
+      "summary": "No proven fraud or illegal activity identified; only monitoring deficiencies and outcome gaps observed.",
+      "jurisdiction": "San Francisco, CA",
+      "reviewStatus": "pass",
+      "publicLabel": "source_fed_case_board",
+      "legalBoundary": "relationship signal for audit review, not legal adjudication",
+      "caseScore": 88,
+      "model": {
+        "name": "Aculeus SLM",
+        "version": "source-fed-adapter-0.1",
+        "mode": "source_fed_case_board",
+        "endpoint": "/api/investigate"
+      },
+      "commandCenter": {
+        "break": "No proven fraud or illegal activity identified; only monitoring deficiencies and outcome gaps observed.",
+        "proof": [
+          "HealthRIGHT 360 received a commendable rating (4) in the FY22-23 Behavioral Health Services Monitoring Report.",
+          "San Francisco DPH submits annual monitoring reports to DHCS and tracks performance metrics for substance use services.",
+          "County Performance Unit Report identified compliance deficiencies and corrective actions for San Francisco's SABG contract."
+        ],
+        "missing": "complete contract file from contracting agency or board clerk | invoice and payment ledger from controller, finance department, or agency accounts payable | monitoring or performance report from program office, oversight body, or independent auditor | Potential delay in parent-reported outcome collection | No identified deficiencies but limited sample of reports",
+        "move": "complete contract file from contracting agency or board clerk",
+        "scopeParity": "SFDPH lanes are review-only parity cases: visible findings require citation-pass rows, blocked verifier rows stay in the audit trail, and broader conclusions require stronger records."
+      },
+      "entities": [
+        {
+          "name": "public_record_review",
+          "role": "finding type",
+          "confidence": 75
+        },
+        {
+          "name": "procurement_review",
+          "role": "finding type",
+          "confidence": 75
+        },
+        {
+          "name": "official_record_reference",
+          "role": "finding type",
+          "confidence": 75
+        }
+      ],
+      "sourceFamilies": [
+        "official_public_record"
+      ],
+      "dossier": {
+        "title": "San Francisco drug rehabilitation program and where the fraud is",
+        "deck": "No proven fraud or illegal activity identified; only monitoring deficiencies and outcome gaps observed.",
+        "posture": "PASS",
+        "centralQuestion": "San Francisco drug rehabilitation program and where the fraud is.",
+        "shortFinding": "HealthRIGHT 360 received a commendable rating (4) in the FY22-23 Behavioral Health Services Monitoring Report. San Francisco DPH submits annual monitoring reports to DHCS and tracks performance metrics for substance use services. County Performance Unit Report identified compliance deficiencies and corrective actions for San Francisco's SABG contract.",
+        "summary": "No proven fraud or illegal activity identified; only monitoring deficiencies and outcome gaps observed.",
+        "stats": [
+          {
+            "label": "Verified leads",
+            "value": "10",
+            "detail": "Finding cards that passed the citation verifier or remain visible as blocked leads."
+          },
+          {
+            "label": "Evidence rows",
+            "value": "25",
+            "detail": "Source-ledger records carried into the front end."
+          },
+          {
+            "label": "Missing records",
+            "value": "5",
+            "detail": "Records needed before stronger conclusions."
+          }
+        ],
+        "layers": [
+          {
+            "label": "Scope",
+            "title": "Question entered",
+            "body": "San Francisco drug rehabilitation program and where the fraud is.",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03"
+            ]
+          },
+          {
+            "label": "Evidence",
+            "title": "Source ledger opened",
+            "body": "25 source-ledger records are visible for review.",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03",
+              "web_04",
+              "web_05",
+              "web_06"
+            ]
+          },
+          {
+            "label": "Verifier",
+            "title": "Claims stay citation-bound",
+            "body": "CITATION_VERIFIER_BLOCKED",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03"
+            ]
+          }
+        ],
+        "findings": [
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-F001",
+            "entity": "public_record_review",
+            "signal": "medium",
+            "whatRecordSays": "HealthRIGHT 360 received a commendable rating (4) in the FY22-23 Behavioral Health Services Monitoring Report.",
+            "whyItMatters": "Confidence 0.9; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "human review",
+            "sourceFamily": "public_record_review",
+            "sourceIds": [
+              "web_01"
+            ]
+          },
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-F003",
+            "entity": "public_record_review",
+            "signal": "low",
+            "whatRecordSays": "San Francisco DPH submits annual monitoring reports to DHCS and tracks performance metrics for substance use services.",
+            "whyItMatters": "Confidence 0.65; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "human review",
+            "sourceFamily": "public_record_review",
+            "sourceIds": [
+              "web_06"
+            ]
+          },
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-F005",
+            "entity": "procurement_review",
+            "signal": "low",
+            "whatRecordSays": "County Performance Unit Report identified compliance deficiencies and corrective actions for San Francisco's SABG contract.",
+            "whyItMatters": "Confidence 0.65; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "human review",
+            "sourceFamily": "procurement_review",
+            "sourceIds": [
+              "web_08"
+            ]
+          },
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-TEF001",
+            "entity": "official_record_reference",
+            "signal": "medium",
+            "whatRecordSays": "The cited extract lists BHS MH/ SUD OP, Residential and Residential Step-Down, contract 1000010457, and 32,757,423.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_03_a9500a95bd"
+            ]
+          },
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-TEF002",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited San Francisco DPH monitoring update extract says development of periodic aggregate PSC-35 reports was delayed due to COVID-19, staffing shortages, and implementation of CalAIM.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_04_8504ec44de"
+            ]
+          },
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-TEF003",
+            "entity": "official_record_reference",
+            "signal": "medium",
+            "whatRecordSays": "The cited San Francisco DPH agreement extract lists HealthRIGHT 360 / HR360 and a total proposed agreement amount of $9,414,414.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_01_52788e02f9"
+            ]
+          },
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-TEF004",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited San Francisco DPH quality-improvement evaluation extract marks the HealthRIGHT 360 after-hours access objective as partially met and links the delay to staffing challenges.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_02_db5747365e"
+            ]
+          },
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-TEF005",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited monitoring-report extract lists Agency: HealthRIGHT 360, Overall Program Rating: 3 - Acceptable/Meets Standards, Program Performance 4, Program Compliance 3, and Client Satisfaction 4.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_01_851b8b2f7e"
+            ]
+          },
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-TEF006",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited fiscal and compliance monitoring extract says the review was conducted for FY23-24 and that no findings were identified.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_02_58212140b6"
+            ]
+          },
+          {
+            "findingId": "sf_drug_rehabilitation_fwa-TEF007",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited Health Commission committee extract says the representative payee service would be put out to bid separately and that some monitoring reports did not have finalized dates.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_03_16023128eb"
+            ]
+          }
+        ],
+        "claimLedger": [
+          {
+            "claim": "HealthRIGHT 360 received a commendable rating (4) in the FY22-23 Behavioral Health Services Monitoring Report.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_01"
+            ]
+          },
+          {
+            "claim": "San Francisco DPH submits annual monitoring reports to DHCS and tracks performance metrics for substance use services.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_06"
+            ]
+          },
+          {
+            "claim": "County Performance Unit Report identified compliance deficiencies and corrective actions for San Francisco's SABG contract.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_08"
+            ]
+          },
+          {
+            "claim": "The cited extract lists BHS MH/ SUD OP, Residential and Residential Step-Down, contract 1000010457, and 32,757,423.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_03_a9500a95bd"
+            ]
+          },
+          {
+            "claim": "The cited San Francisco DPH monitoring update extract says development of periodic aggregate PSC-35 reports was delayed due to COVID-19, staffing shortages, and implementation of CalAIM.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_04_8504ec44de"
+            ]
+          },
+          {
+            "claim": "The cited San Francisco DPH agreement extract lists HealthRIGHT 360 / HR360 and a total proposed agreement amount of $9,414,414.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_01_52788e02f9"
+            ]
+          },
+          {
+            "claim": "HR360 FY23-24 funding summary reports $79,058,563 in expenditures and a pending contract renewal.",
+            "support": "blocked_by_citation_verifier",
+            "limitation": "quoted_or_claim_text_not_supported_by_excerpt",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_02"
+            ]
+          },
+          {
+            "claim": "Monitoring deficiencies include delayed parent-reported outcomes due to staffing shortages and CalAIM implementation delays.",
+            "support": "blocked_by_citation_verifier",
+            "limitation": "quoted_or_claim_text_not_supported_by_excerpt",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_07"
+            ]
+          },
+          {
+            "claim": "Delayed parent-reported outcomes",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          },
+          {
+            "claim": "Pending contract approval",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          },
+          {
+            "claim": "TBD performance metrics",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          }
+        ],
+        "sourceMatrix": [
+          {
+            "family": "Official records",
+            "status": "25",
+            "proves": "Authority and source trail",
+            "missing": "Underlying attachments where not fetched"
+          },
+          {
+            "family": "Usable evidence",
+            "status": "17",
+            "proves": "Claim support candidates",
+            "missing": "Human review before publication"
+          },
+          {
+            "family": "Locators",
+            "status": "8",
+            "proves": "Where to fetch next",
+            "missing": "Direct capture or records request"
+          }
+        ],
+        "followUpQuestions": [
+          "Which finding has the strongest official-source support?",
+          "What record would change this case the most?",
+          "Which weak or rejected claim should stay out of the public narrative?",
+          "Which source should be opened next?"
+        ],
+        "nextMoves": [
+          "complete contract file from contracting agency or board clerk",
+          "invoice and payment ledger from controller, finance department, or agency accounts payable",
+          "monitoring or performance report from program office, oversight body, or independent auditor",
+          "Potential delay in parent-reported outcome collection",
+          "No identified deficiencies but limited sample of reports"
+        ]
+      },
+      "claims": [
+        {
+          "title": "public_record_review",
+          "body": "HealthRIGHT 360 received a commendable rating (4) in the FY22-23 Behavioral Health Services Monitoring Report.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_01"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "title": "public_record_review",
+          "body": "San Francisco DPH submits annual monitoring reports to DHCS and tracks performance metrics for substance use services.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_06"
+          ],
+          "confidence": 0.65
+        },
+        {
+          "title": "procurement_review",
+          "body": "County Performance Unit Report identified compliance deficiencies and corrective actions for San Francisco's SABG contract.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_08"
+          ],
+          "confidence": 0.65
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited extract lists BHS MH/ SUD OP, Residential and Residential Step-Down, contract 1000010457, and 32,757,423.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_03_a9500a95bd"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited San Francisco DPH monitoring update extract says development of periodic aggregate PSC-35 reports was delayed due to COVID-19, staffing shortages, and implementation of CalAIM.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_04_8504ec44de"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited San Francisco DPH agreement extract lists HealthRIGHT 360 / HR360 and a total proposed agreement amount of $9,414,414.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_01_52788e02f9"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited San Francisco DPH quality-improvement evaluation extract marks the HealthRIGHT 360 after-hours access objective as partially met and links the delay to staffing challenges.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_02_db5747365e"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited monitoring-report extract lists Agency: HealthRIGHT 360, Overall Program Rating: 3 - Acceptable/Meets Standards, Program Performance 4, Program Compliance 3, and Client Satisfaction 4.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_01_851b8b2f7e"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited fiscal and compliance monitoring extract says the review was conducted for FY23-24 and that no findings were identified.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_02_58212140b6"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited Health Commission committee extract says the representative payee service would be put out to bid separately and that some monitoring reports did not have finalized dates.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_03_16023128eb"
+          ],
+          "confidence": 0.92
+        }
+      ],
+      "sources": [
+        {
+          "sourceId": "web_01",
+          "title": "HR360__Outpatient_Intensive_Outpatient.pdf",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/HR360__Outpatient_Intensive_Outpatient.pdf",
+          "hash": "b930d224809612c2cea06fad167cf8784e7f0c6b3686239d265e856e8c6edf01",
+          "excerpt": "Behavioral Health Services Monitoring Report Fiscal Year 22-23 Business Office Contract Compliance 1380 Howard Street San Francisco, CA 9410 3 City and County of San Francisco London N. Breed, Mayor Department of Public Health Target Population: Adult/Older Adult Section: BHS-SUD Program Reviewed: HR360 Outpatient & Intensive Outpatient Site Address: 1563 Mission Street, 3rd floor, 1601 Donner #3, 2020 Hayes St., 1735 Mission Street, San Francisco, CA 94103 Site Visit Date: February 20, 2024 On-",
+          "quotedExcerpt": "Behavioral Health Services Monitoring Report Fiscal Year 22-23 Business Office Contract Compliance 1380 Howard Street San Francisco, CA 9410 3 City and County of San Francisco London N. Breed, Mayor Department of Public Health Target Population: Adult/Older Adult Section: BHS-SUD Program Reviewed: HR360 Outpatient & Intensive Outpatient Site Address: 1563 Mission Street, 3rd floor, 1601 Donner #3, 2020 Hayes St., 1735 Mission Street, San Francisco, CA 94103 Site Visit Date: February 20, 2024 On-",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_02",
+          "title": "HR360_Funding_Totals_Summary_FY23-24.pdf",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/HR360_Funding_Totals_Summary_FY23-24.pdf",
+          "hash": "79fabb433d57cd9c2f2d2732bab6498f8fc782f348f3739f3204cd9b7302b749",
+          "excerpt": "ms and Related Expenses Workforce and Training 5) Other Emergent Needs such as Mental Health and Substance Use Disorder consultations, and hospital payments for psychiatric emergency and eating disorders.check-writing services, of which approximately $70k annually is the fee, with the balance towards expenses. Certified BHS Fiscal Intermediary 1000003037 3,842,521$ 1/1/2014 12/31/2023 79,058,563 HealthRIGHT 360 (HR360), in collaboration with the San Francisco Department of Public Health (DPH), w",
+          "quotedExcerpt": "ms and Related Expenses Workforce and Training 5) Other Emergent Needs such as Mental Health and Substance Use Disorder consultations, and hospital payments for psychiatric emergency and eating disorders.check-writing services, of which approximately $70k annually is the fee, with the balance towards expenses. Certified BHS Fiscal Intermediary 1000003037 3,842,521$ 1/1/2014 12/31/2023 79,058,563 HealthRIGHT 360 (HR360), in collaboration with the San Francisco Department of Public Health (DPH), w",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_03",
+          "title": "data--substance-use-treatment",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.sf.gov/data--substance-use-treatment",
+          "hash": "2c1130435871ca195ceee476450f919508e48e000b7a636bd4172cde83c73b76",
+          "excerpt": "Substance Use Treatment | SF.gov Skip to main content SF.gov Menu Services Get married in San Francisco Get a birth certificate Find affordable housing Get a permit Report a problem Building Business Health Homelessness Housing Personal records Parking Volunteering See all services Departments Assessor-Recorder City Administrator Department of Building Inspections Department of Elections Department of Public Health Rent Board SFGovTV See all departments Jobs Contact Report a problem Contact City",
+          "quotedExcerpt": "Substance Use Treatment | SF.gov Skip to main content SF.gov Menu Services Get married in San Francisco Get a birth certificate Find affordable housing Get a permit Report a problem Building Business Health Homelessness Housing Personal records Parking Volunteering See all services Departments Assessor-Recorder City Administrator Department of Building Inspections Department of Elections Department of Public Health Rent Board SFGovTV See all departments Jobs Contact Report a problem Contact City",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_04",
+          "title": "public-integrity",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.sf.gov/public-integrity",
+          "hash": "04d0e30efb56bcba19ab7385c021b0dad967e3fbd3d4062bf65bb2d99ad4ce3b",
+          "excerpt": "Public Integrity | SF.gov Skip to main content SF.gov Menu Services Get married in San Francisco Get a birth certificate Find affordable housing Get a permit Report a problem Building Business Health Homelessness Housing Personal records Parking Volunteering See all services Departments Assessor-Recorder City Administrator Department of Building Inspections Department of Elections Department of Public Health Rent Board SFGovTV See all departments Jobs Contact Report a problem Contact City depart",
+          "quotedExcerpt": "Public Integrity | SF.gov Skip to main content SF.gov Menu Services Get married in San Francisco Get a birth certificate Find affordable housing Get a permit Report a problem Building Business Health Homelessness Housing Personal records Parking Volunteering See all services Departments Assessor-Recorder City Administrator Department of Building Inspections Department of Elections Department of Public Health Rent Board SFGovTV See all departments Jobs Contact Report a problem Contact City depart",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_05",
+          "title": "[PDF] HealthRight 360 Presentation--Integrated care - DHCS",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.dhcs.ca.gov/provgovpart/Documents/6422/healthRIGHT360Presentation-1-23-20.pdf",
+          "hash": "fb85c72c4b889f7e5fb428ac87e20812c02ebeca8be3b078c56e7c6e815fbd37",
+          "excerpt": "plans  FQHC PPS--Medicaid  Specialty behavioral health Medicaid carve-outs  County general fund  County and state criminal justice funds  HRSA grants  SAMHSA grants  Fundraising Please refer to page 14 for more information. What we do  Integrated substance use disorder and mental health treatment  Case management  Primary care/FQHCs with integrated behavioral health  Transgender healthcare  Medication Assisted Treatment available in San Francisco, San Mateo County, and Los Angeles ",
+          "quotedExcerpt": "plans  FQHC PPS--Medicaid  Specialty behavioral health Medicaid carve-outs  County general fund  County and state criminal justice funds  HRSA grants  SAMHSA grants  Fundraising Please refer to page 14 for more information. What we do  Integrated substance use disorder and mental health treatment  Case management  Primary care/FQHCs with integrated behavioral health  Transgender healthcare  Medication Assisted Treatment available in San Francisco, San Mateo County, and Los Angeles ",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_06",
+          "title": "[PDF] An Overview of DPH Program Monitoring and Performance Metrics",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/Performance_Metrics_-_Devleopment_and_Reporting.pdf",
+          "hash": "674183799a1b1bcb5c39e70cd3606fdcf6ac57caadc67c23683609780ffa93f4",
+          "excerpt": "ed in Program Monitoring About Annual Program Monitoring 5 Funding Period: Jul 1 – Jun 30 (City FY) Monitoring Timeline: Sep 15 – Nov 30 ‣ HIV Health Services - General Fund ‣ Community Health Equity and Promotion - HIV Prevention Services and Wellness Programs Funding Period: Jul 1 – Jun 30 (State FY) Monitoring Timeline: Sep 15 – Mar 31 ‣ Behavioral Health Services for Adults, Children, Transitional Aged Youth, and Mental Health Services Act ‣ Substance Use Disorder Services / Block Grants Fun",
+          "quotedExcerpt": "ed in Program Monitoring About Annual Program Monitoring 5 Funding Period: Jul 1 – Jun 30 (City FY) Monitoring Timeline: Sep 15 – Nov 30 ‣ HIV Health Services - General Fund ‣ Community Health Equity and Promotion - HIV Prevention Services and Wellness Programs Funding Period: Jul 1 – Jun 30 (State FY) Monitoring Timeline: Sep 15 – Mar 31 ‣ Behavioral Health Services for Adults, Children, Transitional Aged Youth, and Mental Health Services Act ‣ Substance Use Disorder Services / Block Grants Fun",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_07",
+          "title": "HC Compliance Monitoring and QM Functions Update ...",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/DPH_Compliance_Monitoring_and_QM_Functions_Update_3_23.pdf",
+          "hash": "7a5f6b74cf09c2678ec8ac0d485184bdf6d036b32b7924206f1808188e1e2ae5",
+          "excerpt": "of services and staff. Focus group reports and recommendations are included in the EQRO reports sent to DHCS and BHS administration annually. Progress on recommendations are reviewed at subsequent EQRO reviews. Annually X X Parent-reported outcomes for Child, Youth, and Family Outcomes BHS is mandated to collect and monitor parent-reported outcomes on the Pediatric Symptom Checklist (PSC) every six months. The administration of the PSC-35 in the San Francisco’s Children, Youth, & Family System o",
+          "quotedExcerpt": "of services and staff. Focus group reports and recommendations are included in the EQRO reports sent to DHCS and BHS administration annually. Progress on recommendations are reviewed at subsequent EQRO reviews. Annually X X Parent-reported outcomes for Child, Youth, and Family Outcomes BHS is mandated to collect and monitor parent-reported outcomes on the Pediatric Symptom Checklist (PSC) every six months. The administration of the PSC-35 in the San Francisco’s Children, Youth, & Family System o",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_08",
+          "title": "[PDF] 18 – County Performance Unit Report - Sabg - DHCS",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.dhcs.ca.gov/services/Documents/SUD%20-%20County%20Monitoring%20Reports/FY_1718_CPU_Reports/CPU_Report_FY_1718_San_Francisco.pdf",
+          "hash": "3c26ca50fc14b7c71f8bd040d1ff5cc3384a3731940eab30b5a0f291213ed8f7",
+          "excerpt": "State of California — Health and Human Services Agency Department of Health Care Services JENNIFER KENT D IRECTOR EDMUND G. BROWN JR. G OVERNOR J uly 10, 2018 Sent via e - mail to: judith.martin@sfdph.org J udith Martin, Medical Director, Substance Use Services San Francisco Department of Health Services Room 221, Second floor, 1380 Howard Street San Francisco, CA 94103 SUBJECT: F iscal Y ear ( FY) 2017 - 18 – County Performance Unit Report - SABG Dear Deputy Medical Director Martin: E nclosed a",
+          "quotedExcerpt": "State of California — Health and Human Services Agency Department of Health Care Services JENNIFER KENT D IRECTOR EDMUND G. BROWN JR. G OVERNOR J uly 10, 2018 Sent via e - mail to: judith.martin@sfdph.org J udith Martin, Medical Director, Substance Use Services San Francisco Department of Health Services Room 221, Second floor, 1380 Howard Street San Francisco, CA 94103 SUBJECT: F iscal Y ear ( FY) 2017 - 18 – County Performance Unit Report - SABG Dear Deputy Medical Director Martin: E nclosed a",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_09",
+          "title": "San Francisco O D S Contract - DHCS - CA.gov",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.dhcs.ca.gov/provgovpart/Documents/DMC_ODS_San_Francisco_Executed_Contract_Redacted.pdf",
+          "hash": "14db265f4a0ef801ee1aac084fdfdee126069c58b045097361a7c7a144750c62",
+          "excerpt": "throughutil izationoffederalandstatefund savailablepursu antto TitleXIXandTitleXXIoftheSoci alSecurityActandtheSAP T Bloc kGran tfor reimbu rsablecover edservicesrenderedbycert ifiedDMC provi ders. Servi ceLocati on Theservice sshallbeperformedatappli cablefacilit iesintheCi tyandCount yofSan Franci sco. Servi ceHour s Theservice sshallbeprovid edduri ngtheworkin ghoursanddaysasdefin edbythe Cont ractor. 1. 2. 3. Page1 of5 4. City and County of San Francisco #16-93237 Exhibit A Scope of Work Pro",
+          "quotedExcerpt": "throughutil izationoffederalandstatefund savailablepursu antto TitleXIXandTitleXXIoftheSoci alSecurityActandtheSAP T Bloc kGran tfor reimbu rsablecover edservicesrenderedbycert ifiedDMC provi ders. Servi ceLocati on Theservice sshallbeperformedatappli cablefacilit iesintheCi tyandCount yofSan Franci sco. Servi ceHour s Theservice sshallbeprovid edduri ngtheworkin ghoursanddaysasdefin edbythe Cont ractor. 1. 2. 3. Page1 of5 4. City and County of San Francisco #16-93237 Exhibit A Scope of Work Pro",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_10",
+          "title": "[PDF] SAN FRANCISCO DEPARTMENT OF PUBLIC HEALTH BETTY T. YEE",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.sco.ca.gov/Files-AUD/08-2020_saa-p47_sanFrancisoPubHealth.pdf",
+          "hash": "bd936a42902671c834de2aa5f759bcefb65e4848a4c2691c9922e6007eff4ba7",
+          "excerpt": "SAN FRANCISCO DEPARTMENT OF PUBLIC HEALTH Audit Report PROPOSITION 47 SAFE NEIGHBORHOODS AND SCHOOLS FUND GRANT EXPENDITURES July 1, 2016, through June 30, 2019 BETTY T. YEE California State Controller August 2020 BETTY T. YEE California State Controller August 4, 2020 Angelica M. Almeida, Ph.D., Director Forensic/Justice Involved Behavioral Health Services San Francisco Department of Public Health 1380 Howard Street, 4th floor San Francisco, CA 94103 Dear Dr. Almeida: This is the final report f",
+          "quotedExcerpt": "SAN FRANCISCO DEPARTMENT OF PUBLIC HEALTH Audit Report PROPOSITION 47 SAFE NEIGHBORHOODS AND SCHOOLS FUND GRANT EXPENDITURES July 1, 2016, through June 30, 2019 BETTY T. YEE California State Controller August 2020 BETTY T. YEE California State Controller August 4, 2020 Angelica M. Almeida, Ph.D., Director Forensic/Justice Involved Behavioral Health Services San Francisco Department of Public Health 1380 Howard Street, 4th floor San Francisco, CA 94103 Dear Dr. Almeida: This is the final report f",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "second_sf_drug_rehabilitation_fwa_R008_01",
+          "title": "IRS TEOS - Tax Exempt Organization Search bulk data downloads",
+          "type": "official_public_record",
+          "publisher": "official_public_record",
+          "role": "found, official, locator_only",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.irs.gov/charities-non-profits/tax-exempt-organization-search-bulk-data-downloads",
+          "hash": "",
+          "excerpt": "IRS tax-exempt organization bulk/download source link discovered from TEOS page: Tax Exempt Organization Search bulk data downloads.",
+          "quotedExcerpt": "IRS tax-exempt organization bulk/download source link discovered from TEOS page: Tax Exempt Organization Search bulk data downloads.",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "official_api:irs_teos_bulk_download_links",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "second_sf_drug_rehabilitation_fwa_R009_01",
+          "title": "The Expanse of PFAS in Stormwater and Wastewater",
+          "type": "official_public_record",
+          "publisher": "official_catalog_metadata",
+          "role": "found, official, locator_only",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://storymaps.arcgis.com/stories/edfc9d763e8c4249b5f002573af199c5",
+          "hash": "",
+          "excerpt": "ArcGIS item metadata: title=The Expanse of PFAS in Stormwater and Wastewater; owner=sotompki_IU; type=StoryMap; snippet=San Francisco, California.",
+          "quotedExcerpt": "ArcGIS item metadata: title=The Expanse of PFAS in Stormwater and Wastewater; owner=sotompki_IU; type=StoryMap; snippet=San Francisco, California.",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "official_api:arcgis_item_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_03_a9500a95bd",
+          "title": "blocked_finding_targeted_refetch",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/HR360_Funding_Totals_Summary_FY23-24.pdf",
+          "hash": "5d987f6b00da1628ff062781425892f7dab16dc78ec52abbddf6e300118d75ea",
+          "excerpt": "hospital payments for psychiatric emergency and eating disorders.check-writing services, of which approximately $70k annually is the fee, with the balance towards expenses. Certified BHS Fiscal Intermediary 1000003037 3,842,521$ 1/1/2014 12/31/2023 79,058,563 HealthRIGHT 360 (HR360), in collaboration with the San Francisco Department of Public Health (DPH), will provide fiscal and human resource, management services, subcontractors, consultants, and staff in support of the Children,Youth, and Families (CYF) Skilled Professional Medical Personnel (SPMP) Foster Care, Street Violence Intervention and Prevention, Jail Health Peer Program. Ended. New contract under #30056 BHS Fiscal Intermediary 1000030056 6,830,241$ 1/1/2024 12/31/2024 TBD Certification pending; will require CAT approval. BHS MH/ SUD OP, Residential and Residential Step-Down 1000010457 32,757,423$ 7/1/2018 6/30/2025 163,930,879 Mental Health and Substance Abuse Disorder services programming Certified BHS Street Crisis Resp",
+          "quotedExcerpt": "hospital payments for psychiatric emergency and eating disorders.check-writing services, of which approximately $70k annually is the fee, with the balance towards expenses. Certified BHS Fiscal Intermediary 1000003037 3,842,521$ 1/1/2014 12/31/2023 79,058,563 HealthRIGHT 360 (HR360), in collaboration with the San Francisco Department of Public Health (DPH), will provide fiscal and human resource, management services, subcontractors, consultants, and staff in support of the Children,Youth, and Families (CYF) Skilled Professional Medical Personnel (SPMP) Foster Care, Street Violence Intervention and Prevention, Jail Health Peer Program. Ended. New contract under #30056 BHS Fiscal Intermediary 1000030056 6,830,241$ 1/1/2024 12/31/2024 TBD Certification pending; will require CAT approval. BHS MH/ SUD OP, Residential and Residential Step-Down 1000010457 32,757,423$ 7/1/2018 6/30/2025 163,930,879 Mental Health and Substance Abuse Disorder services programming Certified BHS Street Crisis Resp",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 1,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "HR360",
+            "Funding"
+          ],
+          "amountCandidates": [
+            "$ 1"
+          ]
+        },
+        {
+          "sourceId": "extract_targeted_extract_04_8504ec44de",
+          "title": "blocked_finding_targeted_refetch",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/DPH_Compliance_Monitoring_and_QM_Functions_Update_3_23.pdf",
+          "hash": "0d1c845af0b4bacf4f0142a66f20ced7e1cda2e10063443ea051d5737c44f338",
+          "excerpt": "Family System of Care began in October 2018. After the first two years of administration, data were to be examined and formal, periodic reporting of aggregate data was to be developed. Due to the COVID-19 crisis, staffing shortages, and the implementation of CalAIM this process has been delayed. Examination of the PSC-35 data since October 2018 and development of periodic reports will occur as soon as the task can be prioritized. Every 6 months X X HIV Community Planning Council HIV Health Services and HIV Prevention Services: This collaborative body fulfills Federal mandated functions to receive Federal HIV funding, including reviewing utilization data, updates on aggregate HIV+ client qual",
+          "quotedExcerpt": "Family System of Care began in October 2018. After the first two years of administration, data were to be examined and formal, periodic reporting of aggregate data was to be developed. Due to the COVID-19 crisis, staffing shortages, and the implementation of CalAIM this process has been delayed. Examination of the PSC-35 data since October 2018 and development of periodic reports will occur as soon as the task can be prioritized. Every 6 months X X HIV Community Planning Council HIV Health Services and HIV Prevention Services: This collaborative body fulfills Federal mandated functions to receive Federal HIV funding, including reviewing utilization data, updates on aggregate HIV+ client qual",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 2,
+          "matchedTerms": [
+            "CalAIM",
+            "staffing shortages",
+            "parent-reported outcomes"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_01_52788e02f9",
+          "title": "Microsoft Word - HC Memo HR360 - DG edits",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.sf.gov/sites/default/files/2023-02/HC%20Memo%20HR360%20signed%202-2-2023_0.pdf",
+          "hash": "4a30f78fea853cd0296e461b888a80b9cb25cf24d915faa3330c1ad080def5fe",
+          "excerpt": "DPH Administrator: Hillary Kunins Program Administrator: Jose‐Luis Guzman Phone: (415) 255‐3727 Contact: Vitka Eisen Phone (415)226‐1775 Contract Analyst: Sarah Ghoneim Phone: (628) 271‐6157 Request for approval of a New Professional Services Agreement, with HealthRight 360 to transition two existing programs from Baker Places (Joe Healy and Acceptance Place) to HR360 with the continued goal of reducing the impact of substance use disorder and addiction on the target populations. The total proposed agreement amount is $9,414,414 which includes a 12% contingency for the term of 11/16/2022 through 06/30/2024 (1 year 7 months 14 days). Mark only one for each question below: 1. Vendor Type: ☐ Fo",
+          "quotedExcerpt": "DPH Administrator: Hillary Kunins Program Administrator: Jose‐Luis Guzman Phone: (415) 255‐3727 Contact: Vitka Eisen Phone (415)226‐1775 Contract Analyst: Sarah Ghoneim Phone: (628) 271‐6157 Request for approval of a New Professional Services Agreement, with HealthRight 360 to transition two existing programs from Baker Places (Joe Healy and Acceptance Place) to HR360 with the continued goal of reducing the impact of substance use disorder and addiction on the target populations. The total proposed agreement amount is $9,414,414 which includes a 12% contingency for the term of 11/16/2022 through 06/30/2024 (1 year 7 months 14 days). Mark only one for each question below: 1. Vendor Type: ☐ Fo",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 1,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "HR360"
+          ],
+          "amountCandidates": [
+            "$9,414,414"
+          ]
+        },
+        {
+          "sourceId": "followup_crawler_fetch_official_api_followup_aba9535adf",
+          "title": "official-api-followup-aba9535adf",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://storymaps.arcgis.com/stories/edfc9d763e8c4249b5f002573af199c5",
+          "hash": "193d2756750056d751213d9a09dab0b52cffc6b012e4fe3a895cecafa966936c",
+          "excerpt": "The Expanse of PFAS in Stormwater and Wastewater",
+          "quotedExcerpt": "The Expanse of PFAS in Stormwater and Wastewater",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_official_api_followup_ed44d401d7",
+          "title": "official-api-followup-ed44d401d7",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://storymaps.arcgis.com/stories/871f9b2695f1425d88fad10219ce3567",
+          "hash": "d241f8f69fb226d12e59b016a5a558b30fe5988b315826b9c972692f73a8985c",
+          "excerpt": "The Effects of Racial Capitalism on the Opioid Crisis in SF",
+          "quotedExcerpt": "The Effects of Racial Capitalism on the Opioid Crisis in SF",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_metadata_edfc9d763e8c4249b5f002573af199c5",
+          "title": "The Expanse of PFAS in Stormwater and Wastewater",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_rest_metadata, needs_underlying_data_fetch, low_relevance_locator",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://storymaps.arcgis.com/stories/edfc9d763e8c4249b5f002573af199c5",
+          "hash": "011e6a5d9453946d2fa5f9c3c8f459a0758e05d8128ded6563f55bda0f5cc039",
+          "excerpt": "Per- and polyfluoroalkyl substances (PFAS) are persistent synthetic chemicals widely used in consumer products for water, stain, and grease resistance. Their environmental persistence, bioaccumulation potential, and links to adverse human health outcomes [1] make them a significant sustainability challenge. [2] In urban regions such as the San Francisco Bay area, PFAS-containing consumer products are an ongoing source of contamination to wastewater and stormwater systems, contributing to ecological impacts and costly treatment burdens. [3]​ PFAS have been associated with many negative health effects including cancer, obesity, decreased immune response, and higher cholesterol.​ The overarchin",
+          "quotedExcerpt": "Per- and polyfluoroalkyl substances (PFAS) are persistent synthetic chemicals widely used in consumer products for water, stain, and grease resistance. Their environmental persistence, bioaccumulation potential, and links to adverse human health outcomes [1] make them a significant sustainability challenge. [2] In urban regions such as the San Francisco Bay area, PFAS-containing consumer products are an ongoing source of contamination to wastewater and stormwater systems, contributing to ecological impacts and costly treatment burdens. [3]​ PFAS have been associated with many negative health effects including cancer, obesity, decreased immune response, and higher cholesterol.​ The overarchin",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_metadata_871f9b2695f1425d88fad10219ce3567",
+          "title": "The Effects of Racial Capitalism on the Opioid Crisis in SF",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_rest_metadata, needs_underlying_data_fetch, candidate_locator",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://storymaps.arcgis.com/stories/871f9b2695f1425d88fad10219ce3567",
+          "hash": "a34f279f23de0a45468b58d939e0e02983e69b73ff1fdef1ea5a8eef31abbf47",
+          "excerpt": "The opioid crisis in addition to rising rates of homelessness have deeply affected the wellbeing of lower and working class people in San Francisco. The year 2021 found the Tenderloin district in a declared state of emergency as a result of opioid overdose deaths. Neglect and lack of resources has led to an epidemic that has found many people stuck in pits of addiction and disparity. Distribution of synthetic opiates leading to the main cause of overdoses have become a leading cause of death within areas of San Francisco, and attention needs to be brought to enact policy and distribute proper resources to promote education and safe use of such substances. This map displays the disproportiona",
+          "quotedExcerpt": "The opioid crisis in addition to rising rates of homelessness have deeply affected the wellbeing of lower and working class people in San Francisco. The year 2021 found the Tenderloin district in a declared state of emergency as a result of opioid overdose deaths. Neglect and lack of resources has led to an epidemic that has found many people stuck in pits of addiction and disparity. Distribution of synthetic opiates leading to the main cause of overdoses have become a leading cause of death within areas of San Francisco, and attention needs to be brought to enact policy and distribute proper resources to promote education and safe use of such substances. This map displays the disproportiona",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_arcgis_story_data_871f9b2695f1425d88fad10219ce3567",
+          "title": "The Effects of Racial Capitalism on the Opioid Crisis in SF",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, arcgis_item_data, storymap_data_locator",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://storymaps.arcgis.com/stories/871f9b2695f1425d88fad10219ce3567",
+          "hash": "ad78e13f085ad16cb5693139c7d8c2dde49257c9795a91ff9fba041ec0bd2244",
+          "excerpt": "The Effects of Racial Capitalism on the Opioid Crisis in SF | Underfunded communities are more susceptible to accidental overdose in the San Francisco area due to lack of access to treatment centers. | The opioid crisis in addition to rising rates of homelessness have deeply affected the wellbeing of lower and working class people in San Francisco. The year 2021 found the Tenderloin district in a declared state of emergency as a result of opioid overdose dea | Accidental OD Deaths in Comparison to Median Income in SF",
+          "quotedExcerpt": "The Effects of Racial Capitalism on the Opioid Crisis in SF | Underfunded communities are more susceptible to accidental overdose in the San Francisco area due to lack of access to treatment centers. | The opioid crisis in addition to rising rates of homelessness have deeply affected the wellbeing of lower and working class people in San Francisco. The year 2021 found the Tenderloin district in a declared state of emergency as a result of opioid overdose dea | Accidental OD Deaths in Comparison to Median Income in SF",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_02_db5747365e",
+          "title": "SF-DMC-ODS-FY-22-23-QIWP-Evaluation-Report",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/DMC-ODS_FY_22-23_QIWP_Evaluation_Report_rev03.28.2024_0.pdf",
+          "hash": "3e7ecbc962c0ec23dc320e5e33e598469f5b649cb451e35916c8856c6fbe5152",
+          "excerpt": "......................................................................................... GOAL II.a. Ensure timeliness of routine and urgent substance use appointments. OBJECTIVE 7 By June 30, 2023, revisit increasing access to DMC-ODS after-hours services at HealthRIGHT 360. SCORE: ☐ Met ☒ Partially met ☐ Not met Continue next year? ☒Y ☐N ACTION 1 Work with HealthRIGHT 360 to increase staff, embed intake staff at Level 3 facilities, and increase intake hours of both withdrawal management and residential services. STATUS ☐ Completed ☒ In progress ☒ Changed/delayed Continue next year? ☒Y ☐N PERFORMANCE DATA/OUTCOMES (In progress) PAST YEAR’S PROGRESS Due to staffing challenges faced at HR360 this past year in hiring LPHAs and certified counselors who are willing to work in residential facilities, we were not able to meet this objective. Prior to COVID, in 2019 we had expanded intake hours to evenings at HR360 residential services. However, expanded hours were stopped due to COVID restri",
+          "quotedExcerpt": "......................................................................................... GOAL II.a. Ensure timeliness of routine and urgent substance use appointments. OBJECTIVE 7 By June 30, 2023, revisit increasing access to DMC-ODS after-hours services at HealthRIGHT 360. SCORE: ☐ Met ☒ Partially met ☐ Not met Continue next year? ☒Y ☐N ACTION 1 Work with HealthRIGHT 360 to increase staff, embed intake staff at Level 3 facilities, and increase intake hours of both withdrawal management and residential services. STATUS ☐ Completed ☒ In progress ☒ Changed/delayed Continue next year? ☒Y ☐N PERFORMANCE DATA/OUTCOMES (In progress) PAST YEAR’S PROGRESS Due to staffing challenges faced at HR360 this past year in hiring LPHAs and certified counselors who are willing to work in residential facilities, we were not able to meet this objective. Prior to COVID, in 2019 we had expanded intake hours to evenings at HR360 residential services. However, expanded hours were stopped due to COVID restri",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 14,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "HR360",
+            "Evaluation",
+            "Report"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_01_851b8b2f7e",
+          "title": "SFDPH-HR360-Recovery-Residence-Monitoring-Report-FY22-23",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/HR360_Recovery_Residence.pdf",
+          "hash": "e2fe2b4ab9ccca7f8918ffc922379ba3dd9a29f4eecde227d4aebb24c1a01b1d",
+          "excerpt": "ing Team Member(s): September Rose Program/Contractor Representatives: Diana Castillo, Sarah Ahmed, George Fields, Michelle Singletary, Max Williams, Susan Okada, Barbra Laymance, Rebecca Andreano (Personnel), Danielle Jennings (Training) Report Date: Agency: HealthRIGHT 360 4 = Commendable/Exceeds Standards 2 = Improvement Needed/Below Standards 3 = Acceptable/Meets Standards 1 = Unacceptable June 6, 2024 Review Period: July 1, 2022- June 30, 2023 Program Code(s): 87067, 88077, 8928RSD, 8927RSD, 9265RSD, 9035RSD Overall Program Rating: 3 - Acceptable/Meets Standards Category Ratings: Program Performance4 Program Compliance3 Client Satisfaction4 Program Performance Program Compliance Client Satisfaction Declaration of Compliance Administrative Binder Site/Premise Compliance Chart Documentation Plan of Action (if applicable) Satisfaction Survey Completed and Analyzed Achievement of Performance Objectives Sub-Categories Reviewed: Program Deliverables Units of Service Delivered Unduplicat",
+          "quotedExcerpt": "ing Team Member(s): September Rose Program/Contractor Representatives: Diana Castillo, Sarah Ahmed, George Fields, Michelle Singletary, Max Williams, Susan Okada, Barbra Laymance, Rebecca Andreano (Personnel), Danielle Jennings (Training) Report Date: Agency: HealthRIGHT 360 4 = Commendable/Exceeds Standards 2 = Improvement Needed/Below Standards 3 = Acceptable/Meets Standards 1 = Unacceptable June 6, 2024 Review Period: July 1, 2022- June 30, 2023 Program Code(s): 87067, 88077, 8928RSD, 8927RSD, 9265RSD, 9035RSD Overall Program Rating: 3 - Acceptable/Meets Standards Category Ratings: Program Performance4 Program Compliance3 Client Satisfaction4 Program Performance Program Compliance Client Satisfaction Declaration of Compliance Administrative Binder Site/Premise Compliance Chart Documentation Plan of Action (if applicable) Satisfaction Survey Completed and Analyzed Achievement of Performance Objectives Sub-Categories Reviewed: Program Deliverables Units of Service Delivered Unduplicat",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 1,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "HR360",
+            "Monitoring Report Fiscal Year 22-23",
+            "Recovery Residence",
+            "Program Deliverables",
+            "Recovery"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_02_58212140b6",
+          "title": "SFDPH-HR360-FY23-24-Fiscal-Compliance-Monitoring",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/Fiscal_Info-vercon_HR360_FY23_24_0.pdf",
+          "hash": "84f7093e443e220fb21414116996e65ed24466926fb2ea03ad5e2dd91227ead0",
+          "excerpt": "of Public Health MH-Adult: Adult RCF/E and SNF Beds (LT) (#1000018756) Department of Public Health \"Health Ed: HCV Linkage to Care (# 1000002612)\" Dear Vitka Eisen: This letter conveys the results of the Citywide Fiscal and Compliance Monitoring conducted for FY23-24. The monitoring was led by Wasim Samara, Department of Public Health in conjunction with other funding City Departments. The fiscal and compliance monitoring reviewed multiple standards, including but not limited to the following categories: Agency-Wide Budget, Audited Financial Statements, Financial Reports and Invoice Review. We are pleased to report that there were no findings identified in our fiscal and compliance monitoring. Please extend our appreciation to your staff for their preparation in advance of the monitoring and assistance during the process. We thank you for your work in serving the San Francisco community. Sincerely,",
+          "quotedExcerpt": "of Public Health MH-Adult: Adult RCF/E and SNF Beds (LT) (#1000018756) Department of Public Health \"Health Ed: HCV Linkage to Care (# 1000002612)\" Dear Vitka Eisen: This letter conveys the results of the Citywide Fiscal and Compliance Monitoring conducted for FY23-24. The monitoring was led by Wasim Samara, Department of Public Health in conjunction with other funding City Departments. The fiscal and compliance monitoring reviewed multiple standards, including but not limited to the following categories: Agency-Wide Budget, Audited Financial Statements, Financial Reports and Invoice Review. We are pleased to report that there were no findings identified in our fiscal and compliance monitoring. Please extend our appreciation to your staff for their preparation in advance of the monitoring and assistance during the process. We thank you for your work in serving the San Francisco community. Sincerely,",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 3,
+          "matchedTerms": [
+            "FY23-24",
+            "Citywide Fiscal and Compliance Monitoring",
+            "no findings identified",
+            "Fiscal",
+            "Compliance",
+            "Monitoring"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_03_16023128eb",
+          "title": "SF-Health-Commission-Finance-Planning-Committee-2025-03-03",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/MFPC030325F.pdf",
+          "hash": "f002995e3cc1833ab8f9d1268217ace748f3f8e92cbb2c4eeee7d84123cf70f7",
+          "excerpt": "crease in volume. Sabrina Robinson, ZSFG COO, stated that there are currently 7 staff vacancies and 6 people out on leave in the ZSFG Radiology Department. She also noted that the volume of need for these services has also continued to increase. Regarding the HR360 Contract, Vice President Guillermo noted the recent City Attorney guidance that stipulates that each contract only have one solicitation. Ms. Ruggels stated that there are two solicitations associated with this contract. When the services are put out to bid, the bulk of the contracted services will remain together. Vice President Guillermo asked for more information regarding how services may be broken up in the new solicitation. Ms. Ruggels stated that the outpatient and residential services will be put out to bid together and the representative payee service will be put out to bid separately. Vice President noted that some monitoring reports do not have finalized dates, which impacts the Commissioners’ review of this infor",
+          "quotedExcerpt": "crease in volume. Sabrina Robinson, ZSFG COO, stated that there are currently 7 staff vacancies and 6 people out on leave in the ZSFG Radiology Department. She also noted that the volume of need for these services has also continued to increase. Regarding the HR360 Contract, Vice President Guillermo noted the recent City Attorney guidance that stipulates that each contract only have one solicitation. Ms. Ruggels stated that there are two solicitations associated with this contract. When the services are put out to bid, the bulk of the contracted services will remain together. Vice President Guillermo asked for more information regarding how services may be broken up in the new solicitation. Ms. Ruggels stated that the outpatient and residential services will be put out to bid together and the representative payee service will be put out to bid separately. Vice President noted that some monitoring reports do not have finalized dates, which impacts the Commissioners’ review of this infor",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 2,
+          "matchedTerms": [
+            "HR360",
+            "HealthRight360",
+            "FY23-24 monitoring reports",
+            "representative payee",
+            "monitoring report",
+            "Health"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_01_8504ec44de",
+          "title": "SFDPH-Compliance-Monitoring-And-QM-Functions-Update-2023-03",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "found, fetched, official, locator_only, targeted_extract, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://media.api.sf.gov/documents/DPH_Compliance_Monitoring_and_QM_Functions_Update_3_23.pdf",
+          "hash": "0d1c845af0b4bacf4f0142a66f20ced7e1cda2e10063443ea051d5737c44f338",
+          "excerpt": "Family System of Care began in October 2018. After the first two years of administration, data were to be examined and formal, periodic reporting of aggregate data was to be developed. Due to the COVID-19 crisis, staffing shortages, and the implementation of CalAIM this process has been delayed. Examination of the PSC-35 data since October 2018 and development of periodic reports will occur as soon as the task can be prioritized. Every 6 months X X HIV Community Planning Council HIV Health Services and HIV Prevention Services: This collaborative body fulfills Federal mandated functions to receive Federal HIV funding, including reviewing utilization data, updates on aggregate HIV+ client quality of care, as well as monthly details and annual trends of client service grievance and complaint issues provided by the HIV Consumer Advocate. One-third of the HCPC appointed members (of 50 seats) are un-affiliated consumers of HIV services. Monthly X Assessing Client Satisfaction 1. Client Inpu",
+          "quotedExcerpt": "Family System of Care began in October 2018. After the first two years of administration, data were to be examined and formal, periodic reporting of aggregate data was to be developed. Due to the COVID-19 crisis, staffing shortages, and the implementation of CalAIM this process has been delayed. Examination of the PSC-35 data since October 2018 and development of periodic reports will occur as soon as the task can be prioritized. Every 6 months X X HIV Community Planning Council HIV Health Services and HIV Prevention Services: This collaborative body fulfills Federal mandated functions to receive Federal HIV funding, including reviewing utilization data, updates on aggregate HIV+ client quality of care, as well as monthly details and annual trends of client service grievance and complaint issues provided by the HIV Consumer Advocate. One-third of the HCPC appointed members (of 50 seats) are un-affiliated consumers of HIV services. Monthly X Assessing Client Satisfaction 1. Client Inpu",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 2,
+          "matchedTerms": [
+            "CalAIM",
+            "staffing shortages",
+            "parent-reported outcomes",
+            "monitoring",
+            "Compliance",
+            "Monitoring"
+          ],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_001_494db6ba06f3",
+          "title": "HEALTHRIGHT 360 supplier_contract row 1",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "494db6ba06f354ea7ccfce9c0d882863756c39107212c49b47c1aaa6fe3aee75",
+          "excerpt": "SF Data supplier_contract row 1: HEALTHRIGHT 360 pmt_amt 220533.09.",
+          "quotedExcerpt": "SF Data supplier_contract row 1: HEALTHRIGHT 360 pmt_amt 220533.09.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "220533.09"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_002_02c6592a4e06",
+          "title": "HEALTHRIGHT 360 supplier_contract row 2",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "02c6592a4e06db44c766a384a3b58f0c79664cf60dc8ce13ead60606036e3385",
+          "excerpt": "SF Data supplier_contract row 2: HEALTHRIGHT 360 pmt_amt 894050.98.",
+          "quotedExcerpt": "SF Data supplier_contract row 2: HEALTHRIGHT 360 pmt_amt 894050.98.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "894050.98"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_003_e0b7650d77b1",
+          "title": "HEALTHRIGHT 360 supplier_contract row 3",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "e0b7650d77b1bf939017debd29d85336f5b3ebcd83f43955be122dfe46409409",
+          "excerpt": "SF Data supplier_contract row 3: HEALTHRIGHT 360 pmt_amt 904193.38.",
+          "quotedExcerpt": "SF Data supplier_contract row 3: HEALTHRIGHT 360 pmt_amt 904193.38.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "904193.38"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_004_c56dbc019c0c",
+          "title": "HEALTHRIGHT 360 supplier_contract row 4",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "c56dbc019c0cb852f98b084d5ca086b24246f45d78dc2348b547d5db60d4a207",
+          "excerpt": "SF Data supplier_contract row 4: HEALTHRIGHT 360 pmt_amt 132223.52.",
+          "quotedExcerpt": "SF Data supplier_contract row 4: HEALTHRIGHT 360 pmt_amt 132223.52.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "132223.52"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_005_8ff1d6e79529",
+          "title": "HEALTHRIGHT 360 supplier_contract row 5",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "8ff1d6e79529ad843d1a00e264e7bac819e557db1044f500f117f62b11eb1568",
+          "excerpt": "SF Data supplier_contract row 5: HEALTHRIGHT 360 pmt_amt 6711153.27.",
+          "quotedExcerpt": "SF Data supplier_contract row 5: HEALTHRIGHT 360 pmt_amt 6711153.27.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "6711153.27"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_006_3b47d29c8354",
+          "title": "HEALTHRIGHT 360 supplier_contract row 6",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "3b47d29c8354b01320a70f431392c31e9a1a7dde12c6b7f9fbe6e65e88f48514",
+          "excerpt": "SF Data supplier_contract row 6: HEALTHRIGHT 360 pmt_amt 773285.18.",
+          "quotedExcerpt": "SF Data supplier_contract row 6: HEALTHRIGHT 360 pmt_amt 773285.18.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "773285.18"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_007_5c0300a84515",
+          "title": "HEALTHRIGHT 360 supplier_contract row 7",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "5c0300a84515a6bbf44c7ca96defe42153d511460773f5e0c9e257162042875d",
+          "excerpt": "SF Data supplier_contract row 7: HEALTHRIGHT 360 pmt_amt 44279529.97.",
+          "quotedExcerpt": "SF Data supplier_contract row 7: HEALTHRIGHT 360 pmt_amt 44279529.97.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "44279529.97"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_008_e8575fba697a",
+          "title": "HEALTHRIGHT 360 supplier_contract row 8",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "e8575fba697ad8a7ae0dad3c1fb7a57fc3a90b7c92ce6c2b79a92d0ec7db4e0d",
+          "excerpt": "SF Data supplier_contract row 8: HEALTHRIGHT 360 pmt_amt 42309882.24.",
+          "quotedExcerpt": "SF Data supplier_contract row 8: HEALTHRIGHT 360 pmt_amt 42309882.24.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "42309882.24"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_009_330c97b64b69",
+          "title": "HEALTHRIGHT 360 supplier_contract row 9",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "330c97b64b696015c12bcfb6c2e1d28f3a106f44c4d0130f837006af01320f28",
+          "excerpt": "SF Data supplier_contract row 9: HEALTHRIGHT 360 pmt_amt 839979.72.",
+          "quotedExcerpt": "SF Data supplier_contract row 9: HEALTHRIGHT 360 pmt_amt 839979.72.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "839979.72"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_010_d2bf40ee1ee4",
+          "title": "HEALTHRIGHT 360 supplier_contract row 10",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "d2bf40ee1ee471bedecc4a9ea94466b10ded49a33e792fbe4cfa1a712d293083",
+          "excerpt": "SF Data supplier_contract row 10: HEALTHRIGHT 360 pmt_amt 613803.",
+          "quotedExcerpt": "SF Data supplier_contract row 10: HEALTHRIGHT 360 pmt_amt 613803.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "613803"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_001_8df79d75e2b7",
+          "title": "HEALTHRIGHT 360 vendor_voucher_payment row 1",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "8df79d75e2b78affb5408f161bfd10839f7ce0e3fbbdbde95701c52288963cb8",
+          "excerpt": "SF Data vendor_voucher_payment row 1: HEALTHRIGHT 360 vouchers_paid 279452.97.",
+          "quotedExcerpt": "SF Data vendor_voucher_payment row 1: HEALTHRIGHT 360 vouchers_paid 279452.97.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "279452.97"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_002_b538d9d054af",
+          "title": "HEALTHRIGHT 360 vendor_voucher_payment row 2",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "b538d9d054afd6b462eafd3d77e9d9f88997366355daa343ae87c124e3ecb367",
+          "excerpt": "SF Data vendor_voucher_payment row 2: HEALTHRIGHT 360 vouchers_paid 93210.45.",
+          "quotedExcerpt": "SF Data vendor_voucher_payment row 2: HEALTHRIGHT 360 vouchers_paid 93210.45.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "93210.45"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_003_671f9fe74e18",
+          "title": "HEALTHRIGHT 360 vendor_voucher_payment row 3",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "671f9fe74e18d837334531a6318343f75cee5caec26376a6bcdd1dd166ca5343",
+          "excerpt": "SF Data vendor_voucher_payment row 3: HEALTHRIGHT 360 vouchers_paid 62598.43.",
+          "quotedExcerpt": "SF Data vendor_voucher_payment row 3: HEALTHRIGHT 360 vouchers_paid 62598.43.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "62598.43"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_004_ae52bcd62714",
+          "title": "HEALTHRIGHT 360 vendor_voucher_payment row 4",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "ae52bcd62714b33c153a59b7fd36ebf9e9f535b87376115761e3474dc35543b8",
+          "excerpt": "SF Data vendor_voucher_payment row 4: HEALTHRIGHT 360 vouchers_paid 162218.11.",
+          "quotedExcerpt": "SF Data vendor_voucher_payment row 4: HEALTHRIGHT 360 vouchers_paid 162218.11.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "162218.11"
+          ]
+        },
+        {
+          "sourceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_005_5f75f0a7be55",
+          "title": "HEALTHRIGHT 360 vendor_voucher_payment row 5",
+          "type": "official_public_record",
+          "publisher": "SF Data",
+          "role": "fetched, official, usable_as_evidence, narrow_row_fact",
+          "confidence": "usable_as_evidence_for_narrow_row_fact",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "hash": "5f75f0a7be55fc2e3c840b7ac99e5f2440e209bc5e145798f3b88bd8d78a9667",
+          "excerpt": "SF Data vendor_voucher_payment row 5: HEALTHRIGHT 360 vouchers_paid 0.",
+          "quotedExcerpt": "SF Data vendor_voucher_payment row 5: HEALTHRIGHT 360 vouchers_paid 0.",
+          "limitation": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "supportLevel": "supported_narrow_row_fact",
+          "retrievalMethod": "sfgov_socrata_api",
+          "pageNumber": null,
+          "matchedTerms": [
+            "HealthRIGHT 360",
+            "contract",
+            "voucher",
+            "amount"
+          ],
+          "amountCandidates": [
+            "0"
+          ]
+        }
+      ],
+      "lanes": [
+        {
+          "laneId": "lead",
+          "label": "Question received",
+          "headline": "A public-record question enters.",
+          "body": "San Francisco drug rehabilitation program and where the fraud is.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "sources",
+          "label": "Sources opened",
+          "headline": "The ledger is visible.",
+          "body": "25 evidence rows are available.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "findings",
+          "label": "Findings checked",
+          "headline": "The verifier gates claims.",
+          "body": "10 finding cards were produced.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "gaps",
+          "label": "Gaps named",
+          "headline": "Missing records stay visible.",
+          "body": "5 missing records are listed.",
+          "sourceIds": []
+        }
+      ],
+      "anomalyMath": [],
+      "nextRecords": [
+        {
+          "priority": "high",
+          "recordId": "missing_1",
+          "holder": "public agency or record custodian",
+          "request": "complete contract file from contracting agency or board clerk",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_2",
+          "holder": "public agency or record custodian",
+          "request": "invoice and payment ledger from controller, finance department, or agency accounts payable",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_3",
+          "holder": "public agency or record custodian",
+          "request": "monitoring or performance report from program office, oversight body, or independent auditor",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_4",
+          "holder": "public agency or record custodian",
+          "request": "Potential delay in parent-reported outcome collection",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_5",
+          "holder": "public agency or record custodian",
+          "request": "No identified deficiencies but limited sample of reports",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        }
+      ],
+      "actions": {
+        "directMove": "complete contract file from contracting agency or board clerk",
+        "requestLanguage": "complete contract file from contracting agency or board clerk",
+        "ifRefused": "Ask for the statutory exemption, record index, and segregable public portions.",
+        "coalitionPath": "Share only citation-verified review leads and missing-record requests."
+      },
+      "sourceBoard": {
+        "generatedAt": "2026-05-16T01:56:17Z",
+        "sourceRunId": "aculeus_case_board_verified_targeted_extract_findings",
+        "originalCaseId": "sf_drug_rehabilitation_fwa"
+      },
+      "sfdphScopeParity": {
+        "status": "review_only",
+        "decision": "SFDPH_SCOPE_PARITY_VERIFIED_REVIEW_ONLY",
+        "laneCount": 4,
+        "lanes": [
+          {
+            "laneId": "healthright360_funding",
+            "status": "PASS",
+            "visibleFindingCount": 7,
+            "citationPassCount": 7,
+            "citationBlockedCount": 2,
+            "targetedExtractCount": 2,
+            "blockedCitationsHiddenFromFindings": true,
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false
+          },
+          {
+            "laneId": "healthright360_monitoring",
+            "status": "PASS",
+            "visibleFindingCount": 10,
+            "citationPassCount": 10,
+            "citationBlockedCount": 2,
+            "targetedExtractCount": 3,
+            "blockedCitationsHiddenFromFindings": true,
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false
+          },
+          {
+            "laneId": "healthright360_qi",
+            "status": "PASS",
+            "visibleFindingCount": 7,
+            "citationPassCount": 7,
+            "citationBlockedCount": 2,
+            "targetedExtractCount": 1,
+            "blockedCitationsHiddenFromFindings": true,
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false
+          },
+          {
+            "laneId": "calaim_monitoring",
+            "status": "PASS",
+            "visibleFindingCount": 10,
+            "citationPassCount": 10,
+            "citationBlockedCount": 2,
+            "targetedExtractCount": 1,
+            "blockedCitationsHiddenFromFindings": true,
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false
+          }
+        ],
+        "evidencePosture": "citation_pass_findings_only_blocked_rows_in_audit_trail",
+        "blockedCitationsHiddenFromFindings": true,
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false,
+        "fraudOrIntentClaimAllowed": false,
+        "nextAction": "Use the SFDPH lanes as review-only parity cases; gather payment, contract, monitoring, and public-record-response records before promoting broader findings."
+      },
+      "officialSfgovHealthrightFinancialRowFacts": [
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_001_494db6ba06f3",
+          "atomId": "sfgov_healthright_supplier_contract_001_494db6ba06f3",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "supplier_contract",
+          "datasetId": "cqi5-hm2d",
+          "datasetLabel": "SF Data Supplier Contracts",
+          "rowIndex": 1,
+          "rowHash": "494db6ba06f354ea7ccfce9c0d882863756c39107212c49b47c1aaa6fe3aee75",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": "1000002508",
+          "contractTitle": "PUBLIC HEALTH SERVICES",
+          "department": "AIR Airport Commission",
+          "fiscalYear": null,
+          "voucher": null,
+          "purchaseOrder": null,
+          "primaryAmountLabel": "pmt_amt",
+          "primaryAmount": 220533.09,
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_002_02c6592a4e06",
+          "atomId": "sfgov_healthright_supplier_contract_002_02c6592a4e06",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "supplier_contract",
+          "datasetId": "cqi5-hm2d",
+          "datasetLabel": "SF Data Supplier Contracts",
+          "rowIndex": 2,
+          "rowHash": "02c6592a4e06db44c766a384a3b58f0c79664cf60dc8ce13ead60606036e3385",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": "1000002540",
+          "contractTitle": "#1000002540 HR360 AMD#3 (Program and Fiscal Management)",
+          "department": "DPH Public Health",
+          "fiscalYear": null,
+          "voucher": null,
+          "purchaseOrder": null,
+          "primaryAmountLabel": "pmt_amt",
+          "primaryAmount": 894050.98,
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_003_e0b7650d77b1",
+          "atomId": "sfgov_healthright_supplier_contract_003_e0b7650d77b1",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "supplier_contract",
+          "datasetId": "cqi5-hm2d",
+          "datasetLabel": "SF Data Supplier Contracts",
+          "rowIndex": 3,
+          "rowHash": "e0b7650d77b1bf939017debd29d85336f5b3ebcd83f43955be122dfe46409409",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": "1000002612",
+          "contractTitle": "DPH-HOT SHOT HCV PROJECT",
+          "department": "DPH Public Health",
+          "fiscalYear": null,
+          "voucher": null,
+          "purchaseOrder": null,
+          "primaryAmountLabel": "pmt_amt",
+          "primaryAmount": 904193.38,
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_004_c56dbc019c0c",
+          "atomId": "sfgov_healthright_supplier_contract_004_c56dbc019c0c",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "supplier_contract",
+          "datasetId": "cqi5-hm2d",
+          "datasetLabel": "SF Data Supplier Contracts",
+          "rowIndex": 4,
+          "rowHash": "c56dbc019c0cb852f98b084d5ca086b24246f45d78dc2348b547d5db60d4a207",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": "1000002698",
+          "contractTitle": "SF JAIL HEALTH ABUSE & PSYCH S",
+          "department": "AIR Airport Commission",
+          "fiscalYear": null,
+          "voucher": null,
+          "purchaseOrder": null,
+          "primaryAmountLabel": "pmt_amt",
+          "primaryAmount": 132223.52,
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_supplier_contract_005_8ff1d6e79529",
+          "atomId": "sfgov_healthright_supplier_contract_005_8ff1d6e79529",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "supplier_contract",
+          "datasetId": "cqi5-hm2d",
+          "datasetLabel": "SF Data Supplier Contracts",
+          "rowIndex": 5,
+          "rowHash": "8ff1d6e79529ad843d1a00e264e7bac819e557db1044f500f117f62b11eb1568",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": "1000002995",
+          "contractTitle": "SUBSTANCE ABUSE & MENTAL HEALT",
+          "department": "DPH Public Health",
+          "fiscalYear": null,
+          "voucher": null,
+          "purchaseOrder": null,
+          "primaryAmountLabel": "pmt_amt",
+          "primaryAmount": 6711153.27,
+          "url": "https://data.sfgov.org/resource/cqi5-hm2d.json?%24limit=10&%24where=upper%28prime_contractor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28project_team_supplier%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_001_8df79d75e2b7",
+          "atomId": "sfgov_healthright_vendor_voucher_payment_001_8df79d75e2b7",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "vendor_voucher_payment",
+          "datasetId": "n9pm-xkyq",
+          "datasetLabel": "SF Data Vendor Payments (Vouchers)",
+          "rowIndex": 1,
+          "rowHash": "8df79d75e2b78affb5408f161bfd10839f7ce0e3fbbdbde95701c52288963cb8",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": "1000027495",
+          "contractTitle": "DPH - SUD Prevention",
+          "department": "DPH Public Health",
+          "fiscalYear": "2024",
+          "voucher": "0290345001",
+          "purchaseOrder": "000081164201",
+          "primaryAmountLabel": "vouchers_paid",
+          "primaryAmount": 279452.97,
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_002_b538d9d054af",
+          "atomId": "sfgov_healthright_vendor_voucher_payment_002_b538d9d054af",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "vendor_voucher_payment",
+          "datasetId": "n9pm-xkyq",
+          "datasetLabel": "SF Data Vendor Payments (Vouchers)",
+          "rowIndex": 2,
+          "rowHash": "b538d9d054afd6b462eafd3d77e9d9f88997366355daa343ae87c124e3ecb367",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": "1000027495",
+          "contractTitle": "DPH - SUD Prevention",
+          "department": "DPH Public Health",
+          "fiscalYear": "2024",
+          "voucher": "0290398501",
+          "purchaseOrder": "000081164201",
+          "primaryAmountLabel": "vouchers_paid",
+          "primaryAmount": 93210.45,
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_003_671f9fe74e18",
+          "atomId": "sfgov_healthright_vendor_voucher_payment_003_671f9fe74e18",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "vendor_voucher_payment",
+          "datasetId": "n9pm-xkyq",
+          "datasetLabel": "SF Data Vendor Payments (Vouchers)",
+          "rowIndex": 3,
+          "rowHash": "671f9fe74e18d837334531a6318343f75cee5caec26376a6bcdd1dd166ca5343",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": "1000027495",
+          "contractTitle": "DPH - SUD Prevention",
+          "department": "DPH Public Health",
+          "fiscalYear": "2024",
+          "voucher": "0300859101",
+          "purchaseOrder": "000081164201",
+          "primaryAmountLabel": "vouchers_paid",
+          "primaryAmount": 62598.43,
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_004_ae52bcd62714",
+          "atomId": "sfgov_healthright_vendor_voucher_payment_004_ae52bcd62714",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "vendor_voucher_payment",
+          "datasetId": "n9pm-xkyq",
+          "datasetLabel": "SF Data Vendor Payments (Vouchers)",
+          "rowIndex": 4,
+          "rowHash": "ae52bcd62714b33c153a59b7fd36ebf9e9f535b87376115761e3474dc35543b8",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": "1000020842",
+          "contractTitle": "Capacity Building Lyon Martin",
+          "department": "DPH Public Health",
+          "fiscalYear": "2024",
+          "voucher": "0293660401",
+          "purchaseOrder": "000081733501",
+          "primaryAmountLabel": "vouchers_paid",
+          "primaryAmount": 162218.11,
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        },
+        {
+          "evidenceId": "sfgov_healthright_financial_sfgov_healthright_vendor_voucher_payment_005_5f75f0a7be55",
+          "atomId": "sfgov_healthright_vendor_voucher_payment_005_5f75f0a7be55",
+          "status": "citation_verified_sfgov_healthright_financial_row_fact",
+          "recordType": "vendor_voucher_payment",
+          "datasetId": "n9pm-xkyq",
+          "datasetLabel": "SF Data Vendor Payments (Vouchers)",
+          "rowIndex": 5,
+          "rowHash": "5f75f0a7be55fc2e3c840b7ac99e5f2440e209bc5e145798f3b88bd8d78a9667",
+          "vendorOrContractor": "HEALTHRIGHT 360",
+          "contractNumber": null,
+          "contractTitle": null,
+          "department": "DPH Public Health",
+          "fiscalYear": "2024",
+          "voucher": "0260398401",
+          "purchaseOrder": "Direct Payments",
+          "primaryAmountLabel": "vouchers_paid",
+          "primaryAmount": 0,
+          "url": "https://data.sfgov.org/resource/n9pm-xkyq.json?%24limit=10&%24where=upper%28vendor%29+like+%27%25HEALTHRIGHT%25%27+or+upper%28contract_title%29+like+%27%25HEALTHRIGHT%25%27",
+          "allowedClaimScope": "narrow official SF Data HealthRIGHT 360 contract or voucher row fact only",
+          "unsupportedScopes": [
+            "fraud",
+            "intent",
+            "waste",
+            "vendor misconduct",
+            "confirmed improper payment",
+            "program performance beyond row text",
+            "contract compliance beyond row text",
+            "service quality beyond row text"
+          ],
+          "trainingConversionAllowed": false
+        }
+      ]
+    },
+    {
+      "caseId": "source_becerra_chirla",
+      "displayId": "AC-004",
+      "caseType": "source_fed_public_records",
+      "caseScope": "Correct spelling to Xavier Becerra. Find campaign endorsements, CHIRLA Action Fund records, CHIRLA financial statements/Form 990, public grant funding, and relationship evidence. Separate endorsement/funding/shared infrastructure from unsupported quid-pro-quo claims.",
+      "title": "Xavier Bacerra and his connection to CHIRLA",
+      "headline": "A source-fed case board is ready for review.",
+      "lead": "Xavier Bacerra and his connection to CHIRLA.",
+      "summary": "Aculeus converted a web-search harness run into a cited case board.",
+      "jurisdiction": "United States",
+      "reviewStatus": "pass",
+      "publicLabel": "source_fed_case_board",
+      "legalBoundary": "relationship signal for audit review, not legal adjudication",
+      "caseScore": 88,
+      "model": {
+        "name": "Aculeus SLM",
+        "version": "source-fed-adapter-0.1",
+        "mode": "source_fed_case_board",
+        "endpoint": "/api/investigate"
+      },
+      "commandCenter": {
+        "break": "The record trail supports review leads and missing records.",
+        "proof": [
+          "CHIRLA received $2,975,270 in ISF award (FY 2023-24) and $2,653,370 in ISF award (FY 2024-25)",
+          "CHIRLA's financial statements and Form 990 for 2022 have been audited and reported",
+          "CHIRLA Action Fund endorsed Xavier Becerra for California governor"
+        ],
+        "missing": "complete contract file from contracting agency or board clerk | invoice and payment ledger from controller, finance department, or agency accounts payable | monitoring or performance report from program office, oversight body, or independent auditor | campaign endorsement and expenditure support records from campaign committee, CHIRLA Action Fund, California campaign finance portal | sam_entity_management requires SAM_API_KEY before this gap can be resolved.",
+        "move": "complete contract file from contracting agency or board clerk",
+        "officialRecordScope": "IRS TEOS and CA SOS records can support official-record references; alleged linkage or intent remains rejected without stronger official records.",
+        "calaccessLookup": "CAL-ACCESS produced hash-only locator matches; linkage, influence, intent, or misconduct claims remain blocked pending linked official records."
+      },
+      "entities": [
+        {
+          "name": "procurement_review",
+          "role": "finding type",
+          "confidence": 75
+        },
+        {
+          "name": "public_record_review",
+          "role": "finding type",
+          "confidence": 75
+        },
+        {
+          "name": "official_record_reference",
+          "role": "finding type",
+          "confidence": 75
+        }
+      ],
+      "sourceFamilies": [
+        "official_public_record",
+        "secondary_or_locator"
+      ],
+      "dossier": {
+        "title": "Xavier Bacerra and his connection to CHIRLA",
+        "deck": "The source trail is organized into review leads, evidence, and missing records.",
+        "posture": "PASS",
+        "centralQuestion": "Xavier Bacerra and his connection to CHIRLA.",
+        "shortFinding": "CHIRLA received $2,975,270 in ISF award (FY 2023-24) and $2,653,370 in ISF award (FY 2024-25) CHIRLA's financial statements and Form 990 for 2022 have been audited and reported CHIRLA Action Fund endorsed Xavier Becerra for California governor",
+        "summary": "Aculeus generated a case board from public-source retrieval.",
+        "stats": [
+          {
+            "label": "Verified leads",
+            "value": "22",
+            "detail": "Finding cards that passed the citation verifier or remain visible as blocked leads."
+          },
+          {
+            "label": "Evidence rows",
+            "value": "41",
+            "detail": "Source-ledger records carried into the front end."
+          },
+          {
+            "label": "Missing records",
+            "value": "5",
+            "detail": "Records needed before stronger conclusions."
+          }
+        ],
+        "layers": [
+          {
+            "label": "Scope",
+            "title": "Question entered",
+            "body": "Xavier Bacerra and his connection to CHIRLA.",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03"
+            ]
+          },
+          {
+            "label": "Evidence",
+            "title": "Source ledger opened",
+            "body": "41 source-ledger records are visible for review.",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03",
+              "web_04",
+              "web_05",
+              "web_06"
+            ]
+          },
+          {
+            "label": "Verifier",
+            "title": "Claims stay citation-bound",
+            "body": "PASS",
+            "sourceIds": [
+              "web_01",
+              "web_02",
+              "web_03"
+            ]
+          }
+        ],
+        "findings": [
+          {
+            "findingId": "becerra_chirla-F001",
+            "entity": "procurement_review",
+            "signal": "high",
+            "whatRecordSays": "CHIRLA received $2,975,270 in ISF award (FY 2023-24) and $2,653,370 in ISF award (FY 2024-25)",
+            "whyItMatters": "Confidence 0.9; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "human review",
+            "sourceFamily": "procurement_review",
+            "sourceIds": [
+              "web_01",
+              "web_02"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-F002",
+            "entity": "public_record_review",
+            "signal": "medium",
+            "whatRecordSays": "CHIRLA's financial statements and Form 990 for 2022 have been audited and reported",
+            "whyItMatters": "Confidence 0.9; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "human review",
+            "sourceFamily": "public_record_review",
+            "sourceIds": [
+              "web_04",
+              "web_07"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-F003",
+            "entity": "public_record_review",
+            "signal": "low",
+            "whatRecordSays": "CHIRLA Action Fund endorsed Xavier Becerra for California governor",
+            "whyItMatters": "Confidence 0.65; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "human review",
+            "sourceFamily": "public_record_review",
+            "sourceIds": [
+              "web_06",
+              "web_08"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF001",
+            "entity": "official_record_reference",
+            "signal": "medium",
+            "whatRecordSays": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights (CHIRLA) with an adjacent award amount of $2,975,270.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_01_975165ad9d"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF002",
+            "entity": "official_record_reference",
+            "signal": "medium",
+            "whatRecordSays": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights (CHIRLA) with an adjacent award amount of $2,999,400.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_02_cec1813231"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF003",
+            "entity": "official_record_reference",
+            "signal": "medium",
+            "whatRecordSays": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights with an adjacent award amount of $2,790,800.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_03_e63f942c55"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF004",
+            "entity": "official_record_reference",
+            "signal": "medium",
+            "whatRecordSays": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights (CHIRLA) with an adjacent award amount of $2,653,370.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_04_31a1eb8de5"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF005",
+            "entity": "official_record_reference",
+            "signal": "medium",
+            "whatRecordSays": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights with an adjacent award amount of $2,790,800.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "extract_targeted_extract_05_ec28a1b357"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF006",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited IRS TEOS index row lists COALITION FOR HUMANE IMMIGRANT RIGHTS, EIN 954421521, return_type 990, tax_period 202206, and object_id 202341359349310519.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_irs_teos_954421521_202206_202341359349310519"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF007",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited IRS TEOS index row lists COALITION FOR HUMANE IMMIGRANT RIGHTS, EIN 954421521, return_type 990, tax_period 202306, and object_id 202441319349305374.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_irs_teos_954421521_202306_202441319349305374"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF008",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited IRS TEOS index row lists COALITION FOR HUMANE IMMIGRANT RIGHTS, EIN 954421521, return_type 990, tax_period 202406, and object_id 202501349349307610.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_irs_teos_954421521_202406_202501349349307610"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF009",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited CA SOS Power Search committee lookup lists Coalition for Humane Immigrant Rights (CHIRLA) (Nonprofit 501(c )(3)) with committee ID 1430910.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_ca_sos_powersearch_committee_1430910_coalition_for_humane_immigrant_rights_chirla_nonprofit_501_c_3"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF010",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited CA SOS Power Search committee lookup lists Coalition for Humane Immigrant Rights (CHIRLA) - Action Fund (Nonprofit 501(c)(4)) with committee ID 1476639.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_ca_sos_powersearch_committee_1476639_coalition_for_humane_immigrant_rights_chirla_action_fund_nonprofit_501_c_4"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF011",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited CA SOS Power Search committee lookup lists Immigrant Power PAC (FED PAC ID#C00750786), Sponsored by CHIRLA Action Fund- State Committee with committee ID 1430927.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_ca_sos_powersearch_committee_1430927_immigrant_power_pac_fed_pac_id_c00750786_sponsored_by_chirla_action_fund_state_comm"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF012",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited CA SOS Power Search committee lookup lists Becerra for Governor 2026 with committee ID 1480025.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_ca_sos_powersearch_committee_1480025_becerra_for_governor_2026"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF013",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited CA SOS Power Search committee lookup lists California People Supporting Xavier Becerra for Governor 2026 with committee ID 1490681.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_ca_sos_powersearch_committee_1490681_california_people_supporting_xavier_becerra_for_governor_2026"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF014",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited CA SOS Power Search committee lookup lists Californios Unidos por Becerra for Governor 2026, Sponsored by Laborers' International Union of North America, Local 300 with committee ID 1490030.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_ca_sos_powersearch_committee_1490030_californios_unidos_por_becerra_for_governor_2026_sponsored_by_laborers_internationa"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF015",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited CA SOS Power Search committee lookup lists Working Families for Healthy Communities supporting Becerra for Governor 2026 sponsored by labor and community health organizations with committee ID 1490885.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_ca_sos_powersearch_committee_1490885_working_families_for_healthy_communities_supporting_becerra_for_governor_2026_spons"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF016",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited CA SOS Power Search candidate lookup lists BECERRA, XAVIER.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_ca_sos_powersearch_candidate_becerra_xavier"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF017",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited IRS Form 990 XML extract for COALITION FOR HUMANE IMMIGRANT RIGHTS tax_period 202206 lists CYTotalRevenueAmt 18424426, CYTotalExpensesAmt 15373731, and GovernmentGrantsAmt 12369461.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_irs_teos_form990_xml_202341359349310519"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF018",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited IRS Form 990 XML extract for COALITION FOR HUMANE IMMIGRANT RIGHTS tax_period 202306 lists CYTotalRevenueAmt 44877869, CYTotalExpensesAmt 20129065, and GovernmentGrantsAmt 33966572.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_irs_teos_form990_xml_202441319349305374"
+            ]
+          },
+          {
+            "findingId": "becerra_chirla-TEF019",
+            "entity": "official_record_reference",
+            "signal": "low",
+            "whatRecordSays": "The cited IRS Form 990 XML extract for COALITION FOR HUMANE IMMIGRANT RIGHTS tax_period 202406 lists CYTotalRevenueAmt 31031530, CYTotalExpensesAmt 23696747, and GovernmentGrantsAmt 25588332.",
+            "whyItMatters": "Confidence 0.92; citation verifier status verified_review_lead.",
+            "whatItDoesNotProve": "It does not prove fraud, intent, guilt, or liability unless an official adjudicative record says so.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceFamily": "official_record_reference",
+            "sourceIds": [
+              "followup_irs_teos_form990_xml_202501349349307610"
+            ]
+          }
+        ],
+        "claimLedger": [
+          {
+            "claim": "CHIRLA received $2,975,270 in ISF award (FY 2023-24) and $2,653,370 in ISF award (FY 2024-25)",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_01",
+              "web_02"
+            ]
+          },
+          {
+            "claim": "CHIRLA's financial statements and Form 990 for 2022 have been audited and reported",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_04",
+              "web_07"
+            ]
+          },
+          {
+            "claim": "CHIRLA Action Fund endorsed Xavier Becerra for California governor",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "human review",
+            "sourceIds": [
+              "web_06",
+              "web_08"
+            ]
+          },
+          {
+            "claim": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights (CHIRLA) with an adjacent award amount of $2,975,270.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_01_975165ad9d"
+            ]
+          },
+          {
+            "claim": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights (CHIRLA) with an adjacent award amount of $2,999,400.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_02_cec1813231"
+            ]
+          },
+          {
+            "claim": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights with an adjacent award amount of $2,790,800.",
+            "support": "verified_review_lead",
+            "limitation": "Support is limited to cited evidence IDs.",
+            "nextRecord": "Human reviewer can inspect the cited official page and decide whether this record supports a broader case theory.",
+            "sourceIds": [
+              "extract_targeted_extract_03_e63f942c55"
+            ]
+          },
+          {
+            "claim": "Alleged quid-pro-quo relationship between Becerra endorsement and ISF funding",
+            "support": "rejected_or_not_supported",
+            "limitation": "Do not publish as a finding.",
+            "nextRecord": "Find primary support or keep rejected.",
+            "sourceIds": []
+          },
+          {
+            "claim": "Potential inference of quid-pro-quo between Becerra endorsement and ISF funding not supported by explicit linkage",
+            "support": "weak_signal",
+            "limitation": "Needs stronger evidence.",
+            "nextRecord": "Run second retrieval or request the missing record.",
+            "sourceIds": []
+          }
+        ],
+        "sourceMatrix": [
+          {
+            "family": "Official records",
+            "status": "36",
+            "proves": "Authority and source trail",
+            "missing": "Underlying attachments where not fetched"
+          },
+          {
+            "family": "Usable evidence",
+            "status": "29",
+            "proves": "Claim support candidates",
+            "missing": "Human review before publication"
+          },
+          {
+            "family": "Locators",
+            "status": "12",
+            "proves": "Where to fetch next",
+            "missing": "Direct capture or records request"
+          }
+        ],
+        "followUpQuestions": [
+          "Which finding has the strongest official-source support?",
+          "What record would change this case the most?",
+          "Which weak or rejected claim should stay out of the public narrative?",
+          "Which source should be opened next?"
+        ],
+        "nextMoves": [
+          "complete contract file from contracting agency or board clerk",
+          "invoice and payment ledger from controller, finance department, or agency accounts payable",
+          "monitoring or performance report from program office, oversight body, or independent auditor",
+          "campaign endorsement and expenditure support records from campaign committee, CHIRLA Action Fund, California campaign finance portal",
+          "sam_entity_management requires SAM_API_KEY before this gap can be resolved."
+        ]
+      },
+      "claims": [
+        {
+          "title": "procurement_review",
+          "body": "CHIRLA received $2,975,270 in ISF award (FY 2023-24) and $2,653,370 in ISF award (FY 2024-25)",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_01",
+            "web_02"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "title": "public_record_review",
+          "body": "CHIRLA's financial statements and Form 990 for 2022 have been audited and reported",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_04",
+            "web_07"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "title": "public_record_review",
+          "body": "CHIRLA Action Fund endorsed Xavier Becerra for California governor",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "web_06",
+            "web_08"
+          ],
+          "confidence": 0.65
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights (CHIRLA) with an adjacent award amount of $2,975,270.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_01_975165ad9d"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights (CHIRLA) with an adjacent award amount of $2,999,400.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_02_cec1813231"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights with an adjacent award amount of $2,790,800.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_03_e63f942c55"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights (CHIRLA) with an adjacent award amount of $2,653,370.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_04_31a1eb8de5"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CDSS Immigration Services Funding award page lists Coalition for Humane Immigrant Rights with an adjacent award amount of $2,790,800.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "extract_targeted_extract_05_ec28a1b357"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited IRS TEOS index row lists COALITION FOR HUMANE IMMIGRANT RIGHTS, EIN 954421521, return_type 990, tax_period 202206, and object_id 202341359349310519.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_irs_teos_954421521_202206_202341359349310519"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited IRS TEOS index row lists COALITION FOR HUMANE IMMIGRANT RIGHTS, EIN 954421521, return_type 990, tax_period 202306, and object_id 202441319349305374.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_irs_teos_954421521_202306_202441319349305374"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited IRS TEOS index row lists COALITION FOR HUMANE IMMIGRANT RIGHTS, EIN 954421521, return_type 990, tax_period 202406, and object_id 202501349349307610.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_irs_teos_954421521_202406_202501349349307610"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CA SOS Power Search committee lookup lists Coalition for Humane Immigrant Rights (CHIRLA) (Nonprofit 501(c )(3)) with committee ID 1430910.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_ca_sos_powersearch_committee_1430910_coalition_for_humane_immigrant_rights_chirla_nonprofit_501_c_3"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CA SOS Power Search committee lookup lists Coalition for Humane Immigrant Rights (CHIRLA) - Action Fund (Nonprofit 501(c)(4)) with committee ID 1476639.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_ca_sos_powersearch_committee_1476639_coalition_for_humane_immigrant_rights_chirla_action_fund_nonprofit_501_c_4"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CA SOS Power Search committee lookup lists Immigrant Power PAC (FED PAC ID#C00750786), Sponsored by CHIRLA Action Fund- State Committee with committee ID 1430927.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_ca_sos_powersearch_committee_1430927_immigrant_power_pac_fed_pac_id_c00750786_sponsored_by_chirla_action_fund_state_comm"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CA SOS Power Search committee lookup lists Becerra for Governor 2026 with committee ID 1480025.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_ca_sos_powersearch_committee_1480025_becerra_for_governor_2026"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CA SOS Power Search committee lookup lists California People Supporting Xavier Becerra for Governor 2026 with committee ID 1490681.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_ca_sos_powersearch_committee_1490681_california_people_supporting_xavier_becerra_for_governor_2026"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CA SOS Power Search committee lookup lists Californios Unidos por Becerra for Governor 2026, Sponsored by Laborers' International Union of North America, Local 300 with committee ID 1490030.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_ca_sos_powersearch_committee_1490030_californios_unidos_por_becerra_for_governor_2026_sponsored_by_laborers_internationa"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CA SOS Power Search committee lookup lists Working Families for Healthy Communities supporting Becerra for Governor 2026 sponsored by labor and community health organizations with committee ID 1490885.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_ca_sos_powersearch_committee_1490885_working_families_for_healthy_communities_supporting_becerra_for_governor_2026_spons"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited CA SOS Power Search candidate lookup lists BECERRA, XAVIER.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_ca_sos_powersearch_candidate_becerra_xavier"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited IRS Form 990 XML extract for COALITION FOR HUMANE IMMIGRANT RIGHTS tax_period 202206 lists CYTotalRevenueAmt 18424426, CYTotalExpensesAmt 15373731, and GovernmentGrantsAmt 12369461.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_irs_teos_form990_xml_202341359349310519"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited IRS Form 990 XML extract for COALITION FOR HUMANE IMMIGRANT RIGHTS tax_period 202306 lists CYTotalRevenueAmt 44877869, CYTotalExpensesAmt 20129065, and GovernmentGrantsAmt 33966572.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_irs_teos_form990_xml_202441319349305374"
+          ],
+          "confidence": 0.92
+        },
+        {
+          "title": "official_record_reference",
+          "body": "The cited IRS Form 990 XML extract for COALITION FOR HUMANE IMMIGRANT RIGHTS tax_period 202406 lists CYTotalRevenueAmt 31031530, CYTotalExpensesAmt 23696747, and GovernmentGrantsAmt 25588332.",
+          "state": "verified_review_lead",
+          "sourceIds": [
+            "followup_irs_teos_form990_xml_202501349349307610"
+          ],
+          "confidence": 0.92
+        }
+      ],
+      "sources": [
+        {
+          "sourceId": "web_01",
+          "title": "ADA_SFY2023-26_ISF_Award_Announcement_Final.pdf?ver=WUWFopxf_AEWzXNw_1lNew%3D%3D",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/ADA_SFY2023-26_ISF_Award_Announcement_Final.pdf?ver=WUWFopxf_AEWzXNw_1lNew%3D%3D",
+          "hash": "6a0f15a96d259d7e7c2fc28d4530239edbd9305156ea96be308633f3cf65e8ef",
+          "excerpt": "99,200 Asian Americans Advancing Justice SoCal $1,023,020 Immigration Services Funding (ISF) Awards Page | 3 ORGANIZATION1 SFY 2023-24 ISF AWARD Bet Tzedek $178,000 Catholic Charities of Los Angeles $7,224,710 Central American Resource Center (CARECEN) of California $2,066,000 Centro Community Hispanic Association $335,000 Children's Law Center of California $75,000 Clinica Monsenor Oscar A. Romero $256,000 Coalition for Humane Immigrant Rights (CHIRLA) $2,975,270 El Rescate $266,040 Human Right",
+          "quotedExcerpt": "99,200 Asian Americans Advancing Justice SoCal $1,023,020 Immigration Services Funding (ISF) Awards Page | 3 ORGANIZATION1 SFY 2023-24 ISF AWARD Bet Tzedek $178,000 Catholic Charities of Los Angeles $7,224,710 Central American Resource Center (CARECEN) of California $2,066,000 Centro Community Hispanic Association $335,000 Children's Law Center of California $75,000 Clinica Monsenor Oscar A. Romero $256,000 Coalition for Humane Immigrant Rights (CHIRLA) $2,975,270 El Rescate $266,040 Human Right",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_02",
+          "title": "SFY_2025-26_ISF_Award_Announcement_FINAL%20ADA.pdf?ver=F7PxLo5Aa_phioh41SpNOQ%3D%3D",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/ISF/SFY_2025-26_ISF_Award_Announcement_FINAL%20ADA.pdf?ver=F7PxLo5Aa_phioh41SpNOQ%3D%3D",
+          "hash": "ae29dc5d0fe6511825c7f42dfa02b30f31c73977249943ab9aed2c5745572858",
+          "excerpt": "lic Health Coalition $240,050 Al Otro Lado $289,200 Asian Americans Advancing Justice SoCal $1,170,330 Bet Tzedek $178,000 Catholic Charities of Los Angeles $7,224,710 Immigration Services Funding (ISF) Awards Page | 3 ORGANIZATION SFY 2025-26 ISF AWARD Central American Resource Center (CARECEN) of California $1,765,090 Centro Community Hispanic Association $335,000 Clinica Monsenor Oscar A. Romero $295,500 Coalition for Humane Immigrant Rights (CHIRLA) $2,653,370 El Rescate $337,240 Human Right",
+          "quotedExcerpt": "lic Health Coalition $240,050 Al Otro Lado $289,200 Asian Americans Advancing Justice SoCal $1,170,330 Bet Tzedek $178,000 Catholic Charities of Los Angeles $7,224,710 Immigration Services Funding (ISF) Awards Page | 3 ORGANIZATION SFY 2025-26 ISF AWARD Central American Resource Center (CARECEN) of California $1,765,090 Centro Community Hispanic Association $335,000 Clinica Monsenor Oscar A. Romero $295,500 Coalition for Humane Immigrant Rights (CHIRLA) $2,653,370 El Rescate $337,240 Human Right",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_03",
+          "title": "immigration-services-funding",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/inforesources/immigration/immigration-services-funding",
+          "hash": "04e98613e189198463f0081b24b853e3dc023368f5744720fd1f760fa531ceb9",
+          "excerpt": "ay cause. --> Menu Contact Search Disclaimer Home Letters/Regulations Forms/Brochures Fiscal/Financial Data Portal Home Letters/Regulations Forms/Brochures Fiscal/Financial Data Portal CDSS Programs Immigration Services Immigration Services Funding Immigration Services Funding (ISF) Program The Welfare and Institutions Code (WIC) 13302-13307 authorizes the California Department of Social Services (CDSS) to fund qualified nonprofit organizations (Grantees) to provide services to immigrants residi",
+          "quotedExcerpt": "ay cause. --> Menu Contact Search Disclaimer Home Letters/Regulations Forms/Brochures Fiscal/Financial Data Portal Home Letters/Regulations Forms/Brochures Fiscal/Financial Data Portal CDSS Programs Immigration Services Immigration Services Funding Immigration Services Funding (ISF) Program The Welfare and Institutions Code (WIC) 13302-13307 authorizes the California Department of Social Services (CDSS) to fund qualified nonprofit organizations (Grantees) to provide services to immigrants residi",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_04",
+          "title": "2023-954421521-202441319349305374-9.pdf",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://pdf.guidestar.org/PDF_Images/2023/954/421/2023-954421521-202441319349305374-9.pdf",
+          "hash": "3f91f87f9f8cf46fa1a66ac55bf79e03ed7e4af52c0d48db8bbe950af8bdccd9",
+          "excerpt": "x if mail is not delivered to street address) Room/suite LOS ANGELES, CA 90057 City or town, state or province, country, and ZIP or foreign postal code D Employer identification number 95­4421521 E Telephone number (213) 353­1333 G Gross receipts $ 44,879,455 F Name and address of principal officer: Angelica Salas 2533 WEST THIRD ST 101 LOS ANGELES , CA 90057 I Tax­exempt status: 501(c)(3) 501(c) ( ) (insert no.) 4947(a)(1) or 527 J Website: WWW.CHIRLA.ORG H(a) Is this a group return for subordi",
+          "quotedExcerpt": "x if mail is not delivered to street address) Room/suite LOS ANGELES, CA 90057 City or town, state or province, country, and ZIP or foreign postal code D Employer identification number 95­4421521 E Telephone number (213) 353­1333 G Gross receipts $ 44,879,455 F Name and address of principal officer: Angelica Salas 2533 WEST THIRD ST 101 LOS ANGELES , CA 90057 I Tax­exempt status: 501(c)(3) 501(c) ( ) (insert no.) 4947(a)(1) or 527 J Website: WWW.CHIRLA.ORG H(a) Is this a group return for subordi",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_05",
+          "title": "https://www.xavierbecerra2026.com/endorsements/",
+          "type": "secondary_or_locator",
+          "publisher": "secondary_or_unknown",
+          "role": "fetched, found, secondary, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.xavierbecerra2026.com/endorsements/",
+          "hash": "0b0a8b21f52e73abafb0e10ce2ec51dfabdc993a5190bf6b163076852620cb7f",
+          "excerpt": "Endorsements - Xavier Becerra Contribute Now This is a break-glass moment – for our families, our neighbors, and folks all across our great state. Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other About Bio Why I’m Running Endorsements Priorities Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homel",
+          "quotedExcerpt": "Endorsements - Xavier Becerra Contribute Now This is a break-glass moment – for our families, our neighbors, and folks all across our great state. Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other About Bio Why I’m Running Endorsements Priorities Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homel",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_06",
+          "title": "article_095a8745-bcc9-43ef-833a-9e736ace7ae0.html",
+          "type": "secondary_or_locator",
+          "publisher": "secondary_or_unknown",
+          "role": "fetched, found, secondary, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.calonews.com/communities/los-angeles/chirla-action-fund-endorses-xavier-becerra-for-california-governor/article_095a8745-bcc9-43ef-833a-9e736ace7ae0.html",
+          "hash": "9976ab75d1c6b806afad067f981fe96097dc6ca30c31f16cda1a1d9efef5b897",
+          "excerpt": "CHIRLA Action Fund endorses Xavier Becerra for California governor | Los Angeles | calonews.com Skip to main content You are the owner of this article. Edit Article Add New Article Close You have permission to edit this article. Edit Close Facebook Twitter YouTube Instagram Site search Search Sign Up Log In Dashboard Logout My Account Dashboard Profile Saved items Logout Home News Breaking News Real Estate & Housing Race Politics National Local Schools Local Governement Lifestyle Entertainment C",
+          "quotedExcerpt": "CHIRLA Action Fund endorses Xavier Becerra for California governor | Los Angeles | calonews.com Skip to main content You are the owner of this article. Edit Article Add New Article Close You have permission to edit this article. Edit Close Facebook Twitter YouTube Instagram Site search Search Sign Up Log In Dashboard Logout My Account Dashboard Profile Saved items Logout Home News Breaking News Real Estate & Housing Race Politics National Local Schools Local Governement Lifestyle Entertainment C",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_07",
+          "title": "Financial%20Statements%206-30-23.pdf",
+          "type": "secondary_or_locator",
+          "publisher": "secondary_or_unknown",
+          "role": "fetched, found, secondary, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://justthenews.com/sites/default/files/2025-06/Financial%20Statements%206-30-23.pdf",
+          "hash": "ab3a553ebbccd3eae633980fc1979b79f62bc2580fcf262cfdd8f7ab23b6d7ee",
+          "excerpt": "in Accordance with Government Auditing Standards CONTENTS Frith - Smith & Archibald, LLP 6355 Topanga Canyon Blvd, Suite 400 • Woodland Hills, CA 91367 • Tele: 818 774-1500 • Fax: 818 774-3780 • www.f-sa.com Independent Auditors' Report To the Board of Directors of Coalition for Humane Immigrant Rights Opinion We have audited the accompanying consolidated financial statements of Coalition for Humane Immigrant Rights (a nonprofit organization) (“CHIRLA”), which comprise of the consolidated statem",
+          "quotedExcerpt": "in Accordance with Government Auditing Standards CONTENTS Frith - Smith & Archibald, LLP 6355 Topanga Canyon Blvd, Suite 400 • Woodland Hills, CA 91367 • Tele: 818 774-1500 • Fax: 818 774-3780 • www.f-sa.com Independent Auditors' Report To the Board of Directors of Coalition for Humane Immigrant Rights Opinion We have audited the accompanying consolidated financial statements of Coalition for Humane Immigrant Rights (a nonprofit organization) (“CHIRLA”), which comprise of the consolidated statem",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "seed",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_08",
+          "title": "CHIRLA defends Becerra from Steyer’s recent attack ad | Los Angeles | calonews.com",
+          "type": "secondary_or_locator",
+          "publisher": "secondary_or_unknown",
+          "role": "fetched, found, secondary, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.calonews.com/communities/los-angeles/chirla-defends-becerra-from-steyer-s-recent-attack-ad/article_bcf27638-fd06-4251-97b0-04f8f0ad7b22.html",
+          "hash": "fb6c514587a0fe38cbb6f5eb1bf50879a14ab395e0289f8bb1a033b06d4c168f",
+          "excerpt": "t LA Southeast LA Bell Bell Gardens Cudahy Downey Huntington Park Lynwood Norwalk South Gate Baldwin Park Commerce Compton Covina El Monte Long Beach Monterey Park Montebello Pico Rivera Pomona West Covina Whittier Orange County Inland Empire Ventura County Events Obituaries Multimedia Podcasts Videos Lalo On Caló Español Advertise Newsletters Share This Facebook Twitter WhatsApp LinkedIn SMS Email Close CHIRLA Action Fund reinforces support for Xavier Becerra. (Facebook screenshot) Facebook Twi",
+          "quotedExcerpt": "t LA Southeast LA Bell Bell Gardens Cudahy Downey Huntington Park Lynwood Norwalk South Gate Baldwin Park Commerce Compton Covina El Monte Long Beach Monterey Park Montebello Pico Rivera Pomona West Covina Whittier Orange County Inland Empire Ventura County Events Obituaries Multimedia Podcasts Videos Lalo On Caló Español Advertise Newsletters Share This Facebook Twitter WhatsApp LinkedIn SMS Email Close CHIRLA Action Fund reinforces support for Xavier Becerra. (Facebook screenshot) Facebook Twi",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_09",
+          "title": "California gubernatorial candidates divided over education funding and social issues | Education | calonews.com",
+          "type": "secondary_or_locator",
+          "publisher": "secondary_or_unknown",
+          "role": "fetched, found, secondary, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.calonews.com/featured-topics/education/california-gubernatorial-candidates-divided-over-education-funding-and-social-issues/article_46e14cab-fc30-447e-8b29-f9a586170718.html",
+          "hash": "9ff6ff532c3c33fe605bc3b4439a4902d0a6b6fc5409c4543afe1976cb17b14e",
+          "excerpt": "Gardens Cudahy Downey Huntington Park Lynwood Norwalk South Gate Baldwin Park Commerce Compton Covina El Monte Long Beach Monterey Park Montebello Pico Rivera Pomona West Covina Whittier Orange County Inland Empire Ventura County Events Obituaries Multimedia Podcasts Videos Lalo On Caló Español Advertise Newsletters Share This Facebook Twitter WhatsApp LinkedIn SMS Email Close Candidates in California's gubernatorial race, from left, Matt Mahan, Xavier Becerra, Chad Bianco, Steve Hilton, Tom Ste",
+          "quotedExcerpt": "Gardens Cudahy Downey Huntington Park Lynwood Norwalk South Gate Baldwin Park Commerce Compton Covina El Monte Long Beach Monterey Park Montebello Pico Rivera Pomona West Covina Whittier Orange County Inland Empire Ventura County Events Obituaries Multimedia Podcasts Videos Lalo On Caló Español Advertise Newsletters Share This Facebook Twitter WhatsApp LinkedIn SMS Email Close Candidates in California's gubernatorial race, from left, Matt Mahan, Xavier Becerra, Chad Bianco, Steve Hilton, Tom Ste",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "web_10",
+          "title": "BECERRA, XAVIER - Candidate overview | FEC",
+          "type": "official_public_record",
+          "publisher": "primary_or_official",
+          "role": "fetched, found, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.fec.gov/data/candidate/H2CA30143/",
+          "hash": "13fdaa79d7a594cee4f6c1c4371714c7132916bbe8f1e9da23f7eb806b24bf1f",
+          "excerpt": "BECERRA, XAVIER - Candidate overview | FEC m_auth=EDR0yhH3jo_lEfiev6nbSQ>m_preview=env-17>m_cookies_win=x\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"> Javascript recommended: FEC.gov uses Javascript to provide the best possible user experience. Learn how to enable Javascript in your browser Your web browser is not supported This site uses features that are not supported by this browser. For a better experience, please switch to a modern browser. skip navigation Here's how you kn",
+          "quotedExcerpt": "BECERRA, XAVIER - Candidate overview | FEC m_auth=EDR0yhH3jo_lEfiev6nbSQ>m_preview=env-17>m_cookies_win=x\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"> Javascript recommended: FEC.gov uses Javascript to provide the best possible user experience. Learn how to enable Javascript in your browser Your web browser is not supported This site uses features that are not supported by this browser. For a better experience, please switch to a modern browser. skip navigation Here's how you kn",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "parallel_search",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "second_becerra_chirla_R007_01",
+          "title": "IRS TEOS - Update your information",
+          "type": "official_public_record",
+          "publisher": "official_public_record",
+          "role": "found, official, locator_only",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.irs.gov/filing/individuals/update-my-information",
+          "hash": "",
+          "excerpt": "IRS tax-exempt organization bulk/download source link discovered from TEOS page: Update your information.",
+          "quotedExcerpt": "IRS tax-exempt organization bulk/download source link discovered from TEOS page: Update your information.",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "official_api:irs_teos_bulk_download_links",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "second_becerra_chirla_R010_01",
+          "title": "SEC ticker - MICROSOFT CORP",
+          "type": "official_public_record",
+          "publisher": "official_public_record",
+          "role": "found, official, locator_only",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+          "hash": "",
+          "excerpt": "SEC company ticker mapping: title=MICROSOFT CORP; ticker=MSFT; cik=0000789019.",
+          "quotedExcerpt": "SEC company ticker mapping: title=MICROSOFT CORP; ticker=MSFT; cik=0000789019.",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "official_api:sec_company_tickers",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_01_975165ad9d",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/ADA_SFY2023-26_ISF_Award_Announcement_Final.pdf?ver=WUWFopxf_AEWzXNw_1lNew%3d%3d",
+          "hash": "df027bd6142cd0e5a454e45ddce99e6c633779d301d8b2a501a6442b18664b35",
+          "excerpt": "Immigration Services Funding (ISF) Awards Page | 1 JANUARY 12, 2024 IMMIGRATION SERVICES FUNDING A WARD ANNOUNCEMENT STATE FISCAL YEAR 2023-2026 The California Department of Social Services (CDSS) Immigration Services Bureau (ISB) is pleased to announce the recipients of the Immigration Services Funding (ISF) program for State Fiscal Years (SFY) 2023-26. The CDSS will award $36,883,122 in funding to 85 recipients. Annual funding awards are listed in table 1. Immigration services include the following four service categories: (1) Immigration Legal Services and Benefits, including but not limited to; Legal Consultation Services; Application Assistance for Deferred Action for Childhood Arrivals",
+          "quotedExcerpt": "Immigration Services Funding (ISF) Awards Page | 1 JANUARY 12, 2024 IMMIGRATION SERVICES FUNDING A WARD ANNOUNCEMENT STATE FISCAL YEAR 2023-2026 The California Department of Social Services (CDSS) Immigration Services Bureau (ISB) is pleased to announce the recipients of the Immigration Services Funding (ISF) program for State Fiscal Years (SFY) 2023-26. The CDSS will award $36,883,122 in funding to 85 recipients. Annual funding awards are listed in table 1. Immigration services include the following four service categories: (1) Immigration Legal Services and Benefits, including but not limited to; Legal Consultation Services; Application Assistance for Deferred Action for Childhood Arrivals",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_02_cec1813231",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/FINAL_ADA_FY2020-21_ISF_Award_Announcement.pdf?ver=2021-11-02-082100-197",
+          "hash": "f242837d8b5f2142ed8a9325e1ac5a4ca5e6333b7231cb3cf61837142c44a0d2",
+          "excerpt": "ISF and RD Funding MARCH 22, 2021 IMMIGRATION SERVICES FUNDING AWARD ANNOUNCEMENT FISCAL YEAR 2020-2021 The California Department of Social Services (CDSS) Immigration Services Bureau is pleased to announce the recipients of the Immigration Services Funding (ISF) and Removal Defense (RD) funding for Fiscal Year (FY) 2020-21. The CDSS allocated $42,615,680 in funding. A total of 97 ISF grantees are awarded for the service period of January 1, 2021 through December 31, 2021 and 31 RD grantees are awarded for the service period of January 1, 2021 – December 31, 2022. Immigration services include the following six service categories: (1) Services to Assist Applicants seeking Deferred Action for",
+          "quotedExcerpt": "ISF and RD Funding MARCH 22, 2021 IMMIGRATION SERVICES FUNDING AWARD ANNOUNCEMENT FISCAL YEAR 2020-2021 The California Department of Social Services (CDSS) Immigration Services Bureau is pleased to announce the recipients of the Immigration Services Funding (ISF) and Removal Defense (RD) funding for Fiscal Year (FY) 2020-21. The CDSS allocated $42,615,680 in funding. A total of 97 ISF grantees are awarded for the service period of January 1, 2021 through December 31, 2021 and 31 RD grantees are awarded for the service period of January 1, 2021 – December 31, 2022. Immigration services include the following six service categories: (1) Services to Assist Applicants seeking Deferred Action for",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_03_e63f942c55",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/FY2022-23_ISF_Award_Announcement_12_23.pdf?ver=2024-01-18-123509-670",
+          "hash": "dd42ee7f6f6208641d4b415d3fbed07159b48c805d4706f8e213c4989dc26ad3",
+          "excerpt": "ISF Awards DECEMBER 23, 2022 IMMIGRATION SERVICES FUNDING AWARD ANNOUNCEMENT FISCAL YEAR 2022-2023 The California Department of Social Services (CDSS) Immigration Services Bureau is pleased to announce the recipients of the Immigration Services Funding (ISF) renewal for Fiscal Year (FY) 2022-23. The CDSS allocated $35,757,030 in funding. The award includes $460,000 from the one-time One California funding provided in FY 2022-23 for Education and Outreach. A total of 93 ISF organizations are awarded for the service period of January 1, 2023, through December 31, 2023. Awards are listed in Table 1. Immigration services include the following six service categories: (1) Legal Consultation Servic",
+          "quotedExcerpt": "ISF Awards DECEMBER 23, 2022 IMMIGRATION SERVICES FUNDING AWARD ANNOUNCEMENT FISCAL YEAR 2022-2023 The California Department of Social Services (CDSS) Immigration Services Bureau is pleased to announce the recipients of the Immigration Services Funding (ISF) renewal for Fiscal Year (FY) 2022-23. The CDSS allocated $35,757,030 in funding. The award includes $460,000 from the one-time One California funding provided in FY 2022-23 for Education and Outreach. A total of 93 ISF organizations are awarded for the service period of January 1, 2023, through December 31, 2023. Awards are listed in Table 1. Immigration services include the following six service categories: (1) Legal Consultation Servic",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_04_31a1eb8de5",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/ISF/SFY_2025-26_ISF_Award_Announcement_FINAL ADA.pdf?ver=F7PxLo5Aa_phioh41SpNOQ%3d%3d",
+          "hash": "161e6fd4d0aeb9f6012d4f29b994d7721210ca628894209b340fc33e5264c5cd",
+          "excerpt": "Immigration Services Funding (ISF) Awards Page | 1 JULY 1, 2025 IMMIGRATION SERVICES FUNDING AWARD ANNOUNCEMENT STATE FISCAL YEAR 2023-2026 The California Department of Social Services (CDSS) Immigration Services Bureau (ISB) is pleased to announce the recipients of the renewed Immigration Services Funding (ISF) program for State Fiscal Years (SFY) 2025-26. The existing agreement is a three- and-a-half-year service term with three separate budget cycles. The ISF Program’s second year service term is a 12-month service period beginning July 1, 2025, and concludes June 30, 2026, with four reporting and invoicing periods. Immigration services include the following four service categories: (1) I",
+          "quotedExcerpt": "Immigration Services Funding (ISF) Awards Page | 1 JULY 1, 2025 IMMIGRATION SERVICES FUNDING AWARD ANNOUNCEMENT STATE FISCAL YEAR 2023-2026 The California Department of Social Services (CDSS) Immigration Services Bureau (ISB) is pleased to announce the recipients of the renewed Immigration Services Funding (ISF) program for State Fiscal Years (SFY) 2025-26. The existing agreement is a three- and-a-half-year service term with three separate budget cycles. The ISF Program’s second year service term is a 12-month service period beginning July 1, 2025, and concludes June 30, 2026, with four reporting and invoicing periods. Immigration services include the following four service categories: (1) I",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_05_ec28a1b357",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/_ADA_FY2021-22_ISF_Award_Announcement.pdf?ver=2022-01-27-141217-217",
+          "hash": "57f326c12f0f974c1e8844f1fc826f3ce0b480bdc6f8a7c2c9493864d0c2dd0e",
+          "excerpt": "ISF and RD Funding JANUARY 27, 2022 IMMIGRATION SERVICES FUNDING AWARD ANNOUNCEMENT FISCAL YEAR 2021-2022 The California Department of Social Services (CDSS) Immigration Services Bureau is pleased to announce the recipients of the Immigration Services Funding (ISF) for Fiscal Years (FY) 2021-22. The CDSS allocated $35,678,030 in funding. The award includes $460,000 from the one-time One California funding provided in FY 2021-22 for Education and Outreach. A total of 93 ISF organizations are awarded for the service period of January 1, 2022 through December 31, 2023. Awards are listed in Table 1. Immigration services include the following six service categories: (1) Legal Consultation Service",
+          "quotedExcerpt": "ISF and RD Funding JANUARY 27, 2022 IMMIGRATION SERVICES FUNDING AWARD ANNOUNCEMENT FISCAL YEAR 2021-2022 The California Department of Social Services (CDSS) Immigration Services Bureau is pleased to announce the recipients of the Immigration Services Funding (ISF) for Fiscal Years (FY) 2021-22. The CDSS allocated $35,678,030 in funding. The award includes $460,000 from the one-time One California funding provided in FY 2021-22 for Education and Outreach. A total of 93 ISF organizations are awarded for the service period of January 1, 2022 through December 31, 2023. Awards are listed in Table 1. Immigration services include the following six service categories: (1) Legal Consultation Service",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "extract_targeted_extract_01_975165ad9d",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/ADA_SFY2023-26_ISF_Award_Announcement_Final.pdf?ver=WUWFopxf_AEWzXNw_1lNew%3d%3d",
+          "hash": "48b1d4b668503399ac6a5ece3ac2feee61e19ec5915a26132aba381cb9d8beb9",
+          "excerpt": "Angeles $7,224,710 Central American Resource Center (CARECEN) of California $2,066,000 Centro Community Hispanic Association $335,000 Children's Law Center of California $75,000 Clinica Monsenor Oscar A. Romero $256,000 Coalition for Humane Immigrant Rights (CHIRLA) $2,975,270 El Rescate $266,040 Human Rights First $84,699 Immigration Center for Women and Children $1,020,000 International Institute of Los Angeles (IILA) $404,500 International Rescue Committee, Inc. (IRC) – Los Angeles $102,000 Korean Immigrant Workers Advocates of Southern California (KIWA) $123,000 Korean Resource Center $240,300 Legal Aid Foundation of Los Angeles $75,000 Los Angeles County Bar Association $129,200 Los Ang",
+          "quotedExcerpt": "Angeles $7,224,710 Central American Resource Center (CARECEN) of California $2,066,000 Centro Community Hispanic Association $335,000 Children's Law Center of California $75,000 Clinica Monsenor Oscar A. Romero $256,000 Coalition for Humane Immigrant Rights (CHIRLA) $2,975,270 El Rescate $266,040 Human Rights First $84,699 Immigration Center for Women and Children $1,020,000 International Institute of Los Angeles (IILA) $404,500 International Rescue Committee, Inc. (IRC) – Los Angeles $102,000 Korean Immigrant Workers Advocates of Southern California (KIWA) $123,000 Korean Resource Center $240,300 Legal Aid Foundation of Los Angeles $75,000 Los Angeles County Bar Association $129,200 Los Ang",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 3,
+          "matchedTerms": [
+            "CHIRLA",
+            "Coalition for Humane Immigrant Rights",
+            "Los Angeles",
+            "Immigration Services Funding",
+            "ISF",
+            "grant"
+          ],
+          "amountCandidates": [
+            "$2,975,270",
+            "$266,040",
+            "$84,699",
+            "$1,020,000",
+            "$404,500",
+            "$102,000"
+          ]
+        },
+        {
+          "sourceId": "extract_targeted_extract_02_cec1813231",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/FINAL_ADA_FY2020-21_ISF_Award_Announcement.pdf?ver=2021-11-02-082100-197",
+          "hash": "d63ba0ab6ebe8b47099fea1190b1f5213d111415d313833a48ea3707b7b93576",
+          "excerpt": "California Los Angeles $6,352,360 $0 Central American Resource Center - CARECEN - of California $1,942,000 $0 Centro Community Hispanic Association, Inc. $340,750 $0 Clinica Msr. Oscar A Romero $225,000 $0 Coalition for Humane Immigrant Rights of Los Angeles (CHIRLA) $2,999,400 $0 Consejo de Federaciones Mexicanas en Norte America $146,750 $0 Council of American-Islamic Relations California $308,650 $109,400 El Rescate $255,540 $0 Human Rights First $56,500 $489,500 Immigrant Defender Law Center $0 $530,000 Immigration Center for Women and Children $1,020,000 $0 Interfaith Refugee & Immigration Service (Episcopal Diocese) (IRIS) $272,460 $0 International Institute of Los Angeles $408,000 $44",
+          "quotedExcerpt": "California Los Angeles $6,352,360 $0 Central American Resource Center - CARECEN - of California $1,942,000 $0 Centro Community Hispanic Association, Inc. $340,750 $0 Clinica Msr. Oscar A Romero $225,000 $0 Coalition for Humane Immigrant Rights of Los Angeles (CHIRLA) $2,999,400 $0 Consejo de Federaciones Mexicanas en Norte America $146,750 $0 Council of American-Islamic Relations California $308,650 $109,400 El Rescate $255,540 $0 Human Rights First $56,500 $489,500 Immigrant Defender Law Center $0 $530,000 Immigration Center for Women and Children $1,020,000 $0 Interfaith Refugee & Immigration Service (Episcopal Diocese) (IRIS) $272,460 $0 International Institute of Los Angeles $408,000 $44",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 3,
+          "matchedTerms": [
+            "CHIRLA",
+            "Coalition for Humane Immigrant Rights",
+            "Los Angeles",
+            "ISF",
+            "grant",
+            "award"
+          ],
+          "amountCandidates": [
+            "$2,999,400",
+            "$0",
+            "$146,750",
+            "$0",
+            "$308,650",
+            "$109,400"
+          ]
+        },
+        {
+          "sourceId": "extract_targeted_extract_03_e63f942c55",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/FY2022-23_ISF_Award_Announcement_12_23.pdf?ver=2024-01-18-123509-670",
+          "hash": "9a5118961915af7f531d4f5222082775a1f3dee92afc34042f9d094730944167",
+          "excerpt": "Bet Tzedek $275,000 Building Skills Partnership $90,000 Catholic Charities of California $6,416,860 Central American Resource Center - CARECEN - of California $1,963,000 Centro Community Hispanic Association, Inc. $340,750 Clinica Msr. Oscar A Romero $250,000 Coalition for Humane Immigrant Rights $2,790,800 Consejo de Federaciones Mexicanas en Norte America (COFEM) $180,450 Council of American-Islamic Relations California $297,650 El Rescate $255,540 Human Rights First $73,000 Immigration Center for Women & Children $1,020,000 Interfaith Refugee & Immigration Service (Episcopal Diocese) - IRIS $281,460 International Institute of Los Angeles $404,500",
+          "quotedExcerpt": "Bet Tzedek $275,000 Building Skills Partnership $90,000 Catholic Charities of California $6,416,860 Central American Resource Center - CARECEN - of California $1,963,000 Centro Community Hispanic Association, Inc. $340,750 Clinica Msr. Oscar A Romero $250,000 Coalition for Humane Immigrant Rights $2,790,800 Consejo de Federaciones Mexicanas en Norte America (COFEM) $180,450 Council of American-Islamic Relations California $297,650 El Rescate $255,540 Human Rights First $73,000 Immigration Center for Women & Children $1,020,000 Interfaith Refugee & Immigration Service (Episcopal Diocese) - IRIS $281,460 International Institute of Los Angeles $404,500",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 2,
+          "matchedTerms": [
+            "Coalition for Humane Immigrant Rights",
+            "Los Angeles",
+            "ISF",
+            "grant",
+            "award"
+          ],
+          "amountCandidates": [
+            "$2,790,800",
+            "$180,450",
+            "$297,650",
+            "$255,540",
+            "$73,000",
+            "$1,020,000"
+          ]
+        },
+        {
+          "sourceId": "extract_targeted_extract_04_31a1eb8de5",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/ISF/SFY_2025-26_ISF_Award_Announcement_FINAL ADA.pdf?ver=F7PxLo5Aa_phioh41SpNOQ%3d%3d",
+          "hash": "d7f9e3938aa445eec9732ddd75f9afa026afd012e9f858f9e82e831e7a75c904",
+          "excerpt": "unding (ISF) Awards Page | 3 ORGANIZATION SFY 2025-26 ISF AWARD Central American Resource Center (CARECEN) of California $1,765,090 Centro Community Hispanic Association $335,000 Clinica Monsenor Oscar A. Romero $295,500 Coalition for Humane Immigrant Rights (CHIRLA) $2,653,370 El Rescate $337,240 Human Rights First $84,699 Immigration Center for Women and Children $1,125,000 International Institute of Los Angeles (IILA) $429,000 International Rescue Committee, Inc. (IRC) – Los Angeles $112,000 Korean Immigrant Workers Advocates of Southern California (KIWA) $123,000 Korean Resource Center $277,300 Legal Aid Foundation of Los Angeles $94,000 Los Angeles County Bar Association $129,200 Los An",
+          "quotedExcerpt": "unding (ISF) Awards Page | 3 ORGANIZATION SFY 2025-26 ISF AWARD Central American Resource Center (CARECEN) of California $1,765,090 Centro Community Hispanic Association $335,000 Clinica Monsenor Oscar A. Romero $295,500 Coalition for Humane Immigrant Rights (CHIRLA) $2,653,370 El Rescate $337,240 Human Rights First $84,699 Immigration Center for Women and Children $1,125,000 International Institute of Los Angeles (IILA) $429,000 International Rescue Committee, Inc. (IRC) – Los Angeles $112,000 Korean Immigrant Workers Advocates of Southern California (KIWA) $123,000 Korean Resource Center $277,300 Legal Aid Foundation of Los Angeles $94,000 Los Angeles County Bar Association $129,200 Los An",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 3,
+          "matchedTerms": [
+            "CHIRLA",
+            "Coalition for Humane Immigrant Rights",
+            "Los Angeles",
+            "Immigration Services Funding",
+            "ISF",
+            "grant"
+          ],
+          "amountCandidates": [
+            "$2,653,370",
+            "$337,240",
+            "$84,699",
+            "$1,125,000",
+            "$429,000",
+            "$112,000"
+          ]
+        },
+        {
+          "sourceId": "extract_targeted_extract_05_ec28a1b357",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "citation_verified_extract, fetched, found, needs_citation_verifier, official, targeted_extract, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/_ADA_FY2021-22_ISF_Award_Announcement.pdf?ver=2022-01-27-141217-217",
+          "hash": "3ffed7817918a6fc093c5034c4f88edd3f7504f2bc4a48464e0ab705c6593d9d",
+          "excerpt": "unity Health Centers $139,500 Legal Aid Society of San Diego $172,540 STATEWIDE/LTTA n/a Catholic Charities of California Los Angeles $6,416,860 Catholic Legal Immigration Network, Inc. (CLINIC) $278,000 Center for Gender & Refugee Studies-California $196,100 Coalition for Humane Immigrant Rights of Los Angeles** $2,790,800 Immigrant Legal Resource Center $234,000 Lawyers’ Committee for Civil Rights of the San Francisco Bay Area $56,500 TOTAL $35,678,030 TABLE 2. ISF PROGRAM ADMINISTRATOR FUNDING AWARDS ORGANIZATION ISF PA ADMINISTRATIVE AWARD FY 2021-22 BAY AREA Centro Legal de la Raza $625,372 LOS ANGELES Coalition for Humane Immigrant Rights of Los Angeles $472,539 SAN DIEGO Jewish Family",
+          "quotedExcerpt": "unity Health Centers $139,500 Legal Aid Society of San Diego $172,540 STATEWIDE/LTTA n/a Catholic Charities of California Los Angeles $6,416,860 Catholic Legal Immigration Network, Inc. (CLINIC) $278,000 Center for Gender & Refugee Studies-California $196,100 Coalition for Humane Immigrant Rights of Los Angeles** $2,790,800 Immigrant Legal Resource Center $234,000 Lawyers’ Committee for Civil Rights of the San Francisco Bay Area $56,500 TOTAL $35,678,030 TABLE 2. ISF PROGRAM ADMINISTRATOR FUNDING AWARDS ORGANIZATION ISF PA ADMINISTRATIVE AWARD FY 2021-22 BAY AREA Centro Legal de la Raza $625,372 LOS ANGELES Coalition for Humane Immigrant Rights of Los Angeles $472,539 SAN DIEGO Jewish Family",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 4,
+          "matchedTerms": [
+            "Coalition for Humane Immigrant Rights",
+            "Los Angeles",
+            "ISF",
+            "grant",
+            "award"
+          ],
+          "amountCandidates": [
+            "$2,790,800",
+            "$234,000",
+            "$56,500",
+            "$35,678,030",
+            "$625,372",
+            "$472,539"
+          ]
+        },
+        {
+          "sourceId": "extract_targeted_extract_08_dd2dfdf6d8",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch_targeted_extract",
+          "role": "found, fetched, official, locator_only, targeted_extract, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "http://www.cdss.ca.gov/inforesources/immigration/immigration-services-funding",
+          "hash": "382b0fd84d2a2f6c564e594ddc76a3259dc840cc894c2faf14cf5a59b778be8e",
+          "excerpt": "efits, Education and Outreach for individuals and events as defined by CDSS, Legal Training and Technical Assistance , and ISF Supportive Services . Additionally, the CDSS expanded the ISF administrative partnership with regional Program Administrators in the Los Angeles, San Diego, Bay Area, Central Valley and Inland Empire. The ISF Program service awards are allocated based on the Regional Map , listing counties by regions. SFY 2025 - 26 ISF Awarded Organizations The CDSS ISB is pleased to announce the recipients of the ISF program for SFY 2025-26. The CDSS has awarded $36,999,090 in funding to 83 recipients. Review the SFY 2025-26 Award announcement for a list of awarded Grantees and prog",
+          "quotedExcerpt": "efits, Education and Outreach for individuals and events as defined by CDSS, Legal Training and Technical Assistance , and ISF Supportive Services . Additionally, the CDSS expanded the ISF administrative partnership with regional Program Administrators in the Los Angeles, San Diego, Bay Area, Central Valley and Inland Empire. The ISF Program service awards are allocated based on the Regional Map , listing counties by regions. SFY 2025 - 26 ISF Awarded Organizations The CDSS ISB is pleased to announce the recipients of the ISF program for SFY 2025-26. The CDSS has awarded $36,999,090 in funding to 83 recipients. Review the SFY 2025-26 Award announcement for a list of awarded Grantees and prog",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler+pypdf",
+          "pageNumber": 0,
+          "matchedTerms": [
+            "Los Angeles",
+            "Immigration Services Funding",
+            "ISF",
+            "grant",
+            "award"
+          ],
+          "amountCandidates": [
+            "$36,999,090"
+          ]
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_19_1035515ca7",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://www.cdss.ca.gov/Portals/9/Immigration/ISB Regional Map and List for Website (2).pdf?ver=TpUCYvuZQBLgaql7DBPF5w%3d%3d",
+          "hash": "d51009e5ee0df6f78b6bf07a3d623cb3cac150418462569f05b15f124d0b3ebd",
+          "excerpt": "Immigration Services Bureau – Regions by County Bay Area Alameda County Contra Costa County Marin County Napa County San Francisco County San Mateo County Santa Clara County Solano County Sonoma County Central Coas t Monterey County San Benito County San Luis Obispo County Santa Barbara County Santa Cruz County Ventura County Orange Cou nty Orange County San Diego Imperial County San Diego County Central Valley Fresno County Kern County Kings County Madera County Mariposa County Merced County Mono County San Joaquin County Stanislaus County Tulare County Tuolumne County Inland Empir e Inyo County Riverside County San Bernardino County Los An geles Los Angeles County Northern California Alpin",
+          "quotedExcerpt": "Immigration Services Bureau – Regions by County Bay Area Alameda County Contra Costa County Marin County Napa County San Francisco County San Mateo County Santa Clara County Solano County Sonoma County Central Coas t Monterey County San Benito County San Luis Obispo County Santa Barbara County Santa Cruz County Ventura County Orange Cou nty Orange County San Diego Imperial County San Diego County Central Valley Fresno County Kern County Kings County Madera County Mariposa County Merced County Mono County San Joaquin County Stanislaus County Tulare County Tuolumne County Inland Empir e Inyo County Riverside County San Bernardino County Los An geles Los Angeles County Northern California Alpin",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_crawler_fetch_crawler_followup_20_dd2dfdf6d8",
+          "title": "grant_award_followup",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "http://www.cdss.ca.gov/inforesources/immigration/immigration-services-funding",
+          "hash": "ab6a6e88caddbb4ecb90395cb1c5b51490e7a722e47b854fca695c21d97f2d1a",
+          "excerpt": "Immigration Services Funding Accessibility help | Skip to Content Department of Social Services Social Services Site Notification: CDSS website will be unavailable for a Scheduled Maintenance from Saturday, May 30, 2020 at 10PM (PDT) through Sunday, May 31, 2020 at 2AM (PDT). We apologize for any inconvenience this may cause. --> Menu Contact Search Disclaimer Home Letters/Regulations Forms/Brochures Fiscal/Financial Data Portal Home Letters/Regulations Forms/Brochures Fiscal/Financial Data Portal CDSS Programs Immigration Services Immigration Services Funding Immigration Services Funding (ISF) Program The Welfare and Institutions Code (WIC) 13302-13307 authorizes the California Department o",
+          "quotedExcerpt": "Immigration Services Funding Accessibility help | Skip to Content Department of Social Services Social Services Site Notification: CDSS website will be unavailable for a Scheduled Maintenance from Saturday, May 30, 2020 at 10PM (PDT) through Sunday, May 31, 2020 at 2AM (PDT). We apologize for any inconvenience this may cause. --> Menu Contact Search Disclaimer Home Letters/Regulations Forms/Brochures Fiscal/Financial Data Portal Home Letters/Regulations Forms/Brochures Fiscal/Financial Data Portal CDSS Programs Immigration Services Immigration Services Funding Immigration Services Funding (ISF) Program The Welfare and Institutions Code (WIC) 13302-13307 authorizes the California Department o",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_irs_teos_954421521_202206_202341359349310519",
+          "title": "IRS TEOS Form 990 index 2023 - COALITION FOR HUMANE IMMIGRANT RIGHTS",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "citation_verified_extract, fetched, found, irs_teos_index, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://apps.irs.gov/pub/epostcard/990/xml/2023/index_2023.csv",
+          "hash": "3c0b4d6d85193853638c3e0afd15a7583d1981e689a01b111f51a76e2f04a376",
+          "excerpt": "IRS TEOS index row: taxpayer=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; return_type=990; tax_period=202206; filing_year=2023; object_id=202341359349310519; xml_batch_id=not_listed.",
+          "quotedExcerpt": "IRS TEOS index row: taxpayer=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; return_type=990; tax_period=202206; filing_year=2023; object_id=202341359349310519; xml_batch_id=not_listed.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_irs_teos_954421521_202306_202441319349305374",
+          "title": "IRS TEOS Form 990 index 2024 - COALITION FOR HUMANE IMMIGRANT RIGHTS",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "citation_verified_extract, fetched, found, irs_teos_index, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://apps.irs.gov/pub/epostcard/990/xml/2024/index_2024.csv",
+          "hash": "6b70258a495761e80ff2b813dbe1e0a8981a888f133c3e9c86cbf24db381ee39",
+          "excerpt": "IRS TEOS index row: taxpayer=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; return_type=990; tax_period=202306; filing_year=2024; object_id=202441319349305374; xml_batch_id=2024_TEOS_XML_05a.",
+          "quotedExcerpt": "IRS TEOS index row: taxpayer=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; return_type=990; tax_period=202306; filing_year=2024; object_id=202441319349305374; xml_batch_id=2024_TEOS_XML_05a.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_irs_teos_954421521_202406_202501349349307610",
+          "title": "IRS TEOS Form 990 index 2025 - COALITION FOR HUMANE IMMIGRANT RIGHTS",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "citation_verified_extract, fetched, found, irs_teos_index, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://apps.irs.gov/pub/epostcard/990/xml/2025/index_2025.csv",
+          "hash": "7f4cff64d38f2b9ab11f46aca429f7b0a14169eff64a79827ed484f1c87e78bb",
+          "excerpt": "IRS TEOS index row: taxpayer=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; return_type=990; tax_period=202406; filing_year=2025; object_id=202501349349307610; xml_batch_id=2025_TEOS_XML_05A.",
+          "quotedExcerpt": "IRS TEOS index row: taxpayer=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; return_type=990; tax_period=202406; filing_year=2025; object_id=202501349349307610; xml_batch_id=2025_TEOS_XML_05A.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_committee_1430910_coalition_for_humane_immigrant_rights_chirla_nonprofit_501_c_3",
+          "title": "CA SOS Power Search committee lookup - Coalition for Humane Immigrant Rights (CHIRLA) (Nonprofit 501(c )(3))",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "ca_sos_powersearch_committee, ca_sos_powersearch_lookup, citation_verified_extract, fetched, found, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/xml/get_committee_list.php",
+          "hash": "693571535f356a68596f39135ae901bdd97bcae99095a8174654ee4d263ff32d",
+          "excerpt": "CA SOS Power Search committee lookup: search_text=CHIRLA; committee_name=Coalition for Humane Immigrant Rights (CHIRLA) (Nonprofit 501(c )(3)); committee_id=1430910.",
+          "quotedExcerpt": "CA SOS Power Search committee lookup: search_text=CHIRLA; committee_name=Coalition for Humane Immigrant Rights (CHIRLA) (Nonprofit 501(c )(3)); committee_id=1430910.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_committee_1476639_coalition_for_humane_immigrant_rights_chirla_action_fund_nonprofit_501_c_4",
+          "title": "CA SOS Power Search committee lookup - Coalition for Humane Immigrant Rights (CHIRLA) - Action Fund (Nonprofit 501(c)(4))",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "ca_sos_powersearch_committee, ca_sos_powersearch_lookup, citation_verified_extract, fetched, found, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/xml/get_committee_list.php",
+          "hash": "7ab0157b480f94475e1adf7ba9447efad54f36d0d3b049470ea080e2f4ee09cd",
+          "excerpt": "CA SOS Power Search committee lookup: search_text=CHIRLA; committee_name=Coalition for Humane Immigrant Rights (CHIRLA) - Action Fund (Nonprofit 501(c)(4)); committee_id=1476639.",
+          "quotedExcerpt": "CA SOS Power Search committee lookup: search_text=CHIRLA; committee_name=Coalition for Humane Immigrant Rights (CHIRLA) - Action Fund (Nonprofit 501(c)(4)); committee_id=1476639.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_committee_1430927_immigrant_power_pac_fed_pac_id_c00750786_sponsored_by_chirla_action_fund_state_comm",
+          "title": "CA SOS Power Search committee lookup - Immigrant Power PAC (FED PAC ID#C00750786), Sponsored by CHIRLA Action Fund- State Committee",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "ca_sos_powersearch_committee, ca_sos_powersearch_lookup, citation_verified_extract, fetched, found, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/xml/get_committee_list.php",
+          "hash": "8769a76683badc18e8047d9d1f333db7ef26bbeab61e14f86dbbfe77ffccb0d0",
+          "excerpt": "CA SOS Power Search committee lookup: search_text=CHIRLA; committee_name=Immigrant Power PAC (FED PAC ID#C00750786), Sponsored by CHIRLA Action Fund- State Committee; committee_id=1430927.",
+          "quotedExcerpt": "CA SOS Power Search committee lookup: search_text=CHIRLA; committee_name=Immigrant Power PAC (FED PAC ID#C00750786), Sponsored by CHIRLA Action Fund- State Committee; committee_id=1430927.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_committee_1480025_becerra_for_governor_2026",
+          "title": "CA SOS Power Search committee lookup - Becerra for Governor 2026",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "ca_sos_powersearch_committee, ca_sos_powersearch_lookup, citation_verified_extract, fetched, found, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/xml/get_committee_list.php",
+          "hash": "652d5e815bac60e35ec1e0f8347a1e1b9917d7ab9abfd65b5ccd56d70b429ed6",
+          "excerpt": "CA SOS Power Search committee lookup: search_text=Becerra for Governor; committee_name=Becerra for Governor 2026; committee_id=1480025.",
+          "quotedExcerpt": "CA SOS Power Search committee lookup: search_text=Becerra for Governor; committee_name=Becerra for Governor 2026; committee_id=1480025.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_committee_1490681_california_people_supporting_xavier_becerra_for_governor_2026",
+          "title": "CA SOS Power Search committee lookup - California People Supporting Xavier Becerra for Governor 2026",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "ca_sos_powersearch_committee, ca_sos_powersearch_lookup, citation_verified_extract, fetched, found, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/xml/get_committee_list.php",
+          "hash": "488631bf00eb7a948e7fb1c99e021a3f6c940434040286108abc3984c228116e",
+          "excerpt": "CA SOS Power Search committee lookup: search_text=Becerra for Governor; committee_name=California People Supporting Xavier Becerra for Governor 2026; committee_id=1490681.",
+          "quotedExcerpt": "CA SOS Power Search committee lookup: search_text=Becerra for Governor; committee_name=California People Supporting Xavier Becerra for Governor 2026; committee_id=1490681.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_committee_1490030_californios_unidos_por_becerra_for_governor_2026_sponsored_by_laborers_internationa",
+          "title": "CA SOS Power Search committee lookup - Californios Unidos por Becerra for Governor 2026, Sponsored by Laborers' International Union of North America, Local 300",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "ca_sos_powersearch_committee, ca_sos_powersearch_lookup, citation_verified_extract, fetched, found, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/xml/get_committee_list.php",
+          "hash": "9d645310fa34e979341c37b8f22a506fdd59f6b8853a53a7f28c097a5bfd6bee",
+          "excerpt": "CA SOS Power Search committee lookup: search_text=Becerra for Governor; committee_name=Californios Unidos por Becerra for Governor 2026, Sponsored by Laborers' International Union of North America, Local 300; committee_id=1490030.",
+          "quotedExcerpt": "CA SOS Power Search committee lookup: search_text=Becerra for Governor; committee_name=Californios Unidos por Becerra for Governor 2026, Sponsored by Laborers' International Union of North America, Local 300; committee_id=1490030.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_committee_1490885_working_families_for_healthy_communities_supporting_becerra_for_governor_2026_spons",
+          "title": "CA SOS Power Search committee lookup - Working Families for Healthy Communities supporting Becerra for Governor 2026 sponsored by labor and community health organizations",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "ca_sos_powersearch_committee, ca_sos_powersearch_lookup, citation_verified_extract, fetched, found, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/xml/get_committee_list.php",
+          "hash": "6a4dad484104d746a2d72b4f1740c2761f1dd35cd084b7032444e4d15d62506f",
+          "excerpt": "CA SOS Power Search committee lookup: search_text=Becerra for Governor; committee_name=Working Families for Healthy Communities supporting Becerra for Governor 2026 sponsored by labor and community health organizations; committee_id=1490885.",
+          "quotedExcerpt": "CA SOS Power Search committee lookup: search_text=Becerra for Governor; committee_name=Working Families for Healthy Communities supporting Becerra for Governor 2026 sponsored by labor and community health organizations; committee_id=1490885.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_candidate_becerra_xavier",
+          "title": "CA SOS Power Search candidate lookup - BECERRA, XAVIER",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "ca_sos_powersearch_candidate, ca_sos_powersearch_lookup, citation_verified_extract, fetched, found, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/xml/get_candidate_list.php",
+          "hash": "b132aebe11d57d3e85f042f671e830b2a22b98649e63a955c002fad924a32d1c",
+          "excerpt": "CA SOS Power Search candidate lookup: search_text=BECERRA; candidate_name=BECERRA, XAVIER.",
+          "quotedExcerpt": "CA SOS Power Search candidate lookup: search_text=BECERRA; candidate_name=BECERRA, XAVIER.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_contribution_chirla_becerra_xavier_no_match",
+          "title": "CA SOS Power Search contribution query - CHIRLA to BECERRA, XAVIER",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, ca_sos_powersearch_lookup, ca_sos_powersearch_contribution_query, no_direct_match",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/advanced.php",
+          "hash": "0d6d21baec64517bc96208e1b4c2bf2b4a88b8d14c53e32dfde8e782ce54c751",
+          "excerpt": "CA SOS Power Search contribution result: contributor=CHIRLA; recipient=BECERRA, XAVIER; no result summary was returned.",
+          "quotedExcerpt": "CA SOS Power Search contribution result: contributor=CHIRLA; recipient=BECERRA, XAVIER; no result summary was returned.",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_ca_sos_powersearch_contribution_chirla_becerra_for_governor_2026_no_match",
+          "title": "CA SOS Power Search contribution query - CHIRLA to Becerra for Governor 2026",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "found, fetched, official, locator_only, needs_citation_verifier, ca_sos_powersearch_lookup, ca_sos_powersearch_contribution_query, no_direct_match",
+          "confidence": "locator_only",
+          "visibility": "source_fed_case_board",
+          "url": "https://powersearch.sos.ca.gov/advanced.php",
+          "hash": "26119aaa3aa154cee195214f2ebde143b5cf426668171f853caa2c2054122533",
+          "excerpt": "CA SOS Power Search contribution result: contributor=CHIRLA; recipient=Becerra for Governor 2026; no result summary was returned.",
+          "quotedExcerpt": "CA SOS Power Search contribution result: contributor=CHIRLA; recipient=Becerra for Governor 2026; no result summary was returned.",
+          "limitation": "Locator or blocked record; it needs fetch, browser capture, or public-record follow-up.",
+          "supportLevel": "partially_supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_irs_teos_form990_xml_202341359349310519",
+          "title": "IRS TEOS Form 990 XML extract 2023 - COALITION FOR HUMANE IMMIGRANT RIGHTS",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "citation_verified_extract, fetched, found, irs_teos_form990_xml_extract, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://apps.irs.gov/pub/epostcard/990/xml/2023/2023_TEOS_XML_05A.zip",
+          "hash": "6738e341613a10e5566af72e40bebcc7ff4068ba489c6f2f1472fbf9a19b94ff",
+          "excerpt": "IRS TEOS Form 990 XML extract: organization_name=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; tax_period=202206; filing_year=2023; object_id=202341359349310519; CYTotalRevenueAmt=18424426; CYTotalExpensesAmt=15373731; GovernmentGrantsAmt=12369461.",
+          "quotedExcerpt": "IRS TEOS Form 990 XML extract: organization_name=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; tax_period=202206; filing_year=2023; object_id=202341359349310519; CYTotalRevenueAmt=18424426; CYTotalExpensesAmt=15373731; GovernmentGrantsAmt=12369461.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_irs_teos_form990_xml_202441319349305374",
+          "title": "IRS TEOS Form 990 XML extract 2024 - COALITION FOR HUMANE IMMIGRANT RIGHTS",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "citation_verified_extract, fetched, found, irs_teos_form990_xml_extract, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://apps.irs.gov/pub/epostcard/990/xml/2024/2024_TEOS_XML_05A.zip",
+          "hash": "20e7188b9257704661dc014f7ce2755cce51692b2f75d249dd373ecbd0df4eb5",
+          "excerpt": "IRS TEOS Form 990 XML extract: organization_name=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; tax_period=202306; filing_year=2024; object_id=202441319349305374; CYTotalRevenueAmt=44877869; CYTotalExpensesAmt=20129065; GovernmentGrantsAmt=33966572.",
+          "quotedExcerpt": "IRS TEOS Form 990 XML extract: organization_name=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; tax_period=202306; filing_year=2024; object_id=202441319349305374; CYTotalRevenueAmt=44877869; CYTotalExpensesAmt=20129065; GovernmentGrantsAmt=33966572.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        },
+        {
+          "sourceId": "followup_irs_teos_form990_xml_202501349349307610",
+          "title": "IRS TEOS Form 990 XML extract 2025 - COALITION FOR HUMANE IMMIGRANT RIGHTS",
+          "type": "official_public_record",
+          "publisher": "official_followup_fetch",
+          "role": "citation_verified_extract, fetched, found, irs_teos_form990_xml_extract, needs_citation_verifier, official, usable_as_evidence",
+          "confidence": "usable_as_evidence",
+          "visibility": "source_fed_case_board",
+          "url": "https://apps.irs.gov/pub/epostcard/990/xml/2025/2025_TEOS_XML_05A.zip",
+          "hash": "588396e8f498d6ad41fb9e31924ac83ade7b144dfa18e62776897d6ead5408d1",
+          "excerpt": "IRS TEOS Form 990 XML extract: organization_name=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; tax_period=202406; filing_year=2025; object_id=202501349349307610; CYTotalRevenueAmt=31031530; CYTotalExpensesAmt=23696747; GovernmentGrantsAmt=25588332.",
+          "quotedExcerpt": "IRS TEOS Form 990 XML extract: organization_name=COALITION FOR HUMANE IMMIGRANT RIGHTS; EIN=954421521; tax_period=202406; filing_year=2025; object_id=202501349349307610; CYTotalRevenueAmt=31031530; CYTotalExpensesAmt=23696747; GovernmentGrantsAmt=25588332.",
+          "limitation": "Supports only the cited claim and does not prove the whole case by itself.",
+          "supportLevel": "supported",
+          "retrievalMethod": "custom_official_link_crawler",
+          "pageNumber": null,
+          "matchedTerms": [],
+          "amountCandidates": []
+        }
+      ],
+      "lanes": [
+        {
+          "laneId": "lead",
+          "label": "Question received",
+          "headline": "A public-record question enters.",
+          "body": "Xavier Bacerra and his connection to CHIRLA.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "sources",
+          "label": "Sources opened",
+          "headline": "The ledger is visible.",
+          "body": "41 evidence rows are available.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "findings",
+          "label": "Findings checked",
+          "headline": "The verifier gates claims.",
+          "body": "22 finding cards were produced.",
+          "sourceIds": []
+        },
+        {
+          "laneId": "gaps",
+          "label": "Gaps named",
+          "headline": "Missing records stay visible.",
+          "body": "5 missing records are listed.",
+          "sourceIds": []
+        }
+      ],
+      "anomalyMath": [],
+      "nextRecords": [
+        {
+          "priority": "high",
+          "recordId": "missing_1",
+          "holder": "public agency or record custodian",
+          "request": "complete contract file from contracting agency or board clerk",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_2",
+          "holder": "public agency or record custodian",
+          "request": "invoice and payment ledger from controller, finance department, or agency accounts payable",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_3",
+          "holder": "public agency or record custodian",
+          "request": "monitoring or performance report from program office, oversight body, or independent auditor",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_4",
+          "holder": "public agency or record custodian",
+          "request": "campaign endorsement and expenditure support records from campaign committee, CHIRLA Action Fund, California campaign finance portal",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        },
+        {
+          "priority": "medium",
+          "recordId": "missing_5",
+          "holder": "public agency or record custodian",
+          "request": "sam_entity_management requires SAM_API_KEY before this gap can be resolved.",
+          "reason": "Needed before upgrading a review lead into a stronger finding."
+        }
+      ],
+      "actions": {
+        "directMove": "complete contract file from contracting agency or board clerk",
+        "requestLanguage": "complete contract file from contracting agency or board clerk",
+        "ifRefused": "Ask for the statutory exemption, record index, and segregable public portions.",
+        "coalitionPath": "Share only citation-verified review leads and missing-record requests."
+      },
+      "sourceBoard": {
+        "generatedAt": "2026-05-16T01:56:17Z",
+        "sourceRunId": "aculeus_case_board_verified_targeted_extract_findings",
+        "originalCaseId": "becerra_chirla"
+      },
+      "chirlaOfficialRecordScope": {
+        "status": "review_only",
+        "decision": "CHIRLA_OFFICIAL_RECORD_SCOPE_VERIFIED_REVIEW_ONLY",
+        "laneCount": 3,
+        "lanes": [
+          {
+            "laneId": "irs_teos_lookup",
+            "status": "PASS",
+            "officialRecordCount": 3,
+            "visibleFindingCount": 11,
+            "citationPassCount": 11,
+            "weakOrRejectedClaimCount": 15,
+            "unsupportedLinkageRejected": true,
+            "trainingConversionAllowed": false,
+            "sourceBodiesPersisted": false,
+            "modelFindingsGenerated": false
+          },
+          {
+            "laneId": "ca_sos_powersearch",
+            "status": "PASS",
+            "officialRecordCount": 10,
+            "visibleFindingCount": 15,
+            "citationPassCount": 15,
+            "weakOrRejectedClaimCount": 22,
+            "unsupportedLinkageRejected": true,
+            "trainingConversionAllowed": false,
+            "sourceBodiesPersisted": false,
+            "modelFindingsGenerated": false
+          },
+          {
+            "laneId": "irs_teos_object_extract_v2",
+            "status": "PASS",
+            "officialRecordCount": 3,
+            "visibleFindingCount": 22,
+            "citationPassCount": 22,
+            "weakOrRejectedClaimCount": 13,
+            "unsupportedLinkageRejected": true,
+            "trainingConversionAllowed": false,
+            "sourceBodiesPersisted": false,
+            "modelFindingsGenerated": false
+          }
+        ],
+        "evidencePosture": "official_records_only_no_linkage_or_intent_claim",
+        "unsupportedLinkageRejected": true,
+        "trainingConversionAllowed": false,
+        "sourceBodiesPersisted": false,
+        "modelFindingsGenerated": false,
+        "quidProQuoOrIntentClaimAllowed": false,
+        "nextAction": "Use IRS TEOS and CA SOS records as official-record references only; keep alleged linkage claims rejected unless stronger official records support them."
+      },
+      "calaccessEntityLookup": {
+        "status": "review_only",
+        "decision": "CALACCESS_ENTITY_LOOKUP_HASH_ONLY_READY",
+        "tables": [
+          "FILERS",
+          "F501_502"
+        ],
+        "terms": [
+          "CHIRLA",
+          "XAVIER BECERRA",
+          "BECERRA"
+        ],
+        "totalMatches": 8,
+        "rawRowsPersisted": false,
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false,
+        "linkageOrInfluenceClaimAllowed": false,
+        "lookups": [
+          {
+            "table": "FILERS",
+            "status": "LOOKUP_COMPLETE_HASH_ONLY",
+            "rowCountScanned": 450837,
+            "headerColumnCount": 1,
+            "matchCount": 0
+          },
+          {
+            "table": "F501_502",
+            "status": "LOOKUP_COMPLETE_HASH_ONLY",
+            "rowCountScanned": 20939,
+            "headerColumnCount": 54,
+            "matchCount": 8
+          }
+        ],
+        "followupTaskCount": 8,
+        "followupTasks": [
+          {
+            "taskId": "calaccess_f501_502_001",
+            "sourceTable": "F501_502",
+            "rowNumber": 864,
+            "evidencePosture": "locator_only_hash_not_claim_evidence",
+            "retrievalStatus": "QUEUED_REVIEW_ONLY",
+            "targetRecord": "Resolve matched CAL-ACCESS row to its official filing, filer, committee, filing period, and form image or official filing record.",
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false,
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "taskId": "calaccess_f501_502_002",
+            "sourceTable": "F501_502",
+            "rowNumber": 3943,
+            "evidencePosture": "locator_only_hash_not_claim_evidence",
+            "retrievalStatus": "QUEUED_REVIEW_ONLY",
+            "targetRecord": "Resolve matched CAL-ACCESS row to its official filing, filer, committee, filing period, and form image or official filing record.",
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false,
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "taskId": "calaccess_f501_502_003",
+            "sourceTable": "F501_502",
+            "rowNumber": 3944,
+            "evidencePosture": "locator_only_hash_not_claim_evidence",
+            "retrievalStatus": "QUEUED_REVIEW_ONLY",
+            "targetRecord": "Resolve matched CAL-ACCESS row to its official filing, filer, committee, filing period, and form image or official filing record.",
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false,
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "taskId": "calaccess_f501_502_004",
+            "sourceTable": "F501_502",
+            "rowNumber": 15339,
+            "evidencePosture": "locator_only_hash_not_claim_evidence",
+            "retrievalStatus": "QUEUED_REVIEW_ONLY",
+            "targetRecord": "Resolve matched CAL-ACCESS row to its official filing, filer, committee, filing period, and form image or official filing record.",
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false,
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "taskId": "calaccess_f501_502_005",
+            "sourceTable": "F501_502",
+            "rowNumber": 18010,
+            "evidencePosture": "locator_only_hash_not_claim_evidence",
+            "retrievalStatus": "QUEUED_REVIEW_ONLY",
+            "targetRecord": "Resolve matched CAL-ACCESS row to its official filing, filer, committee, filing period, and form image or official filing record.",
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false,
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "taskId": "calaccess_f501_502_006",
+            "sourceTable": "F501_502",
+            "rowNumber": 18287,
+            "evidencePosture": "locator_only_hash_not_claim_evidence",
+            "retrievalStatus": "QUEUED_REVIEW_ONLY",
+            "targetRecord": "Resolve matched CAL-ACCESS row to its official filing, filer, committee, filing period, and form image or official filing record.",
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false,
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "taskId": "calaccess_f501_502_007",
+            "sourceTable": "F501_502",
+            "rowNumber": 18773,
+            "evidencePosture": "locator_only_hash_not_claim_evidence",
+            "retrievalStatus": "QUEUED_REVIEW_ONLY",
+            "targetRecord": "Resolve matched CAL-ACCESS row to its official filing, filer, committee, filing period, and form image or official filing record.",
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false,
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "taskId": "calaccess_f501_502_008",
+            "sourceTable": "F501_502",
+            "rowNumber": 19878,
+            "evidencePosture": "locator_only_hash_not_claim_evidence",
+            "retrievalStatus": "QUEUED_REVIEW_ONLY",
+            "targetRecord": "Resolve matched CAL-ACCESS row to its official filing, filer, committee, filing period, and form image or official filing record.",
+            "findingPromotionAllowed": false,
+            "trainingConversionAllowed": false,
+            "linkageOrInfluenceClaimAllowed": false
+          }
+        ],
+        "filingAtomDecision": "CALACCESS_FILING_ATOMS_READY_NARROW_SCOPE",
+        "filingAtomVerifierDecision": "CALACCESS_FILING_ATOMS_VERIFIED_NARROW_SCOPE",
+        "filingAtomCount": 8,
+        "exactTargetEntityMatches": 7,
+        "surnameOnlyNonTargetCount": 1,
+        "filingAtoms": [
+          {
+            "atomId": "calaccess_f501_502_atom_001",
+            "filingId": "568781",
+            "formType": "F501",
+            "candidateName": "Glen Becerra",
+            "exactTargetEntityMatch": false,
+            "entityMatchScope": "surname_only_locator",
+            "allowedClaimScope": "surname_only_non_target_locator_only",
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "atomId": "calaccess_f501_502_atom_002",
+            "filingId": "636962",
+            "formType": "F502",
+            "candidateName": "Xavier Becerra",
+            "exactTargetEntityMatch": true,
+            "entityMatchScope": "exact_target_entity",
+            "allowedClaimScope": "official_campaign_filing_row_atom_only",
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "atomId": "calaccess_f501_502_atom_003",
+            "filingId": "636963",
+            "formType": "F501",
+            "candidateName": "Xavier Becerra",
+            "exactTargetEntityMatch": true,
+            "entityMatchScope": "exact_target_entity",
+            "allowedClaimScope": "official_campaign_filing_row_atom_only",
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "atomId": "calaccess_f501_502_atom_004",
+            "filingId": "2134684",
+            "formType": "F501",
+            "candidateName": "XAVIER BECERRA",
+            "exactTargetEntityMatch": true,
+            "entityMatchScope": "exact_target_entity",
+            "allowedClaimScope": "official_campaign_filing_row_atom_only",
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "atomId": "calaccess_f501_502_atom_005",
+            "filingId": "2326187",
+            "formType": "F501",
+            "candidateName": "XAVIER BECERRA",
+            "exactTargetEntityMatch": true,
+            "entityMatchScope": "exact_target_entity",
+            "allowedClaimScope": "official_campaign_filing_row_atom_only",
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "atomId": "calaccess_f501_502_atom_006",
+            "filingId": "2134684",
+            "formType": "F501",
+            "candidateName": "XAVIER BECERRA",
+            "exactTargetEntityMatch": true,
+            "entityMatchScope": "exact_target_entity",
+            "allowedClaimScope": "official_campaign_filing_row_atom_only",
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "atomId": "calaccess_f501_502_atom_007",
+            "filingId": "2724706",
+            "formType": "F501",
+            "candidateName": "XAVIER BECERRA",
+            "exactTargetEntityMatch": true,
+            "entityMatchScope": "exact_target_entity",
+            "allowedClaimScope": "official_campaign_filing_row_atom_only",
+            "linkageOrInfluenceClaimAllowed": false
+          },
+          {
+            "atomId": "calaccess_f501_502_atom_008",
+            "filingId": "3031020",
+            "formType": "F501",
+            "candidateName": "XAVIER BECERRA",
+            "exactTargetEntityMatch": true,
+            "entityMatchScope": "exact_target_entity",
+            "allowedClaimScope": "official_campaign_filing_row_atom_only",
+            "linkageOrInfluenceClaimAllowed": false
+          }
+        ],
+        "publicOutputRule": "Entity lookup rows are locator signals only. Public artifacts may show terms searched, match counts, row hashes, and matched column indexes, not raw row contents.",
+        "nextAction": "Use these work orders to fetch official filing details and independent linkage records; do not synthesize influence or intent claims from row hashes."
+      }
+    }
+  ],
+  "officialStateLocalRowFacts": [
+    {
+      "evidenceId": "state_local_row_001",
+      "locatorId": "state_local_row_locator_001",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "Socrata",
+      "sourceFamily": "local_open_data_rows",
+      "datasetOrResourceId": "cqi5-hm2d",
+      "rowHash": "61f85034e610842e745582ead427316c011da66bc242a89d08e6cf2569e2b28e",
+      "rowIndex": "1",
+      "sampleFields": {
+        "agreed_amt": "1000000",
+        "consumed_amt": "0",
+        "contract_title": "x",
+        "contract_type": "Construction Contracts",
+        "data_as_of": "2026-04-19T22:37:18.000",
+        "data_loaded_at": "2026-05-11T02:44:14.188",
+        "department": "ADM GSA - City Administrator",
+        "department_code": "ADM"
+      },
+      "url": "https://data.sfgov.org/resource/cqi5-hm2d.json",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    },
+    {
+      "evidenceId": "state_local_row_002",
+      "locatorId": "state_local_row_locator_002",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "Socrata",
+      "sourceFamily": "local_open_data_rows",
+      "datasetOrResourceId": "cqi5-hm2d",
+      "rowHash": "2c3328e363f08389ed29430d396d4595a2737e0397b25934f9e0ab5453b58497",
+      "rowIndex": "2",
+      "sampleFields": {
+        "agreed_amt": "27000",
+        "consumed_amt": "0",
+        "contract_no": "7104",
+        "contract_title": "AIR-BPAC16000234-K9 TRAINING",
+        "contract_type": "Non-Purchasing Contract (Rents, etc.)",
+        "data_as_of": "2026-04-19T22:37:18.000",
+        "data_loaded_at": "2026-05-11T02:44:14.188",
+        "department": "AIR"
+      },
+      "url": "https://data.sfgov.org/resource/cqi5-hm2d.json",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    },
+    {
+      "evidenceId": "state_local_row_003",
+      "locatorId": "state_local_row_locator_003",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "Socrata",
+      "sourceFamily": "local_open_data_rows",
+      "datasetOrResourceId": "n9pm-xkyq",
+      "rowHash": "9d747b0cd137c4d1304efb5ac13115b91856a60e357266d161c56c3ac66697eb",
+      "rowIndex": "1",
+      "sampleFields": {
+        "character": "Materials & Supplies",
+        "character_code": "MTL_SUPP",
+        "contract_number": "1000013809",
+        "contract_title": "DPH Pharmaceuticals",
+        "data_as_of": "2024-01-26 00:00:00-08:00",
+        "data_loaded_at": "2026-05-11T03:02:40.000",
+        "department": "DPH Public Health"
+      },
+      "url": "https://data.sfgov.org/resource/n9pm-xkyq.json",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    },
+    {
+      "evidenceId": "state_local_row_004",
+      "locatorId": "state_local_row_locator_004",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "Socrata",
+      "sourceFamily": "local_open_data_rows",
+      "datasetOrResourceId": "n9pm-xkyq",
+      "rowHash": "90264b5f9307f26be4f61c54cd287444bebfdf4a176817207fe2c2f5c32a78a4",
+      "rowIndex": "2",
+      "sampleFields": {
+        "character": "Materials & Supplies",
+        "character_code": "MTL_SUPP",
+        "contract_number": "1000013809",
+        "contract_title": "DPH Pharmaceuticals",
+        "data_as_of": "2024-01-26 00:00:00-08:00",
+        "data_loaded_at": "2026-05-11T03:02:40.000",
+        "department": "DPH Public Health"
+      },
+      "url": "https://data.sfgov.org/resource/n9pm-xkyq.json",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    },
+    {
+      "evidenceId": "state_local_row_005",
+      "locatorId": "state_local_row_locator_005",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "CKAN",
+      "sourceFamily": "state_open_data_rows",
+      "datasetOrResourceId": "https://bythenumbers.sco.ca.gov/api/views/ju3w-4gxp/rows.csv?accessType=DOWNLOAD",
+      "rowHash": "aa6e624e480eff726ca4d940e6c50a067fefe6bade5c642e22e3be0ef0b4b230",
+      "rowIndex": "1",
+      "sampleFields": {
+        "category": "Internal Service Fund",
+        "city_state_zip": "Adelanto, CA 92301",
+        "county": "San Bernardino",
+        "entity_name": "Adelanto",
+        "estimated_population": "35293",
+        "field_name": "PERS_SERV",
+        "fiscal_year": "2018",
+        "line_description": "Personnel Services"
+      },
+      "url": "https://bythenumbers.sco.ca.gov/api/views/ju3w-4gxp/rows.csv?accessType=DOWNLOAD",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    },
+    {
+      "evidenceId": "state_local_row_006",
+      "locatorId": "state_local_row_locator_006",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "CKAN",
+      "sourceFamily": "state_open_data_rows",
+      "datasetOrResourceId": "https://bythenumbers.sco.ca.gov/api/views/ju3w-4gxp/rows.csv?accessType=DOWNLOAD",
+      "rowHash": "d3d14289a6b8d1d8d47ad02dad81c4779191e58db4966977643b5a6d7c7d3ace",
+      "rowIndex": "2",
+      "sampleFields": {
+        "category": "Internal Service Fund",
+        "city_state_zip": "Adelanto, CA 92301",
+        "county": "San Bernardino",
+        "entity_name": "Adelanto",
+        "estimated_population": "35293",
+        "field_name": "CONTRACT_SERV",
+        "fiscal_year": "2018",
+        "line_description": "Contractual Services"
+      },
+      "url": "https://bythenumbers.sco.ca.gov/api/views/ju3w-4gxp/rows.csv?accessType=DOWNLOAD",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    },
+    {
+      "evidenceId": "state_local_row_007",
+      "locatorId": "state_local_row_locator_007",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "CKAN",
+      "sourceFamily": "state_open_data_rows",
+      "datasetOrResourceId": "https://bythenumbers.sco.ca.gov/api/views/ykhf-vfsr/rows.csv?accessType=DOWNLOAD",
+      "rowHash": "c5da046654c2b9612f2214c19fcecc73a6ac98bd52b656e11f3210daca345bbd",
+      "rowIndex": "1",
+      "sampleFields": {
+        "entity_name": "Adelanto",
+        "estimated_population": "36131",
+        "expenditures_per_capita": "803",
+        "fiscal_year": "2024",
+        "total_expenditures": "29019759"
+      },
+      "url": "https://bythenumbers.sco.ca.gov/api/views/ykhf-vfsr/rows.csv?accessType=DOWNLOAD",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    },
+    {
+      "evidenceId": "state_local_row_008",
+      "locatorId": "state_local_row_locator_008",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "CKAN",
+      "sourceFamily": "state_open_data_rows",
+      "datasetOrResourceId": "https://bythenumbers.sco.ca.gov/api/views/ykhf-vfsr/rows.csv?accessType=DOWNLOAD",
+      "rowHash": "c44ca47c1cec38257b9ff0790b8410b6f044bd04a530b10a3ee70f89279ecd00",
+      "rowIndex": "2",
+      "sampleFields": {
+        "entity_name": "Adelanto",
+        "estimated_population": "36656",
+        "expenditures_per_capita": "642",
+        "fiscal_year": "2023",
+        "total_expenditures": "23547968"
+      },
+      "url": "https://bythenumbers.sco.ca.gov/api/views/ykhf-vfsr/rows.csv?accessType=DOWNLOAD",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    },
+    {
+      "evidenceId": "state_local_row_009",
+      "locatorId": "state_local_row_locator_009",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "ArcGIS",
+      "sourceFamily": "geospatial_open_data_rows",
+      "datasetOrResourceId": "https://socogis.sonomacounty.ca.gov/map/rest/services/CALFIREPublic/Responsibility_Areas_Fire_Protection/FeatureServer/0/query",
+      "rowHash": "624b56b1894a22c7d7b3bf4b80bcfd38f83fedb0c14542f668ac5ddadf3f7a7d",
+      "rowIndex": "1",
+      "sampleFields": {
+        "objectid": "1",
+        "shape__area": "1498695.2609185989",
+        "shape__length": "21065.020271687885",
+        "sra": "FRA"
+      },
+      "url": "https://socogis.sonomacounty.ca.gov/map/rest/services/CALFIREPublic/Responsibility_Areas_Fire_Protection/FeatureServer/0/query",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    },
+    {
+      "evidenceId": "state_local_row_010",
+      "locatorId": "state_local_row_locator_010",
+      "status": "citation_verified_state_local_row_fact",
+      "surface": "ArcGIS",
+      "sourceFamily": "geospatial_open_data_rows",
+      "datasetOrResourceId": "https://socogis.sonomacounty.ca.gov/map/rest/services/CALFIREPublic/Responsibility_Areas_Fire_Protection/FeatureServer/0/query",
+      "rowHash": "e8fd25b0ac8bcd42737437a7c5f8eca5075052f3fb77c0b9998e4da6d45851a5",
+      "rowIndex": "2",
+      "sampleFields": {
+        "objectid": "2",
+        "shape__area": "74003810.63383804",
+        "shape__length": "50827.987513081614",
+        "sra": "FRA"
+      },
+      "url": "https://socogis.sonomacounty.ca.gov/map/rest/services/CALFIREPublic/Responsibility_Areas_Fire_Protection/FeatureServer/0/query",
+      "allowedClaimScope": "narrow official state/local open-data row atoms only",
+      "unsupportedScopes": [
+        "fraud",
+        "intent",
+        "waste",
+        "program performance",
+        "vendor misconduct",
+        "contract compliance",
+        "service quality"
+      ]
+    }
+  ],
+  "fourPromptReadiness": {
+    "status": "review_only",
+    "decision": "FOUR_PROMPT_SOURCE_FED_READINESS_PASS_REVIEW_ONLY",
+    "caseCount": 4,
+    "truthIndexArtifactCount": 59,
+    "rows": [
+      {
+        "caseId": "source_la_homelessness_fwa",
+        "topic": "LA homelessness",
+        "status": "PASS",
+        "findingCount": 16,
+        "sourceCount": 65,
+        "findingPromotionPosture": "citation_bound_review_leads",
+        "trainingConversionAllowed": false
+      },
+      {
+        "caseId": "source_ca_school_board_spending",
+        "topic": "CA school board spending",
+        "status": "PASS",
+        "findingCount": 3,
+        "sourceCount": 15,
+        "findingPromotionPosture": "citation_bound_review_leads",
+        "trainingConversionAllowed": false
+      },
+      {
+        "caseId": "source_sf_drug_rehabilitation_fwa",
+        "topic": "SF drug rehabilitation",
+        "status": "PASS",
+        "findingCount": 10,
+        "sourceCount": 25,
+        "findingPromotionPosture": "citation_bound_review_leads",
+        "trainingConversionAllowed": false
+      },
+      {
+        "caseId": "source_becerra_chirla",
+        "topic": "Becerra/CHIRLA",
+        "status": "PASS",
+        "findingCount": 22,
+        "sourceCount": 41,
+        "findingPromotionPosture": "citation_bound_review_leads",
+        "trainingConversionAllowed": false
+      }
+    ],
+    "nextAction": "Use this matrix as the operator landing summary; continue retrieval only where a row's missing records or case-specific gate says more evidence is needed."
+  },
+  "missingRecordWorkOrders": {
+    "status": "queued_review_only",
+    "decision": "MISSING_RECORD_WORK_ORDERS_READY_REVIEW_ONLY",
+    "taskCount": 13,
+    "tasks": [
+      {
+        "taskId": "missing_record_source_la_homelessness_fwa_01",
+        "caseId": "source_la_homelessness_fwa",
+        "recordFamily": "contract_file",
+        "targetRecord": "Retrieve complete LAHSA/city contract files and amendments referenced by existing findings.",
+        "providerHint": "official_link_crawler",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_la_homelessness_fwa_02",
+        "caseId": "source_la_homelessness_fwa",
+        "recordFamily": "invoice_payment_ledger",
+        "targetRecord": "Retrieve invoice, payment, warrant, and encumbrance records for cited homelessness contracts.",
+        "providerHint": "official_api_or_public_records",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_la_homelessness_fwa_03",
+        "caseId": "source_la_homelessness_fwa",
+        "recordFamily": "performance_monitoring",
+        "targetRecord": "Retrieve program monitoring and performance reports that connect spending to outcomes.",
+        "providerHint": "official_link_crawler",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_ca_school_board_spending_01",
+        "caseId": "source_ca_school_board_spending",
+        "recordFamily": "executed_contract",
+        "targetRecord": "Retrieve the executed LAUSD AllHere contract and attachments.",
+        "providerHint": "public_records_request",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_ca_school_board_spending_02",
+        "caseId": "source_ca_school_board_spending",
+        "recordFamily": "invoice_payment_ledger",
+        "targetRecord": "Retrieve LAUSD invoices, warrants, payments, encumbrances, and purchase-order history for AllHere.",
+        "providerHint": "public_records_request",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_ca_school_board_spending_03",
+        "caseId": "source_ca_school_board_spending",
+        "recordFamily": "performance_deliverables",
+        "targetRecord": "Retrieve deliverables, implementation status, performance, and monitoring records for the AllHere contract.",
+        "providerHint": "public_records_request",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_ca_school_board_spending_04",
+        "caseId": "source_ca_school_board_spending",
+        "recordFamily": "oig_index",
+        "targetRecord": "Capture or request LAUSD OIG, audit, investigation, and complaint index search results for AllHere.",
+        "providerHint": "browser_or_public_records",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_sf_drug_rehabilitation_fwa_01",
+        "caseId": "source_sf_drug_rehabilitation_fwa",
+        "recordFamily": "contract_file",
+        "targetRecord": "Retrieve HealthRIGHT360 contract files, amendments, and board approvals tied to SUD/behavioral-health programs.",
+        "providerHint": "official_link_crawler",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_sf_drug_rehabilitation_fwa_02",
+        "caseId": "source_sf_drug_rehabilitation_fwa",
+        "recordFamily": "invoice_payment_ledger",
+        "targetRecord": "Retrieve SF controller/payment ledger rows and invoices for HealthRIGHT360 contract numbers surfaced in official records.",
+        "providerHint": "official_api_or_public_records",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_sf_drug_rehabilitation_fwa_03",
+        "caseId": "source_sf_drug_rehabilitation_fwa",
+        "recordFamily": "performance_monitoring",
+        "targetRecord": "Retrieve monitoring, corrective-action, quality-improvement, and performance reports tied to HealthRIGHT360 programs.",
+        "providerHint": "official_link_crawler",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_becerra_chirla_01",
+        "caseId": "source_becerra_chirla",
+        "recordFamily": "campaign_finance",
+        "targetRecord": "Retrieve campaign finance, endorsement, expenditure, and committee records relevant to CHIRLA Action Fund and Xavier Becerra.",
+        "providerHint": "official_api_or_crawler",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_becerra_chirla_02",
+        "caseId": "source_becerra_chirla",
+        "recordFamily": "award_decision_records",
+        "targetRecord": "Retrieve CDSS/ISF award decision, scoring, contract, and payment records for CHIRLA awards.",
+        "providerHint": "official_link_crawler_or_public_records",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      },
+      {
+        "taskId": "missing_record_source_becerra_chirla_03",
+        "caseId": "source_becerra_chirla",
+        "recordFamily": "communications_or_adjudicative_records",
+        "targetRecord": "Retrieve only official communications, adjudicative findings, or public-record responses before any linkage or intent claim.",
+        "providerHint": "public_records_request",
+        "retrievalStatus": "queued",
+        "evidencePosture": "locator_or_request_until_fetched_and_citation_verified",
+        "findingPromotionAllowed": false,
+        "trainingConversionAllowed": false
+      }
+    ],
+    "nextAction": "Execute queued work orders case by case, starting with public APIs/crawlers and escalating to public-record requests only where official web/API surfaces do not expose the records."
+  }
+};

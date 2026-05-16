@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Aculeus logomark">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="1.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .18"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="120" height="120" fill="none"/>
+  <path d="M60 8 113 112H84L70 82 60 58 50 82 36 112H7L60 8Z" fill="#e01622"/>
+  <path d="M60 45 72 60 60 76 48 60 60 45Z" fill="#fff7e9"/>
+  <path d="M60 8 113 112H84L70 82 60 58 50 82 36 112H7L60 8Z" filter="url(#grain)" opacity=".55"/>
+</svg>

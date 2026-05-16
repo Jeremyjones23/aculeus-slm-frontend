@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aculeus Source-Fed Case Board</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/source-fed.css">
+    <script src="/data/source-fed-case-board.js"></script>
+    <script type="module" src="/source-fed.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a href="/" aria-label="Back to Aculeus">
+          <img src="/assets/aculeus-lockup.svg" alt="Aculeus">
+        </a>
+        <div>
+          <span>Source-fed public records</span>
+          <h1>Case Board</h1>
+        </div>
+      </header>
+      <section class="board-layout">
+        <aside class="case-list" aria-label="Source-fed cases">
+          <div class="section-head">
+            <b>Cases</b>
+            <small data-case-count>Loading</small>
+          </div>
+          <div data-case-list></div>
+        </aside>
+        <section class="case-board" aria-live="polite" data-case-board>
+          <div class="empty-state">Loading source-fed case board.</div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Aculeus">
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="#fff7e9" stroke="#e01622" stroke-opacity=".42" stroke-width="2"/>
+  <path d="M32 6 58 60H44L36 42 32 33 28 42 20 60H6L32 6Z" fill="#e01622"/>
+  <path d="M32 24 37 32 32 40 27 32 32 24Z" fill="#fff7e9"/>
+</svg>

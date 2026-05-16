@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 128" role="img" aria-label="Aculeus">
+  <rect width="640" height="128" fill="none"/>
+  <path d="M63 10 119 118H89L74 87 63 61 52 87 37 118H7L63 10Z" fill="#e01622"/>
+  <path d="M63 47 76 64 63 81 50 64 63 47Z" fill="#fff7e9"/>
+  <text x="152" y="78" fill="#10100f" font-family="Outfit, Avenir Next, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="8">ACULEUS</text>
+</svg>
