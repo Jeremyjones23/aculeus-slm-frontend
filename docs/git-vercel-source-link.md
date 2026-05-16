@@ -5,7 +5,7 @@
 - Local source root: `C:\Users\jerem\OneDrive\Documents\Codex Sandbox\aculeus-slm-frontend`
 - Local branch: `main`
 - Initial source commit: `c127cf3 Initial Aculeus SLM frontend source`
-- Current pushed commit: `b922947 Fix deployed admin store reads`
+- Latest deployed application commit: `b922947 Fix deployed admin store reads`
 - GitHub repository: `Jeremyjones23/aculeus-slm-frontend`
 - Vercel project: `jeremyjones23s-projects/aculeus-slm-frontend`
 
@@ -31,7 +31,7 @@ Verified:
 git ls-remote origin
 ```
 
-returns `b922947` or newer for `HEAD` and `refs/heads/main`.
+returns the current `main` commit for `HEAD` and `refs/heads/main`; latest deployed application code is `b922947`, with any later docs-only commits noted separately.
 
 The repository was initially created private. Vercel still could not attach it, so the source was scanned for secret-bearing material outside ignored files and the repository was made public to eliminate private-repo access as the cause. The scan only matched test fixtures and secret-pattern validators.
 
