@@ -72,8 +72,9 @@ export async function POST(request) {
       costLatency: ledgerEntry.result_summary,
       finalOutcome: ledgerEntry.status
     });
-    const traceRef = appendTrainingTrace(trace);
-    if (run?.runId) await appendRunTrainingTrace(run.runId, traceRef);
+    const traceRef = run?.runId
+      ? await appendRunTrainingTrace(run.runId, trace)
+      : appendTrainingTrace(trace);
 
     return NextResponse.json({
       ok: true,

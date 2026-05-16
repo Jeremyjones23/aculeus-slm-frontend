@@ -64,8 +64,9 @@ export async function POST(request) {
       sourceLedger: result.evidence_record ? [result.evidence_record] : [],
       finalOutcome: result.status
     });
-    const traceRef = appendTrainingTrace(trace);
-    if (run?.runId) await appendRunTrainingTrace(run.runId, traceRef);
+    const traceRef = run?.runId
+      ? await appendRunTrainingTrace(run.runId, trace)
+      : appendTrainingTrace(trace);
 
     return NextResponse.json({ ...result, runId: run?.runId || payload.runId || null, ledger_entry: ledgerEntry, training_trace: traceRef });
   } catch (error) {

@@ -41,8 +41,7 @@ export async function POST(request, context) {
       userFeedback: signal.user_feedback,
       finalOutcome: "user_feedback_recorded_for_offline_review"
     });
-    const traceRef = appendTrainingTrace(trace);
-    await appendRunTrainingTrace(runId, traceRef);
+    const traceRef = await appendRunTrainingTrace(runId, trace);
 
     return NextResponse.json({
       ok: true,
