@@ -33,6 +33,7 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 - Reviewed traces can be exported through `/api/admin/training-export`, and the export remains offline-only with no production update or hosted-training trigger.
 - Blocked crawler and receipt fetches now produce Browserbase/manual public-capture fallback ledger entries instead of being hidden or promoted.
 - Hosted Browserbase execution is deployed through `/api/browser-capture`; the Vercel production runtime currently verifies the Browserbase Fetch path with receipt hashes, candidate-only ledger rows, and no secret leakage. Local Browserbase CDP capture with the saved key produces screenshot hashes.
+- Browserbase session-create failures and `429 Too Many Requests` responses fall back to Browserbase Fetch, preserving candidate-only ledger visibility instead of failing silently.
 - Controlled pilot packet export exists as JSON and HTML.
 - Nightly Production smoke automation exists for auth, receipt, Browserbase capture, provider dry-run, source-ledger, and training-export gates.
 - A complete remaining-task inventory is maintained in `docs/remaining-production-tasks.md`.

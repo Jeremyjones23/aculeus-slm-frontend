@@ -105,11 +105,13 @@ Deployed Browserbase smoke passes through Browserbase Fetch with receipt hash an
 
 Local Browserbase CDP capture with the saved Browserbase key succeeds and produces both `receipt_hash` and `screenshot_sha256`. The active narrowing is Vercel runtime compatibility, not Browserbase account configuration.
 
+The route now falls back to Browserbase Fetch when Browserbase session creation fails or rate-limits with `429 Too Many Requests`, so rate limits do not erase the ledger row or bypass candidate-only gates.
+
 ### Narrow Resolution Path
 
 1. Keep `/api/browser-capture` pinned to the Node.js runtime with a 60 second maximum duration.
 2. Load `playwright-core` directly for remote CDP instead of importing the full Playwright package.
-3. Keep Browserbase Fetch as fallback for text/HTML receipt capture.
+3. Keep Browserbase Fetch as fallback for text/HTML receipt capture, including session-create failures and rate limits.
 4. Run `npm run smoke:browserbase:cdp -- https://example.com` locally to prove real screenshot hashing.
 5. Run `ACULEUS_REQUIRE_BROWSERBASE_SCREENSHOT=1 npm run smoke:postdeploy:browserbase -- https://aculeus-slm-frontend.vercel.app` after the next Vercel deployment to prove the deployed screenshot path.
 6. Persist screenshot artifact metadata without exposing raw private content.
