@@ -10,7 +10,7 @@ import {
 } from "@/lib/aculeus-reviewer-actions.js";
 import { getRun, appendRunLedger, appendRunTrainingTrace } from "@/lib/aculeus-product-store.js";
 import { appendTrainingTrace, buildTrainingTrace } from "@/lib/aculeus-training-trace-exporter.js";
-import { buildAccessDeniedPayload, canReviewEvidence, getRequestUser } from "@/lib/access-control.js";
+import { buildAccessDeniedPayload, canReviewEvidence, getVerifiedRequestUser } from "@/lib/access-control.js";
 
 function receiptStore() {
   const defaultDir = process.env.VERCEL || process.env.VERCEL_ENV
@@ -21,7 +21,7 @@ function receiptStore() {
 
 export async function POST(request) {
   try {
-    const user = getRequestUser(request);
+    const user = await getVerifiedRequestUser(request);
     if (!canReviewEvidence(user)) {
       return NextResponse.json(buildAccessDeniedPayload("review_evidence", user), { status: 403 });
     }

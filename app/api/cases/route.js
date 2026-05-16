@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { listRecentCaseSeeds } from "@/lib/aculeus-product-data.js";
 import { listCases, saveCase } from "@/lib/aculeus-product-store.js";
-import { buildAccessDeniedPayload, canAccessWorkspace, canCreateCase, getRequestUser } from "@/lib/access-control.js";
+import { buildAccessDeniedPayload, canAccessWorkspace, canCreateCase, getVerifiedRequestUser } from "@/lib/access-control.js";
 
 export async function GET(request) {
-  const user = getRequestUser(request);
+  const user = await getVerifiedRequestUser(request);
   if (!canAccessWorkspace(user)) {
     return NextResponse.json(buildAccessDeniedPayload("list_cases", user), { status: 403 });
   }
@@ -17,7 +17,7 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
-  const user = getRequestUser(request);
+  const user = await getVerifiedRequestUser(request);
   if (!canCreateCase(user)) {
     return NextResponse.json(buildAccessDeniedPayload("create_case", user), { status: 403 });
   }

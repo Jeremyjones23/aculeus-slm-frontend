@@ -5,7 +5,8 @@ import { createFileReceiptStore } from "@/lib/aculeus-receipt-store.js";
 import { fetchPublicReceipt } from "@/lib/aculeus-receipt-fetcher.js";
 import { verifyReceiptCitation } from "@/lib/aculeus-citation-verifier.js";
 import { getRun, appendRunLedger } from "@/lib/aculeus-product-store.js";
-import { buildAccessDeniedPayload, canReviewEvidence, getRequestUser } from "@/lib/access-control.js";
+import { buildAccessDeniedPayload, canReviewEvidence, getVerifiedRequestUser } from "@/lib/access-control.js";
+import { browserFallbackLedgerEntry } from "@/lib/aculeus-browser-capture-fallback.js";
 
 function receiptStore() {
   const defaultDir = process.env.VERCEL || process.env.VERCEL_ENV
@@ -15,13 +16,16 @@ function receiptStore() {
 }
 
 export async function POST(request) {
+  let payload = null;
+  let candidate = null;
+  let run = null;
   try {
-    const user = getRequestUser(request);
+    const user = await getVerifiedRequestUser(request);
     if (!canReviewEvidence(user)) {
       return NextResponse.json(buildAccessDeniedPayload("fetch_receipt", user), { status: 403 });
     }
-    const payload = await request.json();
-    const candidate = payload.candidate || {
+    payload = await request.json();
+    candidate = payload.candidate || {
       candidate_id: payload.candidate_id || payload.source_id,
       source_id: payload.source_id,
       url: payload.url,
@@ -49,7 +53,7 @@ export async function POST(request) {
       adjudicative_source: payload.adjudicative_source === true
     });
     const quote_sha256 = quote ? createHash("sha256").update(String(quote)).digest("hex") : null;
-    const run = payload.runId ? await getRun(payload.runId) : null;
+    run = payload.runId ? await getRun(payload.runId) : null;
     const ledgerEntry = {
       ledger_entry_id: `receipt_fetch_${Date.now()}`,
       entry_type: "receipt_fetch",
@@ -74,6 +78,30 @@ export async function POST(request) {
       ledger_entry: ledgerEntry
     });
   } catch (error) {
+    if (payload?.url || candidate?.url) {
+      const fallbackEntry = browserFallbackLedgerEntry({
+        run_id: run?.runId || payload?.runId || null,
+        case_id: run?.caseId || payload?.caseId || null,
+        source_id: candidate?.source_id || payload?.source_id || candidate?.candidate_id,
+        candidate_id: candidate?.candidate_id || payload?.candidate_id || payload?.source_id || null,
+        url: candidate?.url || payload?.url,
+        title: candidate?.title || payload?.title || "Receipt fetch fallback",
+        reason: error.message
+      });
+      if (run?.runId) await appendRunLedger(run.runId, fallbackEntry);
+      return NextResponse.json({
+        ok: true,
+        mode: "receipt_fetch_needs_browser",
+        runId: run?.runId || payload?.runId || null,
+        receipt: null,
+        verifier: {
+          source_promotion_allowed: false,
+          finding_promotion_allowed: false,
+          issues: [{ issue_type: "receipt_fetch_needs_browser", severity: "blocking", message: error.message }]
+        },
+        ledger_entry: fallbackEntry
+      }, { status: 200 });
+    }
     return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   }
 }

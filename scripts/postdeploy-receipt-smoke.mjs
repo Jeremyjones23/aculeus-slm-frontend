@@ -1,6 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
+import { createSmokeAuthHeaders } from "./smoke-auth-headers.mjs";
 
 const base = (process.argv[2] || process.env.ACULEUS_PREVIEW_URL || process.env.ACULEUS_DEPLOY_URL || "").replace(/\/+$/, "");
 if (!base) {
@@ -10,13 +11,11 @@ if (!base) {
 const receiptUrl = process.env.ACULEUS_RECEIPT_SMOKE_URL || "https://raw.githubusercontent.com/Jeremyjones23/calds-runtime/main/README.md";
 const quote = process.env.ACULEUS_RECEIPT_SMOKE_QUOTE || "CalDS (California Doge Services) is a California-first, evidence-first oversight workflow prototype.";
 const claim = process.env.ACULEUS_RECEIPT_SMOKE_CLAIM || "Fraud occurred because this public record mentions oversight workflow.";
-const headers = {
-  "content-type": "application/json",
-  "x-clerk-user-id": process.env.ACULEUS_SMOKE_USER_ID || "receipt_smoke_operator",
-  "x-aculeus-email": process.env.ACULEUS_SMOKE_EMAIL || "operator@aculeus.local",
-  "x-aculeus-role": process.env.ACULEUS_SMOKE_ROLE || "operator",
-  "x-aculeus-approval-status": "approved"
-};
+const headers = createSmokeAuthHeaders({
+  userId: process.env.ACULEUS_SMOKE_USER_ID || "receipt_smoke_operator",
+  email: process.env.ACULEUS_SMOKE_EMAIL || "operator@aculeus.local",
+  role: process.env.ACULEUS_SMOKE_ROLE || "operator"
+});
 
 async function readJson(response) {
   const text = await response.text();

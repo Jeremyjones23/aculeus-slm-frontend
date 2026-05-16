@@ -1,6 +1,6 @@
 # Controlled Pilot Account and Role Workflow
 
-Status: ready for internal rehearsal; external pilot onboarding waits for Vercel Git linking and Clerk DNS residuals to be clean.
+Status: ready for internal rehearsal; external pilot onboarding waits for Vercel Git linking, Clerk DNS residuals, and real Clerk pilot-token E2E to be clean.
 
 ## Pilot Roles
 
@@ -15,14 +15,22 @@ All roles require `approval_status=approved`. Pending or missing approval is den
 
 ## Clerk Claim Contract
 
-Aculeus currently accepts these request claims from Clerk/session middleware or trusted smoke headers:
+Aculeus now reads Clerk server-side session state with `auth()` and `currentUser()`. The production session must expose the pilot user's role and approval status through session claims, public metadata, or organization role mapping:
+
+- `aculeus_role` or `role`
+- `aculeus_approval_status=approved` or `approval_status=approved`
+- organization roles containing `admin`, `operator`, `reviewer`, `viewer`, or `member`
+
+Signed smoke headers are still accepted only for internal route and postdeploy smokes when `ACULEUS_SMOKE_SECRET` is configured:
 
 - `x-clerk-user-id` or `x-aculeus-user-id`
 - `x-aculeus-email` or `x-clerk-user-email`
 - `x-aculeus-role` or `x-clerk-role`
 - `x-aculeus-approval-status=approved`
+- `x-aculeus-smoke-ts`
+- `x-aculeus-smoke-signature`
 
-The Clerk production session must map the pilot user's role and approval status into equivalent claims before external pilot access is opened.
+Unsigned trusted headers require `ACULEUS_TRUST_SMOKE_HEADERS=1` and are restricted to local/test fixtures.
 
 ## First Pilot Cohort
 
@@ -42,6 +50,7 @@ Before sending external invitations:
 - `npm run pilot:packet` passes and includes current residual platform checks.
 - Vercel Git linking is clean or explicitly waived for the pilot.
 - Clerk DNS Configuration platform check is clean or explicitly waived for the pilot.
+- Real Clerk `admin`, `operator`, `reviewer`, `viewer`, and `pending` accounts pass deployed role-token E2E.
 
 ## Rehearsal Script
 

@@ -1,15 +1,14 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { createSmokeAuthHeaders } from "./smoke-auth-headers.mjs";
 
 const base = (process.argv[2] || process.env.ACULEUS_DEPLOY_URL || "https://aculeus-slm-frontend.vercel.app").replace(/\/+$/, "");
 const providerCapUsd = Number(process.env.ACULEUS_LIVE_PROVIDER_CAP_USD || "0.12");
-const headers = {
-  "content-type": "application/json",
-  "x-clerk-user-id": process.env.ACULEUS_SMOKE_USER_ID || "postdeploy_live_provider_operator",
-  "x-aculeus-email": process.env.ACULEUS_SMOKE_EMAIL || "operator@aculeus.local",
-  "x-aculeus-role": process.env.ACULEUS_SMOKE_ROLE || "operator",
-  "x-aculeus-approval-status": "approved"
-};
+const headers = createSmokeAuthHeaders({
+  userId: process.env.ACULEUS_SMOKE_USER_ID || "postdeploy_live_provider_operator",
+  email: process.env.ACULEUS_SMOKE_EMAIL || "operator@aculeus.local",
+  role: process.env.ACULEUS_SMOKE_ROLE || "operator"
+});
 
 const results = [];
 

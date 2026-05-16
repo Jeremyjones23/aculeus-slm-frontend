@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { answerFollowUp } from "@/lib/aculeus-run-adapter.js";
-import { buildAccessDeniedPayload, canAccessWorkspace, getRequestUser } from "@/lib/access-control.js";
+import { buildAccessDeniedPayload, canAccessWorkspace, getVerifiedRequestUser } from "@/lib/access-control.js";
 
 export async function POST(request) {
-  const user = getRequestUser(request);
+  const user = await getVerifiedRequestUser(request);
   if (!canAccessWorkspace(user)) {
     return NextResponse.json(buildAccessDeniedPayload("ask_follow_up", user), { status: 403 });
   }

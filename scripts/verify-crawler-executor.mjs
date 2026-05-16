@@ -27,6 +27,19 @@ if (!liveMock.result_sets[0]?.content_hash) failures.push("mock live crawler mis
 if (!liveMock.result_sets[0]?.robots?.allowed) failures.push("mock live crawler missing allow robots metadata");
 if (liveMock.result_sets[0]?.candidates?.[0]?.evidence_promotion_allowed !== false) failures.push("crawler candidate escaped evidence gate");
 
+const blockedFetchFn = async (url) => {
+  if (String(url).endsWith("/robots.txt")) {
+    return new Response("User-agent: *\nDisallow: /\n", { status: 200, headers: { "content-type": "text/plain" } });
+  }
+  return new Response("blocked", { status: 403 });
+};
+const blockedMock = await executeCrawlerTasks(tasks.slice(0, 1), { enableNetwork: true, fetchFn: blockedFetchFn, maxTasks: 1 });
+failures.push(...validateCrawlerExecution(blockedMock));
+const blockedCandidate = blockedMock.result_sets[0]?.candidates?.[0];
+if (!blockedCandidate?.labels?.includes("needs_browser")) failures.push("blocked crawler candidate missing needs_browser label");
+if (blockedCandidate?.browser_capture_fallback?.mode !== "browserbase_or_manual_public_capture") failures.push("blocked crawler candidate missing Browserbase fallback plan");
+if (blockedCandidate?.browser_capture_fallback?.evidence_promotion_allowed !== false) failures.push("browser fallback escaped evidence gate");
+
 if (failures.length) {
   console.error(`Crawler executor verification failed:\n${failures.join("\n")}`);
   process.exit(1);

@@ -28,26 +28,28 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 - Four regression dossiers run through official API plus provider candidate retrieval with zero auto-promoted evidence.
 - Receipt fetch creates content hashes and quote hashes, and high-risk finding promotion remains blocked.
 - Admin API exposes run audit rows, provider spend/cap/call counts, and near-cap alerts.
+- Admin UI now exposes a reviewer trace workbench with trace queue, safety gates, review decisions, and reviewed SFT/preference JSONL export links.
 - Training traces persist for retrieval, reviewer, feedback, and shadow-eval flows.
+- Reviewed traces can be exported through `/api/admin/training-export`, and the export remains offline-only with no production update or hosted-training trigger.
+- Blocked crawler and receipt fetches now produce Browserbase/manual public-capture fallback ledger entries instead of being hidden or promoted.
 - Controlled pilot packet export exists as JSON and HTML.
 - Nightly Production smoke automation exists for auth, receipt, provider dry-run, and source-ledger gates.
 
 ### Blocking External Invites
 
-- Real Clerk session verification is not yet wired end to end. Production-mode routes currently accept trusted smoke headers for role and approval claims.
+- Real Clerk session verification is wired app-side through Clerk middleware, `auth()`, `currentUser()`, role metadata, and approval claims, but real Clerk pilot accounts and deployed JWT/custom-claim E2E are still pending.
+- Signed smoke headers remain available for internal postdeploy smokes through `ACULEUS_SMOKE_SECRET`; unsigned trusted headers are local/test-only.
 - Vercel still reports `Clerk DNS Configuration` as a failed platform check.
 - Vercel GitHub integration is not attached; deploys are explicit source deploys from the local Git tree.
 - Real Clerk pilot accounts have not been created and tested with real JWT/custom-claim behavior.
-- Reviewer-facing trace-review controls exist at the API level but are not yet exposed as a complete UI workflow.
-- Approved-trace export to SFT/preference JSONL is not yet gated by human review in the product surface.
-- Browserbase/custom-crawler fallbacks are not yet production-operable for pages that block server fetch.
+- Browserbase/custom-crawler fallbacks are planned and ledger-visible, but hosted Browserbase execution is not yet production-operable for pages that block server fetch.
 - Legal/public claim posture has not been finalized for external user workflows.
 
 ## Production-Readiness Task List
 
 ### Identity And Access
 
-- Replace trusted production smoke headers with verified Clerk server-side session reads.
+- Keep verified Clerk server-side session reads as the primary production auth path.
 - Map Clerk user metadata or organization roles to `admin`, `operator`, `reviewer`, and `viewer`.
 - Require `approval_status=approved` from verified Clerk claims.
 - Keep smoke-header fallback restricted to test mode, local preview, or a signed internal smoke secret.
@@ -87,14 +89,14 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 - Keep Exa, Parallel, Browserbase, custom crawlers, PDF parsing, and Qdrant as candidate sources until receipt verification.
 - Add per-provider quality scoring explanations in the reviewer queue.
 - Add dedupe audit details showing why a source was merged or kept distinct.
-- Add Browserbase/custom-crawler receipt fallback for pages that block server fetch.
+- Promote the current Browserbase/manual fallback ledger plan into hosted Browserbase capture execution for pages that block server fetch.
 - Add source-fetch status reasons for blocked, failed, needs browser, locator-only, and needs public-records-request cases.
 - Add explicit stale-content handling and recrawl controls for records likely to change.
 - Add source coverage metrics by case: official records found, providers used, candidate count, receipt count, promoted source count, missing-record count.
 
 ### Reviewer Workflow
 
-- Add UI controls for training-trace review decisions.
+- Maintain UI controls for training-trace review decisions and extend them with filters and reviewer note requirements.
 - Add UI controls for shadow-eval report download from admin and case context.
 - Add reviewer queue filters for official, provider, crawler, PDF, Qdrant, failed fetch, locator-only, and needs public-records request.
 - Add reviewer note requirements for promotion, rejection, defer, and missing-record requests.
@@ -105,8 +107,8 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 
 ### Training And Model Path
 
-- Export approved SFT rows only from reviewed traces.
-- Export preference pairs only from reviewed trace comparisons.
+- Export approved SFT rows only from reviewed traces through `/api/admin/training-export?format=sft`.
+- Export preference rows only from reviewed traces through `/api/admin/training-export?format=preference`.
 - Keep `training_conversion_allowed=false` until a reviewer explicitly approves the trace.
 - Add a training-data packet manifest with trace IDs, review decisions, source counts, verifier pass rates, and leakage scan status.
 - Add held-out eval promotion gates for planner, scout, analyst, and formatter behaviors.
@@ -178,4 +180,3 @@ Aculeus is ready to invite people only when all of these are true:
 - Preserved legacy route: `source-fed.html`, `source-fed.js`, and `source-fed.css` remain available for the source-fed demo contract.
 - Legacy static demo lane: `index.html`, root static assets, `model-adapter.js`, `script.js`, `styles.css`, `scripts/serve.mjs`, `scripts/qa-browser.mjs`, and `scripts/verify-legacy-static-demo.mjs` are no longer the production readiness path.
 - Ignored generated artifacts under `qa-artifacts/` are evidence for the latest run only; stale local screenshots/logs can be pruned after the latest smoke artifacts and pilot packet are preserved.
-

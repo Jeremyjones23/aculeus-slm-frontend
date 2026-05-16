@@ -5,11 +5,11 @@ import { collectProviderCandidates, planProviderCandidateTasks } from "@/lib/acu
 import { executeProviderCandidateTasks, validateProviderExecution } from "@/lib/aculeus-provider-executor.js";
 import { normalizeCandidateSet } from "@/lib/aculeus-source-quality.js";
 import { appendTrainingTrace, buildTrainingTrace } from "@/lib/aculeus-training-trace-exporter.js";
-import { buildAccessDeniedPayload, canCreateCase, getRequestUser } from "@/lib/access-control.js";
+import { buildAccessDeniedPayload, canCreateCase, getVerifiedRequestUser } from "@/lib/access-control.js";
 
 export async function POST(request) {
   try {
-    const user = getRequestUser(request);
+    const user = await getVerifiedRequestUser(request);
     if (!canCreateCase(user)) {
       return NextResponse.json(buildAccessDeniedPayload("run_provider_search", user), { status: 403 });
     }

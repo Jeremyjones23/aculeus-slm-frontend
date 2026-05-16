@@ -2,10 +2,10 @@ import { NextResponse } from "next/server";
 import { createAculeusRun } from "@/lib/aculeus-run-adapter.js";
 import { getCase, saveRun } from "@/lib/aculeus-product-store.js";
 import { initializeRunLifecycle } from "@/lib/aculeus-run-lifecycle.js";
-import { buildAccessDeniedPayload, canCreateCase, getRequestUser } from "@/lib/access-control.js";
+import { buildAccessDeniedPayload, canCreateCase, getVerifiedRequestUser } from "@/lib/access-control.js";
 
 export async function POST(request, context) {
-  const user = getRequestUser(request);
+  const user = await getVerifiedRequestUser(request);
   if (!canCreateCase(user)) {
     return NextResponse.json(buildAccessDeniedPayload("create_case_run", user), { status: 403 });
   }

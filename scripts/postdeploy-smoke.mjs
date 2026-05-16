@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { createSmokeAuthHeaders } from "./smoke-auth-headers.mjs";
 
 const base = (process.argv[2] || process.env.ACULEUS_PREVIEW_URL || process.env.ACULEUS_DEPLOY_URL || "").replace(/\/+$/, "");
 if (!base) {
@@ -8,13 +9,11 @@ if (!base) {
 
 const runLiveProvider = process.env.ACULEUS_LIVE_PROVIDER_SMOKE === "true";
 const providerCapUsd = Number(process.env.ACULEUS_PROVIDER_CAP_USD || "0.25");
-const headers = {
-  "content-type": "application/json",
-  "x-clerk-user-id": process.env.ACULEUS_SMOKE_USER_ID || "postdeploy_operator",
-  "x-aculeus-email": process.env.ACULEUS_SMOKE_EMAIL || "operator@aculeus.local",
-  "x-aculeus-role": process.env.ACULEUS_SMOKE_ROLE || "operator",
-  "x-aculeus-approval-status": "approved"
-};
+const headers = createSmokeAuthHeaders({
+  userId: process.env.ACULEUS_SMOKE_USER_ID || "postdeploy_operator",
+  email: process.env.ACULEUS_SMOKE_EMAIL || "operator@aculeus.local",
+  role: process.env.ACULEUS_SMOKE_ROLE || "operator"
+});
 
 const results = [];
 

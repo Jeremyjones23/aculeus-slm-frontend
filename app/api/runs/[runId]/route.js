@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { getRun, saveRun } from "@/lib/aculeus-product-store.js";
 import { advanceRunLifecycle } from "@/lib/aculeus-run-lifecycle.js";
-import { buildAccessDeniedPayload, canAccessWorkspace, getRequestUser } from "@/lib/access-control.js";
+import { buildAccessDeniedPayload, canAccessWorkspace, getVerifiedRequestUser } from "@/lib/access-control.js";
 
 export async function GET(request, context) {
-  const user = getRequestUser(request);
+  const user = await getVerifiedRequestUser(request);
   if (!canAccessWorkspace(user)) {
     return NextResponse.json(buildAccessDeniedPayload("read_run", user), { status: 403 });
   }

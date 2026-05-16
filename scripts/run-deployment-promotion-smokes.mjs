@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { getRequestUser, canAccessWorkspace, canCreateCase, ROLES } from "../lib/access-control.js";
+import { getRequestUser, canAccessWorkspace, canCreateCase, createSmokeSignature, ROLES } from "../lib/access-control.js";
 import {
   buildDeploymentPromotionPacket,
   REQUIRED_PRODUCTION_ENV,
@@ -83,16 +83,12 @@ function runAuthSmoke() {
   const productionEnv = {
     ACULEUS_AUTH_MODE: "production",
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || "pk_boundary_fixture",
-    CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY || "sk_boundary_fixture"
+    CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY || "sk_boundary_fixture",
+    ACULEUS_SMOKE_SECRET: process.env.ACULEUS_SMOKE_SECRET || "deployment_promotion_auth_smoke_secret"
   };
   const anonymous = getRequestUser(new Request("http://aculeus.local/api/session"), productionEnv);
   const approved = getRequestUser(new Request("http://aculeus.local/api/session", {
-    headers: {
-      "x-clerk-user-id": "user_smoke_operator",
-      "x-aculeus-email": "operator@aculeus.local",
-      "x-aculeus-role": ROLES.operator,
-      "x-aculeus-approval-status": "approved"
-    }
+    headers: signedHeaders("user_smoke_operator", "operator@aculeus.local", ROLES.operator, productionEnv.ACULEUS_SMOKE_SECRET)
   }), productionEnv);
   const pass = !canAccessWorkspace(anonymous) && canAccessWorkspace(approved) && canCreateCase(approved);
   if (!pass) return { status: "fail", summary: "Auth boundary did not block anonymous and admit approved operator." };
@@ -104,6 +100,18 @@ function runAuthSmoke() {
     };
   }
   return { status: "pass", summary: "Production auth boundary smoke passed with configured Clerk env." };
+}
+
+function signedHeaders(userId, email, role, secret, approvalStatus = "approved") {
+  const timestamp = String(Date.now());
+  return {
+    "x-clerk-user-id": userId,
+    "x-aculeus-email": email,
+    "x-aculeus-role": role,
+    "x-aculeus-approval-status": approvalStatus,
+    "x-aculeus-smoke-ts": timestamp,
+    "x-aculeus-smoke-signature": createSmokeSignature({ userId, email, role, approvalStatus, timestamp }, secret)
+  };
 }
 
 async function runNeonSmoke() {

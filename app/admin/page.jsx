@@ -1,12 +1,30 @@
-import { buildAdminRunSummary } from "@/lib/aculeus-admin-console.js";
+import { AculeusAdminTraceWorkbench } from "@/components/aculeus-admin-trace-workbench.jsx";
+import { buildAdminRunSummary, buildTrainingExportDataset, buildTrainingTraceReviewQueue } from "@/lib/aculeus-admin-console.js";
+import { canReviewEvidence, getVerifiedRequestUser } from "@/lib/access-control.js";
 import { readLocalStore } from "@/lib/aculeus-product-store.js";
+import { headers } from "next/headers";
 
 export const metadata = {
   title: "Aculeus Admin"
 };
 
-export default function AdminPage() {
-  const summary = buildAdminRunSummary(readLocalStore());
+export default async function AdminPage() {
+  const user = await getVerifiedRequestUser({ headers: await headers() });
+  if (!canReviewEvidence(user)) {
+    return (
+      <main className="admin-shell">
+        <section className="admin-header">
+          <p className="eyebrow">Admin console</p>
+          <h1>Access denied</h1>
+          <p>Approved reviewer, operator, or admin access is required to open the Aculeus audit console.</p>
+        </section>
+      </main>
+    );
+  }
+  const store = readLocalStore();
+  const summary = buildAdminRunSummary(store);
+  const traceQueue = buildTrainingTraceReviewQueue(store, { limit: 40 });
+  const exportSummary = buildTrainingExportDataset(store, { format: "sft", limit: 500 });
   return (
     <main className="admin-shell">
       <section className="admin-header">
@@ -26,7 +44,10 @@ export default function AdminPage() {
       </section>
       <section className="admin-actions" aria-label="Admin downloads">
         <a href="/api/admin/shadow-eval?limit=60">Shadow eval JSON</a>
+        <a href="/api/admin/training-export?format=sft">Reviewed SFT export</a>
+        <a href="/api/admin/training-export?format=preference">Reviewed preference export</a>
       </section>
+      <AculeusAdminTraceWorkbench queue={traceQueue} exportSummary={exportSummary} />
       {summary.provider_cost_summary.alerts.length > 0 ? (
         <section className="admin-alerts" aria-label="Provider spend alerts">
           <h2>Provider spend alerts</h2>

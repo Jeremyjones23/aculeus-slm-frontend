@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 import { storeArtifact } from "@/lib/aculeus-blob-artifacts.js";
-import { buildAccessDeniedPayload, canCreateCase, getRequestUser } from "@/lib/access-control.js";
+import { buildAccessDeniedPayload, canCreateCase, getVerifiedRequestUser } from "@/lib/access-control.js";
 
 export async function POST(request) {
-  const user = getRequestUser(request);
+  const user = await getVerifiedRequestUser(request);
   if (!canCreateCase(user)) {
     return NextResponse.json(buildAccessDeniedPayload("upload_source", user), { status: 403 });
   }

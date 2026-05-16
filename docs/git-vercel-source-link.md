@@ -5,7 +5,7 @@
 - Local source root: `C:\Users\jerem\OneDrive\Documents\Codex Sandbox\aculeus-slm-frontend`
 - Local branch: `main`
 - Initial source commit: `c127cf3 Initial Aculeus SLM frontend source`
-- Current pushed commit: `722c8b4 Add pilot trace shadow eval script`
+- Current pushed commit: `bccbf82 Harden production readiness gates`
 - GitHub repository: `Jeremyjones23/aculeus-slm-frontend`
 - Vercel project: `jeremyjones23s-projects/aculeus-slm-frontend`
 
@@ -31,7 +31,7 @@ Verified:
 git ls-remote origin
 ```
 
-returns `722c8b4f9d6f7b623c58108d5bb4c0b0feca5b3a` for `HEAD` and `refs/heads/main`.
+returns `bccbf82` or newer for `HEAD` and `refs/heads/main`.
 
 The repository was initially created private. Vercel still could not attach it, so the source was scanned for secret-bearing material outside ignored files and the repository was made public to eliminate private-repo access as the cause. The scan only matched test fixtures and secret-pattern validators.
 
@@ -42,6 +42,13 @@ Failed to connect Jeremyjones23/aculeus-slm-frontend to project. Make sure there
 ```
 
 The same failure persisted after the repository existed, was pushed, and was made public. The documented Vercel project update API rejects both `gitRepository` and `link` as patch fields for an existing project, so there is no supported REST fallback in this session.
+
+Additional 2026-05-16 verification:
+
+- GitHub connector access can read `Jeremyjones23/aculeus-slm-frontend`, which confirms the repository is reachable from the connected GitHub side.
+- `npx vercel git connect https://github.com/Jeremyjones23/aculeus-slm-frontend.git --yes --token $env:VERCEL_TOKEN` still fails with the same access/typo message.
+- Vercel MCP `_get_project` against project `prj_SYALeEjcDBUaQxJdtZvCE66YYIcd` and team `team_6Rg9l8vyTRAfLCscKxe7lbX7` returns `403 Forbidden`.
+- No callable Chrome/browser-control tool was exposed in this Codex session, so dashboard clicks could not be executed from the agent despite the user having browser credentials available in a separate context.
 
 ## Decision
 

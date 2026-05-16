@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
-import { canReviewEvidence, getRequestUser } from "@/lib/access-control.js";
+import { canReviewEvidence, getVerifiedRequestUser } from "@/lib/access-control.js";
 import { buildPilotShadowEvalReport } from "@/lib/aculeus-pilot-shadow-eval.js";
 import { hasDatabase, query } from "@/lib/database.js";
 
 export async function GET(request) {
   try {
-    const user = getRequestUser(request);
+    const user = await getVerifiedRequestUser(request);
     if (!canReviewEvidence(user)) {
       return NextResponse.json({ ok: false, error: "shadow_eval_access_denied" }, { status: 403 });
     }

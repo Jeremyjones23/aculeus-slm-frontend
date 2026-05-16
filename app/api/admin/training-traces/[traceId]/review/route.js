@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { canReviewEvidence, getRequestUser } from "@/lib/access-control.js";
+import { canReviewEvidence, getVerifiedRequestUser } from "@/lib/access-control.js";
 import { reviewTrainingTrace } from "@/lib/aculeus-product-store.js";
 
 export async function POST(request, context) {
   try {
-    const user = getRequestUser(request);
+    const user = await getVerifiedRequestUser(request);
     if (!canReviewEvidence(user)) {
       return NextResponse.json({ ok: false, error: "trace_review_denied" }, { status: 403 });
     }

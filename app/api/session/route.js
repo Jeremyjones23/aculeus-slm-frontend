@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { canAccessWorkspace, canCreateCase, canReviewEvidence, getRequestUser, resolveAuthMode } from "@/lib/access-control.js";
+import { canAccessWorkspace, canCreateCase, canReviewEvidence, getVerifiedRequestUser, resolveAuthMode } from "@/lib/access-control.js";
 
 export async function GET(request) {
-  const user = getRequestUser(request);
+  const user = await getVerifiedRequestUser(request);
   const workspaceAccess = canAccessWorkspace(user);
   return NextResponse.json({
     ok: workspaceAccess,
