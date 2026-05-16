@@ -547,6 +547,7 @@ h1 {
 }
 
 .admin-metrics article,
+.admin-alerts,
 .admin-table {
   border: 1px solid var(--line);
   background: rgba(255, 251, 244, 0.78);
@@ -570,6 +571,36 @@ h1 {
 
 .admin-table {
   overflow-x: auto;
+}
+
+.admin-alerts {
+  margin: 0 0 1rem;
+}
+
+.admin-alerts h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.admin-alerts ul {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.admin-alerts li {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.7fr) minmax(160px, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(188, 48, 35, 0.08);
+  border: 1px solid rgba(188, 48, 35, 0.22);
 }
 
 .admin-table table {
@@ -1051,6 +1082,10 @@ h1 {
   .operator-grid,
   .operator-header,
   .candidate-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-alerts li {
     grid-template-columns: 1fr;
   }
 

@@ -19,7 +19,25 @@ export default function AdminPage() {
         <article><span>Failures</span><strong>{summary.failure_count}</strong></article>
         <article><span>Exports</span><strong>{summary.export_count}</strong></article>
         <article><span>Spend</span><strong>${summary.estimated_spend_usd.toFixed(2)}</strong></article>
+        <article><span>Provider spend</span><strong>${summary.provider_cost_summary.estimated_spend_usd.toFixed(2)}</strong></article>
+        <article><span>Provider cap</span><strong>${summary.provider_cost_summary.provider_cap_usd.toFixed(2)}</strong></article>
+        <article><span>Provider calls</span><strong>{summary.provider_cost_summary.provider_call_count}</strong></article>
+        <article><span>Spend alerts</span><strong>{summary.provider_cost_summary.alert_count}</strong></article>
       </section>
+      {summary.provider_cost_summary.alerts.length > 0 ? (
+        <section className="admin-alerts" aria-label="Provider spend alerts">
+          <h2>Provider spend alerts</h2>
+          <ul>
+            {summary.provider_cost_summary.alerts.map((alert) => (
+              <li key={`${alert.run_id}-${alert.alert}`}>
+                <strong>{alert.alert}</strong>
+                <span>{alert.run_id}</span>
+                <span>${alert.estimated_spend_usd.toFixed(2)} / ${alert.provider_cap_usd.toFixed(2)}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
       <section className="admin-table" aria-label="Run audit table">
         <table>
           <thead>
@@ -31,6 +49,9 @@ export default function AdminPage() {
               <th>Ledger</th>
               <th>Failures</th>
               <th>Exports</th>
+              <th>Provider Spend</th>
+              <th>Provider Cap</th>
+              <th>Spend Alert</th>
             </tr>
           </thead>
           <tbody>
@@ -43,6 +64,9 @@ export default function AdminPage() {
                 <td>{row.ledger_count}</td>
                 <td>{row.failure_count}</td>
                 <td>{row.export_count}</td>
+                <td>${row.provider_estimated_spend_usd.toFixed(2)}</td>
+                <td>${row.provider_cap_usd.toFixed(2)}</td>
+                <td>{row.provider_spend_alert}</td>
               </tr>
             ))}
           </tbody>
