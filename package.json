@@ -79,11 +79,10 @@
     "@neondatabase/serverless": "latest",
     "@vercel/blob": "latest",
     "next": "latest",
+    "playwright": "^1.60.0",
     "react": "latest",
     "react-dom": "latest",
     "workflow": "latest"
   },
-  "devDependencies": {
-    "playwright": "^1.60.0"
-  }
+  "devDependencies": {}
 }
