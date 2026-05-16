@@ -32,8 +32,10 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 - Training traces persist for retrieval, reviewer, feedback, and shadow-eval flows.
 - Reviewed traces can be exported through `/api/admin/training-export`, and the export remains offline-only with no production update or hosted-training trigger.
 - Blocked crawler and receipt fetches now produce Browserbase/manual public-capture fallback ledger entries instead of being hidden or promoted.
+- Hosted Browserbase execution is deployed through `/api/browser-capture`; the Vercel production runtime currently verifies the Browserbase Fetch path with receipt hashes, candidate-only ledger rows, and no secret leakage.
 - Controlled pilot packet export exists as JSON and HTML.
-- Nightly Production smoke automation exists for auth, receipt, provider dry-run, and source-ledger gates.
+- Nightly Production smoke automation exists for auth, receipt, Browserbase capture, provider dry-run, source-ledger, and training-export gates.
+- A complete remaining-task inventory is maintained in `docs/remaining-production-tasks.md`.
 
 ### Blocking External Invites
 
@@ -42,8 +44,8 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 - Vercel still reports `Clerk DNS Configuration` as a failed platform check.
 - Vercel GitHub integration is not attached; deploys are explicit source deploys from the local Git tree.
 - Real Clerk pilot accounts have not been created and tested with real JWT/custom-claim behavior.
-- Browserbase/custom-crawler fallbacks are planned and ledger-visible, but hosted Browserbase execution is not yet production-operable for pages that block server fetch.
-- Legal/public claim posture has not been finalized for external user workflows.
+- Screenshot-capable Browserbase CDP capture still needs a Vercel-compatible runtime or worker path; Browserbase Fetch is operational but does not produce screenshot hashes.
+- Known-customer disclaimer exists at `/disclaimer`; full terms, privacy/data-handling, and acceptable-use pages remain open before broader invites.
 
 ## Production-Readiness Task List
 
@@ -90,6 +92,7 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 - Add per-provider quality scoring explanations in the reviewer queue.
 - Add dedupe audit details showing why a source was merged or kept distinct.
 - Promote the current Browserbase/manual fallback ledger plan into hosted Browserbase capture execution for pages that block server fetch.
+- Add deployed Browserbase smoke coverage to the nightly smoke path and keep it passing before pilot invites.
 - Add source-fetch status reasons for blocked, failed, needs browser, locator-only, and needs public-records-request cases.
 - Add explicit stale-content handling and recrawl controls for records likely to change.
 - Add source coverage metrics by case: official records found, providers used, candidate count, receipt count, promoted source count, missing-record count.
@@ -164,6 +167,7 @@ Aculeus is ready to invite people only when all of these are true:
 - `npm run e2e:local` passes.
 - `npm run e2e:production` passes.
 - `npm run smoke:postdeploy:admin -- https://aculeus-slm-frontend.vercel.app` passes.
+- `npm run smoke:postdeploy:browserbase -- https://aculeus-slm-frontend.vercel.app` passes.
 - `npm run smoke:postdeploy:live-provider -- https://aculeus-slm-frontend.vercel.app` passes under the approved cap.
 - Four-dossier deployed regression passes with zero auto-promoted evidence.
 - Real Clerk role-token E2E passes for admin, operator, reviewer, viewer, and pending users.

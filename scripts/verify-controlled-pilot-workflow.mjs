@@ -67,6 +67,9 @@ for (const phrase of [
   "`reviewer`",
   "`viewer`",
   "approval_status=approved",
+  "npm run clerk:role-accounts",
+  "ACULEUS_CLERK_ROLE_EMAILS",
+  "npm run smoke:postdeploy:browserbase",
   "Clerk DNS Configuration",
   "Vercel Git linking",
   "npm run smoke:nightly-production"

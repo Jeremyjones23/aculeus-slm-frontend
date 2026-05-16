@@ -5,7 +5,7 @@
 - Local source root: `C:\Users\jerem\OneDrive\Documents\Codex Sandbox\aculeus-slm-frontend`
 - Local branch: `main`
 - Initial source commit: `c127cf3 Initial Aculeus SLM frontend source`
-- Latest deployed application commit: `b922947 Fix deployed admin store reads`
+- Latest verified deployed application commit: `782419f Add Browserbase fetch capture fallback`
 - GitHub repository: `Jeremyjones23/aculeus-slm-frontend`
 - Vercel project: `jeremyjones23s-projects/aculeus-slm-frontend`
 
@@ -46,9 +46,12 @@ The same failure persisted after the repository existed, was pushed, and was mad
 Additional 2026-05-16 verification:
 
 - GitHub connector access can read `Jeremyjones23/aculeus-slm-frontend`, which confirms the repository is reachable from the connected GitHub side.
+- GitHub collaborator permission check for `Jeremyjones23` on `Jeremyjones23/aculeus-slm-frontend` returns `admin`.
 - `npx vercel git connect https://github.com/Jeremyjones23/aculeus-slm-frontend.git --yes --token $env:VERCEL_TOKEN` still fails with the same access/typo message.
+- `npx vercel git connect` still fails from the linked project root with the same access/typo message.
 - Vercel MCP `_get_project` against project `prj_SYALeEjcDBUaQxJdtZvCE66YYIcd` and team `team_6Rg9l8vyTRAfLCscKxe7lbX7` returns `403 Forbidden`.
 - No callable Chrome/browser-control tool was exposed in this Codex session, so dashboard clicks could not be executed from the agent despite the user having browser credentials available in a separate context.
+- The current production alias is assigned manually after source deploy because the GitHub integration is still not attached.
 
 ## Decision
 

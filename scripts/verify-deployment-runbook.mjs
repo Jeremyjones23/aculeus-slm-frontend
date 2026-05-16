@@ -14,10 +14,12 @@ for (const phrase of [
   "remote Qdrant mutation",
   "Controlled Pilot Checklist",
   "Provider cap gate",
+  "Browserbase gate",
   "Four-dossier regression gate",
   "Training trace gate",
   "Production Promotion Gate",
-  "npm run smoke:postdeploy:receipt -- <preview-url>"
+  "npm run smoke:postdeploy:receipt -- <preview-url>",
+  "npm run smoke:postdeploy:browserbase -- <preview-url>"
 ]) {
   if (!runbook.includes(phrase)) throw new Error(`deployment runbook missing phrase: ${phrase}`);
 }

@@ -31,7 +31,10 @@ const requiredPhrases = [
   "Real Clerk role-token E2E passes for admin, operator, reviewer, viewer, and pending users.",
   "Vercel Production has zero failed checks.",
   "Noise-Pruning Decisions",
-  "Legacy static demo lane"
+  "Legacy static demo lane",
+  "docs/remaining-production-tasks.md",
+  "Browserbase Fetch path",
+  "npm run smoke:postdeploy:browserbase -- https://aculeus-slm-frontend.vercel.app"
 ];
 
 const missing = requiredPhrases.filter((phrase) => !text.includes(phrase));

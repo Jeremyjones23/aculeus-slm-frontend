@@ -31,10 +31,11 @@ npm run test:backup-restore
 3. Run one dry provider search with cap visible and live provider disabled.
 4. Run one official API search and confirm candidates are not evidence.
 5. Fetch a receipt and confirm verifier gate controls promotion.
-6. Open `/admin` and confirm run audit counts are visible.
-7. Export JSON, HTML, and PDF packets and run public/private scan.
-8. Build telemetry snapshot and verify synthetic alerts trigger.
-9. Create backup packet and run restore smoke.
+6. Run hosted Browserbase capture and confirm receipt hash, candidate-only ledger persistence, and no secret leakage.
+7. Open `/admin` and confirm run audit counts are visible.
+8. Export JSON, HTML, and PDF packets and run public/private scan.
+9. Build telemetry snapshot and verify synthetic alerts trigger.
+10. Create backup packet and run restore smoke.
 
 ## Controlled Pilot Checklist
 
@@ -45,6 +46,7 @@ Complete this checklist before any controlled pilot is opened to an external rev
 - Provider cap gate: every live provider run declares `provider_cap_usd`, the admin console shows provider spend/cap/call counts, and any `provider_spend_near_cap` or `provider_spend_over_cap` alert is resolved or explicitly waived in the pilot packet.
 - Public API gate: official API runs remain no-spend public-record candidate retrievals; official API, provider, crawler, PDF, and Qdrant rows remain candidate leads until receipt-backed reviewer promotion.
 - Receipt gate: at least one deployed `npm run smoke:postdeploy:receipt -- <preview-url>` pass confirms receipt fetch, content hash, quote hash, source-level promotion, and high-risk finding blockage.
+- Browserbase gate: at least one deployed `npm run smoke:postdeploy:browserbase -- <preview-url>` pass confirms hosted Browserbase capture, receipt hash, candidate-only ledger persistence, and no secret-bearing response fields.
 - Four-dossier regression gate: the LA homelessness, CA school board spending, San Francisco drug rehabilitation, and Xavier Becerra/CHIRLA scenarios each produce a case board with source-ledger candidates and zero auto-promoted findings.
 - Training trace gate: planner, retrieval, reviewer, feedback, score payload, cost/latency, and final-outcome fields persist to durable training traces with `training_conversion_allowed=false` until review.
 - Export gate: JSON, HTML, and PDF exports pass the public/private leakage scan and state that candidates are not evidence.
@@ -60,6 +62,7 @@ npm run verify
 npm run build
 npm run smoke:postdeploy -- <preview-url>
 npm run smoke:postdeploy:receipt -- <preview-url>
+npm run smoke:postdeploy:browserbase -- <preview-url>
 ```
 
 Then generate and retain the promotion packet:

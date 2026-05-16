@@ -40,6 +40,21 @@ Unsigned trusted headers require `ACULEUS_TRUST_SMOKE_HEADERS=1` and are restric
 4. Create one `viewer` account for read-only case-board review.
 5. Leave one deliberately `pending` test account to confirm denial.
 
+Set the account emails through `ACULEUS_CLERK_ROLE_EMAILS` before creating or updating the accounts:
+
+```powershell
+$env:ACULEUS_CLERK_ROLE_EMAILS='{"admin":"admin@example.com","operator":"operator@example.com","reviewer":"reviewer@example.com","viewer":"viewer@example.com","pending":"pending@example.com"}'
+npm run clerk:role-accounts
+```
+
+The command writes Clerk public metadata only:
+
+- `aculeus_role`
+- `aculeus_approval_status`
+- `aculeus_pilot_account=true`
+
+The command does not print passwords or secrets. Passwordless invitation or Clerk-managed sign-in remains the required login path.
+
 ## Pre-Invite Gate
 
 Before sending external invitations:
@@ -47,6 +62,7 @@ Before sending external invitations:
 - `npm run verify` passes.
 - `npm run smoke:nightly-production -- https://aculeus-slm-frontend.vercel.app` passes.
 - `npm run smoke:postdeploy:admin -- https://aculeus-slm-frontend.vercel.app` passes.
+- `npm run smoke:postdeploy:browserbase -- https://aculeus-slm-frontend.vercel.app` passes.
 - `npm run pilot:packet` passes and includes current residual platform checks.
 - Vercel Git linking is clean or explicitly waived for the pilot.
 - Clerk DNS Configuration platform check is clean or explicitly waived for the pilot.
