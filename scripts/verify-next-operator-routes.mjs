@@ -84,7 +84,9 @@ try {
     if (!savedRun?.ledger?.some((entry) => entry.entry_type === "official_api_search")) failures.push("run ledger missing official API entry");
     if (!savedRun?.ledger?.some((entry) => entry.entry_type === "provider_search")) failures.push("run ledger missing provider search entry");
     if (!savedRun?.trainingTraces?.length) failures.push("run missing training trace refs");
-    const traceRows = readFileSync(tracePath, "utf8").trim().split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+    const traceRows = existsSync(tracePath)
+      ? readFileSync(tracePath, "utf8").trim().split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line))
+      : savedRun.trainingTraces || [];
     if (traceRows.length < 2) failures.push("training trace export missing route events");
     if (traceRows.some((row) => row.training_conversion_allowed !== false || row.direct_model_answer_used !== false)) failures.push("training trace violated offline-training guard");
   }

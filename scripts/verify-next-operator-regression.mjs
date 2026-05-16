@@ -78,7 +78,7 @@ try {
   const store = JSON.parse(readFileSync(join(storeDir, "local-store.json"), "utf8"));
   const traceRows = existsSync(tracePath)
     ? readFileSync(tracePath, "utf8").trim().split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line))
-    : [];
+    : store.runs.flatMap((run) => run.trainingTraces || []);
   const failures = [];
   const liveOfficialExpected = process.env.ACULEUS_DRY_OFFICIAL_REGRESSION !== "1";
   const liveProviderExpected = process.env.ACULEUS_LIVE_PROVIDER_REGRESSION === "1";

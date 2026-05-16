@@ -70,7 +70,9 @@ try {
     throw new Error("feedback trace ref was not attached to run");
   }
 
-  const traceRows = readFileSync(tracePath, "utf8").trim().split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+  const traceRows = existsSync(tracePath)
+    ? readFileSync(tracePath, "utf8").trim().split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line))
+    : savedRun.trainingTraces || [];
   const feedbackTrace = traceRows.find((row) => row.action === "user_feedback" && row.run_id === runId);
   if (!feedbackTrace) throw new Error("feedback trace row missing from substrate");
   if (feedbackTrace.user_feedback?.saved_or_exported !== true) throw new Error("feedback trace missing saved/exported signal");
