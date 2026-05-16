@@ -1,10 +1,14 @@
 import { randomUUID } from "node:crypto";
 
+const missing = [];
+if (!process.env.ACULEUS_CLERK_ROLE_EMAILS) missing.push("ACULEUS_CLERK_ROLE_EMAILS JSON with admin, operator, reviewer, viewer, pending emails");
+if (!process.env.CLERK_SECRET_KEY) missing.push("CLERK_SECRET_KEY for the real Clerk application");
+if (missing.length) {
+  throw new Error(`Missing Clerk role-account prerequisites: ${missing.join("; ")}.`);
+}
+
 const roleMap = parseRoleEmails();
 const secretKey = process.env.CLERK_SECRET_KEY;
-if (!secretKey) {
-  throw new Error("CLERK_SECRET_KEY is required to create or update real Clerk role accounts.");
-}
 
 const { createClerkClient } = await import("@clerk/backend");
 const clerk = createClerkClient({ secretKey });

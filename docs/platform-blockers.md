@@ -7,11 +7,11 @@ Last verified: 2026-05-16.
 ## Current Production Deployment
 
 - Canonical URL: `https://aculeus-slm-frontend.vercel.app`
-- Latest verified source SHA: `782419f1971c929ecfdf9ba55b0a9c4f36b8f5dc`
-- Latest inspected deployment: `dpl_3VtrC2emBWCUyeAtdPnX8bgoDXaJ`
-- Latest inspected deployment URL: `https://aculeus-slm-frontend-koxhzitb8-jeremyjones23s-projects.vercel.app`
+- Latest verified source SHA: `5576246e204b6255593cf974ed987700c27ece4f`
+- Latest inspected deployment: `dpl_Ek7GyCrRV9sU5hs1r88ePAbDRxtR`
+- Latest inspected deployment URL: `https://aculeus-slm-frontend-66wagtzrb-jeremyjones23s-projects.vercel.app`
 - Latest deployed status: Ready
-- Current deployment mode: explicit Vercel source deploy from the local Git tree
+- Current deployment mode: GitHub-triggered Vercel production deploy; manual source deploy remains fallback-only.
 
 ## Blocker 1: Vercel Clerk DNS Configuration
 
