@@ -42,6 +42,7 @@
     "smoke:deployment-promotion": "node scripts/run-deployment-promotion-smokes.mjs",
     "smoke:postdeploy": "node scripts/postdeploy-smoke.mjs",
     "smoke:postdeploy:receipt": "node scripts/postdeploy-receipt-smoke.mjs",
+    "eval:shadow:pilot": "node scripts/run-shadow-eval-pilot-traces.mjs",
     "test:runner": "node scripts/verify-investigation-runner.mjs",
     "test:runner-api": "node scripts/verify-investigation-run-api.mjs",
     "test:receipts": "node scripts/verify-receipt-citation.mjs && node scripts/verify-receipt-api.mjs",
