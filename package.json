@@ -23,6 +23,7 @@
     "test:source-refresh": "node scripts/verify-source-refresh-scheduler.mjs",
     "test:export-packets": "node scripts/verify-export-packets.mjs",
     "test:trace-scoring": "node scripts/verify-trace-scoring.mjs",
+    "test:trace-review": "node scripts/verify-training-trace-review.mjs",
     "test:user-feedback": "node scripts/verify-user-feedback-traces.mjs",
     "test:preference-pairs": "node scripts/verify-preference-pairs.mjs",
     "test:eval-bank-10": "node scripts/verify-eval-bank-10.mjs",
