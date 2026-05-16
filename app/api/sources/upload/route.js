@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 import { storeArtifact } from "@/lib/aculeus-blob-artifacts.js";
+import { buildAccessDeniedPayload, canCreateCase, getRequestUser } from "@/lib/access-control.js";
 
 export async function POST(request) {
+  const user = getRequestUser(request);
+  if (!canCreateCase(user)) {
+    return NextResponse.json(buildAccessDeniedPayload("upload_source", user), { status: 403 });
+  }
   const form = await request.formData();
   const file = form.get("file");
   const visibility = String(form.get("visibility") || "private");

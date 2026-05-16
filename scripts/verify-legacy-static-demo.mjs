@@ -13,7 +13,7 @@ const required = [
   "package.json",
   "scripts/serve.mjs",
   "scripts/sync-demo-case-js.mjs",
-  "scripts/verify.mjs",
+  "scripts/verify-legacy-static-demo.mjs",
   "scripts/build.mjs",
   "scripts/qa-browser.mjs",
   "assets/aculeus-logomark.svg",

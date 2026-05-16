@@ -5,6 +5,7 @@ import { createFileReceiptStore } from "@/lib/aculeus-receipt-store.js";
 import { fetchPublicReceipt } from "@/lib/aculeus-receipt-fetcher.js";
 import { verifyReceiptCitation } from "@/lib/aculeus-citation-verifier.js";
 import { getRun, appendRunLedger } from "@/lib/aculeus-product-store.js";
+import { buildAccessDeniedPayload, canReviewEvidence, getRequestUser } from "@/lib/access-control.js";
 
 function receiptStore() {
   const defaultDir = process.env.VERCEL || process.env.VERCEL_ENV
@@ -15,6 +16,10 @@ function receiptStore() {
 
 export async function POST(request) {
   try {
+    const user = getRequestUser(request);
+    if (!canReviewEvidence(user)) {
+      return NextResponse.json(buildAccessDeniedPayload("fetch_receipt", user), { status: 403 });
+    }
     const payload = await request.json();
     const candidate = payload.candidate || {
       candidate_id: payload.candidate_id || payload.source_id,

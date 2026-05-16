@@ -6,8 +6,13 @@ import {
   renderReviewerExportHtml,
   renderReviewerExportPdf
 } from "@/lib/aculeus-export-packets.js";
+import { buildAccessDeniedPayload, canReviewEvidence, getRequestUser } from "@/lib/access-control.js";
 
 export async function GET(request, context) {
+  const user = getRequestUser(request);
+  if (!canReviewEvidence(user)) {
+    return NextResponse.json(buildAccessDeniedPayload("export_run", user), { status: 403 });
+  }
   const { runId } = await context.params;
   const run = await getRun(runId);
   if (!run) {

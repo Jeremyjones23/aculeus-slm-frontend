@@ -5,9 +5,14 @@ import { planOfficialApiTasks } from "@/lib/aculeus-official-source-router.js";
 import { executeOfficialApiTasks, validateOfficialApiExecution } from "@/lib/aculeus-official-api-executor.js";
 import { normalizeCandidateSet } from "@/lib/aculeus-source-quality.js";
 import { appendTrainingTrace, buildTrainingTrace } from "@/lib/aculeus-training-trace-exporter.js";
+import { buildAccessDeniedPayload, canCreateCase, getRequestUser } from "@/lib/access-control.js";
 
 export async function POST(request) {
   try {
+    const user = getRequestUser(request);
+    if (!canCreateCase(user)) {
+      return NextResponse.json(buildAccessDeniedPayload("run_official_api_search", user), { status: 403 });
+    }
     const body = await request.json();
     const run = body.runId ? await getRun(body.runId) : null;
     const spec = buildInvestigationSpec({

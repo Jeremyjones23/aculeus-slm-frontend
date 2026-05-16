@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
 import { appendRunLedger, getRun, saveRun } from "@/lib/aculeus-product-store.js";
+import { buildAccessDeniedPayload, canCreateCase, getRequestUser } from "@/lib/access-control.js";
 
 export async function POST(request, context) {
+  const user = getRequestUser(request);
+  if (!canCreateCase(user)) {
+    return NextResponse.json(buildAccessDeniedPayload("retry_run_task", user), { status: 403 });
+  }
   const { runId } = await context.params;
   const body = await request.json().catch(() => ({}));
   const run = await getRun(runId);

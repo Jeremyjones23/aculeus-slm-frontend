@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
 import { getRun, saveRun } from "@/lib/aculeus-product-store.js";
 import { advanceRunLifecycle } from "@/lib/aculeus-run-lifecycle.js";
+import { buildAccessDeniedPayload, canAccessWorkspace, getRequestUser } from "@/lib/access-control.js";
 
-export async function GET(_request, context) {
+export async function GET(request, context) {
+  const user = getRequestUser(request);
+  if (!canAccessWorkspace(user)) {
+    return NextResponse.json(buildAccessDeniedPayload("read_run", user), { status: 403 });
+  }
   const { runId } = await context.params;
   const run = await getRun(runId);
   if (!run) {

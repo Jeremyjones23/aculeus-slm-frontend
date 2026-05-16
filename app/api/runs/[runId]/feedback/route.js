@@ -2,9 +2,14 @@ import { NextResponse } from "next/server";
 import { appendRunLedger, appendRunTrainingTrace, getRun } from "@/lib/aculeus-product-store.js";
 import { appendTrainingTrace, buildTrainingTrace } from "@/lib/aculeus-training-trace-exporter.js";
 import { buildUserFeedbackSignal, validateUserFeedbackSignal } from "@/lib/aculeus-user-feedback.js";
+import { buildAccessDeniedPayload, canAccessWorkspace, getRequestUser } from "@/lib/access-control.js";
 
 export async function POST(request, context) {
   try {
+    const user = getRequestUser(request);
+    if (!canAccessWorkspace(user)) {
+      return NextResponse.json(buildAccessDeniedPayload("submit_feedback", user), { status: 403 });
+    }
     const { runId } = await context.params;
     const run = await getRun(runId);
     if (!run) return NextResponse.json({ ok: false, error: "run_not_found" }, { status: 404 });

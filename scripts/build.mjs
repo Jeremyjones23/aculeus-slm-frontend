@@ -2,7 +2,7 @@ import { cpSync, mkdirSync, rmSync, copyFileSync } from "node:fs";
 import { join } from "node:path";
 
 await import("./sync-demo-case-js.mjs");
-await import("./verify.mjs");
+await import("./verify-legacy-static-demo.mjs");
 
 const root = process.cwd();
 const outDir = join(root, "public");
