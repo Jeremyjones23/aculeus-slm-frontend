@@ -22,6 +22,12 @@ export default function DisclaimerPage() {
           </article>
         ))}
       </section>
+      <nav className="policy-link-row" aria-label="Pilot policy pages">
+        <a href="/terms">Terms</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/acceptable-use">Acceptable use</a>
+        <a href="/security">Security</a>
+      </nav>
     </main>
   );
 }

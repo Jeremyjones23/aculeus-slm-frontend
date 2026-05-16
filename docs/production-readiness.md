@@ -32,7 +32,7 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 - Training traces persist for retrieval, reviewer, feedback, and shadow-eval flows.
 - Reviewed traces can be exported through `/api/admin/training-export`, and the export remains offline-only with no production update or hosted-training trigger.
 - Blocked crawler and receipt fetches now produce Browserbase/manual public-capture fallback ledger entries instead of being hidden or promoted.
-- Hosted Browserbase execution is deployed through `/api/browser-capture`; the Vercel production runtime currently verifies the Browserbase Fetch path with receipt hashes, candidate-only ledger rows, and no secret leakage.
+- Hosted Browserbase execution is deployed through `/api/browser-capture`; the Vercel production runtime currently verifies the Browserbase Fetch path with receipt hashes, candidate-only ledger rows, and no secret leakage. Local Browserbase CDP capture with the saved key produces screenshot hashes.
 - Controlled pilot packet export exists as JSON and HTML.
 - Nightly Production smoke automation exists for auth, receipt, Browserbase capture, provider dry-run, source-ledger, and training-export gates.
 - A complete remaining-task inventory is maintained in `docs/remaining-production-tasks.md`.
@@ -42,10 +42,10 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 - Real Clerk session verification is wired app-side through Clerk middleware, `auth()`, `currentUser()`, role metadata, and approval claims, but real Clerk pilot accounts and deployed JWT/custom-claim E2E are still pending.
 - Signed smoke headers remain available for internal postdeploy smokes through `ACULEUS_SMOKE_SECRET`; unsigned trusted headers are local/test-only.
 - Vercel still reports `Clerk DNS Configuration` as a failed platform check.
-- Vercel GitHub integration is not attached; deploys are explicit source deploys from the local Git tree.
+- Vercel GitHub integration is attached according to the CLI confirmation, but the next pushed commit still must prove Git-triggered deployment.
 - Real Clerk pilot accounts have not been created and tested with real JWT/custom-claim behavior.
-- Screenshot-capable Browserbase CDP capture still needs a Vercel-compatible runtime or worker path; Browserbase Fetch is operational but does not produce screenshot hashes.
-- Known-customer disclaimer exists at `/disclaimer`; full terms, privacy/data-handling, and acceptable-use pages remain open before broader invites.
+- Screenshot-capable Browserbase CDP capture works locally with `playwright-core`; the next deployment must prove the Vercel Node.js runtime path can return `screenshot_sha256`.
+- Known-customer disclaimer, terms, privacy/data-handling, acceptable-use, and security/incident pages exist at `/disclaimer`, `/terms`, `/privacy`, `/acceptable-use`, and `/security`.
 
 ## Production-Readiness Task List
 
@@ -64,8 +64,7 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 
 ### Platform And Deployment
 
-- Complete Vercel GitHub integration for `Jeremyjones23/aculeus-slm-frontend`.
-- Confirm commits create Preview deployments automatically.
+- Confirm the attached Vercel GitHub integration creates deployments from pushed commits automatically.
 - Clear the Vercel `Clerk DNS Configuration` check.
 - Redeploy Production with zero failed Vercel checks.
 - Preserve manual source deploy as an emergency fallback, but mark it as fallback-only.
@@ -91,8 +90,8 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 - Keep Exa, Parallel, Browserbase, custom crawlers, PDF parsing, and Qdrant as candidate sources until receipt verification.
 - Add per-provider quality scoring explanations in the reviewer queue.
 - Add dedupe audit details showing why a source was merged or kept distinct.
-- Promote the current Browserbase/manual fallback ledger plan into hosted Browserbase capture execution for pages that block server fetch.
-- Add deployed Browserbase smoke coverage to the nightly smoke path and keep it passing before pilot invites.
+- Keep Browserbase Fetch as the deployed fallback and prove screenshot-capable Browserbase CDP with `ACULEUS_REQUIRE_BROWSERBASE_SCREENSHOT=1` after the next deployment.
+- Keep deployed Browserbase smoke coverage in the nightly smoke path before pilot invites.
 - Add source-fetch status reasons for blocked, failed, needs browser, locator-only, and needs public-records-request cases.
 - Add explicit stale-content handling and recrawl controls for records likely to change.
 - Add source coverage metrics by case: official records found, providers used, candidate count, receipt count, promoted source count, missing-record count.
@@ -152,8 +151,7 @@ This file is the operating checklist for moving Aculeus from a working MVP into 
 
 - Define what users are allowed to claim from Aculeus output.
 - Add product copy that avoids asserting fraud, intent, illegality, or wrongdoing without receipt-backed findings and review.
-- Add terms and acceptable-use boundaries for public-record investigations.
-- Add privacy policy and data-handling statement for uploaded sources, receipts, traces, and exports.
+- Keep `/terms`, `/privacy`, `/acceptable-use`, and `/security` current with product behavior and pilot contracts.
 - Add public-records-request workflow language that does not provide legal advice.
 - Add a pre-publication review queue for any exported finding that could be reputationally sensitive.
 - Add user-facing disclaimer that candidates are leads, not evidence, until promoted.
@@ -172,7 +170,7 @@ Aculeus is ready to invite people only when all of these are true:
 - Four-dossier deployed regression passes with zero auto-promoted evidence.
 - Real Clerk role-token E2E passes for admin, operator, reviewer, viewer, and pending users.
 - Vercel Production has zero failed checks.
-- Vercel GitHub integration is attached or formally waived for the pilot.
+- Vercel GitHub integration has produced at least one commit-triggered deployment or is formally waived for the pilot.
 - Latest pilot packet is generated, reviewed, and free of secret/raw-text leakage.
 - Backup/restore smoke passes.
 - Incident owner and rollback target are documented.

@@ -3,6 +3,9 @@ import { browserCaptureLedgerEntry, capturePublicPageWithBrowserbase } from "@/l
 import { buildAccessDeniedPayload, canReviewEvidence, getVerifiedRequestUser } from "@/lib/access-control.js";
 import { appendRunLedger, getRun } from "@/lib/aculeus-product-store.js";
 
+export const runtime = "nodejs";
+export const maxDuration = 60;
+
 export async function POST(request) {
   try {
     const user = await getVerifiedRequestUser(request);

@@ -4,6 +4,7 @@ import { createSmokeAuthHeaders } from "./smoke-auth-headers.mjs";
 
 const base = (process.argv[2] || process.env.ACULEUS_DEPLOY_URL || "https://aculeus-slm-frontend.vercel.app").replace(/\/+$/, "");
 const captureUrl = process.env.ACULEUS_BROWSERBASE_SMOKE_URL || "https://example.com";
+const requireScreenshot = process.env.ACULEUS_REQUIRE_BROWSERBASE_SCREENSHOT === "1";
 const headers = createSmokeAuthHeaders({
   userId: process.env.ACULEUS_SMOKE_USER_ID || "postdeploy_browserbase_admin",
   email: process.env.ACULEUS_SMOKE_EMAIL || "browserbase-admin@aculeus.local",
@@ -64,6 +65,7 @@ record("browser_capture_with_auth", {
 assert(captureResponse.status === 200 && captureJson?.ok, `browser capture failed: ${JSON.stringify(captureJson).slice(0, 500)}`);
 assert(capture.status === "captured", "browser capture did not return captured status");
 assert(Boolean(capture.receipt_hash), "browser capture missing receipt hash");
+if (requireScreenshot) assert(Boolean(capture.screenshot_sha256), "browser capture missing required screenshot hash");
 assert(captureJson?.ledger_entry?.evidence_promotion_allowed === false, "browser capture escaped evidence gate");
 assert(!hasSecretLeak(captureJson), "browser capture leaked secret-bearing fields");
 
@@ -89,6 +91,7 @@ const packet = {
   captureStatus: capture.status,
   hasReceiptHash: Boolean(capture.receipt_hash),
   hasScreenshotHash: Boolean(capture.screenshot_sha256),
+  requireScreenshot,
   results
 };
 const outDir = process.env.ACULEUS_SMOKE_ARTIFACT_DIR || join(process.cwd(), "qa-artifacts");

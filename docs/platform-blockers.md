@@ -48,33 +48,31 @@ A controlled paid-customer pilot can waive this only if:
 - no custom customer domain depends on the failing DNS configuration,
 - real role-token E2E passes despite the failed Vercel check.
 
-## Blocker 2: Vercel GitHub Integration Not Attached
+## Blocker 2: Vercel GitHub Integration Attached, Awaiting Commit-Triggered Deployment Verification
 
 ### Symptom
 
-The repository exists, `main` is pushed, and GitHub reports `Jeremyjones23` has `admin` permission on `Jeremyjones23/aculeus-slm-frontend`, but Vercel CLI still returns:
+The repository now connects to the Vercel project. The CLI verification command returns a nonzero process exit, but the body confirms:
 
 ```text
-Failed to connect Jeremyjones23/aculeus-slm-frontend to project. Make sure there aren't any typos and that you have access to the repository if it's private.
+Jeremyjones23/aculeus-slm-frontend is already connected to your project.
 ```
 
-### Why It Blocks Production Invite Readiness
+### Remaining Verification
 
-Manual source deploys work, but production invite readiness should not depend on an operator remembering the exact local deploy and alias sequence. GitHub integration gives auditable commit-to-preview behavior and reduces release drift.
+GitHub integration is no longer treated as unattached. The remaining proof is a fresh commit from `main` creating a Vercel deployment that records GitHub as the source. Until that happens, manual source deploy remains the fallback release path.
 
 ### Narrow Resolution Path
 
-1. Open Vercel project `jeremyjones23s-projects/aculeus-slm-frontend`.
-2. Open Git repository settings for the project.
-3. Attach GitHub repository `Jeremyjones23/aculeus-slm-frontend`.
-4. Confirm the Vercel GitHub app has access to that repository.
-5. Push a harmless commit.
-6. Confirm a Preview deployment is created from the commit.
-7. Confirm Production promotion records the Git commit in Vercel.
+1. Push the next verified commit to `main`.
+2. Confirm Vercel creates a deployment from GitHub without `vercel deploy`.
+3. Confirm the Vercel deployment page records repository `Jeremyjones23/aculeus-slm-frontend` and the pushed commit SHA.
+4. Run production smokes against the Git-triggered deployment or its promoted production alias.
+5. Update this ledger with the deployment ID and smoke artifact paths.
 
 ### Waiver Standard
 
-A controlled paid-customer pilot can waive this only if:
+If the next push does not trigger deployment despite the project being connected:
 
 - manual deploy and alias commands are followed exactly from the runbook,
 - the release manifest records source SHA, deployment ID, alias target, and smoke artifact paths,
@@ -105,12 +103,16 @@ This blocker should not be waived for any known-customer pilot. Smoke headers pr
 
 Deployed Browserbase smoke passes through Browserbase Fetch with receipt hash and candidate-only ledger rows. Browserbase CDP/Playwright screenshot capture still fails in Vercel serverless packaging, so deployed capture currently has no screenshot hash.
 
+Local Browserbase CDP capture with the saved Browserbase key succeeds and produces both `receipt_hash` and `screenshot_sha256`. The active narrowing is Vercel runtime compatibility, not Browserbase account configuration.
+
 ### Narrow Resolution Path
 
-1. Move CDP capture to a runtime that can load Playwright core cleanly, or create a Browserbase worker outside the Next serverless bundle.
-2. Keep Browserbase Fetch as fallback for text/HTML receipt capture.
-3. Add smoke that requires `screenshot_sha256`.
-4. Persist screenshot artifact metadata without exposing raw private content.
+1. Keep `/api/browser-capture` pinned to the Node.js runtime with a 60 second maximum duration.
+2. Load `playwright-core` directly for remote CDP instead of importing the full Playwright package.
+3. Keep Browserbase Fetch as fallback for text/HTML receipt capture.
+4. Run `npm run smoke:browserbase:cdp -- https://example.com` locally to prove real screenshot hashing.
+5. Run `ACULEUS_REQUIRE_BROWSERBASE_SCREENSHOT=1 npm run smoke:postdeploy:browserbase -- https://aculeus-slm-frontend.vercel.app` after the next Vercel deployment to prove the deployed screenshot path.
+6. Persist screenshot artifact metadata without exposing raw private content.
 
 ### Waiver Standard
 

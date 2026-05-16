@@ -15,7 +15,7 @@ const requiredPhrases = [
   "Real Clerk session verification is wired app-side",
   "real Clerk pilot accounts and deployed JWT/custom-claim E2E are still pending.",
   "Vercel still reports `Clerk DNS Configuration` as a failed platform check.",
-  "Vercel GitHub integration is not attached",
+  "Vercel GitHub integration is attached according to the CLI confirmation, but the next pushed commit still must prove Git-triggered deployment.",
   "Production-Readiness Task List",
   "Identity And Access",
   "Platform And Deployment",

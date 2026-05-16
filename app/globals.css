@@ -1004,40 +1004,46 @@ h1 {
   text-transform: uppercase;
 }
 
-.disclaimer-shell {
+.disclaimer-shell,
+.policy-shell {
   min-height: 100vh;
   padding: 2rem clamp(1rem, 4vw, 3rem) 4rem;
   background: var(--paper);
   color: var(--ink);
 }
 
-.disclaimer-header {
+.disclaimer-header,
+.policy-header {
   max-width: 960px;
   padding: clamp(2.5rem, 7vw, 6rem) 0 2rem;
 }
 
-.disclaimer-header h1 {
+.disclaimer-header h1,
+.policy-header h1 {
   max-width: 920px;
   margin: 0;
   font-size: clamp(2.6rem, 7vw, 6.2rem);
   line-height: 0.92;
 }
 
-.disclaimer-header p {
+.disclaimer-header p,
+.policy-header p {
   max-width: 760px;
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.55;
 }
 
-.disclaimer-grid {
+.disclaimer-grid,
+.policy-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
 }
 
-.disclaimer-grid article {
+.disclaimer-grid article,
+.policy-grid article {
   min-height: 260px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -1045,7 +1051,8 @@ h1 {
   background: rgba(255, 255, 255, 0.62);
 }
 
-.disclaimer-grid span {
+.disclaimer-grid span,
+.policy-grid span {
   color: var(--red);
   font-family: var(--mono);
   font-size: 0.72rem;
@@ -1053,15 +1060,36 @@ h1 {
   text-transform: uppercase;
 }
 
-.disclaimer-grid h2 {
+.disclaimer-grid h2,
+.policy-grid h2 {
   margin: 1.25rem 0 0.65rem;
   font-size: clamp(1.35rem, 2.4vw, 2rem);
   line-height: 1;
 }
 
-.disclaimer-grid p {
+.disclaimer-grid p,
+.policy-grid p {
   color: var(--muted);
   line-height: 1.5;
+}
+
+.policy-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.policy-link-row a {
+  border: 1px solid rgba(17, 16, 14, 0.2);
+  background: var(--ink);
+  color: #fff;
+  padding: 0.78rem 0.9rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .operator-board {
@@ -1527,7 +1555,8 @@ h1 {
   .operator-grid,
   .operator-header,
   .candidate-row,
-  .disclaimer-grid {
+  .disclaimer-grid,
+  .policy-grid {
     grid-template-columns: 1fr;
   }
 

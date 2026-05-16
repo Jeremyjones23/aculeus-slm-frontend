@@ -41,8 +41,8 @@ Last updated: 2026-05-16.
 | ID | Status | Task | Acceptance Gate |
 | --- | --- | --- | --- |
 | PL-01 | Open | Clear Vercel `Clerk DNS Configuration` failed check. | Latest production deployment has zero failed Vercel checks. |
-| PL-02 | Open | Attach Vercel GitHub integration for `Jeremyjones23/aculeus-slm-frontend`. | Commits to `main` trigger Vercel deployment without manual source deploy. |
-| PL-03 | Open | Create a formal pilot waiver if GitHub integration remains blocked. | Pilot packet records waiver owner, reason, expiry, and manual deploy procedure. |
+| PL-02 | Verify | Attach Vercel GitHub integration for `Jeremyjones23/aculeus-slm-frontend`. | Vercel now reports the repository is already connected; next pushed commit must prove commit-triggered deployment. |
+| PL-03 | Conditional | Create a formal pilot waiver if GitHub integration fails to deploy from the next pushed commit. | Pilot packet records waiver owner, reason, expiry, and manual deploy procedure. |
 | PL-04 | Open | Add release manifest with commit SHA, deployment URL, alias target, checks, and smoke artifact paths. | Manifest is generated after every production deploy. |
 | PL-05 | Open | Add rollback drill using Vercel alias reassignment to previous verified deployment. | Drill records previous deployment and smoke result after rollback. |
 | PL-06 | Open | Add production health endpoint or admin panel row for deployment ID and source SHA. | `/admin` exposes current deployment metadata without secrets. |
@@ -158,9 +158,9 @@ Last updated: 2026-05-16.
 | ID | Status | Task | Acceptance Gate |
 | --- | --- | --- | --- |
 | LC-01 | Done | Add user-facing disclaimer page. | `/disclaimer` exists and verification passes. |
-| LC-02 | Open | Add terms for known paid customer pilot use. | Terms cover permitted use, customer responsibility, public-record boundaries, and account control. |
-| LC-03 | Open | Add privacy/data-handling statement. | Statement covers uploaded sources, receipts, traces, exports, retention, and deletion requests. |
-| LC-04 | Open | Add acceptable-use boundaries. | Product disallows harassment, doxxing, private-data fishing, unsupported allegations, and unlawful use. |
+| LC-02 | Complete | Add terms for known paid customer pilot use. | `/terms` covers permitted use, customer responsibility, public-record boundaries, and account control. |
+| LC-03 | Complete | Add privacy/data-handling statement. | `/privacy` covers uploaded sources, receipts, traces, exports, retention, and deletion requests. |
+| LC-04 | Complete | Add acceptable-use boundaries. | `/acceptable-use` disallows harassment, doxxing, private-data fishing, unsupported allegations, and unlawful use. |
 | LC-05 | Open | Add pre-publication review queue for sensitive exported findings. | Sensitive exported findings require reviewer and customer approval. |
 | LC-06 | Open | Add public-records-request wording that avoids legal advice. | Templates are operational, not legal advice. |
 
@@ -170,7 +170,7 @@ The smallest credible known-customer pilot gate is:
 
 1. ID-01 through ID-08 complete.
 2. PL-01 cleared or formally waived by owner.
-3. PL-02 cleared or PL-03 formally waived by owner.
+3. PL-02 commit-triggered deployment verified or PL-03 formally waived by owner.
 4. BR-02 remains passing on deployed production.
 5. RV-05 and RV-07 complete.
 6. DP-03 and DP-04 complete for backup/restore confidence.
