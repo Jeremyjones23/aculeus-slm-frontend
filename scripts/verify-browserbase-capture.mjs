@@ -1,5 +1,6 @@
 import {
   browserCaptureLedgerEntry,
+  capturePublicPageWithBrowserbaseFetch,
   capturePublicPageWithBrowserbase,
   createBrowserbaseSession
 } from "../lib/aculeus-browserbase-capture.js";
@@ -55,6 +56,23 @@ if (ledgerEntry.evidence_promotion_allowed !== false || ledgerEntry.finding_prom
 
 const missingKey = await capturePublicPageWithBrowserbase({ url: "https://example.com", candidate_id: "missing_key" }, { apiKey: "" });
 if (missingKey.status !== "needs_browser" || missingKey.evidence_promotion_allowed !== false) failures.push("missing Browserbase key fallback invalid");
+
+const fetchCapture = await capturePublicPageWithBrowserbaseFetch({
+  candidate_id: "candidate_fetch_verify",
+  url: "https://example.com/fetch",
+  title: "Fetch capture"
+}, {
+  apiKey: "bb_test_secret",
+  projectId: "project_verify",
+  fetchFn: async () => new Response(JSON.stringify({
+    id: "bb_fetch_verify",
+    statusCode: 200,
+    contentType: "text/html",
+    content: "<html><body>Browserbase hosted fetch receipt text.</body></html>"
+  }), { status: 200, headers: { "content-type": "application/json" } })
+});
+if (fetchCapture.status !== "captured" || fetchCapture.provider !== "Browserbase Fetch") failures.push("Browserbase fetch fallback did not capture");
+if (!fetchCapture.receipt_hash || fetchCapture.evidence_promotion_allowed !== false) failures.push("Browserbase fetch fallback escaped receipt gate");
 
 if (failures.length) {
   console.error(`Browserbase capture verification failed:\n${failures.join("\n")}`);
