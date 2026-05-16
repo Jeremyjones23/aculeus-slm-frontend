@@ -1,7 +1,7 @@
 import { AculeusAdminTraceWorkbench } from "@/components/aculeus-admin-trace-workbench.jsx";
 import { buildAdminRunSummary, buildTrainingExportDataset, buildTrainingTraceReviewQueue } from "@/lib/aculeus-admin-console.js";
 import { canReviewEvidence, getVerifiedRequestUser } from "@/lib/access-control.js";
-import { readLocalStore } from "@/lib/aculeus-product-store.js";
+import { getProductRepository } from "@/lib/aculeus-product-store.js";
 import { headers } from "next/headers";
 
 export const metadata = {
@@ -21,7 +21,7 @@ export default async function AdminPage() {
       </main>
     );
   }
-  const store = readLocalStore();
+  const store = await getProductRepository().readStore();
   const summary = buildAdminRunSummary(store);
   const traceQueue = buildTrainingTraceReviewQueue(store, { limit: 40 });
   const exportSummary = buildTrainingExportDataset(store, { format: "sft", limit: 500 });
