@@ -23,7 +23,8 @@ npm run test:backup-restore
 - `DATABASE_URL`
 - `BLOB_READ_WRITE_TOKEN`
 - `ACULEUS_MODEL_ID`
-- `AI_GATEWAY_API_KEY` and `ACULEUS_SALIENCE_MODEL_ID` / `ACULEUS_RENDER_MODEL_ID` / `ACULEUS_VERIFY_MODEL_ID` (salience/media layer; set the verifier model different from the renderer)
+- Provider API keys for the model ids you use — `DEEPSEEK_API_KEY` / `XAI_API_KEY` / `OPENAI_API_KEY` (calls go direct to each provider; no gateway)
+- `ACULEUS_SALIENCE_MODEL_ID` / `ACULEUS_RENDER_MODEL_ID` / `ACULEUS_VERIFY_MODEL_ID` (salience/media layer; prefixed direct model ids, verifier different from the renderer)
 
 ## Schema Migration
 
