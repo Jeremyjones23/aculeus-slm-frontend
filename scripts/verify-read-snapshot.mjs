@@ -25,6 +25,11 @@ if (isEligibleForMedia(read).eligible !== true) throw new Error("eligible Read w
 if (isEligibleForMedia({ evidence_records: [] }).reason !== "no_promoted_evidence") throw new Error("empty Read not rejected");
 const noCounter = { evidence_records: [{ evidence_record_id: "e1", claim: "x", support_level: "supported", receipt: {} }] };
 if (isEligibleForMedia(noCounter).reason !== "counter_case_required") throw new Error("Read without counter-case not rejected");
+// A bare/empty counter_case flag must not satisfy eligibility without an actual qualifier record.
+const flagOnly = { counter_case: true, evidence_records: [{ evidence_record_id: "e1", claim: "x", support_level: "supported", receipt: {} }] };
+if (isEligibleForMedia(flagOnly).reason !== "counter_case_required") throw new Error("truthy counter_case flag bypassed eligibility");
+const emptyFlag = { counter_case: [], evidence_records: noCounter.evidence_records };
+if (isEligibleForMedia(emptyFlag).reason !== "counter_case_required") throw new Error("empty counter_case value bypassed eligibility");
 
 // Atomization
 const atoms = atomizeRead(read);

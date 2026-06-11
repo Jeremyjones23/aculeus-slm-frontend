@@ -26,6 +26,11 @@ if (!/counter-case/i.test(describeMediaRunBlocker(noCounter.reason))) throw new 
 // With an explicit counter-case -> eligible request with default profiles/formats.
 const withCounter = buildMediaRunRequestFromBrief({ ...baseBrief, counterCase: { body: "The auditor found no violation." } });
 if (!withCounter.ok) throw new Error(`brief with counter-case should be eligible, got ${withCounter.reason}`);
+// source_run_id references runs(id): it must carry the real runId and never fall back to the case id.
+if (withCounter.body.read.source_run_id !== "run_la") throw new Error("source_run_id did not carry the brief runId");
+const noRunId = buildMediaRunRequestFromBrief({ ...baseBrief, runId: undefined, counterCase: { body: "The auditor found no violation." } });
+if (noRunId.body.read.source_run_id === baseBrief.caseId) throw new Error("source_run_id fell back to the case id");
+if (noRunId.body.read.source_run_id !== "") throw new Error("source_run_id should be empty when no runId is present");
 const evid = withCounter.body.read.evidence_records;
 if (!evid.some((e) => e.role === "counter_case")) throw new Error("counter-case evidence record not added");
 if (!evid.some((e) => e.evidence_record_id === "s1" && /USAspending/.test(e.receipt.publisher))) throw new Error("support claim did not map to its receipt");
