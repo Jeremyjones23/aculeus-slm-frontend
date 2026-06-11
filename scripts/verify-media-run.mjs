@@ -40,6 +40,10 @@ try {
   if (otherRun.content_hash !== snapshot.content_hash) throw new Error("content_hash should ignore run identity");
   if (otherRun.snapshot_id === snapshot.snapshot_id) throw new Error("snapshot_id must be run-scoped so distinct runs do not collide");
 
+  // Media run ids are unique even across same-instant creates.
+  const second = await startMediaRun({ snapshot, profiles, formats });
+  if (second.media_run.media_run_id === result.media_run.media_run_id) throw new Error("media_run_id collided across runs");
+
   // Ineligible Read is refused.
   const ineligible = await startMediaRun({ snapshot: { ...snapshot, eligible: false, eligibility_reason: "counter_case_required" }, profiles, formats });
   if (ineligible.ok !== false || !/read_ineligible/.test(ineligible.reason)) throw new Error("ineligible Read was not refused");

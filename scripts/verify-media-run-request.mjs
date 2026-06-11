@@ -22,6 +22,7 @@ const baseBrief = {
 const noCounter = buildMediaRunRequestFromBrief(baseBrief);
 if (noCounter.ok !== false || noCounter.reason !== "counter_case_required") throw new Error("brief without counter-case should be ineligible");
 if (!/counter-case/i.test(describeMediaRunBlocker(noCounter.reason))) throw new Error("blocker message missing");
+if (!/run/i.test(describeMediaRunBlocker("source_run_required"))) throw new Error("source_run_required blocker text missing");
 
 // With an explicit counter-case -> eligible request with default profiles/formats.
 const withCounter = buildMediaRunRequestFromBrief({ ...baseBrief, counterCase: { body: "The auditor found no violation." } });
