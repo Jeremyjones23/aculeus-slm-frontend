@@ -50,6 +50,11 @@ if (clean.gestalt_checked !== false) throw new Error("gestalt should not run wit
 if (clean.substance_lock_passed !== false || clean.publish_ready !== false) throw new Error("structural-only must not be publish-ready");
 if (clean.cross_model !== true) throw new Error("verifier must differ from renderer");
 
+// Verifier on the SAME model as the renderer can never certify a publish (cross-model rule).
+const sameModel = await runSubstanceLock({ render: cleanRender, snapshot, atoms, verifyModelId: "openai/gpt-4o", renderModelId: "openai/gpt-4o" });
+if (sameModel.cross_model !== false) throw new Error("same render/verify model should not be cross_model");
+if (sameModel.substance_lock_passed !== false || sameModel.publish_ready !== false) throw new Error("same-model verifier must not pass the substance lock");
+
 // Injected unsupported claim → BLOCKED (Tier 1 unbound_claim).
 const tampered = await runSubstanceLock({
   render: { ...cleanRender, naked_assertions: ["the grantee committed fraud"] },
