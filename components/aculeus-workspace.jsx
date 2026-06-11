@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useReducer } from "react";
+import { useCallback, useMemo, useReducer, useState } from "react";
 import {
   AccessRequestDialog,
   CitationOverlay,
@@ -13,6 +13,7 @@ import {
   WorkGrid
 } from "./aculeus-workspace-sections.jsx";
 import { createInitialState, workspaceReducer } from "./aculeus-workspace-state.js";
+import { buildMediaRunRequestFromBrief, describeMediaRunBlocker } from "../lib/aculeus-media-run-request.js";
 
 const defaultLead = "Open the intermediary network: public money, fiscal agents, sub-grants, source gaps, and the records needed to prove what moved where.";
 
@@ -20,6 +21,42 @@ export function AculeusWorkspace({ recentCases, initialBrief, checkpoints }) {
   const [state, dispatch] = useReducer(workspaceReducer, initialBrief, createInitialState);
   const activeBrief = state.brief;
   const sourceMap = useMemo(() => new Map((activeBrief?.citations || []).map((item) => [item.citationId, item])), [activeBrief]);
+
+  // Turn an approved Read into a media run. Eligibility (needs a counter-case) is honest;
+  // the server re-validates via buildReadSnapshot.
+  const mediaRequest = useMemo(
+    () => buildMediaRunRequestFromBrief(activeBrief || {}, { runId: state.activeRun?.runId }),
+    [activeBrief, state.activeRun?.runId]
+  );
+  const [mediaBusy, setMediaBusy] = useState(false);
+  const [mediaError, setMediaError] = useState(null);
+
+  const createMediaRun = useCallback(async () => {
+    if (!mediaRequest.ok || mediaBusy) return;
+    setMediaBusy(true);
+    setMediaError(null);
+    try {
+      const response = await fetch("/api/media-runs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(mediaRequest.body)
+      });
+      const payload = await response.json();
+      if (payload.ok && payload.persisted === false) {
+        // The render succeeded but could not be saved durably, so the review page would load
+        // nothing on redirect — surface it instead of navigating to an empty run.
+        setMediaError("media_run_not_persisted");
+      } else if (payload.ok && payload.media_run?.media_run_id) {
+        window.location.assign(`/media-review?id=${payload.media_run.media_run_id}`);
+      } else {
+        setMediaError(payload.reason || "media_run_failed");
+      }
+    } catch (error) {
+      setMediaError(error.message);
+    } finally {
+      setMediaBusy(false);
+    }
+  }, [mediaBusy, mediaRequest]);
 
   const refreshCaseBoard = useCallback(async (runId = state.activeRun?.runId) => {
     if (!runId) return null;
@@ -221,6 +258,26 @@ export function AculeusWorkspace({ recentCases, initialBrief, checkpoints }) {
         onOpenCitation={openCitation}
         onQuestionChange={changeQuestion}
       />
+      <section className="media-trigger" style={{ display: "flex", alignItems: "center", gap: "14px", flexWrap: "wrap", padding: "14px 0" }}>
+        <button
+          type="button"
+          className="media-trigger__cta"
+          onClick={createMediaRun}
+          disabled={!mediaRequest.ok || mediaBusy}
+        >
+          {mediaBusy ? "Creating media run…" : "Create media run from this Read"}
+        </button>
+        {!mediaRequest.ok ? (
+          <span className="media-trigger__hint" style={{ fontFamily: "monospace", fontSize: "12px", color: "#94a3b8" }}>
+            {describeMediaRunBlocker(mediaRequest.reason)}
+          </span>
+        ) : null}
+        {mediaError ? (
+          <span className="media-trigger__error" style={{ fontFamily: "monospace", fontSize: "12px", color: "#ff3b30" }}>
+            {mediaError}
+          </span>
+        ) : null}
+      </section>
       <RunFeedbackPanel
         activeRun={state.activeRun}
         feedbackBusy={state.feedbackBusy}

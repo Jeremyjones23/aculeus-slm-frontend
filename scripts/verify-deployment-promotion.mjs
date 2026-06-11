@@ -10,7 +10,7 @@ const completeEnv = {
   CLERK_SECRET_KEY: "sk_fixture_secret",
   DATABASE_URL: "postgres://fixture",
   BLOB_READ_WRITE_TOKEN: "blob_fixture_secret",
-  ACULEUS_MODEL_ID: "openai/gpt-oss-20b",
+  ACULEUS_MODEL_ID: "deepseek/deepseek-chat",
   EXA_API_KEY: "exa_fixture_secret",
   PARALLEL_API_KEY: "parallel_fixture_secret",
   DATA_GOV_API_KEY: "datagov_fixture_secret",

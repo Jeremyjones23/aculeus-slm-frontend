@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aculeus — Salience Layer · Implementation Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-bg:#0b1220; --panel:#101a2e; --panel2:#0d1526; --hairline:#1e293b;
+  --slate:#334155; --graphite:#475569; --fog:#94a3b8; --ash:#cbd5e1;
+  --paper:#f5f7fa; --bone:#ffffff; --blue:#2563ff; --cyan:#00c7d9;
+  --amber:#ffb020; --red:#ff3b30; --green:#22c55e;
+  --sans:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',Consolas,Menlo,monospace;
+  --serif:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink-bg);
+  background-image:radial-gradient(rgba(148,163,184,.05) 1px, transparent 1px);
+  background-size:26px 26px;
+  color:var(--bone);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  font-size:14px;
+  line-height:1.55;
+}
+.wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+
+/* ---------- fixed progress rail ---------- */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;
+  background:linear-gradient(90deg,var(--blue),var(--cyan));z-index:50}
+
+/* ---------- section chrome ---------- */
+section{padding:78px 0 86px;border-bottom:1px solid var(--hairline)}
+section:first-of-type{padding-top:64px}
+.kicker{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
+  font-family:var(--mono);font-size:10.5px;text-transform:uppercase;margin-bottom:30px}
+.kicker .kl{color:var(--blue);letter-spacing:.25em}
+.kicker .kr{color:var(--graphite);letter-spacing:.2em;text-align:right;flex:none}
+h2{font-weight:700;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.01em;line-height:1.12;max-width:880px}
+h2 em,h1 em{font-family:var(--serif);font-style:italic;font-weight:600}
+.lede{font-family:var(--serif);font-style:italic;color:var(--fog);font-size:16px;
+  margin-top:14px;max-width:780px;line-height:1.55}
+.microlabel{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--fog)}
+.microlabel::before{content:"■ ";font-size:7px;vertical-align:2px;color:var(--blue)}
+.microlabel.cy::before{color:var(--cyan)}
+.microlabel.am::before{color:var(--amber)}
+.microlabel.gn::before{color:var(--green)}
+.microlabel.rd::before{color:var(--red)}
+.microlabel.gr::before{color:var(--graphite)}
+
+/* ---------- pull quote ---------- */
+.pull{font-family:var(--serif);font-style:italic;font-weight:600;
+  font-size:clamp(20px,2.3vw,27px);line-height:1.45;color:var(--paper);
+  max-width:900px;padding-left:26px;border-left:2px solid var(--blue);margin:8px 0 0}
+
+/* ---------- cover ---------- */
+#s00{padding-top:72px}
+h1{font-weight:700;font-size:clamp(34px,4.6vw,54px);letter-spacing:-.015em;line-height:1.06;max-width:980px}
+.cover-sub{font-family:var(--serif);font-style:italic;color:var(--fog);font-size:18px;
+  margin-top:22px;max-width:820px;line-height:1.6}
+.cover-note{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ash);margin-top:34px;padding:13px 18px;border:1px solid var(--hairline);
+  background:var(--panel2);display:inline-block;border-radius:2px}
+.cover-note b{font-weight:500}
+.cover-note .nb{color:var(--blue)} .cover-note .nc{color:var(--cyan)}
+.index{margin-top:48px;border:1px solid var(--hairline);background:var(--panel2);border-radius:2px}
+.index-head{padding:12px 18px;border-bottom:1px solid var(--hairline)}
+.index-grid{display:grid;grid-template-columns:repeat(5,1fr)}
+.index-grid a{display:block;padding:13px 18px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--fog);text-decoration:none;
+  border-right:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+  transition:color .2s,background .2s}
+.index-grid a:nth-child(5n){border-right:0}
+.index-grid a:nth-child(n+6){border-bottom:0}
+.index-grid a b{display:block;color:var(--graphite);font-weight:500;font-size:9px;
+  letter-spacing:.25em;margin-bottom:4px}
+.index-grid a:hover{color:var(--bone);background:rgba(37,99,255,.06)}
+
+/* ---------- backward chain ---------- */
+.chain{margin-top:40px;display:flex;flex-direction:column;gap:0;max-width:860px}
+.chain-stop{display:flex;align-items:stretch;border:1px solid var(--hairline);
+  background:var(--panel2);border-radius:2px;position:relative}
+.chain-stop .cs-rail{flex:none;width:104px;border-right:1px solid var(--hairline);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--graphite)}
+.chain-stop .cs-body{flex:1;padding:14px 20px}
+.chain-stop .cs-name{font-weight:600;font-size:14px;color:var(--paper)}
+.chain-stop .cs-sub{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--fog);margin-top:3px}
+.chain-stop.end{border-color:var(--cyan)}
+.chain-stop.end .cs-rail{color:var(--cyan);border-right-color:var(--cyan)}
+.chain-stop.trigger{border-color:var(--blue)}
+.chain-stop.trigger .cs-rail{color:var(--blue);border-right-color:var(--blue)}
+.chain-arrow{display:flex;align-items:center;gap:12px;padding:7px 0 7px 36px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--graphite)}
+.chain-arrow::before{content:"▲";font-size:9px;color:var(--slate)}
+.gatechip{margin-top:34px;display:inline-flex;align-items:baseline;gap:14px;
+  border:1px solid var(--amber);background:rgba(255,176,32,.05);border-radius:2px;
+  padding:13px 18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ash);max-width:860px}
+.gatechip b{color:var(--amber);letter-spacing:.25em;font-weight:600;flex:none}
+
+/* ---------- pass cards ---------- */
+.passes{margin-top:42px;display:flex;flex-direction:column;gap:12px}
+.pass{display:flex;align-items:stretch;border:1px solid var(--hairline);
+  background:var(--panel2);border-radius:2px}
+.pass .p-num{flex:none;width:88px;border-right:1px solid var(--hairline);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-weight:500;font-size:30px;color:var(--slate)}
+.pass .p-body{flex:1;padding:16px 22px 15px;min-width:0}
+.pass .p-toprow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pass .p-name{font-weight:700;font-size:14.5px;letter-spacing:.02em;color:var(--paper)}
+.badge{font-family:var(--mono);font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:500;padding:4px 9px 3px;border-radius:2px;border:1px solid;line-height:1.4}
+.badge.det{color:var(--ash);border-color:var(--graphite);background:rgba(71,85,105,.18)}
+.badge.sal{color:#9db8ff;border-color:var(--blue);background:rgba(37,99,255,.12)}
+.badge.ren{color:#7fe7f0;border-color:var(--cyan);background:rgba(0,199,217,.10)}
+.badge.ver{color:#ffd07a;border-color:var(--amber);background:rgba(255,176,32,.10)}
+.badge.hum{color:#8fe6ad;border-color:var(--green);background:rgba(34,197,94,.10)}
+.pass .p-io{font-family:var(--mono);font-size:11px;color:var(--fog);margin-top:10px;line-height:1.6}
+.pass .p-io b{color:var(--ash);font-weight:500}
+.pass .p-io .arr{color:var(--cyan);padding:0 6px}
+.pass .p-gate{margin-top:9px;font-size:12.5px;color:var(--ash);line-height:1.55;
+  padding-top:9px;border-top:1px dashed var(--hairline)}
+.pass .p-gate b{font-family:var(--mono);font-size:9px;letter-spacing:.25em;
+  text-transform:uppercase;font-weight:600;margin-right:10px}
+.pass .p-gate b.g{color:var(--amber)} .pass .p-gate b.gg{color:var(--graphite)}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+
+/* ---------- substance lock ---------- */
+.bigstate{font-weight:700;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.01em;
+  line-height:1.25;max-width:760px;margin-top:6px}
+.bigstate em{color:var(--amber)}
+.prose{max-width:760px;color:var(--ash);font-size:14px;margin-top:18px;line-height:1.65}
+.prose b{color:var(--paper);font-weight:600}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
+.tier{border:1px solid var(--hairline);background:var(--panel2);border-radius:2px;padding:20px 22px}
+.tier .t-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding-bottom:14px;border-bottom:1px solid var(--hairline);margin-bottom:16px}
+.tier .t-scope{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--graphite);text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--ash);
+  padding:7px 11px;border-radius:2px;border:1px solid var(--graphite);background:var(--panel)}
+.chip.block{border-color:rgba(255,59,48,.65);color:#ffb3ae;background:rgba(255,59,48,.05)}
+.chip.block-am{border-color:rgba(255,176,32,.65);color:#ffd07a;background:rgba(255,176,32,.05)}
+.chip small{display:block;font-size:9px;color:var(--fog);letter-spacing:.02em;margin-top:2px;text-transform:none}
+.flow{margin-top:36px;border:1px solid var(--hairline);background:var(--panel2);border-radius:2px;padding:20px 22px}
+.flow-steps{display:flex;align-items:center;gap:0;flex-wrap:wrap;margin-top:14px}
+.flow-step{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ash);
+  border:1px solid var(--hairline);background:var(--panel);padding:9px 13px;border-radius:2px;text-transform:uppercase}
+.flow-step.hot{border-color:var(--red);color:#ffb3ae}
+.flow-step.hum{border-color:var(--green);color:#8fe6ad}
+.flow-sep{font-family:var(--mono);color:var(--graphite);padding:0 10px;font-size:11px}
+.flow-note{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fog);margin-top:16px;padding-top:13px;border-top:1px dashed var(--hairline)}
+.flow-note b{color:var(--amber);font-weight:500}
+
+/* ---------- precedence ---------- */
+.prec{margin-top:42px;display:flex;flex-direction:column;gap:9px;max-width:980px}
+.prec-row{display:flex;align-items:center;gap:0}
+.prec-bar{display:flex;align-items:baseline;gap:16px;border:1px solid var(--hairline);
+  background:var(--panel2);border-left:3px solid var(--bc,var(--graphite));
+  border-radius:2px;padding:13px 20px;min-width:0}
+.prec-num{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--bc,var(--graphite));flex:none}
+.prec-name{font-weight:700;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--paper);flex:none}
+.prec-desc{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--fog);min-width:0}
+.prec-gt{font-family:var(--mono);color:var(--graphite);font-size:10px;letter-spacing:.3em;
+  text-transform:uppercase;padding:1px 0 1px 34px}
+
+/* ---------- worked example ---------- */
+.illu{font-family:var(--mono);font-size:8.5px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--amber);border:1px solid rgba(255,176,32,.55);background:rgba(255,176,32,.06);
+  padding:3px 8px 2px;border-radius:2px;font-weight:500}
+.finding{margin-top:36px;border:1px solid var(--hairline);background:var(--panel2);
+  border-radius:2px;padding:22px 26px;max-width:980px}
+.finding .f-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.finding .f-quote{font-family:var(--serif);font-style:italic;font-weight:600;font-size:19px;
+  line-height:1.5;color:var(--paper)}
+.finding .f-src{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fog);margin-top:14px;padding-top:12px;border-top:1px dashed var(--hairline)}
+.finding .f-src b{color:var(--graphite);font-weight:500;margin-right:10px}
+.atoms{margin-top:16px;display:flex;flex-direction:column;gap:10px;max-width:980px}
+.atom{display:flex;align-items:stretch;border:1px solid var(--hairline);background:var(--panel2);border-radius:2px}
+.atom .a-id{flex:none;width:64px;border-right:1px solid var(--hairline);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:6px;font-family:var(--mono);font-weight:600;
+  font-size:15px;color:var(--cyan)}
+.atom .a-body{flex:1;padding:14px 20px}
+.atom .a-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;
+  padding:3px 8px 2px;border-radius:2px;border:1px solid var(--graphite);color:var(--fog)}
+.tag.strong{border-color:var(--blue);color:#9db8ff}
+.tag.req{border-color:var(--amber);color:#ffd07a}
+.atom .a-claim{font-size:14px;color:var(--paper);line-height:1.55}
+.atom .a-cite{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--fog);margin-top:7px}
+.atom .a-cite b{font-family:var(--mono);font-style:normal;font-size:8.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--graphite);font-weight:500;margin-right:10px}
+.maps{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;max-width:980px}
+.map{border:1px solid var(--hairline);background:var(--panel2);border-radius:2px;padding:20px 22px}
+.map .m-name{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper)}
+.map dl{margin-top:14px;display:grid;grid-template-columns:96px 1fr;row-gap:8px;column-gap:14px}
+.map dt{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--graphite);padding-top:2px}
+.map dd{font-size:13px;color:var(--ash)}
+.map dd em{font-family:var(--serif);font-style:italic;color:var(--paper)}
+.map dd .bt{font-family:var(--mono);font-size:11px;color:var(--cyan)}
+.map .m-must{margin-top:13px;padding-top:11px;border-top:1px dashed var(--hairline);
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#ffd07a}
+.renders{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;max-width:980px}
+.rcard{border:1px solid var(--hairline);background:var(--panel2);border-radius:2px;
+  padding:20px 22px;display:flex;flex-direction:column}
+.rcard .r-fmt{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding-bottom:13px;border-bottom:1px solid var(--hairline);margin-bottom:14px}
+.rcard .r-aud{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--graphite);text-align:right}
+.rcard .r-head{font-family:var(--serif);font-style:italic;font-weight:600;font-size:16.5px;color:var(--paper);line-height:1.4}
+.rcard .r-body{font-size:13px;color:var(--ash);line-height:1.7;margin-top:9px}
+.bt{font-family:var(--mono);font-size:10px;color:var(--cyan);letter-spacing:.02em;white-space:nowrap}
+.same-line{margin-top:34px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--paper);border:1px solid var(--hairline);
+  background:var(--panel2);border-left:3px solid var(--cyan);border-radius:2px;
+  padding:16px 22px;max-width:980px;line-height:2}
+.same-line .bt{font-size:10px}
+.same-line i{color:var(--cyan);font-style:normal}
+
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;margin-top:36px;background:var(--panel2);
+  border:1px solid var(--hairline)}
+th{font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--graphite);text-align:left;font-weight:500;padding:13px 16px;
+  border-bottom:1px solid var(--hairline);background:var(--panel)}
+td{padding:14px 16px;border-bottom:1px solid var(--hairline);vertical-align:top;
+  font-size:12.5px;color:var(--ash);line-height:1.55}
+tr:last-child td{border-bottom:0}
+td.mid{font-family:var(--mono);font-weight:600;font-size:12px;color:var(--paper);white-space:nowrap}
+td .mono{font-family:var(--mono);font-size:11px;color:var(--fog)}
+td .gate{color:var(--paper)}
+td.pp{font-family:var(--mono);font-size:11px;color:var(--fog);white-space:nowrap}
+
+/* ---------- contracts & schema ---------- */
+.contract-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.cchip{font-family:var(--mono);font-size:12px;font-weight:500;color:#7fe7f0;
+  border:1px solid rgba(0,199,217,.5);background:rgba(0,199,217,.06);
+  padding:9px 14px;border-radius:2px}
+.schema{margin-top:20px;border:1px solid var(--hairline);background:var(--panel2);border-radius:2px}
+.schema-row{display:flex;align-items:baseline;gap:22px;padding:12px 20px;border-bottom:1px solid var(--hairline)}
+.schema-row:last-child{border-bottom:0}
+.schema-row .tname{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--paper);
+  flex:none;width:230px}
+.schema-row .trole{font-size:12.5px;color:var(--fog)}
+.schema-row .trole b{color:#ffd07a;font-weight:600}
+.ddl{margin-top:22px;display:inline-block;font-family:var(--mono);font-size:11px;
+  color:var(--ash);border:1px solid var(--hairline);background:var(--panel);
+  padding:10px 16px;border-radius:2px;letter-spacing:.02em}
+.ddl b{color:var(--cyan);font-weight:500}
+
+/* ---------- risk chip ---------- */
+.risk{margin-top:28px;display:flex;gap:16px;align-items:baseline;border:1px solid rgba(255,176,32,.55);
+  background:rgba(255,176,32,.05);border-radius:2px;padding:16px 20px;max-width:980px}
+.risk b{font-family:var(--mono);font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--amber);flex:none;font-weight:600}
+.risk span{font-size:13px;color:var(--ash);line-height:1.6}
+
+/* ---------- defensibility ---------- */
+.defense{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+.dcol{border:1px solid var(--hairline);background:var(--panel2);border-radius:2px;padding:22px 24px}
+.dcol.not{border-top:2px solid var(--red)} .dcol.is{border-top:2px solid var(--green)}
+.dcol ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:13px}
+.dcol li{display:flex;gap:13px;align-items:baseline;font-size:13.5px;color:var(--ash);line-height:1.55}
+.dcol li b{font-family:var(--mono);flex:none;font-weight:500;font-size:12px}
+.dcol.not li b{color:var(--red)} .dcol.is li b{color:var(--green)}
+.closer{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(19px,2.1vw,24px);
+  color:var(--paper);margin-top:48px;text-align:center}
+.closer i{color:var(--cyan)}
+
+/* ---------- foot ---------- */
+footer{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
+  padding:26px 0 40px;font-family:var(--mono);font-size:10px;text-transform:uppercase}
+footer .fl{color:var(--fog);letter-spacing:.22em}
+footer .fr{color:var(--graphite);letter-spacing:.2em;text-align:right}
+footer .fl b{color:var(--blue);font-weight:500}
+
+/* ---------- print ---------- */
+@media print{
+  body{background:var(--ink-bg);-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:12px}
+  #progress{display:none}
+  section{page-break-inside:avoid;break-inside:avoid;padding:46px 0 52px}
+  .pass,.atom,.rcard,.tier,.map,.chain-stop,tr{page-break-inside:avoid;break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+  .wrap{padding:0 24px;max-width:none}
+}
+@media (max-width:880px){
+  .tiers,.maps,.renders,.defense,.index-grid{grid-template-columns:1fr}
+  .index-grid a{border-right:0;border-bottom:1px solid var(--hairline)}
+  .index-grid a:last-child{border-bottom:0}
+  .wrap{padding:0 22px}
+  .map dl{grid-template-columns:84px 1fr}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="wrap">
+
+<!-- ============================ 00 · COVER ============================ -->
+<section id="s00">
+  <div class="kicker">
+    <span class="kl">■ ACULEUS — SALIENCE LAYER · IMPLEMENTATION PLAN</span>
+    <span class="kr">ENGINEER HANDOFF · WORK BACKWARDS</span>
+  </div>
+  <h1>From a finished <em style="color:var(--blue)">Read</em> to media that <em style="color:var(--cyan)">lands</em>.</h1>
+  <p class="cover-sub">Same receipts. Every demographic. Plain language, AP-style citations, and salience-coded framing — in one piece, with the record locked.</p>
+  <div class="cover-note"><b><span class="nb">BLUE</span> binds claims to receipts. <span class="nc">CYAN</span> binds renders to claims. The substance never moves.</b></div>
+
+  <div class="index">
+    <div class="index-head microlabel gr">SECTION INDEX</div>
+    <div class="index-grid">
+      <a href="#s01"><b>01</b>Reason from the end</a>
+      <a href="#s02"><b>02</b>The runtime — eight passes</a>
+      <a href="#s03"><b>03</b>The hard gate — substance-lock</a>
+      <a href="#s04"><b>04</b>Constraint precedence</a>
+      <a href="#s05"><b>05</b>Worked micro-example</a>
+      <a href="#s06"><b>06</b>The build — eight milestones</a>
+      <a href="#s07"><b>07</b>Data contracts &amp; schema</a>
+      <a href="#s08"><b>08</b>Model binding</a>
+      <a href="#s09"><b>09</b>Defensibility</a>
+      <a href="#s00"><b>00</b>Cover</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 01 · REASON FROM THE END ===================== -->
+<section id="s01">
+  <div class="kicker">
+    <span class="kl">■ 01 · REASON FROM THE END</span>
+    <span class="kr">ACULEUS — SALIENCE LAYER</span>
+  </div>
+  <h2>Define the finish line. <em style="color:var(--blue)">Then build toward it.</em></h2>
+  <p class="pull" style="margin-top:34px">&ldquo;If a Read is finished, the salience layer writes media for each demographic — plain-language, AP-cited, salience-coded — and the substance never moves.&rdquo;</p>
+
+  <div class="microlabel" style="margin-top:48px">BACKWARD CHAIN · READ TOP-DOWN — EACH STOP REQUIRES THE ONE BELOW IT</div>
+  <div class="chain">
+    <div class="chain-stop end">
+      <div class="cs-rail">END</div>
+      <div class="cs-body">
+        <div class="cs-name">Published media set</div>
+        <div class="cs-sub">PER DEMOGRAPHIC: PLAIN-LANGUAGE + AP-CITED + SALIENCE-CODED</div>
+      </div>
+    </div>
+    <div class="chain-arrow">REQUIRES</div>
+    <div class="chain-stop">
+      <div class="cs-rail">−1</div>
+      <div class="cs-body">
+        <div class="cs-name">Deliver &amp; package</div>
+        <div class="cs-sub">RECEIPTS APPENDIX</div>
+      </div>
+    </div>
+    <div class="chain-arrow">REQUIRES</div>
+    <div class="chain-stop">
+      <div class="cs-rail">−2</div>
+      <div class="cs-body">
+        <div class="cs-name">Render review</div>
+        <div class="cs-sub">REVIEWER + CUSTOMER</div>
+      </div>
+    </div>
+    <div class="chain-arrow">REQUIRES</div>
+    <div class="chain-stop" style="border-color:rgba(255,176,32,.6)">
+      <div class="cs-rail" style="color:var(--amber);border-right-color:rgba(255,176,32,.6)">−3</div>
+      <div class="cs-body">
+        <div class="cs-name">Substance-lock verify</div>
+        <div class="cs-sub" style="color:#ffd07a">HARD GATE</div>
+      </div>
+    </div>
+    <div class="chain-arrow">REQUIRES</div>
+    <div class="chain-stop">
+      <div class="cs-rail">−4</div>
+      <div class="cs-body">
+        <div class="cs-name">Render passes</div>
+        <div class="cs-sub">DRAFT → BIND → CODE</div>
+      </div>
+    </div>
+    <div class="chain-arrow">REQUIRES</div>
+    <div class="chain-stop">
+      <div class="cs-rail">−5</div>
+      <div class="cs-body">
+        <div class="cs-name">Salience map</div>
+        <div class="cs-sub">PER DEMOGRAPHIC</div>
+      </div>
+    </div>
+    <div class="chain-arrow">REQUIRES</div>
+    <div class="chain-stop">
+      <div class="cs-rail">−6</div>
+      <div class="cs-body">
+        <div class="cs-name">Read freeze</div>
+        <div class="cs-sub">IMMUTABLE SNAPSHOT</div>
+      </div>
+    </div>
+    <div class="chain-arrow">REQUIRES</div>
+    <div class="chain-stop trigger">
+      <div class="cs-rail">TRIGGER</div>
+      <div class="cs-body">
+        <div class="cs-name">Approved Read</div>
+        <div class="cs-sub">RECEIPT-BACKED · PROMOTED EVIDENCE · COUNTER-CASE INTACT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gatechip"><b>ELIGIBILITY GATE</b> Before anything: a Read too thin on evidence cannot enter a media run.</div>
+</section>
+
+<!-- ==================== 02 · THE RUNTIME — EIGHT PASSES ==================== -->
+<section id="s02">
+  <div class="kicker">
+    <span class="kl">■ 02 · THE RUNTIME — EIGHT PASSES</span>
+    <span class="kr">ACULEUS — SALIENCE LAYER</span>
+  </div>
+  <h2>The runtime — <em style="color:var(--blue)">eight passes</em>, one record.</h2>
+  <p class="lede">Eight passes carry an approved Read to delivered media. Each names a role bound through the Aculeus run adapter to a configurable model.</p>
+
+  <div class="legend">
+    <span class="badge det">DETERMINISTIC</span>
+    <span class="badge sal">SALIENCE-REASONER</span>
+    <span class="badge ren">RENDERER</span>
+    <span class="badge ver">VERIFIER</span>
+    <span class="badge hum">HUMAN</span>
+  </div>
+
+  <div class="passes">
+    <div class="pass">
+      <div class="p-num">0</div>
+      <div class="p-body">
+        <div class="p-toprow"><span class="p-name">READ FREEZE</span><span class="badge det">DETERMINISTIC</span></div>
+        <div class="p-io"><b>IN</b> approved Read (promoted evidence_records, citations, counter-case)<span class="arr">→</span><b>OUT</b> immutable read_snapshot (content-hashed, versioned)</div>
+        <div class="p-gate"><b class="g">GATE</b>Eligibility — thin Reads rejected; substance frozen here so it can never drift.</div>
+      </div>
+    </div>
+    <div class="pass">
+      <div class="p-num">1</div>
+      <div class="p-body">
+        <div class="p-toprow"><span class="p-name">CLAIM ATOMIZATION + AP-CITE PREP</span><span class="badge ren">RENDERER · LOW TEMP</span><span class="badge det">→ DETERMINISTIC</span></div>
+        <div class="p-io"><b>IN</b> snapshot<span class="arr">→</span><b>OUT</b> atomic claims, each bound to an evidence_record with a pre-built, immutable AP-style attribution string</div>
+        <div class="p-gate"><b class="gg">GUARDRAIL</b>No atom without an evidence record; counter-case + qualifiers tagged required_inclusion; thin atoms marked not lead-eligible.</div>
+      </div>
+    </div>
+    <div class="pass">
+      <div class="p-num">2</div>
+      <div class="p-body">
+        <div class="p-toprow"><span class="p-name">SALIENCE MAP</span><span class="badge sal">SALIENCE-REASONER · DEEPSEEK / GROK</span></div>
+        <div class="p-io"><b>IN</b> atoms + one temperament profile<span class="arr">→</span><b>OUT</b> selected/ordered atoms, frame, door-in, messenger, lexicon map, do-not-say list, required_inclusions</div>
+        <div class="p-gate"><b class="gg">GUARDRAIL</b>SELECTS &amp; FRAMES ONLY — cannot add facts; output validated as a subset of the atom set.</div>
+      </div>
+    </div>
+    <div class="pass">
+      <div class="p-num">3</div>
+      <div class="p-body">
+        <div class="p-toprow"><span class="p-name">RENDER DRAFT</span><span class="badge ren">RENDERER · GROK / OPENAI</span></div>
+        <div class="p-io"><b>IN</b> salience map + atoms + format spec (op-ed / social / newsletter / press-release)<span class="arr">→</span><b>OUT</b> a piece in plain language, salience-coded, with citation markers on every assertion; counter-case included</div>
+        <div class="p-gate"><b class="gg">GUARDRAIL</b>May only assert selected atoms; the model places markers — it never writes the attribution text.</div>
+      </div>
+    </div>
+    <div class="pass">
+      <div class="p-num">4</div>
+      <div class="p-body">
+        <div class="p-toprow"><span class="p-name">CITATION BINDING + AP RESOLUTION</span><span class="badge det">DETERMINISTIC</span><span class="badge ver">+ VERIFIER</span></div>
+        <div class="p-io"><b>IN</b> draft markers<span class="arr">→</span><b>OUT</b> render_claim_bindings; the deterministic binder injects the canonical AP citation verbatim and resolves it against the receipt's source identity; flags naked assertions</div>
+        <div class="p-gate"><b class="g">GATE</b>Every assertive sentence must bind.</div>
+      </div>
+    </div>
+    <div class="pass" style="border-color:rgba(255,176,32,.6)">
+      <div class="p-num" style="color:var(--amber);border-right-color:rgba(255,176,32,.6)">5</div>
+      <div class="p-body">
+        <div class="p-toprow"><span class="p-name">SUBSTANCE-LOCK VERIFIER</span><span class="badge ver">VERIFIER · DEEPSEEK / GROK</span></div>
+        <div class="p-io"><b>IN</b> draft vs snapshot<span class="arr">→</span><b>OUT</b> render_verifier_issues</div>
+        <div class="p-gate"><b class="g">HARD GATE</b>Detailed in section 03.</div>
+      </div>
+    </div>
+    <div class="pass">
+      <div class="p-num">6</div>
+      <div class="p-body">
+        <div class="p-toprow"><span class="p-name">RENDER REVIEW</span><span class="badge hum">HUMAN</span></div>
+        <div class="p-io"><b>IN</b> verified render<span class="arr">→</span><b>OUT</b> render_reviews</div>
+        <div class="p-gate"><b class="g">GATE</b>Reviewer + customer approval required; claims inspectable; cross-demographic diff shown.</div>
+      </div>
+    </div>
+    <div class="pass">
+      <div class="p-num">7</div>
+      <div class="p-body">
+        <div class="p-toprow"><span class="p-name">FORMAT &amp; DELIVER</span><span class="badge det">DETERMINISTIC</span></div>
+        <div class="p-io"><b>IN</b> approved render<span class="arr">→</span><b>OUT</b> delivery_package + receipts appendix</div>
+        <div class="p-gate"><b class="g">GATE</b>Receipts re-validated and capture-date stamped at publish.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 03 · THE HARD GATE — SUBSTANCE-LOCK =================== -->
+<section id="s03">
+  <div class="kicker">
+    <span class="kl">■ 03 · THE HARD GATE — SUBSTANCE-LOCK</span>
+    <span class="kr">ACULEUS — SALIENCE LAYER</span>
+  </div>
+  <h2 class="bigstate" style="font-size:clamp(24px,2.6vw,32px)">Sentence-level binding is necessary — <em>and not sufficient.</em></h2>
+  <p class="prose">Every sentence can bind to a true receipt and the whole piece can still mislead — by <b>selection</b>, by <b>omission</b>, or by <b>implication</b>. So the verifier runs <b>two tiers</b>: one against each claim, one against the gestalt of the piece measured against the Read's bottom line.</p>
+
+  <div class="tiers">
+    <div class="tier">
+      <div class="t-head">
+        <span class="microlabel rd">TIER 1 — PER-CLAIM · BLOCK</span>
+        <span class="t-scope">EVERY ASSERTIVE SENTENCE, INDIVIDUALLY</span>
+      </div>
+      <div class="chips">
+        <span class="chip block">unbound_claim</span>
+        <span class="chip block">new_fact_introduced</span>
+        <span class="chip block">substance_drift</span>
+        <span class="chip block">attribution_mismatch</span>
+        <span class="chip block">thin_evidence_unflagged</span>
+        <span class="chip block">forbidden_move</span>
+        <span class="chip block">ethical_floor_violation</span>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="t-head">
+        <span class="microlabel am">TIER 2 — GESTALT · BLOCK</span>
+        <span class="t-scope">WHOLE PIECE VS THE READ'S BOTTOM LINE</span>
+      </div>
+      <div class="chips">
+        <span class="chip block-am">misleading_implication</span>
+        <span class="chip block-am">selective_omission<small>a required_inclusion was dropped</small></span>
+        <span class="chip block-am">unsupported_causation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="microlabel am">FAILURE HANDLING — BLOCK ISSUES ARE NEVER SILENTLY DROPPED</div>
+    <div class="flow-steps">
+      <span class="flow-step hot">BLOCK ISSUE</span><span class="flow-sep">→</span>
+      <span class="flow-step">REPAIR LOOP → PASS 3<br><span style="color:var(--graphite);font-size:9px">MAX 2 RETRIES</span></span><span class="flow-sep">→</span>
+      <span class="flow-step">STRONGER-MODEL FALLBACK</span><span class="flow-sep">→</span>
+      <span class="flow-step hum">HUMAN REVIEW<br><span style="color:var(--graphite);font-size:9px">BLOCKING ISSUES ATTACHED</span></span>
+    </div>
+    <div class="flow-note">ALL OF IT UNDER A <b>PER-MEDIA-RUN SPEND CAP</b>.</div>
+  </div>
+</section>
+
+<!-- ======================= 04 · CONSTRAINT PRECEDENCE ======================= -->
+<section id="s04">
+  <div class="kicker">
+    <span class="kl">■ 04 · CONSTRAINT PRECEDENCE</span>
+    <span class="kr">ACULEUS — SALIENCE LAYER</span>
+  </div>
+  <h2>When constraints collide, <em style="color:var(--blue)">this is the order.</em></h2>
+  <p class="lede">Plain language is a clarity floor, not a cap on rhetoric.</p>
+
+  <div class="prec">
+    <div class="prec-row">
+      <div class="prec-bar" style="--bc:var(--blue);width:100%">
+        <span class="prec-num">1</span><span class="prec-name">SUBSTANCE</span>
+        <span class="prec-desc">bind to the record</span>
+      </div>
+    </div>
+    <div class="prec-gt">OUTRANKS ▼</div>
+    <div class="prec-row">
+      <div class="prec-bar" style="--bc:var(--blue);width:91%">
+        <span class="prec-num">2</span><span class="prec-name">CITATION</span>
+        <span class="prec-desc">AP attribution resolves</span>
+      </div>
+    </div>
+    <div class="prec-gt">OUTRANKS ▼</div>
+    <div class="prec-row">
+      <div class="prec-bar" style="--bc:var(--red);width:82%">
+        <span class="prec-num">3</span><span class="prec-name">ETHICAL FLOOR</span>
+        <span class="prec-desc">no dehumanizing language, dog-whistles, manufactured urgency</span>
+      </div>
+    </div>
+    <div class="prec-gt">OUTRANKS ▼</div>
+    <div class="prec-row">
+      <div class="prec-bar" style="--bc:var(--cyan);width:73%">
+        <span class="prec-num">4</span><span class="prec-name">SALIENCE CODING</span>
+        <span class="prec-desc">the demographic's frame &amp; lexicon</span>
+      </div>
+    </div>
+    <div class="prec-gt">OUTRANKS ▼</div>
+    <div class="prec-row">
+      <div class="prec-bar" style="--bc:var(--fog);width:64%">
+        <span class="prec-num">5</span><span class="prec-name">PLAIN LANGUAGE</span>
+        <span class="prec-desc">clarity floor</span>
+      </div>
+    </div>
+    <div class="prec-gt">OUTRANKS ▼</div>
+    <div class="prec-row">
+      <div class="prec-bar" style="--bc:var(--graphite);width:55%">
+        <span class="prec-num">6</span><span class="prec-name">FORMAT</span>
+        <span class="prec-desc">op-ed / social / newsletter / press-release</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 05 · WORKED MICRO-EXAMPLE ====================== -->
+<section id="s05">
+  <div class="kicker">
+    <span class="kl">■ 05 · WORKED MICRO-EXAMPLE</span>
+    <span class="kr">ACULEUS — SALIENCE LAYER</span>
+  </div>
+  <h2>One finding. Two doors in. <em style="color:var(--cyan)">Identical receipts.</em></h2>
+  <p class="lede">Everything in this section is illustrative — invented to show the mechanics, not drawn from a live Read.</p>
+
+  <div class="finding">
+    <div class="f-head">
+      <span class="microlabel">FINDING [01]</span>
+      <span class="illu">ILLUSTRATIVE</span>
+    </div>
+    <p class="f-quote">&ldquo;A federal grantee routed $48M over three years to vendors sharing its own officers' addresses.&rdquo;</p>
+    <div class="f-src"><b>SOURCES</b> USASPENDING · IRS 990 · STATE REGISTRY</div>
+  </div>
+
+  <div class="microlabel cy" style="margin-top:44px">ATOMS — EVERY ATOM CARRIES ITS OWN IMMUTABLE AP ATTRIBUTION</div>
+  <div class="atoms">
+    <div class="atom">
+      <div class="a-id">A1</div>
+      <div class="a-body">
+        <div class="a-tags"><span class="tag strong">STRONG</span><span class="tag strong">LEAD-ELIGIBLE</span><span class="illu">ILLUSTRATIVE</span></div>
+        <div class="a-claim">&ldquo;$48M in federal awards flowed to three vendors across FY21–FY23.&rdquo;</div>
+        <div class="a-cite"><b>AP CITE</b>&ldquo;according to federal award records on USAspending.gov&rdquo;</div>
+      </div>
+    </div>
+    <div class="atom">
+      <div class="a-id">A2</div>
+      <div class="a-body">
+        <div class="a-tags"><span class="tag strong">STRONG</span><span class="tag strong">LEAD-ELIGIBLE</span><span class="illu">ILLUSTRATIVE</span></div>
+        <div class="a-claim">&ldquo;Those three vendors share a mailing address with two of the grantee's officers.&rdquo;</div>
+        <div class="a-cite"><b>AP CITE</b>&ldquo;according to the grantee's IRS Form 990 and state business-registry filings&rdquo;</div>
+      </div>
+    </div>
+    <div class="atom" style="border-color:rgba(255,176,32,.55)">
+      <div class="a-id" style="color:var(--amber);border-right-color:rgba(255,176,32,.55)">A3</div>
+      <div class="a-body">
+        <div class="a-tags"><span class="tag req">REQUIRED INCLUSION — COUNTER-CASE</span><span class="illu">ILLUSTRATIVE</span></div>
+        <div class="a-claim">&ldquo;The grantee's independent auditor found no violation; shared addresses can reflect a common registered-agent service.&rdquo;</div>
+        <div class="a-cite"><b>AP CITE</b>&ldquo;according to the grantee's independent audit&rdquo;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="microlabel" style="margin-top:44px">SALIENCE MAPS — TWO DEMOGRAPHICS, SAME ATOMS</div>
+  <div class="maps">
+    <div class="map">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+        <span class="m-name">FAR LEFT</span><span class="illu">ILLUSTRATIVE</span>
+      </div>
+      <dl>
+        <dt>FRAME</dt><dd><em>&ldquo;power &amp; exploitation&rdquo;</em></dd>
+        <dt>MESSENGER</dt><dd><em>&ldquo;the organizer&rdquo;</em></dd>
+        <dt>LEAD</dt><dd><span class="bt">A2 → A1</span></dd>
+        <dt>LEXICON</dt><dd><em>&ldquo;self-dealing, captured&rdquo;</em></dd>
+      </dl>
+      <div class="m-must">■ MUST INCLUDE <span class="bt">A3</span></div>
+    </div>
+    <div class="map">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+        <span class="m-name">RIGHT OF CENTER</span><span class="illu">ILLUSTRATIVE</span>
+      </div>
+      <dl>
+        <dt>FRAME</dt><dd><em>&ldquo;stewardship &amp; trust&rdquo;</em></dd>
+        <dt>MESSENGER</dt><dd><em>&ldquo;the local operator&rdquo;</em></dd>
+        <dt>LEAD</dt><dd><span class="bt">A1 → A2</span></dd>
+        <dt>LEXICON</dt><dd><em>&ldquo;waste, your money, duty&rdquo;</em></dd>
+      </dl>
+      <div class="m-must">■ MUST INCLUDE <span class="bt">A3</span></div>
+    </div>
+  </div>
+
+  <div class="microlabel cy" style="margin-top:44px">RENDERED SNIPPETS — RECEIPTS IDENTICAL · COUNTER-CASE PRESENT IN EVERY VARIANT</div>
+  <div class="renders">
+    <div class="rcard">
+      <div class="r-fmt">
+        <span class="microlabel cy" style="color:var(--ash)">OP-ED · FAR LEFT</span>
+        <span class="r-aud"><span class="illu">ILLUSTRATIVE</span></span>
+      </div>
+      <div class="r-head">&ldquo;They Drained the Safety Net to Pay Themselves.&rdquo;</div>
+      <div class="r-body">&ldquo;Federal records show $48M flowed to three vendors that share an address with the officials who hired them <span class="bt">[A1][A2]</span> — even as the grantee's own auditor cleared the arrangement <span class="bt">[A3]</span>.&rdquo;</div>
+    </div>
+    <div class="rcard">
+      <div class="r-fmt">
+        <span class="microlabel cy" style="color:var(--ash)">SOCIAL · RIGHT OF CENTER</span>
+        <span class="r-aud"><span class="illu">ILLUSTRATIVE</span></span>
+      </div>
+      <div class="r-body" style="margin-top:0">&ldquo;$48M of your tax dollars went to vendors sharing an address with the officials who picked them (USAspending; IRS 990) <span class="bt">[A1][A2]</span>. The grantee's own auditor cleared it <span class="bt">[A3]</span>. Read the filings and decide.&rdquo;</div>
+    </div>
+    <div class="rcard">
+      <div class="r-fmt">
+        <span class="microlabel cy" style="color:var(--ash)">NEWSLETTER · CENTER VOICE</span>
+        <span class="r-aud"><span class="illu">ILLUSTRATIVE</span></span>
+      </div>
+      <div class="r-body" style="margin-top:0">&ldquo;What the filings show: $48M, three vendors, one shared address <span class="bt">[A1][A2]</span>. The grantee's auditor found no violation <span class="bt">[A3]</span>.&rdquo;</div>
+    </div>
+    <div class="rcard">
+      <div class="r-fmt">
+        <span class="microlabel cy" style="color:var(--ash)">PRESS-RELEASE / PITCH</span>
+        <span class="r-aud"><span class="illu">ILLUSTRATIVE</span></span>
+      </div>
+      <div class="r-body" style="margin-top:0">&ldquo;Federal award records and the grantee's own filings show $48M routed to three vendors at an address shared with its officers <span class="bt">[A1][A2]</span>; its independent auditor found no violation <span class="bt">[A3]</span> — the documents are attached for review.&rdquo;</div>
+    </div>
+  </div>
+
+  <div class="same-line">EVERY RENDERING CARRIES THE SAME RECEIPTS <span class="bt">[A1][A2][A3]</span>. <i>SALIENCE CHANGES. SUBSTANCE DOESN'T.</i></div>
+</section>
+
+<!-- =================== 06 · THE BUILD — EIGHT MILESTONES =================== -->
+<section id="s06">
+  <div class="kicker">
+    <span class="kl">■ 06 · THE BUILD — EIGHT MILESTONES</span>
+    <span class="kr">ACULEUS — SALIENCE LAYER</span>
+  </div>
+  <h2>The build — eight milestones, <em style="color:var(--blue)">worked backwards.</em></h2>
+  <p class="lede">Each milestone lands a deliverable, implements named runtime passes, and clears an explicit acceptance gate before the next begins.</p>
+
+  <table>
+    <thead><tr>
+      <th style="width:120px">MILESTONE</th>
+      <th>DELIVERABLE</th>
+      <th style="width:130px">IMPLEMENTS PASSES</th>
+      <th style="width:32%">ACCEPTANCE GATE</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td class="mid">M0 · CONTRACTS &amp; SCHEMA</td>
+        <td>Apply salience tables; type <span class="mono">SalienceMap / RenderVariant / RenderBindings / RenderVerifierResult</span> on the adapter.</td>
+        <td class="pp">—</td>
+        <td><span class="gate">Schema migrates from empty DB; adapter returns typed shells.</span></td>
+      </tr>
+      <tr>
+        <td class="mid">M1 · READ FREEZE + ATOMIZATION</td>
+        <td><span class="mono">read_snapshot</span>, <span class="mono">claim_atoms</span>, immutable AP-citation builder, eligibility gate.</td>
+        <td class="pp">P0–P1</td>
+        <td><span class="gate">A finished Read yields a frozen, hashed atom + citation library; every atom binds to an evidence record; thin Reads rejected.</span></td>
+      </tr>
+      <tr>
+        <td class="mid">M2 · SALIENCE MAP PASS</td>
+        <td>Salience-reasoner role + prompt + subset validator.</td>
+        <td class="pp">P2</td>
+        <td><span class="gate">Per-demographic map validated; ZERO invented facts on a red-team set.</span></td>
+      </tr>
+      <tr>
+        <td class="mid">M3 · RENDER PASS</td>
+        <td>Renderer role, four format specs, plain-language target, marker emission.</td>
+        <td class="pp">P3</td>
+        <td><span class="gate">Draft per demographic × format with a binding marker on every assertion.</span></td>
+      </tr>
+      <tr>
+        <td class="mid">M4 · BINDING + SUBSTANCE-LOCK <span style="color:var(--amber)">(HARD GATE)</span></td>
+        <td>Binder, AP resolution, two-tier verifier, repair/escalation loop, spend cap.</td>
+        <td class="pp">P4–P5</td>
+        <td><span class="gate">An injected unsupported claim is BLOCKED; a dropped counter-case is BLOCKED; the loop converges or escalates to human.</span></td>
+      </tr>
+      <tr>
+        <td class="mid">M5 · RENDER REVIEW UI</td>
+        <td>Inspectable claims, cross-demographic diff, reviewer + customer gates.</td>
+        <td class="pp">P6</td>
+        <td><span class="gate">Both approvals enforced; click-a-claim → receipt.</span></td>
+      </tr>
+      <tr>
+        <td class="mid">M6 · DELIVER + RECEIPTS APPENDIX</td>
+        <td>Packaging, revalidation, citation appendix export.</td>
+        <td class="pp">P7</td>
+        <td><span class="gate">Approved render exports with a fully resolvable citations file.</span></td>
+      </tr>
+      <tr>
+        <td class="mid">M7 · EVAL &amp; TRAINING</td>
+        <td>TWO tracks — INTEGRITY eval (gates) vs SALIENCE-QUALITY eval (informs).</td>
+        <td class="pp">CROSS-CUTTING</td>
+        <td><span class="gate">Substance-lock pass-rate + binding completeness gate promotion; candidate gateway models (DeepSeek / Grok / OpenAI) run a model-comparison eval — promote the one with the highest substance-lock pass-rate and no quality regression. Salience-quality rubric informs but never overrides integrity.</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===================== 07 · DATA CONTRACTS & SCHEMA ===================== -->
+<section id="s07">
+  <div class="kicker">
+    <span class="kl">■ 07 · DATA CONTRACTS &amp; SCHEMA</span>
+    <span class="kr">ACULEUS — SALIENCE LAYER</span>
+  </div>
+  <h2>Structured outputs only. <em style="color:var(--cyan)">The frontend never sees raw chat.</em></h2>
+
+  <div class="microlabel cy" style="margin-top:40px">ADAPTER CONTRACTS — TYPED STRUCTURED OUTPUTS</div>
+  <div class="contract-chips">
+    <span class="cchip">SalienceMap</span>
+    <span class="cchip">RenderVariant</span>
+    <span class="cchip">RenderBindings</span>
+    <span class="cchip">RenderVerifierResult</span>
+    <span class="cchip">DeliveryPackage</span>
+  </div>
+
+  <div class="microlabel" style="margin-top:42px">SCHEMA TABLES — ONE-LINE ROLES</div>
+  <div class="schema">
+    <div class="schema-row"><span class="tname">temperament_profiles</span><span class="trole">The demographic definitions a media run targets — frame, lexicon, and door-in priors.</span></div>
+    <div class="schema-row"><span class="tname">read_snapshots</span><span class="trole">The immutable, content-hashed freeze of an approved Read; the substance of record.</span></div>
+    <div class="schema-row"><span class="tname">claim_atoms</span><span class="trole">Atomic claims, each bound to an evidence record with its immutable AP attribution.</span></div>
+    <div class="schema-row"><span class="tname">media_runs</span><span class="trole">One end-to-end execution of the eight passes against one snapshot, with its spend cap.</span></div>
+    <div class="schema-row"><span class="tname">salience_maps</span><span class="trole">Per-demographic selection, ordering, frame, messenger, lexicon, and required inclusions.</span></div>
+    <div class="schema-row"><span class="tname">render_variants</span><span class="trole">Each drafted piece per demographic × format, versioned across repair loops.</span></div>
+    <div class="schema-row"><span class="tname">render_claim_bindings</span><span class="trole"><b>The enforcer</b> — every assertive sentence resolved to an atom and its canonical citation.</span></div>
+    <div class="schema-row"><span class="tname">render_verifier_issues</span><span class="trole">Tier-1 and Tier-2 findings from the substance-lock verifier, blocking or otherwise.</span></div>
+    <div class="schema-row"><span class="tname">render_reviews</span><span class="trole">Human decisions — reviewer and customer approvals on the verified render.</span></div>
+    <div class="schema-row"><span class="tname">delivery_packages</span><span class="trole">The published artifact plus its receipts appendix, revalidated and capture-date stamped.</span></div>
+  </div>
+
+  <div class="ddl">Full DDL in <b>docs/aculeus-salience-layer-schema.sql</b></div>
+</section>
+
+<!-- ========================== 08 · MODEL BINDING ========================== -->
+<section id="s08">
+  <div class="kicker">
+    <span class="kl">■ 08 · MODEL BINDING</span>
+    <span class="kr">ACULEUS — SALIENCE LAYER</span>
+  </div>
+  <h2>Real models, <em style="color:var(--blue)">one gateway.</em></h2>
+  <p style="color:var(--fog);font-size:14px;line-height:1.6;max-width:920px;margin:6px 0 20px">Every pass that calls a model hits the <b style="color:var(--ash)">Vercel AI Gateway</b> (<span style="font-family:var(--mono);font-size:12px">ai-gateway.vercel.sh/v1/chat/completions</span>, OpenAI-compatible) — the same seam the Read engine uses today in <span style="font-family:var(--mono);font-size:12px">lib/aculeus-case-qa.js</span>. The model is chosen by env, so <b style="color:var(--ash)">DeepSeek, Grok, and OpenAI</b> are swappable with no code change. Every call inherits the hardening contract: a source-locked system prompt, <span style="font-family:var(--mono);font-size:12px">temperature 0.1</span>, JSON-only output, and a deterministic post-validator that discards anything the model invents.</p>
+
+  <table>
+    <thead><tr>
+      <th style="width:190px">ROLE</th>
+      <th style="width:130px">PASS(ES)</th>
+      <th style="width:230px">MODEL · VIA AI GATEWAY</th>
+      <th>WHY</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td class="mid"><span class="badge det">DETERMINISTIC</span></td>
+        <td class="pp">P0, P4 (BIND), P7</td>
+        <td class="mono">no model</td>
+        <td>Hashing, freezing, injecting canonical citations — must be exact, not generated.</td>
+      </tr>
+      <tr>
+        <td class="mid"><span class="badge sal">SALIENCE-REASONER</span></td>
+        <td class="pp">P2</td>
+        <td class="mono">DeepSeek <i>or</i> Grok</td>
+        <td>Judgment about what's salient &amp; which counter-case to keep — the heavy reasoning, the same class of model that builds the dossier.</td>
+      </tr>
+      <tr>
+        <td class="mid"><span class="badge ren">RENDERER</span></td>
+        <td class="pp">P1, P3</td>
+        <td class="mono">Grok <i>or</i> OpenAI</td>
+        <td>Fluent, format-specific writing. The model places citation <i>markers</i> only; the attribution text is injected deterministically.</td>
+      </tr>
+      <tr>
+        <td class="mid"><span class="badge ver">VERIFIER</span></td>
+        <td class="pp">P5</td>
+        <td class="mono">DeepSeek <i>or</i> Grok<br>(≠ the renderer)</td>
+        <td>Adversarial gestalt check against the Read. A different model than the writer, so the checker doesn't share the writer's blind spots.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--graphite);text-transform:uppercase;margin:14px 0 0">■ Bound by env — ACULEUS_SALIENCE_MODEL_ID · ACULEUS_RENDER_MODEL_ID · ACULEUS_VERIFY_MODEL_ID, each a prefixed direct model id keyed to DEEPSEEK_API_KEY · XAI_API_KEY · OPENAI_API_KEY. No gateway, no model hard-coded.</p>
+
+  <div class="risk">
+    <b>■ RISK</b>
+    <span>JSON adherence varies across providers — the deterministic parser and post-validator (as in aculeus-case-qa.js) must reject malformed or invented output, not the model. A model inventing an attribution is already neutralized: citations are injected by code, never written by the model. Provider/gateway dependency and per-call cost are capped per media run with a fallback model.</span>
+  </div>
+</section>
+
+<!-- ========================== 09 · DEFENSIBILITY ========================== -->
+<section id="s09" style="border-bottom:0;padding-bottom:40px">
+  <div class="kicker">
+    <span class="kl">■ 09 · DEFENSIBILITY</span>
+    <span class="kr">ACULEUS — SALIENCE LAYER</span>
+  </div>
+  <h2>Built to survive <em style="color:var(--blue)">discovery</em>, not just <em style="color:var(--cyan)">distribution</em>.</h2>
+
+  <div class="defense">
+    <div class="dcol not">
+      <div class="microlabel rd">WHAT THIS IS NOT</div>
+      <ul>
+        <li><b>✕</b>Five sets of facts.</li>
+        <li><b>✕</b>Audience-tested fiction.</li>
+        <li><b>✕</b>Synthetic slop.</li>
+        <li><b>✕</b>Persuasion that can't survive discovery.</li>
+      </ul>
+    </div>
+    <div class="dcol is">
+      <div class="microlabel gn">WHAT THIS IS</div>
+      <ul>
+        <li><b>✓</b>One frozen Read per topic.</li>
+        <li><b>✓</b>Renderings vary in salience — never substance.</li>
+        <li><b>✓</b>The counter-case ships in every variant.</li>
+        <li><b>✓</b>A global ethical floor over per-demographic coding.</li>
+        <li><b>✓</b>The cross-demographic diff proves same-receipts-different-doors.</li>
+        <li><b>✓</b>Every claim keeps its path to the record.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="closer">&ldquo;Source it, or don't say it — <i>for every door in.</i>&rdquo;</p>
+</section>
+
+<footer>
+  <span class="fl"><b>■</b> ACULEUS.AI · SOURCE IT, OR DON'T SAY IT</span>
+  <span class="fr">SALIENCE LAYER · IMPLEMENTATION PLAN</span>
+</footer>
+
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  function tick(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';
+  }
+  addEventListener('scroll',tick,{passive:true});
+  addEventListener('resize',tick);
+  tick();
+})();
+</script>
+</body>
+</html>

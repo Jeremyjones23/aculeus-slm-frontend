@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aculeus — Architecture Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-bg:#0b1220; --panel:#101a2e; --panel2:#0d1526; --hairline:#1e293b;
+  --slate:#334155; --graphite:#475569; --fog:#94a3b8; --ash:#cbd5e1;
+  --paper:#f5f7fa; --bone:#ffffff; --blue:#2563ff; --cyan:#00c7d9;
+  --amber:#ffb020; --red:#ff3b30; --green:#22c55e;
+  --sans:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',Consolas,Menlo,monospace;
+  --serif:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink-bg);
+  background-image:radial-gradient(rgba(148,163,184,.055) 1px, transparent 1px);
+  background-size:26px 26px;
+  color:var(--bone);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  font-size:14px;
+}
+.wrap{max-width:1660px;margin:0 auto;padding:34px 42px 26px}
+
+/* ---------- header chrome ---------- */
+.kicker{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
+  font-family:var(--mono);font-size:10.5px;text-transform:uppercase}
+.kicker .kl{color:var(--blue);letter-spacing:.25em}
+.kicker .kr{color:var(--graphite);letter-spacing:.2em;text-align:right}
+.titlerow{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:22px;flex-wrap:wrap}
+h1{font-weight:700;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.01em;line-height:1.08}
+h1 em{font-family:var(--serif);font-style:italic;font-weight:600}
+.subtitle{font-family:var(--serif);font-style:italic;color:var(--fog);font-size:15.5px;margin-top:10px;max-width:760px;line-height:1.5}
+#toggleExtras{
+  flex:none;appearance:none;background:transparent;border:1px solid var(--hairline);
+  color:var(--ash);font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  padding:10px 16px;cursor:pointer;transition:border-color .25s,color .25s,background .25s;border-radius:2px;margin-bottom:4px}
+#toggleExtras:hover{border-color:var(--graphite);color:var(--bone);background:rgba(148,163,184,.05)}
+#toggleExtras:focus-visible{outline:1px solid var(--blue);outline-offset:2px}
+
+/* ---------- map / lanes ---------- */
+#map{position:relative;margin-top:30px;display:flex;flex-direction:column;gap:12px}
+.lane{
+  display:flex;align-items:stretch;background:var(--panel2);
+  border:1px solid var(--hairline);border-radius:2px;position:relative}
+.rail{
+  flex:none;width:42px;border-right:1px solid var(--hairline);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  padding:10px 0;position:relative}
+.rail::before{content:"";position:absolute;left:-1px;top:-1px;bottom:-1px;width:2px;background:var(--lc)}
+.rail b{color:var(--lc);font-size:8px;line-height:1;font-weight:400}
+.rail-lines{display:flex;flex-direction:row;gap:3px;align-items:center;justify-content:center;
+  min-height:0;transition:opacity .3s}
+.rail-lines span{
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-family:var(--mono);font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--lc);white-space:nowrap;line-height:1.5}
+.lane-main{flex:1;min-width:0;display:flex;flex-direction:column}
+.lane-full{display:flex;flex-wrap:wrap;gap:12px;padding:16px 18px}
+.lane.extra .lane-full{
+  overflow:hidden;max-height:640px;opacity:1;
+  transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .35s ease,padding .5s cubic-bezier(.4,0,.2,1)}
+.lane-stub{
+  display:flex;align-items:center;gap:10px;border:0;background:transparent;width:100%;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--graphite);
+  padding:0 18px;cursor:pointer;text-align:left;overflow:hidden;
+  max-height:0;opacity:0;
+  transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .35s ease,color .2s}
+.lane-stub b{color:var(--lc);font-size:7px;font-weight:400}
+.lane-stub:hover{color:var(--fog)}
+.lane.collapsed .lane-full{max-height:0;opacity:0;padding-top:0;padding-bottom:0}
+.lane.collapsed .lane-stub{max-height:38px;opacity:1;padding-top:12px;padding-bottom:12px}
+.lane.collapsed .rail-lines{opacity:0}
+
+/* quieter foundation substrate */
+.lane[data-lane="foundation"]{background:transparent}
+.lane[data-lane="foundation"] .lane-full{padding:10px 18px}
+.lane[data-lane="foundation"] .card{padding:7px 9px 6px;opacity:.88}
+.lane[data-lane="foundation"] .card .c-label{font-size:10.5px}
+
+/* ---------- node cards ---------- */
+.card{
+  flex:1 1 122px;min-width:118px;max-width:230px;
+  background:var(--panel);border:1px solid var(--hairline);border-radius:2px;
+  padding:10px 11px 9px;cursor:pointer;position:relative;
+  display:flex;flex-direction:column;gap:7px;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.card:hover,.card:focus-visible{
+  transform:translateY(-2px);border-color:var(--lc);
+  box-shadow:0 8px 22px rgba(0,0,0,.4);outline:none;z-index:2}
+.card.selected{border-color:var(--lc);box-shadow:0 0 0 1px var(--lc),0 8px 22px rgba(0,0,0,.4)}
+.card .c-top{display:flex;gap:7px;align-items:flex-start}
+.card .c-bullet{color:var(--lc);font-size:7px;line-height:14px;flex:none;font-style:normal}
+.card .c-label{font-size:11.5px;font-weight:600;line-height:1.3;color:var(--paper)}
+.card .c-bot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+.card .c-file{font-family:var(--mono);font-size:8.5px;color:var(--fog);opacity:.65;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.lane[data-lane="cyan"] .card{border-style:dotted;border-color:rgba(0,199,217,.45);background:rgba(0,199,217,.025)}
+.lane[data-lane="cyan"] .card:hover,.lane[data-lane="cyan"] .card:focus-visible{border-color:var(--cyan)}
+.lane[data-lane="cyan"] .card.selected{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan),0 8px 22px rgba(0,0,0,.4)}
+
+/* ---------- status chips ---------- */
+.chip{
+  flex:none;font-family:var(--mono);font-size:8px;letter-spacing:.14em;
+  padding:2.5px 6px 2px;border:1px solid;border-radius:2px;line-height:1;white-space:nowrap}
+.chip.LIVE{color:var(--green);border-color:rgba(34,197,94,.5);background:rgba(34,197,94,.13)}
+.chip.DONE{color:var(--green);border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.05)}
+.chip.COMPLETE{color:var(--green);border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.05)}
+.chip.PARTIAL{color:var(--amber);border-color:rgba(255,176,32,.4);background:rgba(255,176,32,.06)}
+.chip.STUB{color:var(--graphite);border-color:var(--slate);background:rgba(71,85,105,.1)}
+.chip.PROPOSED{color:var(--cyan);border-color:rgba(0,199,217,.55);border-style:dotted;background:rgba(0,199,217,.06)}
+.chip.OPEN{color:var(--cyan);border-color:rgba(0,199,217,.4);background:rgba(0,199,217,.05)}
+
+/* ---------- edges ---------- */
+#edges{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:5;pointer-events:none}
+#edges path.vis{fill:none;stroke:var(--graphite);stroke-width:1.1;opacity:.5;transition:opacity .15s,stroke .15s}
+#edges path.vis.special{stroke:var(--cyan);stroke-width:1.6;opacity:.9;stroke-dasharray:none}
+#edges path.vis.hl{stroke:var(--ash);opacity:.95}
+#edges path.vis.special.hl{stroke:var(--cyan);opacity:1}
+#edges path.hit{fill:none;stroke:transparent;stroke-width:13;pointer-events:stroke;cursor:default}
+#edges text.elabel{font-family:var(--mono);font-size:9px;letter-spacing:.16em;fill:var(--cyan);
+  paint-order:stroke;stroke:var(--ink-bg);stroke-width:4px;text-transform:uppercase}
+#etip{
+  position:fixed;z-index:80;pointer-events:none;display:none;
+  background:var(--panel);border:1px solid var(--hairline);border-radius:2px;
+  padding:7px 10px;font-family:var(--mono);font-size:9.5px;color:var(--ash);
+  letter-spacing:.06em;box-shadow:0 8px 24px rgba(0,0,0,.5);max-width:320px}
+#etip .et-route{color:var(--fog);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}
+#etip .et-label{color:var(--bone)}
+
+/* ---------- drawer ---------- */
+#backdrop{position:fixed;inset:0;background:rgba(5,9,18,.55);z-index:40;opacity:0;pointer-events:none;transition:opacity .3s}
+#backdrop.open{opacity:1;pointer-events:auto}
+#drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(430px,94vw);z-index:50;
+  background:var(--panel2);border-left:1px solid var(--hairline);
+  transform:translateX(102%);transition:transform .32s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;box-shadow:-18px 0 50px rgba(0,0,0,.45)}
+#drawer.open{transform:translateX(0)}
+.d-head{padding:26px 28px 18px;border-bottom:1px solid var(--hairline);position:relative}
+.d-lane{font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:10px}
+.d-lane b{font-size:7px;font-weight:400;margin-right:7px}
+.d-title{font-size:19px;font-weight:700;line-height:1.2;padding-right:32px}
+.d-status{margin-top:12px}
+#d-close{
+  position:absolute;top:20px;right:20px;width:30px;height:30px;border:1px solid var(--hairline);
+  background:transparent;color:var(--fog);font-family:var(--mono);font-size:14px;cursor:pointer;border-radius:2px;
+  transition:color .2s,border-color .2s;line-height:1}
+#d-close:hover{color:var(--bone);border-color:var(--graphite)}
+.d-body{padding:22px 28px 34px;overflow-y:auto;flex:1}
+.d-sec{margin-bottom:24px}
+.d-sec h4{font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.d-sec h4::before{content:"■ ";font-size:7px;vertical-align:1px}
+.d-role{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ash);line-height:1.55}
+.d-files{display:flex;flex-direction:column;gap:6px}
+.d-files code{
+  font-family:var(--mono);font-size:10.5px;color:var(--ash);background:var(--panel);
+  border:1px solid var(--hairline);border-radius:2px;padding:6px 9px;word-break:break-all;display:block}
+.d-schema{display:flex;flex-wrap:wrap;gap:7px}
+.d-schema code{
+  font-family:var(--mono);font-size:10px;color:var(--cyan);
+  border:1px dotted rgba(0,199,217,.55);background:rgba(0,199,217,.05);border-radius:2px;padding:5px 9px}
+.d-flow{display:flex;flex-direction:column;gap:7px}
+.d-flow .f-row{font-family:var(--mono);font-size:10px;color:var(--fog);line-height:1.5;
+  display:flex;gap:8px;align-items:baseline}
+.d-flow .f-row b{flex:none;font-size:7px;font-weight:400;margin-top:1px}
+.d-flow .f-row strong{color:var(--ash);font-weight:500}
+.d-flow .f-row em{font-style:normal;color:var(--graphite)}
+.d-flow .f-none{font-family:var(--mono);font-size:10px;color:var(--graphite);letter-spacing:.08em}
+
+/* ---------- legend & foot ---------- */
+.below{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-top:30px;flex-wrap:wrap}
+#legend{border:1px solid var(--hairline);background:var(--panel2);border-radius:2px;padding:14px 18px 13px;max-width:680px}
+#legend h4{font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--graphite);margin-bottom:11px}
+#legend h4::before{content:"■ ";font-size:7px;color:var(--blue)}
+.lg-row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.lg-row + .lg-row{margin-top:10px;padding-top:10px;border-top:1px solid var(--hairline)}
+.lg-lane{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.lg-lane i{width:8px;height:8px;flex:none;font-style:normal}
+.lg-note{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;color:var(--graphite);text-transform:uppercase}
+.foot{
+  display:flex;justify-content:space-between;gap:24px;margin-top:26px;padding-top:16px;
+  border-top:1px solid var(--hairline);
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--graphite)}
+
+@media (max-width:760px){
+  .wrap{padding:24px 18px 20px}
+  .card{min-width:46%}
+  .kicker{flex-direction:column;gap:6px}
+  .kicker .kr{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">
+    <div class="kl">&#9632; ACULEUS &mdash; ARCHITECTURE MAP</div>
+    <div class="kr">INTELLIGENCE &rarr; MEDIA &middot; ENGINEERING VIEW</div>
+  </div>
+
+  <div class="titlerow">
+    <div>
+      <h1>From <em style="color:var(--blue)">Intelligence</em> to <em style="color:var(--cyan)">Media</em>.</h1>
+      <p class="subtitle">The blue layer runs today. The cyan layer is the next stage. Every node is the real code &mdash; or the proposed schema behind it.</p>
+    </div>
+    <button id="toggleExtras" aria-expanded="false">SHOW FULL SYSTEM &#9656;</button>
+  </div>
+
+  <div id="map">
+    <svg id="edges" aria-hidden="true">
+      <defs>
+        <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M0.5,0.8 L7.2,4 L0.5,7.2" style="fill:none;stroke:var(--graphite);stroke-width:1.1"/>
+        </marker>
+        <marker id="arrHl" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M0.5,0.8 L7.2,4 L0.5,7.2" style="fill:none;stroke:var(--ash);stroke-width:1.1"/>
+        </marker>
+        <marker id="arrCyan" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0.5,0.8 L7.2,4 L0.5,7.2" style="fill:none;stroke:var(--cyan);stroke-width:1.3"/>
+        </marker>
+      </defs>
+    </svg>
+    <!-- lanes injected by JS -->
+  </div>
+
+  <div class="below">
+    <div id="legend">
+      <h4>Legend</h4>
+      <div class="lg-row" id="lg-lanes"></div>
+      <div class="lg-row" id="lg-status"></div>
+      <div class="lg-row">
+        <span class="lg-note">Dotted card / dotted chip = proposed, not yet built</span>
+        <span class="lg-note">Cyan edge = blue &rarr; cyan handoff</span>
+        <span class="lg-note">Click a node for files &amp; flows</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div>ACULEUS.AI &middot; SOURCE IT, OR DON'T SAY IT</div>
+    <div>VERIFIED AGAINST REPO @ HEAD</div>
+  </div>
+</div>
+
+<div id="etip"></div>
+<div id="backdrop"></div>
+<aside id="drawer" role="dialog" aria-modal="true" aria-label="Node detail">
+  <div class="d-head">
+    <div class="d-lane" id="d-lane"></div>
+    <div class="d-title" id="d-title"></div>
+    <div class="d-status" id="d-statusWrap"></div>
+    <button id="d-close" aria-label="Close detail">&times;</button>
+  </div>
+  <div class="d-body" id="d-body"></div>
+</aside>
+
+<script>
+/* =================================================================
+   DATA — verified against repo
+   ================================================================= */
+const LANES = [
+  { id:'primary',    name:'PRIMARY RECORD',            color:'var(--slate)',    extra:false, rail:['PRIMARY','RECORD'] },
+  { id:'blue',       name:'BLUE · INTELLIGENCE',       color:'var(--blue)',     extra:false, rail:['BLUE ·','INTELLIGENCE'] },
+  { id:'cyan',       name:'CYAN · MEDIA — NEXT STAGE', color:'var(--cyan)',     extra:false, rail:['CYAN · MEDIA','NEXT STAGE'] },
+  { id:'foundation', name:'FOUNDATION',                color:'var(--graphite)', extra:false, rail:['FOUNDATION'] },
+  { id:'training',   name:'TRAINING & EVAL',           color:'var(--green)',    extra:true,  rail:['TRAINING','& EVAL'] },
+  { id:'governance', name:'GOVERNANCE & OPS',          color:'var(--amber)',    extra:true,  rail:['GOVERNANCE','& OPS'] }
+];
+
+const NODES = [
+  /* PRIMARY RECORD */
+  { id:'off_api', lane:'primary', label:'Official APIs', status:'DONE',
+    files:['lib/aculeus-official-api-executor.js','lib/aculeus-official-source-router.js'],
+    role:'Live calls to 11 routed official sources: USAspending, SAM, Data.gov, CKAN, Socrata, ArcGIS, IRS TEOS, Legistar — parsed into hashed candidates.' },
+  { id:'provider', lane:'primary', label:'Provider Search', status:'DONE',
+    files:['lib/aculeus-provider-executor.js'],
+    role:'Paid Parallel/Exa search with spend caps, dry-run, and concurrency control.' },
+  { id:'crawler', lane:'primary', label:'Crawler', status:'DONE',
+    files:['lib/aculeus-crawler-executor.js'],
+    role:'Robots-aware HTTP crawl of official hosts, with Browserbase fallback.' },
+  { id:'browserbase', lane:'primary', label:'Browserbase Capture', status:'PARTIAL',
+    files:['lib/aculeus-browserbase-capture.js'],
+    role:'CDP screenshot+text capture; Fetch path deployed, CDP screenshot currently local-only (gate BR-03).' },
+  { id:'external_record', lane:'primary', label:'SEC · FEC · Courts', status:'PARTIAL',
+    files:['(separate backend service)'],
+    role:'Primary-record surfaces named in the deck. Connectors live in a separate backend service, not this frontend repo.' },
+
+  /* BLUE · INTELLIGENCE */
+  { id:'intake', lane:'blue', label:'Intake / Query Hardening', status:'DONE',
+    files:['lib/aculeus-source-fed-contracts.js','lib/aculeus-operator-spec.js'],
+    role:'Turns a raw lead into a structured InvestigationSpec: jurisdictions, entities, concern types, source priority, forbidden claims, stop conditions.' },
+  { id:'router', lane:'blue', label:'Official Source Router', status:'DONE',
+    files:['lib/aculeus-official-source-router.js'],
+    role:'Ranks the 11 official APIs by concern type and jurisdiction.' },
+  { id:'runner', lane:'blue', label:'Investigation Runner', status:'PARTIAL',
+    files:['lib/aculeus-investigation-runner.js'],
+    role:'Orchestrates spec → official+provider tasks → retrieval queue. Advancement is time-stepped in repo default.' },
+  { id:'receipt', lane:'blue', label:'Receipt Fetcher', status:'DONE',
+    files:['lib/aculeus-receipt-fetcher.js'],
+    role:'Fetches the public URL, SHA-256 hashes the body, caps bytes, strips raw text from public view.' },
+  { id:'verify', lane:'blue', label:'Citation Verifier', status:'DONE',
+    files:['lib/aculeus-citation-verifier.js'],
+    role:'Blocks promotion unless the quoted text literally appears in the fetched receipt; high-risk claims require an adjudicative source. The BLUE evidence gate.' },
+  { id:'quality', lane:'blue', label:'Source Quality / Dedupe', status:'DONE',
+    files:['lib/aculeus-source-quality.js'],
+    role:'Scores candidates (.gov weighting etc.) and dedupes by normalized URL.' },
+  { id:'gap', lane:'blue', label:'Gap Scout (2nd Pass)', status:'DONE',
+    files:['lib/aculeus-gap-scout.js'],
+    role:'Plans a deduplicated second-pass retrieval over missing records.' },
+  { id:'read', lane:'blue', label:'The Read (Answer Brief)', status:'LIVE',
+    files:['lib/aculeus-case-qa.js','lib/aculeus-run-adapter.js','lib/aculeus-product-data.js'],
+    role:'The canonical cited dossier: the call, the counter-case, the signal to watch. Runs LIVE in production via a direct provider call — model chosen by ACULEUS_MODEL_ID, whose provider prefix routes straight to DeepSeek / xAI / OpenAI, swappable with no code change. A source-locked system prompt + deterministic post-validator fence the model; the deterministic source-fed path is the local/CI fallback.' },
+  { id:'review', lane:'blue', label:'Reviewer Actions', status:'DONE',
+    files:['lib/aculeus-reviewer-actions.js'],
+    role:'Promote / reject / defer / annotate candidates through the verifier gates into evidence records.' },
+  { id:'recordreq', lane:'blue', label:'Record Request Template', status:'DONE',
+    files:['lib/aculeus-record-request-template.js'],
+    role:'Builds FOIA-style requests; neutralizes allegation language for legal safety.' },
+  { id:'export', lane:'blue', label:'Export Packets', status:'DONE',
+    files:['lib/aculeus-export-packets.js'],
+    role:'Reviewer export to JSON/HTML/PDF with public/private redaction.' },
+
+  /* CYAN · MEDIA — NEXT STAGE */
+  { id:'profiles', lane:'cyan', label:'Temperament Profiles', status:'PROPOSED',
+    files:['docs/aculeus-salience-layer-schema.sql'],
+    role:'The five audience definitions — frame, asks, lexicon, messengers, format, forbidden moves. Configuration, versioned.',
+    schema:['temperament_profiles'] },
+  { id:'mediarun', lane:'cyan', label:'Media Run', status:'PROPOSED',
+    files:['docs/aculeus-salience-layer-schema.sql'],
+    role:'A render run that references the approved source run. Re-rendering never mutates the investigation; amplification spend tracked separately.',
+    schema:['media_runs'] },
+  { id:'salience', lane:'cyan', label:'Salience Map', status:'PROPOSED',
+    files:['docs/aculeus-salience-layer-schema.sql'],
+    role:'Per temperament: what is salient and the door in — emphasis, ordering, frame. Selects existing findings; never adds facts. Runs on DeepSeek or Grok via a direct provider call.',
+    schema:['salience_maps'] },
+  { id:'render', lane:'cyan', label:'Temperament Render', status:'PROPOSED',
+    files:['docs/aculeus-salience-layer-schema.sql'],
+    role:"Generates the artifact per temperament; every rendered claim is bound to a promoted evidence record. Writes via Grok or OpenAI through a direct provider call; places citation markers only.",
+    schema:['render_variants','render_claim_bindings'] },
+  { id:'substancelock', lane:'cyan', label:'Substance-Lock Verifier', status:'PROPOSED',
+    files:['docs/aculeus-salience-layer-schema.sql'],
+    role:'HARD GATE — cyan analog of the Citation Verifier. A render cannot publish unless every claim binds to an evidence record, the counter-case is present, and thin evidence is flagged. Runs on a different model than the renderer (DeepSeek or Grok).',
+    schema:['render_verifier_issues','render_claim_bindings'] },
+  { id:'renderreview', lane:'cyan', label:'Render Review', status:'PROPOSED',
+    files:['docs/aculeus-salience-layer-schema.sql'],
+    role:'Pre-publication approval requiring reviewer + customer sign-off before amplification (gate LC-05).',
+    schema:['render_reviews'] },
+  { id:'deliver', lane:'cyan', label:'Format & Deliver', status:'PROPOSED',
+    files:['docs/aculeus-salience-layer-schema.sql'],
+    role:'Packages approved renders into op-ed / script / social / newsletter across channels.',
+    schema:['delivery_packages'] },
+
+  /* FOUNDATION */
+  { id:'auth', lane:'foundation', label:'Clerk Auth / Access Control', status:'PARTIAL',
+    files:['lib/access-control.js','middleware.js'],
+    role:'Clerk session + role/approval gating; real pilot accounts and role E2E still open (gates ID-01…ID-10).' },
+  { id:'data', lane:'foundation', label:'Neon DB / Product Store', status:'DONE',
+    files:['lib/database.js','lib/aculeus-product-store.js'],
+    role:'Neon Postgres client + dual-mode repository (DB or local file store) for runs, cases, traces, access requests.' },
+  { id:'blob', lane:'foundation', label:'Vercel Blob Artifacts', status:'DONE',
+    files:['lib/aculeus-blob-artifacts.js'],
+    role:'Stores uploaded source bytes; metadata-only fallback without a token.' },
+  { id:'workflow', lane:'foundation', label:'Durable Run Engine', status:'PARTIAL',
+    files:['workflows/aculeus-case-run.js','app/api/workflow/aculeus-case-run/route.js'],
+    role:'Vercel Workflow durable runs. Skeleton in the repo emitting intake/retrieving/reasoning checkpoints.' },
+  { id:'telemetry', lane:'foundation', label:'Telemetry', status:'DONE',
+    files:['lib/aculeus-telemetry.js'],
+    role:'Counts run states, spend, and failures; emits threshold alerts.' },
+  { id:'shell', lane:'foundation', label:'Next App Shell', status:'DONE',
+    files:['app/page.jsx','components/aculeus-workspace.jsx'],
+    role:'Next.js App Router product surface rendering the operator workspace.' },
+
+  /* TRAINING & EVAL */
+  { id:'trace', lane:'training', label:'Trace Scoring', status:'DONE',
+    files:['lib/aculeus-trace-scoring.js'],
+    role:'Scores production traces 0–100; training conversion gated off by default.' },
+  { id:'prefpairs', lane:'training', label:'Preference Pairs', status:'DONE',
+    files:['lib/aculeus-preference-pairs.js'],
+    role:'Chosen/rejected pairs from high-score traces.' },
+  { id:'shadow', lane:'training', label:'Shadow Model Eval', status:'DONE',
+    files:['lib/aculeus-shadow-model.js'],
+    role:'Baseline-vs-candidate no-regression comparison.' },
+  { id:'evalbank', lane:'training', label:'Eval Banks (10/25/100)', status:'DONE',
+    files:['lib/aculeus-eval-bank.js','lib/aculeus-broad-eval-bank.js'],
+    role:'Manifest validation, gate eval, and broad generation.' },
+  { id:'adminexport', lane:'training', label:'Admin Export', status:'DONE',
+    files:['lib/aculeus-admin-console.js'],
+    role:'Run summaries, trace review queue, and gated training-export datasets.' },
+
+  /* GOVERNANCE & OPS */
+  { id:'spend', lane:'governance', label:'Spend Caps / Budget', status:'DONE',
+    files:['lib/aculeus-provider-executor.js'],
+    role:'Per-call spend caps and budget accounting by day/workspace/provider.' },
+  { id:'deploygate', lane:'governance', label:'Deployment Promotion', status:'DONE',
+    files:['lib/aculeus-deployment-promotion.js'],
+    role:'10-gate pre-deploy validation packet.' },
+  { id:'backup', lane:'governance', label:'Backup / Restore', status:'PARTIAL',
+    files:['lib/aculeus-backup-restore.js'],
+    role:'Versioned backup packet + retention dry-run; restore smoke still open (DP-04).' },
+  { id:'tenancy', lane:'governance', label:'Tenancy', status:'PARTIAL',
+    files:['lib/aculeus-tenancy.js'],
+    role:'Workspace/membership records + cross-tenant access checks; deployed denial E2E open (DP-07).' },
+  { id:'legal', lane:'governance', label:'Legal Pages', status:'COMPLETE',
+    files:['app/terms','app/privacy','app/acceptable-use','app/security','app/disclaimer'],
+    role:'Terms, privacy, acceptable-use, security, disclaimer routes.' },
+  { id:'observability', lane:'governance', label:'Observability / Alerts', status:'OPEN',
+    files:['(gates OP-01…OP-06)'],
+    role:'Incident packets, alert thresholds, audit log export — planned, not yet built.' }
+];
+
+const EDGES = [
+  { from:'external_record', to:'off_api',     label:'primary record' },
+  { from:'off_api',        to:'router',       label:'official candidates' },
+  { from:'provider',       to:'runner',       label:'provider candidates' },
+  { from:'crawler',        to:'receipt',      label:'fetched pages' },
+  { from:'browserbase',    to:'receipt',      label:'captured pages' },
+  { from:'intake',         to:'router',       label:'investigation spec' },
+  { from:'router',         to:'runner',       label:'ranked sources' },
+  { from:'runner',         to:'receipt',      label:'retrieval queue' },
+  { from:'receipt',        to:'verify',       label:'receipt + hash' },
+  { from:'verify',         to:'quality',      label:'verified candidate' },
+  { from:'quality',        to:'gap',          label:'scored, deduped' },
+  { from:'gap',            to:'read',         label:'filled gaps' },
+  { from:'verify',         to:'read',         label:'evidence + receipts' },
+  { from:'read',           to:'review',       label:'answer brief' },
+  { from:'review',         to:'read',         label:'promoted evidence' },
+  { from:'review',         to:'recordreq',    label:'missing records' },
+  { from:'review',         to:'export',       label:'approved findings' },
+  { from:'read',           to:'mediarun',     label:'approved Read', special:true },
+  { from:'profiles',       to:'salience',     label:'temperament profile' },
+  { from:'mediarun',       to:'salience',     label:'source run ref' },
+  { from:'salience',       to:'render',       label:'salience plan' },
+  { from:'render',         to:'substancelock',label:'render + claim bindings' },
+  { from:'substancelock',  to:'renderreview', label:'verified render' },
+  { from:'renderreview',   to:'deliver',      label:'approved render' },
+  { from:'review',         to:'trace',        label:'reviewed traces' },
+  { from:'trace',          to:'prefpairs',    label:'scored traces' },
+  { from:'read',           to:'workflow',     label:'durable checkpoints' },
+  { from:'shell',          to:'read',         label:'operator run' },
+  { from:'auth',           to:'shell',        label:'session + role' },
+  { from:'data',           to:'shell',        label:'case state' }
+];
+
+const STATUSES = ['LIVE','DONE','PARTIAL','STUB','PROPOSED','COMPLETE','OPEN'];
+const STATUS_HINT = {
+  LIVE:'in production', DONE:'built & tested', PARTIAL:'built, gate open',
+  STUB:'placeholder', PROPOSED:'next stage', COMPLETE:'shipped', OPEN:'planned'
+};
+
+/* =================================================================
+   RENDER LANES & CARDS
+   ================================================================= */
+const nodeById = Object.fromEntries(NODES.map(n => [n.id, n]));
+const laneById = Object.fromEntries(LANES.map(l => [l.id, l]));
+const mapEl = document.getElementById('map');
+const svg   = document.getElementById('edges');
+let extrasShown = false;
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function fileShort(f){ const p = f.split('/'); return p[p.length-1] || f; }
+
+for (const lane of LANES){
+  const sec = document.createElement('section');
+  sec.className = 'lane' + (lane.extra ? ' extra collapsed' : '');
+  sec.dataset.lane = lane.id;
+  sec.style.setProperty('--lc', lane.color);
+
+  const nodes = NODES.filter(n => n.lane === lane.id);
+  const cards = nodes.map(n => `
+    <div class="card" data-node="${n.id}" tabindex="0" role="button"
+         aria-label="${esc(n.label)} — ${n.status}">
+      <div class="c-top"><i class="c-bullet">&#9632;</i><span class="c-label">${esc(n.label)}</span></div>
+      <div class="c-bot"><span class="c-file" title="${esc(n.files.join(' · '))}">${esc(fileShort(n.files[0]))}</span><span class="chip ${n.status}">${n.status}</span></div>
+    </div>`).join('');
+
+  sec.innerHTML = `
+    <div class="rail"><b>&#9632;</b><div class="rail-lines">${lane.rail.map(t=>`<span>${esc(t)}</span>`).join('')}</div></div>
+    <div class="lane-main">
+      <div class="lane-full">${cards}</div>
+      ${lane.extra ? `<button class="lane-stub" type="button"><b>&#9632;</b>${lane.name} &middot; ${nodes.length} COMPONENTS &mdash; HIDDEN &#9656;</button>` : ''}
+    </div>`;
+  mapEl.appendChild(sec);
+}
+
+/* =================================================================
+   LEGEND
+   ================================================================= */
+document.getElementById('lg-lanes').innerHTML = LANES.map(l =>
+  `<span class="lg-lane" style="color:var(--fog)"><i style="background:${l.color}"></i>${l.name}</span>`).join('');
+document.getElementById('lg-status').innerHTML = STATUSES.map(s =>
+  `<span class="lg-lane" style="color:var(--graphite);gap:8px"><span class="chip ${s}">${s}</span>${STATUS_HINT[s]}</span>`).join('');
+
+/* =================================================================
+   EDGES — SVG overlay
+   ================================================================= */
+const SVGNS = 'http://www.w3.org/2000/svg';
+const etip = document.getElementById('etip');
+let selectedNode = null;
+
+function laneVisible(nodeId){
+  const lane = laneById[nodeById[nodeId].lane];
+  return !lane.extra || extrasShown;
+}
+function nodeRect(id){
+  const el = mapEl.querySelector(`[data-node="${id}"]`);
+  if (!el) return null;
+  const r = el.getBoundingClientRect(), m = mapEl.getBoundingClientRect();
+  if (r.width === 0 || r.height === 0) return null;
+  return { x:r.left-m.left, y:r.top-m.top, w:r.width, h:r.height,
+           cx:r.left-m.left + r.width/2, cy:r.top-m.top + r.height/2 };
+}
+function anchor(rect, side, off){
+  switch(side){
+    case 'right':  return [rect.x+rect.w, rect.cy+off];
+    case 'left':   return [rect.x,        rect.cy+off];
+    case 'top':    return [rect.cx+off,   rect.y];
+    case 'bottom': return [rect.cx+off,   rect.y+rect.h];
+  }
+}
+function bez(t,p0,p1,p2,p3){
+  const u=1-t;
+  return [ u*u*u*p0[0]+3*u*u*t*p1[0]+3*u*t*t*p2[0]+t*t*t*p3[0],
+           u*u*u*p0[1]+3*u*u*t*p1[1]+3*u*t*t*p2[1]+t*t*t*p3[1] ];
+}
+
+function drawEdges(){
+  // clear previous paths/labels (keep <defs>)
+  [...svg.querySelectorAll('path.vis, path.hit, text.elabel')].forEach(el => el.remove());
+
+  const m = mapEl.getBoundingClientRect();
+  svg.setAttribute('viewBox', `0 0 ${m.width} ${m.height}`);
+
+  const rects = {};
+  for (const n of NODES){ const r = nodeRect(n.id); if (r) rects[n.id] = r; }
+
+  // pass 1: decide geometry kind + anchor sides
+  const items = [];
+  for (const e of EDGES){
+    if (!laneVisible(e.from) || !laneVisible(e.to)) continue;
+    const a = rects[e.from], b = rects[e.to];
+    if (!a || !b) continue;
+    const sameRow = Math.abs(a.cy - b.cy) < Math.max(a.h, b.h) * 0.6;
+    let sSide, tSide, kind;
+    if (sameRow){
+      const gapR = b.x - (a.x + a.w);
+      if (gapR > -6 && gapR < 110){ sSide='right'; tSide='left'; kind='h'; }
+      else { sSide='top'; tSide='top'; kind='arc'; }       // long / backward same-row hop
+    } else if (b.cy > a.cy){ sSide='bottom'; tSide='top'; kind='v'; }
+    else { sSide='top'; tSide='bottom'; kind='v'; }
+    items.push({ e, a, b, sSide, tSide, kind });
+  }
+
+  // pass 2: spread anchors when several edges share a node side
+  const groups = {};
+  for (const it of items){
+    (groups[`s|${it.e.from}|${it.sSide}`] ??= []).push(it);
+    (groups[`t|${it.e.to}|${it.tSide}`]   ??= []).push(it);
+  }
+  for (const key in groups){
+    const g = groups[key], n = g.length;
+    g.forEach((it, i) => {
+      const off = (i - (n-1)/2) * 14;
+      if (key[0] === 's') it.sOff = off; else it.tOff = off;
+    });
+  }
+
+  // pass 3: build paths
+  for (const it of items){
+    const s = anchor(it.a, it.sSide, it.sOff || 0);
+    const t = anchor(it.b, it.tSide, it.tOff || 0);
+    let c1, c2;
+    if (it.kind === 'h'){
+      const mx = (s[0]+t[0])/2;
+      c1 = [mx, s[1]]; c2 = [mx, t[1]];
+    } else if (it.kind === 'v'){
+      const my = (s[1]+t[1])/2;
+      c1 = [s[0], my]; c2 = [t[0], my];
+    } else { // arc over the top of the lane, staying inside the gutter
+      const lift = Math.min(34, 22 + Math.abs(t[0]-s[0]) * 0.03);
+      c1 = [s[0], s[1]-lift]; c2 = [t[0], t[1]-lift];
+    }
+    const d = `M ${s[0].toFixed(1)},${s[1].toFixed(1)} C ${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${t[0].toFixed(1)},${t[1].toFixed(1)}`;
+
+    const vis = document.createElementNS(SVGNS,'path');
+    vis.setAttribute('d', d);
+    vis.setAttribute('class', 'vis' + (it.e.special ? ' special' : ''));
+    vis.setAttribute('marker-end', it.e.special ? 'url(#arrCyan)' : 'url(#arr)');
+    if (selectedNode && (it.e.from === selectedNode || it.e.to === selectedNode)){
+      vis.classList.add('hl');
+      if (!it.e.special) vis.setAttribute('marker-end','url(#arrHl)');
+    }
+    svg.appendChild(vis);
+
+    const hit = document.createElementNS(SVGNS,'path');
+    hit.setAttribute('d', d);
+    hit.setAttribute('class','hit');
+    hit.addEventListener('mousemove', ev => {
+      etip.style.display = 'block';
+      etip.innerHTML = `<div class="et-route">${esc(nodeById[it.e.from].label)} &rarr; ${esc(nodeById[it.e.to].label)}</div><div class="et-label">${esc(it.e.label)}</div>`;
+      const tw = etip.offsetWidth;
+      let lx = ev.clientX + 14;
+      if (lx + tw > window.innerWidth - 12) lx = ev.clientX - tw - 14;
+      etip.style.left = lx + 'px';
+      etip.style.top  = (ev.clientY + 14) + 'px';
+      vis.classList.add('hl');
+      if (!it.e.special) vis.setAttribute('marker-end','url(#arrHl)');
+    });
+    hit.addEventListener('mouseleave', () => {
+      etip.style.display = 'none';
+      if (!selectedNode || (it.e.from !== selectedNode && it.e.to !== selectedNode)){
+        vis.classList.remove('hl');
+        if (!it.e.special) vis.setAttribute('marker-end','url(#arr)');
+      }
+    });
+    svg.appendChild(hit);
+
+    if (it.e.special){ // persistent label on the blue → cyan handoff
+      const mid = bez(0.5, s, c1, c2, t);
+      const txt = document.createElementNS(SVGNS,'text');
+      txt.setAttribute('class','elabel');
+      txt.setAttribute('x', (mid[0] + 12).toFixed(1));
+      txt.setAttribute('y', (mid[1] + 3).toFixed(1));
+      txt.textContent = 'approved Read → render';
+      svg.appendChild(txt);
+    }
+  }
+}
+
+/* redraw triggers */
+let raf = null;
+function scheduleDraw(){ if (raf) return; raf = requestAnimationFrame(() => { raf = null; drawEdges(); }); }
+window.addEventListener('resize', scheduleDraw);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleDraw);
+window.addEventListener('load', scheduleDraw);
+
+function animateDraw(ms){
+  const t0 = performance.now();
+  (function loop(){
+    drawEdges();
+    if (performance.now() - t0 < ms) requestAnimationFrame(loop);
+  })();
+}
+
+/* =================================================================
+   TOGGLE EXTRAS
+   ================================================================= */
+const toggleBtn = document.getElementById('toggleExtras');
+function setExtras(show){
+  extrasShown = show;
+  document.querySelectorAll('.lane').forEach(sec => {
+    if (laneById[sec.dataset.lane].extra) sec.classList.toggle('collapsed', !show);
+  });
+  toggleBtn.innerHTML = show ? '&#9666; HIDE EXTRAS' : 'SHOW FULL SYSTEM &#9656;';
+  toggleBtn.setAttribute('aria-expanded', String(show));
+  animateDraw(620);
+}
+toggleBtn.addEventListener('click', () => setExtras(!extrasShown));
+document.querySelectorAll('.lane-stub').forEach(b => b.addEventListener('click', () => setExtras(true)));
+
+/* =================================================================
+   DRAWER
+   ================================================================= */
+const drawer   = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+
+function openDrawer(id){
+  const n = nodeById[id], lane = laneById[n.lane];
+  selectedNode = id;
+  document.querySelectorAll('.card.selected').forEach(c => c.classList.remove('selected'));
+  mapEl.querySelector(`[data-node="${id}"]`)?.classList.add('selected');
+
+  document.getElementById('d-lane').innerHTML =
+    `<b style="color:${lane.color}">&#9632;</b><span style="color:${lane.color}">${lane.name}</span>`;
+  document.getElementById('d-title').textContent = n.label;
+  document.getElementById('d-statusWrap').innerHTML = `<span class="chip ${n.status}">${n.status}</span>`;
+
+  const flowsIn  = EDGES.filter(e => e.to   === id);
+  const flowsOut = EDGES.filter(e => e.from === id);
+  const flowRow  = (e, dir) => {
+    const other = nodeById[dir === 'in' ? e.from : e.to];
+    const oc = laneById[other.lane].color;
+    return `<div class="f-row"><b style="color:${oc}">&#9632;</b><span>${dir==='in'?'&larr;':'&rarr;'} <strong>${esc(other.label)}</strong> <em>&middot; ${esc(e.label)}</em></span></div>`;
+  };
+
+  let body = `
+    <div class="d-sec"><p class="d-role">${esc(n.role)}</p></div>
+    <div class="d-sec"><h4>File path${n.files.length>1?'s':''}</h4>
+      <div class="d-files">${n.files.map(f=>`<code>${esc(f)}</code>`).join('')}</div></div>`;
+  if (n.schema){
+    body += `<div class="d-sec"><h4 style="color:var(--cyan)">Proposed schema:</h4>
+      <div class="d-schema">${n.schema.map(s=>`<code>${esc(s)}</code>`).join('')}</div></div>`;
+  }
+  body += `
+    <div class="d-sec"><h4>Flows in</h4><div class="d-flow">${
+      flowsIn.length ? flowsIn.map(e=>flowRow(e,'in')).join('') : '<span class="f-none">&mdash; entry point</span>'
+    }</div></div>
+    <div class="d-sec"><h4>Flows out</h4><div class="d-flow">${
+      flowsOut.length ? flowsOut.map(e=>flowRow(e,'out')).join('') : '<span class="f-none">&mdash; terminal output</span>'
+    }</div></div>`;
+  document.getElementById('d-body').innerHTML = body;
+
+  drawer.classList.add('open');
+  backdrop.classList.add('open');
+  drawEdges();
+}
+function closeDrawer(){
+  selectedNode = null;
+  document.querySelectorAll('.card.selected').forEach(c => c.classList.remove('selected'));
+  drawer.classList.remove('open');
+  backdrop.classList.remove('open');
+  drawEdges();
+}
+mapEl.addEventListener('click', ev => {
+  const card = ev.target.closest('.card');
+  if (card) openDrawer(card.dataset.node);
+});
+mapEl.addEventListener('keydown', ev => {
+  if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.classList.contains('card')){
+    ev.preventDefault(); openDrawer(ev.target.dataset.node);
+  }
+});
+document.getElementById('d-close').addEventListener('click', closeDrawer);
+backdrop.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', ev => { if (ev.key === 'Escape') closeDrawer(); });
+
+/* initial paint */
+drawEdges();
+setTimeout(drawEdges, 120);   // settle after first layout
+setTimeout(drawEdges, 600);   // settle after font swap
+</script>
+</body>
+</html>

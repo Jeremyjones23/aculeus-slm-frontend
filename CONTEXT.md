@@ -29,7 +29,7 @@ The configured backend path that calls the selected language model for investiga
 _Avoid_: Always-on model dependency, training lane
 
 **Guarded Demo Model**:
-The default model contract for the demo lane, currently `openai/gpt-oss-20b` with `rag_16k` and `compact_v2` context discipline.
+The default model contract for the demo lane, currently `deepseek/deepseek-chat` (a direct provider id) with `rag_16k` and `compact_v2` context discipline.
 _Avoid_: Unscoped model swap, paid training path
 
 **Deterministic Demo Fallback**:
