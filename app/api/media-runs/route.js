@@ -22,8 +22,16 @@ export async function POST(request) {
     escalateModelId: body.escalateModelId
   });
   if (!result.ok) return NextResponse.json(result, { status: 422 });
-  await saveMediaRunAuto(result.media_run, snapshot);
-  return NextResponse.json({ ok: true, media_run: result.media_run });
+  // Rendering already succeeded; a persistence failure (e.g. a missing source run FK) must
+  // not surface as a 500. Report it as persisted:false so the client can handle it.
+  let persisted = true;
+  try {
+    await saveMediaRunAuto(result.media_run, snapshot);
+  } catch (error) {
+    persisted = false;
+    console.error("media_run persistence failed", error);
+  }
+  return NextResponse.json({ ok: true, media_run: result.media_run, persisted });
 }
 
 // GET /api/media-runs?id=... — read a saved media run.

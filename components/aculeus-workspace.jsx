@@ -24,7 +24,10 @@ export function AculeusWorkspace({ recentCases, initialBrief, checkpoints }) {
 
   // Turn an approved Read into a media run. Eligibility (needs a counter-case) is honest;
   // the server re-validates via buildReadSnapshot.
-  const mediaRequest = useMemo(() => buildMediaRunRequestFromBrief(activeBrief || {}), [activeBrief]);
+  const mediaRequest = useMemo(
+    () => buildMediaRunRequestFromBrief(activeBrief || {}, { runId: state.activeRun?.runId }),
+    [activeBrief, state.activeRun?.runId]
+  );
   const [mediaBusy, setMediaBusy] = useState(false);
   const [mediaError, setMediaError] = useState(null);
 

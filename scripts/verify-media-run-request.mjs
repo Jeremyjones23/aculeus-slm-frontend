@@ -31,6 +31,9 @@ if (withCounter.body.read.source_run_id !== "run_la") throw new Error("source_ru
 const noRunId = buildMediaRunRequestFromBrief({ ...baseBrief, runId: undefined, counterCase: { body: "The auditor found no violation." } });
 if (noRunId.body.read.source_run_id === baseBrief.caseId) throw new Error("source_run_id fell back to the case id");
 if (noRunId.body.read.source_run_id !== "") throw new Error("source_run_id should be empty when no runId is present");
+// An explicit runId option (the active run's id, not on the brief) is threaded into source_run_id.
+const threaded = buildMediaRunRequestFromBrief({ ...baseBrief, runId: undefined, counterCase: { body: "The auditor found no violation." } }, { runId: "run_active_123" });
+if (threaded.body.read.source_run_id !== "run_active_123") throw new Error("explicit runId option not threaded into source_run_id");
 const evid = withCounter.body.read.evidence_records;
 if (!evid.some((e) => e.role === "counter_case")) throw new Error("counter-case evidence record not added");
 if (!evid.some((e) => e.evidence_record_id === "s1" && /USAspending/.test(e.receipt.publisher))) throw new Error("support claim did not map to its receipt");
