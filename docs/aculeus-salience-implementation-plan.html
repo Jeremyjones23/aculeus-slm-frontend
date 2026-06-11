@@ -447,7 +447,7 @@ footer .fl b{color:var(--blue);font-weight:500}
     <div class="pass">
       <div class="p-num">2</div>
       <div class="p-body">
-        <div class="p-toprow"><span class="p-name">SALIENCE MAP</span><span class="badge sal">SALIENCE-REASONER · FRONTIER</span></div>
+        <div class="p-toprow"><span class="p-name">SALIENCE MAP</span><span class="badge sal">SALIENCE-REASONER · DEEPSEEK / GROK</span></div>
         <div class="p-io"><b>IN</b> atoms + one temperament profile<span class="arr">→</span><b>OUT</b> selected/ordered atoms, frame, door-in, messenger, lexicon map, do-not-say list, required_inclusions</div>
         <div class="p-gate"><b class="gg">GUARDRAIL</b>SELECTS &amp; FRAMES ONLY — cannot add facts; output validated as a subset of the atom set.</div>
       </div>
@@ -471,7 +471,7 @@ footer .fl b{color:var(--blue);font-weight:500}
     <div class="pass" style="border-color:rgba(255,176,32,.6)">
       <div class="p-num" style="color:var(--amber);border-right-color:rgba(255,176,32,.6)">5</div>
       <div class="p-body">
-        <div class="p-toprow"><span class="p-name">SUBSTANCE-LOCK VERIFIER</span><span class="badge ver">VERIFIER · FRONTIER</span></div>
+        <div class="p-toprow"><span class="p-name">SUBSTANCE-LOCK VERIFIER</span><span class="badge ver">VERIFIER · DEEPSEEK / GROK</span></div>
         <div class="p-io"><b>IN</b> draft vs snapshot<span class="arr">→</span><b>OUT</b> render_verifier_issues</div>
         <div class="p-gate"><b class="g">HARD GATE</b>Detailed in section 03.</div>
       </div>
@@ -538,7 +538,7 @@ footer .fl b{color:var(--blue);font-weight:500}
     <div class="flow-steps">
       <span class="flow-step hot">BLOCK ISSUE</span><span class="flow-sep">→</span>
       <span class="flow-step">REPAIR LOOP → PASS 3<br><span style="color:var(--graphite);font-size:9px">MAX 2 RETRIES</span></span><span class="flow-sep">→</span>
-      <span class="flow-step">FRONTIER-RENDERER FALLBACK</span><span class="flow-sep">→</span>
+      <span class="flow-step">STRONGER-MODEL FALLBACK</span><span class="flow-sep">→</span>
       <span class="flow-step hum">HUMAN REVIEW<br><span style="color:var(--graphite);font-size:9px">BLOCKING ISSUES ATTACHED</span></span>
     </div>
     <div class="flow-note">ALL OF IT UNDER A <b>PER-MEDIA-RUN SPEND CAP</b>.</div>
