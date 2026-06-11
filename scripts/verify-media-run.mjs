@@ -38,6 +38,9 @@ try {
   // Ineligible Read is refused.
   const ineligible = await startMediaRun({ snapshot: { ...snapshot, eligible: false, eligibility_reason: "counter_case_required" }, profiles, formats });
   if (ineligible.ok !== false || !/read_ineligible/.test(ineligible.reason)) throw new Error("ineligible Read was not refused");
+  // A snapshot with no source run is refused before any model spend (would break the runs FK).
+  const noSourceRun = await startMediaRun({ snapshot: { ...snapshot, source_run_id: "" }, profiles, formats });
+  if (noSourceRun.ok !== false || noSourceRun.reason !== "source_run_required") throw new Error("media run without a source run was not refused");
   if ((await startMediaRun({ snapshot, profiles: [], formats })).ok !== false) throw new Error("media run without profiles was not refused");
 
   // Store round-trip.
