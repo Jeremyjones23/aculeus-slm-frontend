@@ -455,7 +455,7 @@ footer .fl b{color:var(--blue);font-weight:500}
     <div class="pass">
       <div class="p-num">3</div>
       <div class="p-body">
-        <div class="p-toprow"><span class="p-name">RENDER DRAFT</span><span class="badge ren">RENDERER · ACULEUS SLM</span></div>
+        <div class="p-toprow"><span class="p-name">RENDER DRAFT</span><span class="badge ren">RENDERER · GROK / OPENAI</span></div>
         <div class="p-io"><b>IN</b> salience map + atoms + format spec (op-ed / social / newsletter / press-release)<span class="arr">→</span><b>OUT</b> a piece in plain language, salience-coded, with citation markers on every assertion; counter-case included</div>
         <div class="p-gate"><b class="gg">GUARDRAIL</b>May only assert selected atoms; the model places markers — it never writes the attribution text.</div>
       </div>
@@ -772,7 +772,7 @@ footer .fl b{color:var(--blue);font-weight:500}
         <td class="mid">M7 · EVAL &amp; TRAINING</td>
         <td>TWO tracks — INTEGRITY eval (gates) vs SALIENCE-QUALITY eval (informs).</td>
         <td class="pp">CROSS-CUTTING</td>
-        <td><span class="gate">Substance-lock pass-rate + binding completeness gate promotion; renderer SLM runs shadow no-regression eval (ties to the existing TR-05 formatter gate). Salience-quality rubric informs but never overrides integrity.</span></td>
+        <td><span class="gate">Substance-lock pass-rate + binding completeness gate promotion; candidate gateway models (DeepSeek / Grok / OpenAI) run a model-comparison eval — promote the one with the highest substance-lock pass-rate and no quality regression. Salience-quality rubric informs but never overrides integrity.</span></td>
       </tr>
     </tbody>
   </table>
@@ -818,13 +818,14 @@ footer .fl b{color:var(--blue);font-weight:500}
     <span class="kl">■ 08 · MODEL BINDING</span>
     <span class="kr">ACULEUS — SALIENCE LAYER</span>
   </div>
-  <h2>Roles, not models. <em style="color:var(--blue)">Bound through the run adapter.</em></h2>
+  <h2>Real models, <em style="color:var(--blue)">one gateway.</em></h2>
+  <p style="color:var(--fog);font-size:14px;line-height:1.6;max-width:920px;margin:6px 0 20px">Every pass that calls a model hits the <b style="color:var(--ash)">Vercel AI Gateway</b> (<span style="font-family:var(--mono);font-size:12px">ai-gateway.vercel.sh/v1/chat/completions</span>, OpenAI-compatible) — the same seam the Read engine uses today in <span style="font-family:var(--mono);font-size:12px">lib/aculeus-case-qa.js</span>. The model is chosen by env, so <b style="color:var(--ash)">DeepSeek, Grok, and OpenAI</b> are swappable with no code change. Every call inherits the hardening contract: a source-locked system prompt, <span style="font-family:var(--mono);font-size:12px">temperature 0.1</span>, JSON-only output, and a deterministic post-validator that discards anything the model invents.</p>
 
   <table>
     <thead><tr>
       <th style="width:190px">ROLE</th>
       <th style="width:130px">PASS(ES)</th>
-      <th style="width:200px">MODEL TIER</th>
+      <th style="width:230px">MODEL · VIA AI GATEWAY</th>
       <th>WHY</th>
     </tr></thead>
     <tbody>
@@ -837,27 +838,29 @@ footer .fl b{color:var(--blue);font-weight:500}
       <tr>
         <td class="mid"><span class="badge sal">SALIENCE-REASONER</span></td>
         <td class="pp">P2</td>
-        <td class="mono">frontier</td>
-        <td>Judgment about what's salient &amp; the counter-case; highest reasoning load.</td>
+        <td class="mono">DeepSeek <i>or</i> Grok</td>
+        <td>Judgment about what's salient &amp; which counter-case to keep — the heavy reasoning, the same class of model that builds the dossier.</td>
       </tr>
       <tr>
         <td class="mid"><span class="badge ren">RENDERER</span></td>
         <td class="pp">P1, P3</td>
-        <td class="mono">Aculeus SLM<br>(frontier fallback)</td>
-        <td>Fluent format-specific generation; the SLM is the trained target, frontier on repair escalation.</td>
+        <td class="mono">Grok <i>or</i> OpenAI</td>
+        <td>Fluent, format-specific writing. The model places citation <i>markers</i> only; the attribution text is injected deterministically.</td>
       </tr>
       <tr>
         <td class="mid"><span class="badge ver">VERIFIER</span></td>
         <td class="pp">P5</td>
-        <td class="mono">frontier</td>
-        <td>Adversarial gestalt judgment against the Read; integrity-critical.</td>
+        <td class="mono">DeepSeek <i>or</i> Grok<br>(≠ the renderer)</td>
+        <td>Adversarial gestalt check against the Read. A different model than the writer, so the checker doesn't share the writer's blind spots.</td>
       </tr>
     </tbody>
   </table>
 
+  <p style="font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--graphite);text-transform:uppercase;margin:14px 0 0">■ Bound by env — ACULEUS_SALIENCE_MODEL_ID · ACULEUS_RENDER_MODEL_ID · ACULEUS_VERIFY_MODEL_ID, all over AI_GATEWAY_API_KEY. No model hard-coded.</p>
+
   <div class="risk">
     <b>■ RISK</b>
-    <span>Over-constrained generation (substance + citation + ethical floor + coding + plain language + format) may exceed a small SLM; the frontier fallback and the M7 integrity eval exist to catch this.</span>
+    <span>JSON adherence varies across providers — the deterministic parser and post-validator (as in aculeus-case-qa.js) must reject malformed or invented output, not the model. A model inventing an attribution is already neutralized: citations are injected by code, never written by the model. Provider/gateway dependency and per-call cost are capped per media run with a fallback model.</span>
   </div>
 </section>
 
