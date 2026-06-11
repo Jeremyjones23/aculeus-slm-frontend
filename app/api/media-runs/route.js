@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { buildReadSnapshot } from "@/lib/aculeus-read-snapshot.js";
 import { startMediaRun } from "@/lib/aculeus-media-run.js";
-import { saveMediaRun, getMediaRun } from "@/lib/aculeus-media-run-store.js";
+import { saveMediaRunAuto, getMediaRunAuto } from "@/lib/aculeus-media-run-store.js";
 import { buildAccessDeniedPayload, canCreateCase, getVerifiedRequestUser } from "@/lib/access-control.js";
 
 // POST /api/media-runs — freeze an approved Read and render it for the requested
@@ -22,7 +22,7 @@ export async function POST(request) {
     escalateModelId: body.escalateModelId
   });
   if (!result.ok) return NextResponse.json(result, { status: 422 });
-  saveMediaRun(result.media_run);
+  await saveMediaRunAuto(result.media_run, snapshot);
   return NextResponse.json({ ok: true, media_run: result.media_run });
 }
 
@@ -33,6 +33,6 @@ export async function GET(request) {
     return NextResponse.json(buildAccessDeniedPayload("read_media_run", user), { status: 403 });
   }
   const id = new URL(request.url).searchParams.get("id");
-  const media_run = id ? getMediaRun(id) : null;
+  const media_run = id ? await getMediaRunAuto(id) : null;
   return NextResponse.json({ ok: Boolean(media_run), media_run });
 }

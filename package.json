@@ -21,6 +21,7 @@
     "smoke:salience-pipeline": "node scripts/smoke-salience-pipeline.mjs",
     "test:media-run": "node scripts/verify-media-run.mjs",
     "test:media-review-view": "node scripts/verify-media-review-view.mjs",
+    "qa:media-review": "node scripts/qa-media-review-playwright.mjs",
     "test:complexity": "node scripts/verify-complexity-optimizations.mjs",
     "test:contracts": "node scripts/verify-source-fed-contracts.mjs",
     "test:official-router": "node scripts/verify-official-source-router.mjs",

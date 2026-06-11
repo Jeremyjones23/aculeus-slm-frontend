@@ -87,6 +87,7 @@ create table if not exists media_runs (
   spend_cap_cents integer,
   adapter_mode text,
   model_id text,
+  payload jsonb not null default '{}'::jsonb,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
