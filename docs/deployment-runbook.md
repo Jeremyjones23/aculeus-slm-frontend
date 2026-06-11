@@ -23,6 +23,22 @@ npm run test:backup-restore
 - `DATABASE_URL`
 - `BLOB_READ_WRITE_TOKEN`
 - `ACULEUS_MODEL_ID`
+- `AI_GATEWAY_API_KEY` and `ACULEUS_SALIENCE_MODEL_ID` / `ACULEUS_RENDER_MODEL_ID` / `ACULEUS_VERIFY_MODEL_ID` (salience/media layer; set the verifier model different from the renderer)
+
+## Schema Migration
+
+The product + salience schema is migrated automatically during `postbuild`
+(`scripts/migrate-on-build.mjs`), so a Vercel build with `DATABASE_URL` set applies any
+new `create table if not exists` statements on deploy. It is idempotent and never fails the
+build — a transient migration error is logged as a warning. To run it manually instead (or
+against a fresh database):
+
+```powershell
+npm run migrate:salience-schema
+```
+
+After a deploy that changes the schema, confirm the salience tables exist (or re-run the
+manual migration) before exercising the media-run route.
 
 ## Smoke Sequence
 
