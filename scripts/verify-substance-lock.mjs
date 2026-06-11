@@ -1,6 +1,7 @@
 import {
   bindRender,
   buildSubstanceLockMessages,
+  normIssues,
   runSubstanceLock,
   verifyAndRepair
 } from "../lib/aculeus-substance-lock.js";
@@ -34,6 +35,13 @@ if (!bindings.bindings.every((b) => b.ap_citation_resolved)) throw new Error("AP
 const sys = buildSubstanceLockMessages(cleanRender, snapshot)[0].content;
 if (!/necessary but NOT sufficient/i.test(sys)) throw new Error("verifier prompt missing the gestalt principle");
 if (!/misleading_implication|selective_omission|unsupported_causation/.test(sys)) throw new Error("verifier prompt missing tier-2 checks");
+
+// Gestalt normalization fails CLOSED: a flagged issue with no severity blocks even when its
+// type is not enumerated; only an explicit warn/info on a non-severe type may pass.
+if (normIssues([{ issue_type: "misleading_implication" }])[0].severity !== "block") throw new Error("missing-severity gestalt issue did not fail closed");
+if (normIssues([{ issue_type: "thin_evidence_unflagged", severity: "" }])[0].severity !== "block") throw new Error("empty-severity gestalt issue did not fail closed");
+if (normIssues([{ issue_type: "selective_omission", severity: "warn" }])[0].severity !== "block") throw new Error("an enumerated severe type was downgraded");
+if (normIssues([{ issue_type: "style_nit", severity: "warn" }])[0].severity !== "warn") throw new Error("explicit warn on a non-severe type should be allowed");
 
 // Clean render, no gateway: not blocked, but NOT publish-ready (gestalt did not run).
 const clean = await runSubstanceLock({ render: cleanRender, snapshot, atoms });
