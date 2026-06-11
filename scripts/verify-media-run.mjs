@@ -33,7 +33,12 @@ try {
   // Deterministic mode (no gateway) -> every variant routes to human review.
   if (!result.media_run.variants.every((v) => v.status === "needs_human")) throw new Error("deterministic variant did not route to human review");
   if (result.media_run.status !== "review") throw new Error("media run status should be review when variants need human");
-  if (result.media_run.read_snapshot_id !== snapshot.content_hash) throw new Error("media run did not pin the snapshot hash");
+  if (result.media_run.read_snapshot_id !== snapshot.snapshot_id) throw new Error("media run did not pin the run-scoped snapshot id");
+  if (result.media_run.read_snapshot_content_hash !== snapshot.content_hash) throw new Error("media run dropped the content-hash substance pin");
+  // Same frozen substance from a different run must yield a distinct durable snapshot id.
+  const otherRun = buildReadSnapshot({ ...read, source_run_id: "run_other" });
+  if (otherRun.content_hash !== snapshot.content_hash) throw new Error("content_hash should ignore run identity");
+  if (otherRun.snapshot_id === snapshot.snapshot_id) throw new Error("snapshot_id must be run-scoped so distinct runs do not collide");
 
   // Ineligible Read is refused.
   const ineligible = await startMediaRun({ snapshot: { ...snapshot, eligible: false, eligibility_reason: "counter_case_required" }, profiles, formats });

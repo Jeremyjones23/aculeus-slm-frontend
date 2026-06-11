@@ -34,7 +34,7 @@ const noContra = buildAnswerBriefFromCase({ ...casePacket, dossier: { findings: 
 if (noContra.counterCase !== null) throw new Error("counter-case should be null when the record supplies none");
 
 // The emitted counter-case makes the media-run trigger eligible AND receipt-backs the counter-case.
-const request = buildMediaRunRequestFromBrief(brief);
+const request = buildMediaRunRequestFromBrief(brief, { runId: "run_la" });
 if (!request.ok) throw new Error(`brief with emitted counter-case should be eligible, got ${request.reason}`);
 const cc = request.body.read.evidence_records.find((e) => e.role === "counter_case");
 if (!cc) throw new Error("counter-case evidence record missing from media-run request");

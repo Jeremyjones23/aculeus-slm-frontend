@@ -3,6 +3,7 @@ import { buildReadSnapshot } from "@/lib/aculeus-read-snapshot.js";
 import { startMediaRun } from "@/lib/aculeus-media-run.js";
 import { saveMediaRunAuto, getMediaRunAuto } from "@/lib/aculeus-media-run-store.js";
 import { buildAccessDeniedPayload, canCreateCase, getVerifiedRequestUser } from "@/lib/access-control.js";
+import { hasDatabase, query } from "@/lib/database.js";
 
 // POST /api/media-runs — freeze an approved Read and render it for the requested
 // temperaments x formats. The gateway token is read from env by the pass modules, so
@@ -14,6 +15,14 @@ export async function POST(request) {
   }
   const body = await request.json();
   const snapshot = buildReadSnapshot(body.read || {}, body.snapshotVersion || 1);
+  // Verify the source run actually exists before spending any model calls; a bogus id would
+  // otherwise run the full pipeline and only fail at persistence on the runs FK.
+  if (hasDatabase() && snapshot.source_run_id) {
+    const rows = await query("select 1 from runs where id = $1 limit 1", [snapshot.source_run_id]);
+    if (!rows.length) {
+      return NextResponse.json({ ok: false, reason: "source_run_not_found" }, { status: 422 });
+    }
+  }
   const result = await startMediaRun({
     snapshot,
     profiles: Array.isArray(body.profiles) ? body.profiles : [],

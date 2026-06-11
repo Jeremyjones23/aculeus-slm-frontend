@@ -28,12 +28,13 @@ const withCounter = buildMediaRunRequestFromBrief({ ...baseBrief, counterCase: {
 if (!withCounter.ok) throw new Error(`brief with counter-case should be eligible, got ${withCounter.reason}`);
 // source_run_id references runs(id): it must carry the real runId and never fall back to the case id.
 if (withCounter.body.read.source_run_id !== "run_la") throw new Error("source_run_id did not carry the brief runId");
+// With no run id the request is ineligible (mirrors the server gate); it must not fall back to the case id.
 const noRunId = buildMediaRunRequestFromBrief({ ...baseBrief, runId: undefined, counterCase: { body: "The auditor found no violation." } });
-if (noRunId.body.read.source_run_id === baseBrief.caseId) throw new Error("source_run_id fell back to the case id");
-if (noRunId.body.read.source_run_id !== "") throw new Error("source_run_id should be empty when no runId is present");
+if (noRunId.ok !== false || noRunId.reason !== "source_run_required") throw new Error("brief without a source run should be ineligible");
+if (noRunId.read.source_run_id !== "") throw new Error("source_run_id should be empty (not the case id) when no runId is present");
 // An explicit runId option (the active run's id, not on the brief) is threaded into source_run_id.
 const threaded = buildMediaRunRequestFromBrief({ ...baseBrief, runId: undefined, counterCase: { body: "The auditor found no violation." } }, { runId: "run_active_123" });
-if (threaded.body.read.source_run_id !== "run_active_123") throw new Error("explicit runId option not threaded into source_run_id");
+if (!threaded.ok || threaded.body.read.source_run_id !== "run_active_123") throw new Error("explicit runId option not threaded into source_run_id");
 const evid = withCounter.body.read.evidence_records;
 if (!evid.some((e) => e.role === "counter_case")) throw new Error("counter-case evidence record not added");
 if (!evid.some((e) => e.evidence_record_id === "s1" && /USAspending/.test(e.receipt.publisher))) throw new Error("support claim did not map to its receipt");
