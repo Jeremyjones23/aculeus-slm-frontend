@@ -42,7 +42,11 @@ export function AculeusWorkspace({ recentCases, initialBrief, checkpoints }) {
         body: JSON.stringify(mediaRequest.body)
       });
       const payload = await response.json();
-      if (payload.ok && payload.media_run?.media_run_id) {
+      if (payload.ok && payload.persisted === false) {
+        // The render succeeded but could not be saved durably, so the review page would load
+        // nothing on redirect — surface it instead of navigating to an empty run.
+        setMediaError("media_run_not_persisted");
+      } else if (payload.ok && payload.media_run?.media_run_id) {
         window.location.assign(`/media-review?id=${payload.media_run.media_run_id}`);
       } else {
         setMediaError(payload.reason || "media_run_failed");
